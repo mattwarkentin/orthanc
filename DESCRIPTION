@@ -1,16 +1,22 @@
-Package: oRthanc
-Title: What the Package Does (One Line, Title Case)
+Package: orthanc
+Title: Programmatic Interface to 'Orthanc' REST API
 Version: 0.0.0.9000
 Authors@R: 
     person("Matthew T.", "Warkentin", , "matthew.warkentin@ucalgary.ca", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-8730-3511"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Description: A programmatic interface to the 'Orthanc' (https://www.orthanc-server.com).
+  The primary goal of this package is to wrap the 'Orthanc' DICOM Server REST API
+  to provide 'Orthanc' users a programmatic interface for the R langauge.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3.9000
+Depends:
+    R (>= 4.1.0)
 Imports: 
+    cli,
     glue,
     httr2,
-    rlang
+    rlang,
+URL: https://github.com/mattwarkentin/orthanc
+BugReports: https://github.com/mattwarkentin/orthanc/issues

@@ -1,3 +1,3 @@
-# oRthanc (development version)
+# orthanc (development version)
 
 * Initial package development.
