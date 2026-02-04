@@ -1,0 +1,17 @@
+url: https://mattwarkentin.github.io/orthanc/
+template:
+  bootstrap: 5
+
+reference:
+- title: Orthanc API Clients
+  contents:
+  - Orthanc
+  - OrthancAsync
+
+- title: Resource Classes
+  contents:
+  - Resource
+  - Instance
+  - Series
+  - Study
+  - Patient

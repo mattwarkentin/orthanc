@@ -28,3 +28,17 @@ You can install the development version of `orthanc` from [GitHub](https://githu
 # install.packages("pak")
 pak::pak("mattwarkentin/orthanc")
 ```
+
+## Usage
+
+```{r setup}
+options(max.print = 10)
+```
+
+```{r}
+library(orthanc)
+
+client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
+
+client$get_instances()
+```

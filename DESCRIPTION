@@ -19,5 +19,5 @@ Imports:
     mirai,
     purrr,
     rlang,
-URL: https://github.com/mattwarkentin/orthanc
+URL: https://github.com/mattwarkentin/orthanc, https://mattwarkentin.github.io/orthanc/
 BugReports: https://github.com/mattwarkentin/orthanc/issues

@@ -14,6 +14,7 @@ A programmatic interface to the 'Orthanc' (https://www.orthanc-server.com). The 
 Useful links:
 \itemize{
   \item \url{https://github.com/mattwarkentin/orthanc}
+  \item \url{https://mattwarkentin.github.io/orthanc/}
   \item Report bugs at \url{https://github.com/mattwarkentin/orthanc/issues}
 }
 
