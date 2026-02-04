@@ -11,6 +11,7 @@
 #'
 #' @return An `Orthanc` instance.
 #'
+#' @importFrom R6 R6Class
 #' @importFrom httr2 request req_perform req_url_path_append req_url_query
 #'   req_headers req_cookies_set req_user_agent req_auth_basic req_method
 #'   req_body_json req_body_file req_body_raw req_get_body_type

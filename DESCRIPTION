@@ -18,6 +18,7 @@ Imports:
     httr2,
     mirai,
     purrr,
-    rlang,
+    R6,
+    rlang
 URL: https://github.com/mattwarkentin/orthanc, https://mattwarkentin.github.io/orthanc/
 BugReports: https://github.com/mattwarkentin/orthanc/issues
