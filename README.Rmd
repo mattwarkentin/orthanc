@@ -31,7 +31,9 @@ pak::pak("mattwarkentin/orthanc")
 
 ## Usage
 
-```{r setup}
+```{r}
+#| label: setup
+#| include: false
 options(max.print = 10)
 ```
 
