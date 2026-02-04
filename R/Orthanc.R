@@ -8521,7 +8521,7 @@ Orthanc <-
       },
       include_content = function(req, file, json, data) {
         if (!rlang::is_missing(file)) {
-          ext <- tools::file_ext(file)
+          ext <- fs::path_ext(file)
 
           req <-
             req |>
