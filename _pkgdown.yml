@@ -15,3 +15,13 @@ reference:
   - Series
   - Study
   - Patient
+
+- title: Other Classes
+  contents:
+  - Job
+  - Modality
+  - RemoteModality
+
+- title: Utilities
+  contents:
+  - retrieve_and_write_patients
