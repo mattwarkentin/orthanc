@@ -19,3 +19,17 @@
   : DICOM Study Class
 - [`Patient`](https://mattwarkentin.github.io/orthanc/reference/Patient.md)
   : DICOM Patient Class
+
+## Other Classes
+
+- [`Job`](https://mattwarkentin.github.io/orthanc/reference/Job.md) :
+  Job class to follow a Job in Orthanc
+- [`Modality`](https://mattwarkentin.github.io/orthanc/reference/Modality.md)
+  : Wrapper around Orthanc API when dealing with a modality.
+- [`RemoteModality`](https://mattwarkentin.github.io/orthanc/reference/RemoteModality.md)
+  : Wrapper around Orthanc API when dealing with a modality.
+
+## Utilities
+
+- [`retrieve_and_write_patients()`](https://mattwarkentin.github.io/orthanc/reference/retrieve_and_write_patients.md)
+  : Retrieve and write patients to given path

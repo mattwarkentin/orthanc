@@ -141,7 +141,11 @@ An R6 instance of class `"Series"`.
 
 - [`Series$anonymize()`](#method-Series-anonymize)
 
+- [`Series$anonymize_as_job()`](#method-Series-anonymize_as_job)
+
 - [`Series$modify()`](#method-Series-modify)
+
+- [`Series$modify_as_job()`](#method-Series-modify_as_job)
 
 - [`Series$get_zip()`](#method-Series-get_zip)
 
@@ -261,6 +265,69 @@ Anonymize Series
 
 ------------------------------------------------------------------------
 
+### Method `anonymize_as_job()`
+
+Anonymize Series
+
+#### Usage
+
+    Series$anonymize_as_job(
+      remove = list(),
+      replace = list(),
+      keep = list(),
+      keep_private_tags = FALSE,
+      keep_source = TRUE,
+      priority = 0L,
+      permissive = FALSE,
+      private_creator = NULL,
+      force = FALSE,
+      dicom_version = NULL
+    )
+
+#### Arguments
+
+- `remove`:
+
+  List of tags to remove.
+
+- `replace`:
+
+  Named-list of tags to replce.
+
+- `keep`:
+
+  List of tags to keep unchanged.
+
+- `keep_private_tags`:
+
+  Keep private tags from DICOM instance.
+
+- `keep_source`:
+
+  Keep original resource.
+
+- `priority`:
+
+  Priority of the job.
+
+- `permissive`:
+
+  Ignore errors during individual steps of the job?
+
+- `private_creator`:
+
+  Private creator to be used for private tags in replace.
+
+- `force`:
+
+  Force tags to be changed.
+
+- `dicom_version`:
+
+  Version of the DICOM standard to use for anonymization.
+
+------------------------------------------------------------------------
+
 ### Method `modify()`
 
 Modify Series
@@ -268,6 +335,64 @@ Modify Series
 #### Usage
 
     Series$modify(
+      remove = list(),
+      replace = list(),
+      keep = list(),
+      remove_private_tags = FALSE,
+      keep_source = TRUE,
+      priority = 0L,
+      permissive = FALSE,
+      private_creator = NULL,
+      force = FALSE
+    )
+
+#### Arguments
+
+- `remove`:
+
+  List of tags to remove.
+
+- `replace`:
+
+  Named-list of tags to replce.
+
+- `keep`:
+
+  List of tags to keep unchanged.
+
+- `remove_private_tags`:
+
+  Remove private tags from DICOM instance.
+
+- `keep_source`:
+
+  Keep original resource.
+
+- `priority`:
+
+  Priority of the job.
+
+- `permissive`:
+
+  Ignore errors during individual steps of the job?
+
+- `private_creator`:
+
+  Private creator to be used for private tags in replace.
+
+- `force`:
+
+  Force tags to be changed.
+
+------------------------------------------------------------------------
+
+### Method `modify_as_job()`
+
+Modify Series
+
+#### Usage
+
+    Series$modify_as_job(
       remove = list(),
       replace = list(),
       keep = list(),

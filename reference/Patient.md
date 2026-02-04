@@ -75,7 +75,11 @@ An R6 instance of class `"Patient"`.
 
 - [`Patient$anonymize()`](#method-Patient-anonymize)
 
+- [`Patient$anonymize_as_job()`](#method-Patient-anonymize_as_job)
+
 - [`Patient$modify()`](#method-Patient-modify)
+
+- [`Patient$modify_as_job()`](#method-Patient-modify_as_job)
 
 - [`Patient$get_shared_tags()`](#method-Patient-get_shared_tags)
 
@@ -227,6 +231,69 @@ Anonymize Patient
 
 ------------------------------------------------------------------------
 
+### Method `anonymize_as_job()`
+
+Anonymize Patient
+
+#### Usage
+
+    Patient$anonymize_as_job(
+      remove = list(),
+      replace = list(),
+      keep = list(),
+      keep_private_tags = FALSE,
+      keep_source = TRUE,
+      priority = 0L,
+      permissive = FALSE,
+      private_creator = NULL,
+      force = FALSE,
+      dicom_version = NULL
+    )
+
+#### Arguments
+
+- `remove`:
+
+  List of tags to remove.
+
+- `replace`:
+
+  Named-list of tags to replce.
+
+- `keep`:
+
+  List of tags to keep unchanged.
+
+- `keep_private_tags`:
+
+  Keep private tags from DICOM instance.
+
+- `keep_source`:
+
+  Keep original resource.
+
+- `priority`:
+
+  Priority of the job.
+
+- `permissive`:
+
+  Ignore errors during individual steps of the job?
+
+- `private_creator`:
+
+  Private creator to be used for private tags in replace.
+
+- `force`:
+
+  Force tags to be changed.
+
+- `dicom_version`:
+
+  Version of the DICOM standard to use for anonymization.
+
+------------------------------------------------------------------------
+
 ### Method `modify()`
 
 Modify Patient
@@ -234,6 +301,64 @@ Modify Patient
 #### Usage
 
     Patient$modify(
+      remove = list(),
+      replace = list(),
+      keep = list(),
+      remove_private_tags = FALSE,
+      keep_source = TRUE,
+      priority = 0L,
+      permissive = FALSE,
+      private_creator = NULL,
+      force = FALSE
+    )
+
+#### Arguments
+
+- `remove`:
+
+  List of tags to remove.
+
+- `replace`:
+
+  Named-list of tags to replce.
+
+- `keep`:
+
+  List of tags to keep unchanged.
+
+- `remove_private_tags`:
+
+  Remove private tags from DICOM instance.
+
+- `keep_source`:
+
+  Keep original resource.
+
+- `priority`:
+
+  Priority of the job.
+
+- `permissive`:
+
+  Ignore errors during individual steps of the job?
+
+- `private_creator`:
+
+  Private creator to be used for private tags in replace.
+
+- `force`:
+
+  Force tags to be changed.
+
+------------------------------------------------------------------------
+
+### Method `modify_as_job()`
+
+Modify Patient
+
+#### Usage
+
+    Patient$modify_as_job(
       remove = list(),
       replace = list(),
       keep = list(),
