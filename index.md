@@ -16,10 +16,6 @@ pak::pak("mattwarkentin/orthanc")
 ## Usage
 
 ``` r
-options(max.print = 10)
-```
-
-``` r
 library(orthanc)
 
 client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
