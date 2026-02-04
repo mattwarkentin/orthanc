@@ -6,6 +6,8 @@
 \alias{orthanc-package}
 \title{orthanc: Programmatic Interface to 'Orthanc' REST API}
 \description{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
 A programmatic interface to the 'Orthanc' (https://www.orthanc-server.com). The primary goal of this package is to wrap the 'Orthanc' DICOM Server REST API to provide 'Orthanc' users a programmatic interface for the R langauge.
 }
 \seealso{

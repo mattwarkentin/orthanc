@@ -14,9 +14,10 @@ RoxygenNote: 7.3.3.9000
 Depends:
     R (>= 4.1.0)
 Imports: 
-    cli,
     glue,
     httr2,
+    mirai,
+    purrr,
     rlang,
 URL: https://github.com/mattwarkentin/orthanc
 BugReports: https://github.com/mattwarkentin/orthanc/issues
