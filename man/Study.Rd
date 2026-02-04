@@ -59,7 +59,9 @@ description.}
 \item \href{#method-Study-add_label}{\code{Study$add_label()}}
 \item \href{#method-Study-remove_label}{\code{Study$remove_label()}}
 \item \href{#method-Study-anonymize}{\code{Study$anonymize()}}
+\item \href{#method-Study-anonymize_as_job}{\code{Study$anonymize_as_job()}}
 \item \href{#method-Study-modify}{\code{Study$modify()}}
+\item \href{#method-Study-modify_as_job}{\code{Study$modify_as_job()}}
 \item \href{#method-Study-get_zip}{\code{Study$get_zip()}}
 \item \href{#method-Study-download}{\code{Study$download()}}
 \item \href{#method-Study-get_shared_tags}{\code{Study$get_shared_tags()}}
@@ -166,12 +168,104 @@ anonymization.}
 }
 }
 \if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Study-anonymize_as_job"></a>}}
+\if{latex}{\out{\hypertarget{method-Study-anonymize_as_job}{}}}
+\subsection{Method \code{anonymize_as_job()}}{
+Anonymize Study
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Study$anonymize_as_job(
+  remove = list(),
+  replace = list(),
+  keep = list(),
+  keep_private_tags = FALSE,
+  keep_source = TRUE,
+  priority = 0L,
+  permissive = FALSE,
+  private_creator = NULL,
+  force = FALSE,
+  dicom_version = NULL
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{remove}}{List of tags to remove.}
+
+\item{\code{replace}}{Named-list of tags to replce.}
+
+\item{\code{keep}}{List of tags to keep unchanged.}
+
+\item{\code{keep_private_tags}}{Keep private tags from DICOM instance.}
+
+\item{\code{keep_source}}{Keep original resource.}
+
+\item{\code{priority}}{Priority of the job.}
+
+\item{\code{permissive}}{Ignore errors during individual steps of the job?}
+
+\item{\code{private_creator}}{Private creator to be used for private tags in
+replace.}
+
+\item{\code{force}}{Force tags to be changed.}
+
+\item{\code{dicom_version}}{Version of the DICOM standard to use for
+anonymization.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Study-modify"></a>}}
 \if{latex}{\out{\hypertarget{method-Study-modify}{}}}
 \subsection{Method \code{modify()}}{
 Modify Study
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Study$modify(
+  remove = list(),
+  replace = list(),
+  keep = list(),
+  remove_private_tags = FALSE,
+  keep_source = TRUE,
+  priority = 0L,
+  permissive = FALSE,
+  private_creator = NULL,
+  force = FALSE
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{remove}}{List of tags to remove.}
+
+\item{\code{replace}}{Named-list of tags to replce.}
+
+\item{\code{keep}}{List of tags to keep unchanged.}
+
+\item{\code{remove_private_tags}}{Remove private tags from DICOM instance.}
+
+\item{\code{keep_source}}{Keep original resource.}
+
+\item{\code{priority}}{Priority of the job.}
+
+\item{\code{permissive}}{Ignore errors during individual steps of the job?}
+
+\item{\code{private_creator}}{Private creator to be used for private tags in
+replace.}
+
+\item{\code{force}}{Force tags to be changed.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Study-modify_as_job"></a>}}
+\if{latex}{\out{\hypertarget{method-Study-modify_as_job}{}}}
+\subsection{Method \code{modify_as_job()}}{
+Modify Study as Job
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Study$modify_as_job(
   remove = list(),
   replace = list(),
   keep = list(),

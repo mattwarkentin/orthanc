@@ -49,7 +49,9 @@ An abstract class for a DICOM Patient resource.
 \item \href{#method-Patient-download}{\code{Patient$download()}}
 \item \href{#method-Patient-get_patient_module}{\code{Patient$get_patient_module()}}
 \item \href{#method-Patient-anonymize}{\code{Patient$anonymize()}}
+\item \href{#method-Patient-anonymize_as_job}{\code{Patient$anonymize_as_job()}}
 \item \href{#method-Patient-modify}{\code{Patient$modify()}}
+\item \href{#method-Patient-modify_as_job}{\code{Patient$modify_as_job()}}
 \item \href{#method-Patient-get_shared_tags}{\code{Patient$get_shared_tags()}}
 }
 }
@@ -191,12 +193,104 @@ anonymization.}
 }
 }
 \if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Patient-anonymize_as_job"></a>}}
+\if{latex}{\out{\hypertarget{method-Patient-anonymize_as_job}{}}}
+\subsection{Method \code{anonymize_as_job()}}{
+Anonymize Patient
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Patient$anonymize_as_job(
+  remove = list(),
+  replace = list(),
+  keep = list(),
+  keep_private_tags = FALSE,
+  keep_source = TRUE,
+  priority = 0L,
+  permissive = FALSE,
+  private_creator = NULL,
+  force = FALSE,
+  dicom_version = NULL
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{remove}}{List of tags to remove.}
+
+\item{\code{replace}}{Named-list of tags to replce.}
+
+\item{\code{keep}}{List of tags to keep unchanged.}
+
+\item{\code{keep_private_tags}}{Keep private tags from DICOM instance.}
+
+\item{\code{keep_source}}{Keep original resource.}
+
+\item{\code{priority}}{Priority of the job.}
+
+\item{\code{permissive}}{Ignore errors during individual steps of the job?}
+
+\item{\code{private_creator}}{Private creator to be used for private tags in
+replace.}
+
+\item{\code{force}}{Force tags to be changed.}
+
+\item{\code{dicom_version}}{Version of the DICOM standard to use for
+anonymization.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Patient-modify"></a>}}
 \if{latex}{\out{\hypertarget{method-Patient-modify}{}}}
 \subsection{Method \code{modify()}}{
 Modify Patient
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Patient$modify(
+  remove = list(),
+  replace = list(),
+  keep = list(),
+  remove_private_tags = FALSE,
+  keep_source = TRUE,
+  priority = 0L,
+  permissive = FALSE,
+  private_creator = NULL,
+  force = FALSE
+)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{remove}}{List of tags to remove.}
+
+\item{\code{replace}}{Named-list of tags to replce.}
+
+\item{\code{keep}}{List of tags to keep unchanged.}
+
+\item{\code{remove_private_tags}}{Remove private tags from DICOM instance.}
+
+\item{\code{keep_source}}{Keep original resource.}
+
+\item{\code{priority}}{Priority of the job.}
+
+\item{\code{permissive}}{Ignore errors during individual steps of the job?}
+
+\item{\code{private_creator}}{Private creator to be used for private tags in
+replace.}
+
+\item{\code{force}}{Force tags to be changed.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Patient-modify_as_job"></a>}}
+\if{latex}{\out{\hypertarget{method-Patient-modify_as_job}{}}}
+\subsection{Method \code{modify_as_job()}}{
+Modify Patient
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Patient$modify_as_job(
   remove = list(),
   replace = list(),
   keep = list(),

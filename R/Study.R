@@ -82,6 +82,59 @@ Study <- R6::R6Class(
       Study$new(anon_study[["ID"]], private$.client)
     },
 
+    #' @description Anonymize Study
+    #' @param remove List of tags to remove.
+    #' @param replace Named-list of tags to replce.
+    #' @param keep List of tags to keep unchanged.
+    #' @param force Force tags to be changed.
+    #' @param keep_private_tags Keep private tags from DICOM instance.
+    #' @param keep_source Keep original resource.
+    #' @param priority Priority of the job.
+    #' @param permissive Ignore errors during individual steps of the job?
+    #' @param private_creator Private creator to be used for private tags in
+    #'   replace.
+    #' @param dicom_version Version of the DICOM standard to use for
+    #'   anonymization.
+    anonymize_as_job = function(
+      remove = list(),
+      replace = list(),
+      keep = list(),
+      keep_private_tags = FALSE,
+      keep_source = TRUE,
+      priority = 0L,
+      permissive = FALSE,
+      private_creator = NULL,
+      force = FALSE,
+      dicom_version = NULL
+    ) {
+      data <- list(
+        Aysnchronous = TRUE,
+        Remove = remove,
+        Replace = replace,
+        Keep = keep,
+        Force = force,
+        KeepPrivateTags = keep_private_tags,
+        KeepSource = keep_source,
+        Priority = priority,
+        Permissive = permissive
+      )
+
+      if (!rlang::is_null(private_creator)) {
+        data["PrivateCreator"] <- private_creator
+      }
+
+      if (!rlang::is_null(dicom_version)) {
+        data["DicomVersion"] <- dicom_version
+      }
+
+      anon_study <- private$.client$post_studies_id_anonymize(
+        private$.id,
+        data
+      )
+
+      Job$new(anon_study[["ID"]], private$.client)
+    },
+
     #' @description Modify Study
     #' @param remove List of tags to remove.
     #' @param replace Named-list of tags to replce.
@@ -129,6 +182,55 @@ Study <- R6::R6Class(
       private$.main_dicom_tags <- NULL
 
       Study$new(mod_study[["ID"]], private$.client)
+    },
+
+    #' @description Modify Study as Job
+    #' @param remove List of tags to remove.
+    #' @param replace Named-list of tags to replce.
+    #' @param keep List of tags to keep unchanged.
+    #' @param force Force tags to be changed.
+    #' @param remove_private_tags Remove private tags from DICOM instance.
+    #' @param keep_source Keep original resource.
+    #' @param priority Priority of the job.
+    #' @param permissive Ignore errors during individual steps of the job?
+    #' @param private_creator Private creator to be used for private tags in
+    #'   replace.
+    modify_as_job = function(
+      remove = list(),
+      replace = list(),
+      keep = list(),
+      remove_private_tags = FALSE,
+      keep_source = TRUE,
+      priority = 0L,
+      permissive = FALSE,
+      private_creator = NULL,
+      force = FALSE
+    ) {
+      if (!force & any(names(replace)) == "StudyInstanceUID") {
+        rlang::abort("If StudyInstanceUID is replaced, `force` must be `TRUE`")
+      }
+
+      data <- list(
+        Aysnchronous = TRUE,
+        Remove = remove,
+        Replace = replace,
+        Keep = keep,
+        Force = force,
+        RemovePrivateTags = remove_private_tags,
+        KeepSource = keep_source,
+        Priority = priority,
+        Permissive = permissive
+      )
+
+      if (!rlang::is_null(private_creator)) {
+        data["PrivateCreator"] <- private_creator
+      }
+
+      mod_study <- private$.client$post_studies_id_modify(private$.id, data)
+
+      private$.main_dicom_tags <- NULL
+
+      Job$new(mod_study[["ID"]], private$.client)
     },
 
     #' @description Get the bytes of the zip file.
