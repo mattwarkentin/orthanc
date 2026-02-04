@@ -81,8 +81,8 @@ An R6 instance of class `"Patient"`.
 
 Inherited methods
 
-- [`orthanc::Resource$initialize()`](https://mattwarkentin.github.io/orthanc/html/Resource.html#method-Resource-initialize)
-- [`orthanc::Resource$print()`](https://mattwarkentin.github.io/orthanc/html/Resource.html#method-Resource-print)
+- [`orthanc::Resource$initialize()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-initialize)
+- [`orthanc::Resource$print()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-print)
 
 ------------------------------------------------------------------------
 
