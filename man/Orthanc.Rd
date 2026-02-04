@@ -513,7 +513,7 @@ Serialized response of the HTTP PUT request.
 \if{html}{\out{<a id="method-Orthanc-stream"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-stream}{}}}
 \subsection{Method \code{stream()}}{
-Stream a request and write to disk.
+Stream an HTTP response body and write to disk.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Orthanc$stream(method, route, params = NULL, headers = NULL, cookies = NULL)}\if{html}{\out{</div>}}
 }

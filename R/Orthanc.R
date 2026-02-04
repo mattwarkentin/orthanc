@@ -11,6 +11,13 @@
 #'
 #' @return An `Orthanc` instance.
 #'
+#' @importFrom httr2 request req_perform req_url_path_append req_url_query
+#'   req_headers req_cookies_set req_user_agent req_auth_basic req_method
+#'   req_body_json req_body_file req_body_raw req_get_body_type
+#'   req_perform_connection resp_content_type resp_body_json resp_body_html
+#'   resp_body_string resp_body_raw resp_stream_is_complete resp_stream_raw
+#' @importFrom glue glue
+#'
 #' @export
 Orthanc <-
   R6::R6Class(
@@ -115,7 +122,7 @@ Orthanc <-
         res
       },
 
-      #' @description Stream a request and write to disk.
+      #' @description Stream an HTTP response body and write to disk.
       #' @param method HTTP method.
       #' @param route HTTP route.
       #' @param params Parameters for the HTTP request.
@@ -130,8 +137,7 @@ Orthanc <-
         cookies = NULL
       ) {
         req <- private$request_build(route, params, headers, cookies, method)
-        resp_con <- httr2::req_perform_connection(req)
-        resp_con
+        private$request_perform_stream(req)
       },
 
       #' @description Print method for `Orthanc`.
@@ -8563,6 +8569,10 @@ Orthanc <-
       request_perform = function(req) {
         resp <- httr2::req_perform(req)
         private$response_process(req, resp)
+      },
+      request_perform_stream = function(req) {
+        resp_con <- httr2::req_perform_connection(req)
+        resp_con
       },
       response_process = function(req, resp) {
         stopifnot(inherits(resp, "httr2_response"))

@@ -5,6 +5,8 @@
 #'
 #' @return An R6 instance of class `"Series"`.
 #'
+#' @importFrom purrr map
+#'
 #' @export
 Series <- R6::R6Class(
   classname = "Series",

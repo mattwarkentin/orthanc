@@ -14,6 +14,8 @@
 #' @details
 #' See \link{Orthanc} for more information.
 #'
+#' @importFrom mirai mirai
+#'
 #' @export
 OrthancAsync <-
   R6::R6Class(
