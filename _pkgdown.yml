@@ -25,3 +25,8 @@ reference:
 - title: Utilities
   contents:
   - retrieve_and_write_patients
+  - query_orthanc
+  - find_patients
+  - find_studies
+  - find_series
+  - find_instances
