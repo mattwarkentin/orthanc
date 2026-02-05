@@ -15,8 +15,13 @@
 <url><loc>https://mattwarkentin.github.io/orthanc/reference/Resource.html</loc></url>
 <url><loc>https://mattwarkentin.github.io/orthanc/reference/Series.html</loc></url>
 <url><loc>https://mattwarkentin.github.io/orthanc/reference/Study.html</loc></url>
+<url><loc>https://mattwarkentin.github.io/orthanc/reference/find_instances.html</loc></url>
+<url><loc>https://mattwarkentin.github.io/orthanc/reference/find_patients.html</loc></url>
+<url><loc>https://mattwarkentin.github.io/orthanc/reference/find_series.html</loc></url>
+<url><loc>https://mattwarkentin.github.io/orthanc/reference/find_studies.html</loc></url>
 <url><loc>https://mattwarkentin.github.io/orthanc/reference/index.html</loc></url>
 <url><loc>https://mattwarkentin.github.io/orthanc/reference/orthanc-package.html</loc></url>
+<url><loc>https://mattwarkentin.github.io/orthanc/reference/query_orthanc.html</loc></url>
 <url><loc>https://mattwarkentin.github.io/orthanc/reference/retrieve_and_write_patients.html</loc></url>
 </urlset>
 

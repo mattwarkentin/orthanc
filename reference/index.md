@@ -33,3 +33,13 @@
 
 - [`retrieve_and_write_patients()`](https://mattwarkentin.github.io/orthanc/reference/retrieve_and_write_patients.md)
   : Retrieve and write patients to given path
+- [`query_orthanc()`](https://mattwarkentin.github.io/orthanc/reference/query_orthanc.md)
+  : Query data in the Orthanc server
+- [`find_patients()`](https://mattwarkentin.github.io/orthanc/reference/find_patients.md)
+  : Finds patients in Orthanc according to queries and labels
+- [`find_studies()`](https://mattwarkentin.github.io/orthanc/reference/find_studies.md)
+  : Finds studies in Orthanc according to queries and labels
+- [`find_series()`](https://mattwarkentin.github.io/orthanc/reference/find_series.md)
+  : Finds series in Orthanc according to queries and labels
+- [`find_instances()`](https://mattwarkentin.github.io/orthanc/reference/find_instances.md)
+  : Finds instances in Orthanc according to queries and labels
