@@ -34,9 +34,10 @@ find_series(
 
 - ...:
 
-  Not currently used.
+  Additional arguments passed to `query_orthanc`.
 
 ## Value
 
 A `list` of
-[Series](https://mattwarkentin.github.io/orthanc/reference/Series.md)s.
+[Series](https://mattwarkentin.github.io/orthanc/reference/Series.md)
+objects.

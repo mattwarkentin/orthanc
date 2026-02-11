@@ -153,6 +153,8 @@ An R6 instance of class `"Series"`.
 
 - [`Series$get_shared_tags()`](#method-Series-get_shared_tags)
 
+- [`Series$download_nifti()`](#method-Series-download_nifti)
+
 Inherited methods
 
 - [`orthanc::Resource$initialize()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-initialize)
@@ -477,3 +479,23 @@ Retrieve the shared tags of the series.
 #### Usage
 
     Series$get_shared_tags()
+
+------------------------------------------------------------------------
+
+### Method `download_nifti()`
+
+Download series as NIfTI.
+
+#### Usage
+
+    Series$download_nifti(path, compress = FALSE)
+
+#### Arguments
+
+- `path`:
+
+  Path on disk.
+
+- `compress`:
+
+  Compress to gzip.

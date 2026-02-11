@@ -135,6 +135,7 @@
 <li><p><a href="#method-Instance-get_content_by_tag"><code>Instance$get_content_by_tag()</code></a></p></li>
 <li><p><a href="#method-Instance-anonymize"><code>Instance$anonymize()</code></a></p></li>
 <li><p><a href="#method-Instance-modify"><code>Instance$modify()</code></a></p></li>
+<li><p><a href="#method-Instance-download_nifti"><code>Instance$download_nifti()</code></a></p></li>
 </ul></div><p><details open><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="initialize"><a href="Resource.html#method-initialize"><code>orthanc::Resource$initialize()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="print"><a href="Resource.html#method-print"><code>orthanc::Resource$print()</code></a></span></li>
 </ul></details></p><hr><a id="method-Instance-get_dicom_file_content"></a><div class="section">
@@ -317,6 +318,26 @@ replace.</p></dd>
 
 <dt><code>force</code></dt>
 <dd><p>Force tags to be changed.</p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-Instance-download_nifti"></a><div class="section">
+<h3 id="method-download-nifti-">Method <code>download_nifti()</code><a class="anchor" aria-label="anchor" href="#method-download-nifti-"></a></h3>
+<p>Download instance as NIfTI.</p><div class="section">
+<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Instance</span><span class="op">$</span><span class="fu">download_nifti</span><span class="op">(</span><span class="va">path</span>, compress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>path</code></dt>
+<dd><p>Path on disk.</p></dd>
+
+
+<dt><code>compress</code></dt>
+<dd><p>Compress to gzip.</p></dd>
 
 
 </dl><p></p></div>

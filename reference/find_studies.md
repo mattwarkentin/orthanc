@@ -34,9 +34,10 @@ find_studies(
 
 - ...:
 
-  Not currently used.
+  Additional arguments passed to `query_orthanc`.
 
 ## Value
 
 A `list` of
-[Study](https://mattwarkentin.github.io/orthanc/reference/Study.md)s.
+[Study](https://mattwarkentin.github.io/orthanc/reference/Study.md)
+objects.

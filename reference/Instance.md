@@ -105,6 +105,8 @@ An R6 instance of class `"Instance"`.
 
 - [`Instance$modify()`](#method-Instance-modify)
 
+- [`Instance$download_nifti()`](#method-Instance-download_nifti)
+
 Inherited methods
 
 - [`orthanc::Resource$initialize()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-initialize)
@@ -296,3 +298,23 @@ Modify an Instance
 - `force`:
 
   Force tags to be changed.
+
+------------------------------------------------------------------------
+
+### Method `download_nifti()`
+
+Download instance as NIfTI.
+
+#### Usage
+
+    Instance$download_nifti(path, compress = FALSE)
+
+#### Arguments
+
+- `path`:
+
+  Path on disk.
+
+- `compress`:
+
+  Compress to gzip.

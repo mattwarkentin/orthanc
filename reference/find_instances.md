@@ -34,9 +34,10 @@ find_instances(
 
 - ...:
 
-  Not currently used.
+  Additional arguments passed to `query_orthanc`.
 
 ## Value
 
 A `list` of
-[Instance](https://mattwarkentin.github.io/orthanc/reference/Instance.md)s.
+[Instance](https://mattwarkentin.github.io/orthanc/reference/Instance.md)
+objects.

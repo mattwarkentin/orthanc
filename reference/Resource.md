@@ -34,7 +34,7 @@ Create a new Resource.
 
 #### Usage
 
-    Resource$new(id, client)
+    Resource$new(id, client, lock_children = FALSE)
 
 #### Arguments
 
@@ -45,6 +45,13 @@ Create a new Resource.
 - `client`:
 
   `Orthanc` client.
+
+- `lock_children`:
+
+  If `lock_children` is `TRUE`, the resource children (e.g., instances
+  of a series via `Series$instances`) will be cached at the first query
+  rather than queried every time. This is useful when you want to filter
+  the children of a resource and want to maintain the filter result.
 
 ------------------------------------------------------------------------
 

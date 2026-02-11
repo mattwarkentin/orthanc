@@ -34,9 +34,10 @@ find_patients(
 
 - ...:
 
-  Not currently used.
+  Additional arguments passed to `query_orthanc`.
 
 ## Value
 
 A `list` of
-[Patient](https://mattwarkentin.github.io/orthanc/reference/Patient.md)s.
+[Patient](https://mattwarkentin.github.io/orthanc/reference/Patient.md)
+objects.

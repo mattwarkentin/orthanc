@@ -47,7 +47,7 @@ An R6 instance of class `"Patient"`.
 
 - `protected`:
 
-  Get or Set if patient is protected against recycling.
+  Get or set if patient is protected against recycling.
 
 - `studies`:
 
