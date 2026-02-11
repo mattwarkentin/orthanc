@@ -8520,7 +8520,7 @@ Orthanc <-
           )
       },
       include_content = function(req, file, json, data) {
-        if (!rlang::is_missing(file)) {
+        if (!rlang::is_null(file)) {
           ext <- fs::path_ext(file)
 
           req <-
@@ -8543,7 +8543,7 @@ Orthanc <-
           }
         }
 
-        if (!rlang::is_missing(data)) {
+        if (!rlang::is_null(data)) {
           req <-
             req |>
             httr2::req_body_raw(data)
@@ -8559,7 +8559,7 @@ Orthanc <-
           }
         }
 
-        if (!rlang::is_missing(json)) {
+        if (!rlang::is_null(json)) {
           req <-
             req |>
             httr2::req_body_json(json) |>
@@ -8606,4 +8606,9 @@ Orthanc <-
 
 default_api_url <- function() {
   Sys.getenv("ORTHANC_API_URL", unset = "http://localhost:8042")
+}
+
+client_has_plugin <- function(client, plugin) {
+  plugins <- client$get_plugins()
+  plugin %in% plugins
 }
