@@ -90,6 +90,7 @@ processing description.}
 \item \href{#method-Series-get_zip}{\code{Series$get_zip()}}
 \item \href{#method-Series-download}{\code{Series$download()}}
 \item \href{#method-Series-get_shared_tags}{\code{Series$get_shared_tags()}}
+\item \href{#method-Series-download_nifti}{\code{Series$download_nifti()}}
 }
 }
 \if{html}{\out{
@@ -364,5 +365,24 @@ Retrieve the shared tags of the series.
 \if{html}{\out{<div class="r">}}\preformatted{Series$get_shared_tags()}\if{html}{\out{</div>}}
 }
 
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Series-download_nifti"></a>}}
+\if{latex}{\out{\hypertarget{method-Series-download_nifti}{}}}
+\subsection{Method \code{download_nifti()}}{
+Download series as NIfTI.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Series$download_nifti(path, compress = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{path}}{Path on disk.}
+
+\item{\code{compress}}{Compress to gzip.}
+}
+\if{html}{\out{</div>}}
+}
 }
 }

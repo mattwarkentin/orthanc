@@ -16,41 +16,45 @@ Instance <- R6::R6Class(
     #'
     #' This method retrieves bytes corresponding to DICOM file.
     get_dicom_file_content = function() {
-      private$.client$get_instances_id_file(private$.id)
+      private$client$get_instances_id_file(private$id)
     },
 
     #' @description Download DICOM file to a path.
     #' @param file File path on disk.
     download = function(file) {
-      private$.download_file(
+      check_scalar_character(file)
+      private$download_file(
         "GET",
-        glue::glue("/instances/{private$.id}/file"),
+        glue::glue("/instances/{private$id}/file"),
         file
       )
     },
 
     #' @description Get instance information.
     get_main_information = function() {
-      private$.client$get_instances_id(private$.id)
+      private$client$get_instances_id(private$id)
     },
 
     #' @description Add label to resource.
     #' @param label Label.
     add_label = function(label) {
-      private$.client$put_instances_id_labels_label(private$.id, label)
+      check_scalar_character(label)
+      private$client$put_instances_id_labels_label(private$id, label)
     },
 
     #' @description Delete label from resource.
     #' @param label Label.
     remove_label = function(label) {
-      private$.client$delete_instances_id_labels_label(private$.id, label)
+      check_scalar_character(label)
+      private$client$delete_instances_id_labels_label(private$id, label)
     },
 
     #' @description Get content by tag.
     #' @param tag tag.
     get_content_by_tag = function(tag) {
-      private$.client$get_instances_id_content_path(
-        private$.id,
+      check_scalar_character(tag)
+      private$client$get_instances_id_content_path(
+        private$id,
         path = tag
       )
     },
@@ -76,6 +80,13 @@ Instance <- R6::R6Class(
       force = FALSE,
       dicom_version = NULL
     ) {
+      check_list(remove)
+      check_list(replace)
+      check_list(keep)
+      check_scalar_logical(keep_private_tags)
+      check_scalar_logical(keep_source)
+      check_scalar_logical(force)
+
       data <- list(
         Remove = remove,
         Replace = replace,
@@ -86,14 +97,16 @@ Instance <- R6::R6Class(
       )
 
       if (!rlang::is_null(private_creator)) {
+        check_scalar_character(private_creator)
         data["PrivateCreator"] <- private_creator
       }
 
       if (!rlang::is_null(dicom_version)) {
+        check_scalar_character(dicom_version)
         data["DicomVersion"] <- dicom_version
       }
 
-      private$.client$post_instances_id_anonymize(private$.id, data)
+      private$client$post_instances_id_anonymize(private$id, data)
     },
 
     #' @description Modify an Instance
@@ -118,6 +131,13 @@ Instance <- R6::R6Class(
         rlang::abort("If SOPInstanceUID is replaced, `force` must be `TRUE`")
       }
 
+      check_list(remove)
+      check_list(replace)
+      check_list(keep)
+      check_scalar_logical(remove_private_tags)
+      check_scalar_logical(keep_source)
+      check_scalar_logical(force)
+
       data <- list(
         Remove = remove,
         Replace = replace,
@@ -128,19 +148,55 @@ Instance <- R6::R6Class(
       )
 
       if (!rlang::is_null(private_creator)) {
+        check_scalar_character(private_creator)
         data["PrivateCreator"] <- private_creator
       }
 
-      private$.client$post_instances_id_modify(private$.id, data)
+      private$client$post_instances_id_modify(private$id, data)
+    },
+    #' @description Download instance as NIfTI.
+    #' @param path Path on disk.
+    #' @param compress Compress to gzip.
+    download_nifti = function(path, compress = FALSE) {
+      check_scalar_character(path)
+      check_scalar_logical(compress)
+
+      if (!client_has_plugin(private$client, "neuro")) {
+        rlang::abort(
+          glue::glue("Orthanc client does not have required plugin `{plugin}`.")
+        )
+      }
+
+      if (!fs::dir_exists(path)) {
+        rlang::abort("`path` does not exist.")
+      }
+      path <- fs::path_expand(path)
+
+      params <- NULL
+
+      if (compress) {
+        file <- glue::glue("{path}/{self$uid}.nii.gz")
+        params <- list(compress = "")
+      } else {
+        file <- glue::glue("{path}/{self$uid}.nii")
+      }
+
+      bytes <- private$client$GET(
+        glue::glue("/instances/{self$identifier}/nifti"),
+        params = params
+      )
+
+      file_con <- file(file, "wb")
+      writeBin(as.raw(bytes), file_con)
     }
   ),
   private = list(
-    .type = "Instance"
+    resource_type = "Instance"
   ),
   active = list(
     #' @field uid Get the `SOPInstanceUID`.
     uid = function() {
-      private$.get_main_dicom_tag_value("SOPInstanceUID")
+      private$get_main_dicom_tag_value("SOPInstanceUID")
     },
 
     #' @field file_size Get the file size.
@@ -150,7 +206,7 @@ Instance <- R6::R6Class(
 
     #' @field creation_date Get creation date.
     creation_date = function() {
-      private$.get_main_dicom_tag_value("InstanceCreationDate")
+      private$get_main_dicom_tag_value("InstanceCreationDate")
     },
 
     #' @field series_identifier Get parent series identifier.
@@ -160,7 +216,7 @@ Instance <- R6::R6Class(
 
     #' @field parent_series Get parent series.
     parent_series = function() {
-      Series$new(self$series_identifier, private$.client)
+      Series$new(self$series_identifier, private$client)
     },
 
     #' @field parent_study Get parent study
@@ -175,53 +231,53 @@ Instance <- R6::R6Class(
 
     #' @field acquisition_number Acquisition number.
     acquisition_number = function() {
-      as.integer(private$.get_main_dicom_tag_value("AcquisitionNumber"))
+      as.integer(private$get_main_dicom_tag_value("AcquisitionNumber"))
     },
 
     #' @field image_index Image index.
     image_index = function() {
-      as.integer(private$.get_main_dicom_tag_value("ImageIndex"))
+      as.integer(private$get_main_dicom_tag_value("ImageIndex"))
     },
 
     #' @field image_orientation_patient Image orientation patient.
     image_orientation_patient = function() {
-      private$.get_main_dicom_tag_value("ImageOrientationPatient")
+      private$get_main_dicom_tag_value("ImageOrientationPatient")
     },
 
     #' @field image_position_patient Image position patient.
     image_position_patient = function() {
-      private$.get_main_dicom_tag_value("ImagePositionPatient")
+      private$get_main_dicom_tag_value("ImagePositionPatient")
     },
 
     #' @field image_comments Image comments.
     image_comments = function() {
-      private$.get_main_dicom_tag_value("ImageComments")
+      private$get_main_dicom_tag_value("ImageComments")
     },
 
     #' @field instance_number Instance number.
     instance_number = function() {
-      private$.get_main_dicom_tag_value("InstanceNumber")
+      private$get_main_dicom_tag_value("InstanceNumber")
     },
 
     #' @field number_of_frames Number of frames.
     number_of_frames = function() {
-      private$.get_main_dicom_tag_value("NumberOfFrames")
+      private$get_main_dicom_tag_value("NumberOfFrames")
     },
 
     #' @field temporal_position_identifier Temporal position identifier.
     temporal_position_identifier = function() {
-      private$.get_main_dicom_tag_value("TemporalPositionIdentifier")
+      private$get_main_dicom_tag_value("TemporalPositionIdentifier")
     },
 
     #' @field tags Get tags.
     tags = function() {
-      private$.client$get_instances_id_tags(private$.id)
+      private$client$get_instances_id_tags(private$id)
     },
 
     #' @field simplified_tags Get simplified tags.
     simplified_tags = function() {
-      private$.client$get_instances_id_tags(
-        private$.id,
+      private$client$get_instances_id_tags(
+        private$id,
         params = list(simplify = TRUE)
       )
     },

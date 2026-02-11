@@ -14,19 +14,21 @@ Study <- R6::R6Class(
   public = list(
     #' @description Get study information.
     get_main_information = function() {
-      private$.client$get_studies_id(private$.id)
+      private$client$get_studies_id(private$id)
     },
 
     #' @description Add label to resource.
     #' @param label Label.
     add_label = function(label) {
-      private$.client$put_studies_id_labels_label(private$.id, label)
+      check_scalar_character(label)
+      private$client$put_studies_id_labels_label(private$id, label)
     },
 
     #' @description Delete label from resource.
     #' @param label Label.
     remove_label = function(label) {
-      private$.client$delete_studies_id_labels_label(private$.id, label)
+      check_scalar_character(label)
+      private$client$delete_studies_id_labels_label(private$id, label)
     },
 
     #' @description Anonymize Study
@@ -54,6 +56,15 @@ Study <- R6::R6Class(
       force = FALSE,
       dicom_version = NULL
     ) {
+      check_list(remove)
+      check_list(replace)
+      check_list(keep)
+      check_scalar_logical(keep_private_tags)
+      check_scalar_logical(keep_source)
+      check_scalar_integer(priority)
+      check_scalar_logical(permissive)
+      check_scalar_logical(force)
+
       data <- list(
         Aysnchronous = FALSE,
         Remove = remove,
@@ -67,19 +78,21 @@ Study <- R6::R6Class(
       )
 
       if (!rlang::is_null(private_creator)) {
+        check_scalar_character(private_creator)
         data["PrivateCreator"] <- private_creator
       }
 
       if (!rlang::is_null(dicom_version)) {
+        check_scalar_character(dicom_version)
         data["DicomVersion"] <- dicom_version
       }
 
-      anon_study <- private$.client$post_studies_id_anonymize(
-        private$.id,
+      anon_study <- private$client$post_studies_id_anonymize(
+        private$id,
         data
       )
 
-      Study$new(anon_study[["ID"]], private$.client)
+      Study$new(anon_study[["ID"]], private$client)
     },
 
     #' @description Anonymize Study
@@ -107,6 +120,15 @@ Study <- R6::R6Class(
       force = FALSE,
       dicom_version = NULL
     ) {
+      check_list(remove)
+      check_list(replace)
+      check_list(keep)
+      check_scalar_logical(keep_private_tags)
+      check_scalar_logical(keep_source)
+      check_scalar_integer(priority)
+      check_scalar_logical(permissive)
+      check_scalar_logical(force)
+
       data <- list(
         Aysnchronous = TRUE,
         Remove = remove,
@@ -120,19 +142,21 @@ Study <- R6::R6Class(
       )
 
       if (!rlang::is_null(private_creator)) {
+        check_scalar_character(private_creator)
         data["PrivateCreator"] <- private_creator
       }
 
       if (!rlang::is_null(dicom_version)) {
+        check_scalar_character(dicom_version)
         data["DicomVersion"] <- dicom_version
       }
 
-      anon_study <- private$.client$post_studies_id_anonymize(
-        private$.id,
+      anon_study <- private$client$post_studies_id_anonymize(
+        private$id,
         data
       )
 
-      Job$new(anon_study[["ID"]], private$.client)
+      Job$new(anon_study[["ID"]], private$client)
     },
 
     #' @description Modify Study
@@ -157,6 +181,15 @@ Study <- R6::R6Class(
       private_creator = NULL,
       force = FALSE
     ) {
+      check_list(remove)
+      check_list(replace)
+      check_list(keep)
+      check_scalar_logical(remove_private_tags)
+      check_scalar_logical(keep_source)
+      check_scalar_integer(priority)
+      check_scalar_logical(permissive)
+      check_scalar_logical(force)
+
       if (!force & any(names(replace)) == "StudyInstanceUID") {
         rlang::abort("If StudyInstanceUID is replaced, `force` must be `TRUE`")
       }
@@ -174,14 +207,15 @@ Study <- R6::R6Class(
       )
 
       if (!rlang::is_null(private_creator)) {
+        check_scalar_character(private_creator)
         data["PrivateCreator"] <- private_creator
       }
 
-      mod_study <- private$.client$post_studies_id_modify(private$.id, data)
+      mod_study <- private$client$post_studies_id_modify(private$id, data)
 
       private$.main_dicom_tags <- NULL
 
-      Study$new(mod_study[["ID"]], private$.client)
+      Study$new(mod_study[["ID"]], private$client)
     },
 
     #' @description Modify Study as Job
@@ -206,6 +240,15 @@ Study <- R6::R6Class(
       private_creator = NULL,
       force = FALSE
     ) {
+      check_list(remove)
+      check_list(replace)
+      check_list(keep)
+      check_scalar_logical(remove_private_tags)
+      check_scalar_logical(keep_source)
+      check_scalar_integer(priority)
+      check_scalar_logical(permissive)
+      check_scalar_logical(force)
+
       if (!force & any(names(replace)) == "StudyInstanceUID") {
         rlang::abort("If StudyInstanceUID is replaced, `force` must be `TRUE`")
       }
@@ -223,41 +266,43 @@ Study <- R6::R6Class(
       )
 
       if (!rlang::is_null(private_creator)) {
+        check_scalar_character(private_creator)
         data["PrivateCreator"] <- private_creator
       }
 
-      mod_study <- private$.client$post_studies_id_modify(private$.id, data)
+      mod_study <- private$client$post_studies_id_modify(private$id, data)
 
       private$.main_dicom_tags <- NULL
 
-      Job$new(mod_study[["ID"]], private$.client)
+      Job$new(mod_study[["ID"]], private$client)
     },
 
     #' @description Get the bytes of the zip file.
     get_zip = function() {
-      private$.client$get_studies_id_archive(private$.id)
+      private$client$get_studies_id_archive(private$id)
     },
 
     #' @description Download the zip file to a path.
     #' @param file File path on disk.
     download = function(file) {
-      private$.download_file(
+      check_scalar_character(file)
+      private$download_file(
         "GET",
-        glue::glue("/studies/{private$.id}/archive"),
+        glue::glue("/studies/{private$id}/archive"),
         file
       )
     },
 
     #' @description Retrieve the shared tags of the study.
     get_shared_tags = function() {
-      private$.client$get_studies_id_shared_tags(
-        private$.id,
+      private$client$get_studies_id_shared_tags(
+        private$id,
         params = list(simplify = TRUE)
       )
     }
   ),
   private = list(
-    .type = "Study"
+    resource_type = "Study"
   ),
   active = list(
     #' @field patient_identifier Get parent patient identifier.
@@ -267,32 +312,32 @@ Study <- R6::R6Class(
 
     #' @field parent_patient Get parent patient
     parent_patient = function() {
-      Patient$new(self$patient_identifier, private$.client)
+      Patient$new(self$patient_identifier, private$client)
     },
 
     #' @field referring_physician_name Referring Physician Name
     referring_physician_name = function() {
-      private$.get_main_dicom_tag_value("ReferringPhysicianName")
+      private$get_main_dicom_tag_value("ReferringPhysicianName")
     },
 
     #' @field requesting_physician Requesting Physician
     requesting_physician = function() {
-      private$.get_main_dicom_tag_value("RequestingPhysician")
+      private$get_main_dicom_tag_value("RequestingPhysician")
     },
 
     #' @field date Study Date
     date = function() {
-      private$.get_main_dicom_tag_value("StudyDate")
+      private$get_main_dicom_tag_value("StudyDate")
     },
 
     #' @field study_id Study ID
     study_id = function() {
-      private$.get_main_dicom_tag_value("StudyID")
+      private$get_main_dicom_tag_value("StudyID")
     },
 
     #' @field uid StudyInstanceUID
     uid = function() {
-      private$.get_main_dicom_tag_value("StudyInstanceUID")
+      private$get_main_dicom_tag_value("StudyInstanceUID")
     },
 
     #' @field patient_information Patient Main DICOM Tags
@@ -302,29 +347,39 @@ Study <- R6::R6Class(
 
     #' @field series Get patient's series
     series = function() {
+      if (private$lock_children) {
+        if (rlang::is_null(private$child_resources)) {
+          series_ids = self$get_main_information()[["Series"]]
+          private$child_resources = purrr::map(series_ids, \(id) {
+            Series$new(i, private$client, private$lock_children)
+          })
+        }
+        return(private$child_resources)
+      }
+
       series_ids = self$get_main_information()[["Series"]]
-      purrr::map(series_ids, \(x) Series$new(x, private$.client))
+      purrr::map(series_ids, \(id) Series$new(id, private$client))
     },
 
     #' @field accession_number Accession Number
     accession_number = function() {
-      private$.get_main_dicom_tag_value("AccessionNumber")
+      private$get_main_dicom_tag_value("AccessionNumber")
     },
 
     #' @field description Description
     description = function() {
-      private$.get_main_dicom_tag_value("StudyDescription")
+      private$get_main_dicom_tag_value("StudyDescription")
     },
 
     #' @field institution_name Institution Name
     institution_name = function() {
-      private$.get_main_dicom_tag_value("InstitutionName")
+      private$get_main_dicom_tag_value("InstitutionName")
     },
 
     #' @field requested_procedure_description Requested procedure
     #'   description.
     requested_procedure_description = function() {
-      private$.get_main_dicom_tag_value("RequestedProcedureDescription")
+      private$get_main_dicom_tag_value("RequestedProcedureDescription")
     },
 
     #' @field is_stable Is stable?

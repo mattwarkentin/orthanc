@@ -16,19 +16,21 @@ Series <- R6::R6Class(
   public = list(
     #' @description Get series information.
     get_main_information = function() {
-      private$.client$get_series_id(private$.id)
+      private$client$get_series_id(private$id)
     },
 
     #' @description Add label to resource.
     #' @param label Label.
     add_label = function(label) {
-      private$.client$put_series_id_labels_label(private$.id, label)
+      check_scalar_character(label)
+      private$client$put_series_id_labels_label(private$id, label)
     },
 
     #' @description Delete label from resource.
     #' @param label Label.
     remove_label = function(label) {
-      private$.client$delete_series_id_labels_label(private$.id, label)
+      check_scalar_character(label)
+      private$client$delete_series_id_labels_label(private$id, label)
     },
 
     #' @description Anonymize Series
@@ -56,6 +58,15 @@ Series <- R6::R6Class(
       force = FALSE,
       dicom_version = NULL
     ) {
+      check_list(remove)
+      check_list(replace)
+      check_list(keep)
+      check_scalar_logical(keep_private_tags)
+      check_scalar_logical(keep_source)
+      check_scalar_integer(priority)
+      check_scalar_logical(permissive)
+      check_scalar_logical(force)
+
       data <- list(
         Aysnchronous = FALSE,
         Remove = remove,
@@ -69,16 +80,18 @@ Series <- R6::R6Class(
       )
 
       if (!rlang::is_null(private_creator)) {
+        check_scalar_character(private_creator)
         data["PrivateCreator"] <- private_creator
       }
 
       if (!rlang::is_null(dicom_version)) {
+        check_scalar_character(dicom_version)
         data["DicomVersion"] <- dicom_version
       }
 
-      anon_series <- private$.client$post_series_id_anonymize(private$.id, data)
+      anon_series <- private$client$post_series_id_anonymize(private$id, data)
 
-      Series$new(anon_series[["ID"]], private$.client)
+      Series$new(anon_series[["ID"]], private$client)
     },
 
     #' @description Anonymize Series
@@ -106,6 +119,15 @@ Series <- R6::R6Class(
       force = FALSE,
       dicom_version = NULL
     ) {
+      check_list(remove)
+      check_list(replace)
+      check_list(keep)
+      check_scalar_logical(keep_private_tags)
+      check_scalar_logical(keep_source)
+      check_scalar_integer(priority)
+      check_scalar_logical(permissive)
+      check_scalar_logical(force)
+
       data <- list(
         Aysnchronous = TRUE,
         Remove = remove,
@@ -119,16 +141,18 @@ Series <- R6::R6Class(
       )
 
       if (!rlang::is_null(private_creator)) {
+        check_scalar_character(private_creator)
         data["PrivateCreator"] <- private_creator
       }
 
       if (!rlang::is_null(dicom_version)) {
+        check_scalar_character(dicom_version)
         data["DicomVersion"] <- dicom_version
       }
 
-      anon_series <- private$.client$post_series_id_anonymize(private$.id, data)
+      anon_series <- private$client$post_series_id_anonymize(private$id, data)
 
-      Job$new(anon_series[["ID"]], private$.client)
+      Job$new(anon_series[["ID"]], private$client)
     },
 
     #' @description Modify Series
@@ -153,6 +177,15 @@ Series <- R6::R6Class(
       private_creator = NULL,
       force = FALSE
     ) {
+      check_list(remove)
+      check_list(replace)
+      check_list(keep)
+      check_scalar_logical(remove_private_tags)
+      check_scalar_logical(keep_source)
+      check_scalar_integer(priority)
+      check_scalar_logical(permissive)
+      check_scalar_logical(force)
+
       if (!force & any(names(replace)) == "SeriesInstanceUID") {
         rlang::abort("If SeriesInstanceUID is replaced, `force` must be `TRUE`")
       }
@@ -170,14 +203,15 @@ Series <- R6::R6Class(
       )
 
       if (!rlang::is_null(private_creator)) {
+        check_scalar_character(private_creator)
         data["PrivateCreator"] <- private_creator
       }
 
-      mod_series <- private$.client$post_series_id_modify(private$.id, data)
+      mod_series <- private$client$post_series_id_modify(private$id, data)
 
       private$.main_dicom_tags <- NULL
 
-      Series$new(mod_series[["ID"]], private$.client)
+      Series$new(mod_series[["ID"]], private$client)
     },
 
     #' @description Modify Series
@@ -202,6 +236,15 @@ Series <- R6::R6Class(
       private_creator = NULL,
       force = FALSE
     ) {
+      check_list(remove)
+      check_list(replace)
+      check_list(keep)
+      check_scalar_logical(remove_private_tags)
+      check_scalar_logical(keep_source)
+      check_scalar_integer(priority)
+      check_scalar_logical(permissive)
+      check_scalar_logical(force)
+
       if (!force & any(names(replace)) == "SeriesInstanceUID") {
         rlang::abort("If SeriesInstanceUID is replaced, `force` must be `TRUE`")
       }
@@ -219,156 +262,204 @@ Series <- R6::R6Class(
       )
 
       if (!rlang::is_null(private_creator)) {
+        check_scalar_character(private_creator)
         data["PrivateCreator"] <- private_creator
       }
 
-      mod_series <- private$.client$post_series_id_modify(private$.id, data)
+      mod_series <- private$client$post_series_id_modify(private$id, data)
 
       private$.main_dicom_tags <- NULL
 
-      Job$new(mod_series[["ID"]], private$.client)
+      Job$new(mod_series[["ID"]], private$client)
     },
 
     #' @description Get the bytes of the zip file.
     get_zip = function() {
-      private$.client$get_series_id_archive(private$.id)
+      private$client$get_series_id_archive(private$id)
     },
 
     #' @description Download the zip file to a path.
     #' @param file File path on disk.
     download = function(file) {
-      private$.download_file(
+      check_scalar_character(file)
+      private$download_file(
         "GET",
-        glue::glue("/series/{private$.id}/archive"),
+        glue::glue("/series/{private$id}/archive"),
         file
       )
     },
 
     #' @description Retrieve the shared tags of the series.
     get_shared_tags = function() {
-      private$.client$get_series_id_shared_tags(
-        private$.id,
+      private$client$get_series_id_shared_tags(
+        private$id,
         params = list(simplify = TRUE)
       )
+    },
+
+    #' @description Download series as NIfTI.
+    #' @param path Path on disk.
+    #' @param compress Compress to gzip.
+    download_nifti = function(path, compress = FALSE) {
+      if (!client_has_plugin(private$client, "neuro")) {
+        rlang::abort(
+          glue::glue("Orthanc client does not have required plugin `{plugin}`.")
+        )
+      }
+
+      check_scalar_character(path)
+      check_scalar_logical(compress)
+
+      if (!fs::dir_exists(path)) {
+        rlang::abort("`path` does not exist.")
+      }
+      path <- fs::path_expand(path)
+
+      params <- NULL
+
+      if (compress) {
+        file <- glue::glue("{path}/{self$uid}.nii.gz")
+        params <- list(compress = "")
+      } else {
+        file <- glue::glue("{path}/{self$uid}.nii")
+      }
+
+      bytes <- private$client$GET(
+        glue::glue("/series/{self$identifier}/nifti"),
+        params = params
+      )
+
+      file_con <- file(file, "wb")
+      writeBin(as.raw(bytes), file_con)
     }
   ),
   private = list(
-    .type = "Series"
+    resource_type = "Series"
   ),
   active = list(
     #' @field instances Get series instances.
     instances = function() {
+      if (private$lock_children) {
+        if (rlang::is_null(private$child_resources)) {
+          instances_ids <- self$get_main_information()[["Instances"]]
+          private$child_resources = purrr::map(instances_ids, \(id) {
+            Instance$new(i, private$client, private$lock_children)
+          })
+        }
+        return(private$child_resources)
+      }
+
       instances_ids = self$get_main_information()[["Instances"]]
-      purrr::map(instances_ids, \(x) Instance$new(x, private$.client))
+      purrr::map(instances_ids, \(id) Instance$new(id, private$client))
     },
 
     #' @field uid Get SeriesInstanceUID.
     uid = function() {
-      private$.get_main_dicom_tag_value("SeriesInstanceUID")
+      private$get_main_dicom_tag_value("SeriesInstanceUID")
     },
 
     #' @field manufacturer Manufacturer.
     manufacturer = function() {
-      private$.get_main_dicom_tag_value("Manufacturer")
+      private$get_main_dicom_tag_value("Manufacturer")
     },
 
     #' @field date Date.
     date = function() {
-      private$.get_main_dicom_tag_value("SeriesDate")
+      private$get_main_dicom_tag_value("SeriesDate")
     },
 
     #' @field modality Modality.
     modality = function() {
-      private$.get_main_dicom_tag_value("Modality")
+      private$get_main_dicom_tag_value("Modality")
     },
 
     #' @field series_number Series number.
     series_number = function() {
-      private$.get_main_dicom_tag_value("SeriesNumber")
+      private$get_main_dicom_tag_value("SeriesNumber")
     },
 
     #' @field performed_procedure_step_description Performed procedure step
     #'   description.
     performed_procedure_step_description = function() {
-      private$.get_main_dicom_tag_value("PerformedProcedureStepDescription")
+      private$get_main_dicom_tag_value("PerformedProcedureStepDescription")
     },
 
     #' @field protocol_name Protocol name.
     protocol_name = function() {
-      private$.get_main_dicom_tag_value("ProtocolName")
+      private$get_main_dicom_tag_value("ProtocolName")
     },
 
     #' @field station_name Station name.
     station_name = function() {
-      private$.get_main_dicom_tag_value("StationName")
+      private$get_main_dicom_tag_value("StationName")
     },
 
     #' @field description Description.
     description = function() {
-      private$.get_main_dicom_tag_value("SeriesDescription")
+      private$get_main_dicom_tag_value("SeriesDescription")
     },
 
     #' @field body_part_examined Body part examined.
     body_part_examined = function() {
-      private$.get_main_dicom_tag_value("BodyPartExamined")
+      private$get_main_dicom_tag_value("BodyPartExamined")
     },
 
     #' @field sequence_name Sequence name.
     sequence_name = function() {
-      private$.get_main_dicom_tag_value("SequenceName")
+      private$get_main_dicom_tag_value("SequenceName")
     },
 
     #' @field cardiac_number_of_images Cardiac number of images.
     cardiac_number_of_images = function() {
-      private$.get_main_dicom_tag_value("CardiacNumberOfImages")
+      private$get_main_dicom_tag_value("CardiacNumberOfImages")
     },
 
     #' @field image_in_acquisition Images in acquisition.
     image_in_acquisition = function() {
-      private$.get_main_dicom_tag_value("ImagesInAcquisition")
+      private$get_main_dicom_tag_value("ImagesInAcquisition")
     },
 
     #' @field number_of_temporal_positions Number of temporal positions.
     number_of_temporal_positions = function() {
-      private$.get_main_dicom_tag_value("NumberOfTemporalPositions")
+      private$get_main_dicom_tag_value("NumberOfTemporalPositions")
     },
 
     #' @field number_of_slices Number of slices.
     number_of_slices = function() {
-      private$.get_main_dicom_tag_value("NumberOfSlices")
+      private$get_main_dicom_tag_value("NumberOfSlices")
     },
 
     #' @field number_of_time_slices Number of time slices.
     number_of_time_slices = function() {
-      private$.get_main_dicom_tag_value("NumberOfTimeSlices")
+      private$get_main_dicom_tag_value("NumberOfTimeSlices")
     },
 
     #' @field image_orientation_patient Image orientation patient.
     image_orientation_patient = function() {
-      private$.get_main_dicom_tag_value("ImageOrientationPatient")
+      private$get_main_dicom_tag_value("ImageOrientationPatient")
     },
 
     #' @field series_type Series type.
     series_type = function() {
-      private$.get_main_dicom_tag_value("SeriesType")
+      private$get_main_dicom_tag_value("SeriesType")
     },
 
     #' @field operators_name Operators name.
     operators_name = function() {
-      private$.get_main_dicom_tag_value("OperatorsName")
+      private$get_main_dicom_tag_value("OperatorsName")
     },
 
     #' @field acquisition_device_processing_description Acquisition device
     #'   processing description.
     acquisition_device_processing_description = function() {
-      private$.get_main_dicom_tag_value(
+      private$get_main_dicom_tag_value(
         "AcquisitionDeviceProcessingDescription"
       )
     },
 
     #' @field contrast_bolus_agent Contrast bolus agent.
     contrast_bolus_agent = function() {
-      private$.get_main_dicom_tag_value("ContrastBolusAgent")
+      private$get_main_dicom_tag_value("ContrastBolusAgent")
     },
 
     #' @field is_stable Is stable?
@@ -393,7 +484,7 @@ Series <- R6::R6Class(
 
     #' @field parent_study Get parent study.
     parent_study = function() {
-      Study$new(self$study_identifier, private$.client)
+      Study$new(self$study_identifier, private$client)
     },
 
     #' @field parent_patient Get parent patient.

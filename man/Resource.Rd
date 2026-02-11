@@ -32,7 +32,7 @@ An abstract class for a DICOM Resource in the Orthanc API Client.
 \subsection{Method \code{new()}}{
 Create a new Resource.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Resource$new(id, client)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Resource$new(id, client, lock_children = FALSE)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -41,6 +41,12 @@ Create a new Resource.
 \item{\code{id}}{Orthanc identifier of the resource.}
 
 \item{\code{client}}{\code{Orthanc} client.}
+
+\item{\code{lock_children}}{If \code{lock_children} is \code{TRUE}, the resource children
+(e.g., instances of a series via \code{Series$instances}) will be cached at
+the first query rather than queried every time. This is useful when you
+want to filter the children of a resource and want to maintain the
+filter result.}
 }
 \if{html}{\out{</div>}}
 }

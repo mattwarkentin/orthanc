@@ -15,10 +15,18 @@ Resource <- R6::R6Class(
     #' @description Create a new Resource.
     #' @param id Orthanc identifier of the resource.
     #' @param client `Orthanc` client.
-    initialize = function(id, client) {
-      rlang::inherits_all(client, "Orthanc")
-      private$.id <- id
-      private$.client <- client
+    #' @param lock_children If `lock_children` is `TRUE`, the resource children
+    #'   (e.g., instances of a series via `Series$instances`) will be cached at
+    #'   the first query rather than queried every time. This is useful when you
+    #'   want to filter the children of a resource and want to maintain the
+    #'   filter result.
+    initialize = function(id, client, lock_children = FALSE) {
+      check_orthanc_client(client)
+      check_scalar_character(id)
+      check_scalar_logical(lock_children)
+      private$id <- id
+      private$client <- client
+      private$lock_children <- lock_children
     },
 
     #' @description Get main information for the resource.
@@ -29,19 +37,36 @@ Resource <- R6::R6Class(
     #' @description Print a `Resource` object.
     #' @param ... Not currently used.
     print = function(...) {
-      cat(glue::glue("<{private$.type}: {private$.id}>"))
+      cat(glue::glue("<{private$resource_type}: {private$id}>"))
+    }
+  ),
+  active = list(
+    #' @field identifier Orthanc identifier of the resource.
+    identifier = function() {
+      private$id
+    },
+    #' @field main_dicom_tags Main DICOM tags for the resource.
+    main_dicom_tags = function() {
+      if (rlang::is_null(private$.main_dicom_tags)) {
+        private$.main_dicom_tags <- self$get_main_information()[[
+          "MainDicomTags"
+        ]]
+      }
+      private$.main_dicom_tags
     }
   ),
   private = list(
-    .type = "Resource",
-    .id = NULL,
-    .client = NULL,
+    resource_type = "Resource",
+    id = NULL,
+    client = NULL,
+    lock_children = NULL,
+    child_resources = NULL,
     .main_dicom_tags = NULL,
-    .get_main_dicom_tag_value = function(x) {
+    get_main_dicom_tag_value = function(x) {
       self$main_dicom_tags[[x]]
     },
-    .download_file = function(method, route, file, params = NULL) {
-      resp_con <- private$.client$stream(method, route, params = params)
+    download_file = function(method, route, file, params = NULL) {
+      resp_con <- private$client$stream(method, route, params = params)
       file_con <- file(file, "wb")
       on.exit({
         close(resp_con)
@@ -52,21 +77,6 @@ Resource <- R6::R6Class(
         writeBin(chunk, file_con)
       }
       invisible()
-    }
-  ),
-  active = list(
-    #' @field identifier Orthanc identifier of the resource.
-    identifier = function() {
-      private$.id
-    },
-    #' @field main_dicom_tags Main DICOM tags for the resource.
-    main_dicom_tags = function() {
-      if (rlang::is_null(private$.main_dicom_tags)) {
-        private$.main_dicom_tags <- self$get_main_information()[[
-          "MainDicomTags"
-        ]]
-      }
-      private$.main_dicom_tags
     }
   )
 )

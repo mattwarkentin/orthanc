@@ -31,7 +31,7 @@ An abstract class for a DICOM Patient resource.
 
 \item{\code{labels}}{Labels.}
 
-\item{\code{protected}}{Get or Set if patient is protected against recycling.}
+\item{\code{protected}}{Get or set if patient is protected against recycling.}
 
 \item{\code{studies}}{Get patient's studies.}
 

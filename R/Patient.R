@@ -14,40 +14,43 @@ Patient <- R6::R6Class(
   public = list(
     #' @description Get patient information.
     get_main_information = function() {
-      private$.client$get_patients_id(private$.id)
+      private$client$get_patients_id(private$id)
     },
 
     #' @description Add label to resource.
     #' @param label Label.
     add_label = function(label) {
-      private$.client$put_patients_id_labels_label(private$.id, label)
+      check_scalar_character(label)
+      private$client$put_patients_id_labels_label(private$id, label)
     },
 
     #' @description Delete label from resource.
     #' @param label Label.
     remove_label = function(label) {
-      private$.client$delete_patients_id_labels_label(private$.id, label)
+      check_scalar_character(label)
+      private$client$delete_patients_id_labels_label(private$id, label)
     },
 
     #' @description Get the bytes of the zip file.
     get_zip = function() {
-      private$.client$get_patients_id_archive(private$.id)
+      private$client$get_patients_id_archive(private$id)
     },
 
     #' @description Download the zip file to a path.
     #' @param file File path on disk.
     download = function(file) {
-      private$.download_file(
+      check_scalar_character(file)
+      private$download_file(
         "GET",
-        glue::glue("/patients/{private$.id}/archive"),
+        glue::glue("/patients/{private$id}/archive"),
         file
       )
     },
 
     #' @description Get patient module in a simplified version
     get_patient_module = function() {
-      private$.client$get_patients_id_module(
-        private$.id,
+      private$client$get_patients_id_module(
+        private$id,
         params = list(simplify = TRUE)
       )
     },
@@ -77,6 +80,15 @@ Patient <- R6::R6Class(
       force = FALSE,
       dicom_version = NULL
     ) {
+      check_list(remove)
+      check_list(replace)
+      check_list(keep)
+      check_scalar_logical(keep_private_tags)
+      check_scalar_logical(keep_source)
+      check_scalar_integer(priority)
+      check_scalar_logical(permissive)
+      check_scalar_logical(force)
+
       data <- list(
         Aysnchronous = FALSE,
         Remove = remove,
@@ -90,19 +102,21 @@ Patient <- R6::R6Class(
       )
 
       if (!rlang::is_null(private_creator)) {
+        check_scalar_character(private_creator)
         data["PrivateCreator"] <- private_creator
       }
 
       if (!rlang::is_null(dicom_version)) {
+        check_scalar_character(dicom_version)
         data["DicomVersion"] <- dicom_version
       }
 
-      anon_patient <- private$.client$post_patients_id_anonymize(
-        private$.id,
+      anon_patient <- private$client$post_patients_id_anonymize(
+        private$id,
         data
       )
 
-      Patient$new(anon_patient[["ID"]], private$.client)
+      Patient$new(anon_patient[["ID"]], private$client)
     },
 
     #' @description Anonymize Patient
@@ -130,6 +144,15 @@ Patient <- R6::R6Class(
       force = FALSE,
       dicom_version = NULL
     ) {
+      check_list(remove)
+      check_list(replace)
+      check_list(keep)
+      check_scalar_logical(keep_private_tags)
+      check_scalar_logical(keep_source)
+      check_scalar_integer(priority)
+      check_scalar_logical(permissive)
+      check_scalar_logical(force)
+
       data <- list(
         Aysnchronous = TRUE,
         Remove = remove,
@@ -143,19 +166,21 @@ Patient <- R6::R6Class(
       )
 
       if (!rlang::is_null(private_creator)) {
+        check_scalar_character(private_creator)
         data["PrivateCreator"] <- private_creator
       }
 
       if (!rlang::is_null(dicom_version)) {
+        check_scalar_character(dicom_version)
         data["DicomVersion"] <- dicom_version
       }
 
-      anon_patient <- private$.client$post_patients_id_anonymize(
-        private$.id,
+      anon_patient <- private$client$post_patients_id_anonymize(
+        private$id,
         data
       )
 
-      Job$new(anon_patient[["ID"]], private$.client)
+      Job$new(anon_patient[["ID"]], private$client)
     },
 
     #' @description Modify Patient
@@ -180,6 +205,15 @@ Patient <- R6::R6Class(
       private_creator = NULL,
       force = FALSE
     ) {
+      check_list(remove)
+      check_list(replace)
+      check_list(keep)
+      check_scalar_logical(remove_private_tags)
+      check_scalar_logical(keep_source)
+      check_scalar_integer(priority)
+      check_scalar_logical(permissive)
+      check_scalar_logical(force)
+
       if (!force & any(names(replace)) == "PatientID") {
         rlang::abort("If PatientID is replaced, `force` must be `TRUE`")
       }
@@ -197,14 +231,15 @@ Patient <- R6::R6Class(
       )
 
       if (!rlang::is_null(private_creator)) {
+        check_scalar_character(private_creator)
         data["PrivateCreator"] <- private_creator
       }
 
-      mod_patient <- private$.client$post_patients_id_modify(private$.id, data)
+      mod_patient <- private$client$post_patients_id_modify(private$id, data)
 
       private$.main_dicom_tags <- NULL
 
-      Patient$new(mod_patient[["ID"]], private$.client)
+      Patient$new(mod_patient[["ID"]], private$client)
     },
 
     #' @description Modify Patient
@@ -229,6 +264,15 @@ Patient <- R6::R6Class(
       private_creator = NULL,
       force = FALSE
     ) {
+      check_list(remove)
+      check_list(replace)
+      check_list(keep)
+      check_scalar_logical(remove_private_tags)
+      check_scalar_logical(keep_source)
+      check_scalar_integer(priority)
+      check_scalar_logical(permissive)
+      check_scalar_logical(force)
+
       if (!force & any(names(replace)) == "PatientID") {
         rlang::abort("If PatientID is replaced, `force` must be `TRUE`")
       }
@@ -246,20 +290,21 @@ Patient <- R6::R6Class(
       )
 
       if (!rlang::is_null(private_creator)) {
+        check_scalar_character(private_creator)
         data["PrivateCreator"] <- private_creator
       }
 
-      mod_patient <- private$.client$post_patients_id_modify(private$.id, data)
+      mod_patient <- private$client$post_patients_id_modify(private$id, data)
 
       private$.main_dicom_tags <- NULL
 
-      Job$new(mod_patient[["ID"]], private$.client)
+      Job$new(mod_patient[["ID"]], private$client)
     },
 
     #' @description Retrieve the shared tags of the patient.
     get_shared_tags = function() {
-      private$.client$get_patients_id_shared_tags(
-        private$.id,
+      private$client$get_patients_id_shared_tags(
+        private$id,
         params = list(simplify = TRUE)
       )
     }
@@ -267,27 +312,27 @@ Patient <- R6::R6Class(
   active = list(
     #' @field patient_id Patient ID.
     patient_id = function() {
-      private$.get_main_dicom_tag_value("PatientID")
+      private$get_main_dicom_tag_value("PatientID")
     },
 
     #' @field name Patient Name.
     name = function() {
-      private$.get_main_dicom_tag_value("PatientName")
+      private$get_main_dicom_tag_value("PatientName")
     },
 
     #' @field birth_date Patient Birth Date.
     birth_date = function() {
-      private$.get_main_dicom_tag_value("BirthDate")
+      private$get_main_dicom_tag_value("BirthDate")
     },
 
     #' @field sex Patient Sex.
     sex = function() {
-      private$.get_main_dicom_tag_value("PatientSex")
+      private$get_main_dicom_tag_value("PatientSex")
     },
 
     #' @field other_patient_ids Other Patient IDs.
     other_patient_ids = function() {
-      private$.get_main_dicom_tag_value("OtherPatientIDs")
+      private$get_main_dicom_tag_value("OtherPatientIDs")
     },
 
     #' @field is_stable Is stable?
@@ -305,18 +350,28 @@ Patient <- R6::R6Class(
       self$get_main_information()[["Labels"]]
     },
 
-    #' @field protected Get or Set if patient is protected against recycling.
+    #' @field protected Get or set if patient is protected against recycling.
     protected = function(x) {
       if (rlang::is_missing(x)) {
-        return(private$.client$get_patients_id_protected(private$.id))
+        return(private$client$get_patients_id_protected(private$id))
       }
-      private$.client$put_patients_id_protected(private$.id, json = list(x))
+      private$client$put_patients_id_protected(private$id, json = list(x))
     },
 
     #' @field studies Get patient's studies.
     studies = function() {
+      if (private$lock_children) {
+        if (rlang::is_null(private$child_resources)) {
+          studies_ids = self$get_main_information()[["Studies"]]
+          private$child_resources = purrr::map(studies_ids, \(id) {
+            Study$new(i, private$client, private$lock_children)
+          })
+        }
+        return(private$child_resources)
+      }
+
       studies_ids = self$get_main_information()[["Studies"]]
-      purrr::map(studies_ids, \(x) Study$new(x, private$.client))
+      purrr::map(studies_ids, \(id) Study$new(id, private$client))
     },
 
     #' @field shared_tags Shared tags.
@@ -325,6 +380,6 @@ Patient <- R6::R6Class(
     }
   ),
   private = list(
-    .type = "Patient"
+    resource_type = "Patient"
   )
 )

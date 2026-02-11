@@ -64,6 +64,7 @@ An abstract class for a DICOM Instance resource.
 \item \href{#method-Instance-get_content_by_tag}{\code{Instance$get_content_by_tag()}}
 \item \href{#method-Instance-anonymize}{\code{Instance$anonymize()}}
 \item \href{#method-Instance-modify}{\code{Instance$modify()}}
+\item \href{#method-Instance-download_nifti}{\code{Instance$download_nifti()}}
 }
 }
 \if{html}{\out{
@@ -240,6 +241,25 @@ Modify an Instance
 replace.}
 
 \item{\code{force}}{Force tags to be changed.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Instance-download_nifti"></a>}}
+\if{latex}{\out{\hypertarget{method-Instance-download_nifti}{}}}
+\subsection{Method \code{download_nifti()}}{
+Download instance as NIfTI.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Instance$download_nifti(path, compress = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{path}}{Path on disk.}
+
+\item{\code{compress}}{Compress to gzip.}
 }
 \if{html}{\out{</div>}}
 }
