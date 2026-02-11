@@ -22,10 +22,10 @@ tags.}
 
 \item{labels_constraint}{Contraint on the labels ('All', 'Any', 'None').}
 
-\item{...}{Not currently used.}
+\item{...}{Additional arguments passed to \code{query_orthanc}.}
 }
 \value{
-A \code{list} of \link{Instance}s.
+A \code{list} of \link{Instance} objects.
 }
 \description{
 Finds instances in Orthanc according to queries and labels

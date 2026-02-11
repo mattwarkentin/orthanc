@@ -5,9 +5,9 @@
 #'   tags.
 #' @param labels Character vector of labels to look for in resources.
 #' @param labels_constraint Contraint on the labels ('All', 'Any', 'None').
-#' @param ... Not currently used.
+#' @param ... Additional arguments passed to `query_orthanc`.
 #'
-#' @return A `list` of \link{Patient}s.
+#' @return A `list` of \link{Patient} objects.
 #'
 #' @export
 find_patients <- function(
@@ -17,14 +17,14 @@ find_patients <- function(
   labels_constraint = "All",
   ...
 ) {
-  rlang::check_dots_empty()
-
+  rlang::check_dots_used()
   query_orthanc(
     client = client,
     level = "Patient",
     query = query,
     labels = labels,
-    labels_constraint = labels_constraint
+    labels_constraint = labels_constraint,
+    ...
   )
 }
 
@@ -35,9 +35,9 @@ find_patients <- function(
 #'   tags.
 #' @param labels Character vector of labels to look for in resources.
 #' @param labels_constraint Contraint on the labels ('All', 'Any', 'None').
-#' @param ... Not currently used.
+#' @param ... Additional arguments passed to `query_orthanc`.
 #'
-#' @return A `list` of \link{Study}s.
+#' @return A `list` of \link{Study} objects.
 #'
 #' @export
 find_studies <- function(
@@ -47,14 +47,14 @@ find_studies <- function(
   labels_constraint = "All",
   ...
 ) {
-  rlang::check_dots_empty()
-
+  rlang::check_dots_used()
   query_orthanc(
     client = client,
     level = "Study",
     query = query,
     labels = labels,
-    labels_constraint = labels_constraint
+    labels_constraint = labels_constraint,
+    ...
   )
 }
 
@@ -65,9 +65,9 @@ find_studies <- function(
 #'   tags.
 #' @param labels Character vector of labels to look for in resources.
 #' @param labels_constraint Contraint on the labels ('All', 'Any', 'None').
-#' @param ... Not currently used.
+#' @param ... Additional arguments passed to `query_orthanc`.
 #'
-#' @return A `list` of \link{Series}s.
+#' @return A `list` of \link{Series} objects.
 #'
 #' @export
 find_series <- function(
@@ -77,14 +77,14 @@ find_series <- function(
   labels_constraint = "All",
   ...
 ) {
-  rlang::check_dots_empty()
-
+  rlang::check_dots_used()
   query_orthanc(
     client = client,
     level = "Series",
     query = query,
     labels = labels,
-    labels_constraint = labels_constraint
+    labels_constraint = labels_constraint,
+    ...
   )
 }
 
@@ -95,9 +95,9 @@ find_series <- function(
 #'   tags.
 #' @param labels Character vector of labels to look for in resources.
 #' @param labels_constraint Contraint on the labels ('All', 'Any', 'None').
-#' @param ... Not currently used.
+#' @param ... Additional arguments passed to `query_orthanc`.
 #'
-#' @return A `list` of \link{Instance}s.
+#' @return A `list` of \link{Instance} objects.
 #'
 #' @export
 find_instances <- function(
@@ -107,14 +107,14 @@ find_instances <- function(
   labels_constraint = "All",
   ...
 ) {
-  rlang::check_dots_empty()
-
+  rlang::check_dots_used()
   query_orthanc(
     client = client,
     level = "Instance",
     query = query,
     labels = labels,
-    labels_constraint = labels_constraint
+    labels_constraint = labels_constraint,
+    ...
   )
 }
 
@@ -151,6 +151,14 @@ query_orthanc = function(
   retrieve_all_resources = TRUE,
   lock_children = FALSE
 ) {
+  check_orthanc_client(client)
+  check_scalar_character(level)
+  check_scalar_character(labels_constraint)
+  check_scalar_integer(limit)
+  check_scalar_integer(since)
+  check_scalar_logical(retrieve_all_resources)
+  check_scalar_logical(lock_children)
+
   validate_level(level)
   validate_labels_constraint(labels_constraint)
 
@@ -159,10 +167,16 @@ query_orthanc = function(
     Level = level,
     Limit = limit,
     Since = since,
-    Query = query
+    Query = list()
   )
 
+  if (!rlang::is_empty(query)) {
+    check_named_list(query)
+    data[["Query"]] <- query
+  }
+
   if (!rlang::is_empty(labels)) {
+    check_character(labels)
     data[["Labels"]] <- labels
     data[["LabelsConstraint"]] <- labels_constraint
   }
@@ -176,19 +190,28 @@ query_orthanc = function(
       }
 
       results <- append(results, result_for_interval)
+      data[["Since"]] <- data[["Since"]] + limit
     }
   } else {
     results <- client$post_tools_find(data)
   }
 
   if (level == "Patient") {
-    resources <- purrr::map(results, \(x) Patient$new(x, client))
+    resources <- purrr::map(results, \(x) {
+      Patient$new(x[["ID"]], client, lock_children)
+    })
   } else if (level == "Study") {
-    resources <- purrr::map(results, \(x) Study$new(x, client))
+    resources <- purrr::map(results, \(x) {
+      Study$new(x[["ID"]], client, lock_children)
+    })
   } else if (level == "Series") {
-    resources <- purrr::map(results, \(x) Series$new(x, client))
+    resources <- purrr::map(results, \(x) {
+      Series$new(x[["ID"]], client, lock_children)
+    })
   } else if (level == "Instance") {
-    resources <- purrr::map(results, \(x) Instance$new(x, client))
+    resources <- purrr::map(results, \(x) {
+      Instance$new(x[["ID"]], client, lock_children)
+    })
   } else {
     rlang::abort("Unknown level.")
   }
