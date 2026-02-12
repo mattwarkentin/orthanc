@@ -3,44 +3,43 @@
 #' @param patients List of \link{Patient}s
 #' @param path Path where you want to write the files.
 #'
+#' @inheritParams purrr::walk
+#'
 #' @return Nothing, invisibly.
 #'
 #' @export
-retrieve_and_write_patients = function(patients, path) {
+retrieve_and_write_patients = function(patients, path, progress = FALSE) {
   if (!fs::dir_exists(path)) {
     rlang::abort("`path` does not exist.")
   }
-  for (patient in patients) {
-    retrieve_and_write_patient(patient, path)
-  }
+  purrr::walk(
+    patients,
+    \(x) retrieve_and_write_patient(x, path),
+    .progress = progress
+  )
   invisible()
 }
 
 retrieve_and_write_patient = function(patient, path) {
   patient_id <- patient$patient_id
-  patient_path <- glue::glue("{path}/{patient_id}")
-
-  for (study in patient$studies) {
-    retrieve_and_write_study(study, patient_path)
+  if (patient_id == "" || rlang::is_null(patient_id)) {
+    patient_id <- "unknown"
   }
+  patient_path <- glue::glue("{path}/{patient_id}")
+  purrr::walk(patient$studies, \(x) retrieve_and_write_study(x, patient_path))
 }
 
 retrieve_and_write_study = function(study, patient_path) {
   study_path <- glue::glue("{patient_path}/{study$uid}")
-
-  for (series in study$series) {
-    retrieve_and_write_series(series, study_path)
-  }
+  purrr::walk(study$series, \(x) retrieve_and_write_series(x, study_path))
 }
 
 retrieve_and_write_series = function(series, study_path) {
   series_path <- glue::glue("{study_path}/{series$uid}")
-
   fs::dir_create(series_path, recurse = TRUE)
-
-  for (instance in series$instances) {
-    retrieve_and_write_instance(instance, series_path)
-  }
+  purrr::walk(series$instances, \(x) {
+    retrieve_and_write_instance(x, series_path)
+  })
 }
 
 retrieve_and_write_instance = function(instance, series_path) {
