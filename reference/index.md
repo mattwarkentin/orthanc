@@ -43,3 +43,5 @@
   : Finds series in Orthanc according to queries and labels
 - [`find_instances()`](https://mattwarkentin.github.io/orthanc/reference/find_instances.md)
   : Finds instances in Orthanc according to queries and labels
+- [`find_and_filter_patients()`](https://mattwarkentin.github.io/orthanc/reference/find_and_filter_patients.md)
+  : Find and filter patients

@@ -105,10 +105,13 @@ An R6 instance of class `"Study"`.
 
 - [`Study$get_shared_tags()`](#method-Study-get_shared_tags)
 
+- [`Study$remove_empty_series()`](#method-Study-remove_empty_series)
+
 Inherited methods
 
 - [`orthanc::Resource$initialize()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-initialize)
 - [`orthanc::Resource$print()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-print)
+- [`orthanc::Resource$set_child_resources()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-set_child_resources)
 
 ------------------------------------------------------------------------
 
@@ -429,3 +432,13 @@ Retrieve the shared tags of the study.
 #### Usage
 
     Study$get_shared_tags()
+
+------------------------------------------------------------------------
+
+### Method `remove_empty_series()`
+
+Remove empty series from study.
+
+#### Usage
+
+    Study$remove_empty_series()

@@ -71,7 +71,9 @@
 <span></span>
 <span><span class="va">client</span> <span class="op">&lt;-</span> <span class="va"><a href="reference/Orthanc.html">Orthanc</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="st">"https://orthanc.uclouvain.be/demo"</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">client</span><span class="op">$</span><span class="fu">get_instances</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">instances</span> <span class="op">&lt;-</span> <span class="va">client</span><span class="op">$</span><span class="fu">get_instances</span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">instances</span></span>
 <span><span class="co">#&gt; [[1]]</span></span>
 <span><span class="co">#&gt; [1] "001a7d82-54008387-7b23ad57-8fb6202a-6d3b305b"</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -87,24 +89,31 @@
 <span><span class="co">#&gt; [[5]]</span></span>
 <span><span class="co">#&gt; [1] "00419319-1d16e8d6-2eb65ed2-0de8313f-3356e31e"</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; [[6]]</span></span>
-<span><span class="co">#&gt; [1] "005f747f-edbb7c3a-9174bcfa-5591350a-0866aa35"</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; [[7]]</span></span>
-<span><span class="co">#&gt; [1] "00874fa6-f3da74b0-147489f4-71427817-a8b502ed"</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; [[8]]</span></span>
-<span><span class="co">#&gt; [1] "0092ce4b-9d4b0966-f5fd8c6a-beb6daa7-2e6bcda9"</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; [[9]]</span></span>
-<span><span class="co">#&gt; [1] "00a99a6f-a5ace144-3e0ef3ae-831374b6-311c1307"</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; [[10]]</span></span>
-<span><span class="co">#&gt; [1] "00c7f841-f909c088-9732704b-4a533ea3-c2f2be2c"</span></span>
-<span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt;  [ reached 'max' / getOption("max.print") -- omitted 2542 entries ]</span></span>
+<span><span class="co">#&gt;  [ reached 'max' / getOption("max.print") -- omitted 2547 entries ]</span></span>
 <span><span class="co">#&gt; attr(,"class")</span></span>
 <span><span class="co">#&gt; [1] "orthanc_response" "list"</span></span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">instance</span> <span class="op">&lt;-</span> <span class="va"><a href="reference/Instance.html">Instance</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="va">instances</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span>, <span class="va">client</span><span class="op">)</span></span>
+<span><span class="va">instance</span></span>
+<span><span class="co">#&gt; &lt;Instance: 001a7d82-54008387-7b23ad57-8fb6202a-6d3b305b&gt;</span></span>
+<span></span>
+<span><span class="va">instance</span><span class="op">$</span><span class="va">main_dicom_tags</span></span>
+<span><span class="co">#&gt; $AcquisitionNumber</span></span>
+<span><span class="co">#&gt; [1] "4"</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $ImageOrientationPatient</span></span>
+<span><span class="co">#&gt; [1] "1\\0\\0\\0\\1\\0"</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $ImagePositionPatient</span></span>
+<span><span class="co">#&gt; [1] "-249.51171875\\-458.51171875\\364"</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $InstanceCreationDate</span></span>
+<span><span class="co">#&gt; [1] "20151217"</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; $InstanceCreationTime</span></span>
+<span><span class="co">#&gt; [1] "125203.943000"</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;  [ reached 'max' / getOption("max.print") -- omitted 2 entries ]</span></span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">

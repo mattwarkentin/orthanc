@@ -153,12 +153,15 @@ An R6 instance of class `"Series"`.
 
 - [`Series$get_shared_tags()`](#method-Series-get_shared_tags)
 
+- [`Series$remove_empty_instances()`](#method-Series-remove_empty_instances)
+
 - [`Series$download_nifti()`](#method-Series-download_nifti)
 
 Inherited methods
 
 - [`orthanc::Resource$initialize()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-initialize)
 - [`orthanc::Resource$print()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-print)
+- [`orthanc::Resource$set_child_resources()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-set_child_resources)
 
 ------------------------------------------------------------------------
 
@@ -479,6 +482,16 @@ Retrieve the shared tags of the series.
 #### Usage
 
     Series$get_shared_tags()
+
+------------------------------------------------------------------------
+
+### Method `remove_empty_instances()`
+
+Remove empty instances from series.
+
+#### Usage
+
+    Series$remove_empty_instances()
 
 ------------------------------------------------------------------------
 

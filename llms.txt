@@ -20,7 +20,9 @@ library(orthanc)
 
 client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 
-client$get_instances()
+instances <- client$get_instances()
+
+instances
 #> [[1]]
 #> [1] "001a7d82-54008387-7b23ad57-8fb6202a-6d3b305b"
 #> 
@@ -36,24 +38,33 @@ client$get_instances()
 #> [[5]]
 #> [1] "00419319-1d16e8d6-2eb65ed2-0de8313f-3356e31e"
 #> 
-#> [[6]]
-#> [1] "005f747f-edbb7c3a-9174bcfa-5591350a-0866aa35"
-#> 
-#> [[7]]
-#> [1] "00874fa6-f3da74b0-147489f4-71427817-a8b502ed"
-#> 
-#> [[8]]
-#> [1] "0092ce4b-9d4b0966-f5fd8c6a-beb6daa7-2e6bcda9"
-#> 
-#> [[9]]
-#> [1] "00a99a6f-a5ace144-3e0ef3ae-831374b6-311c1307"
-#> 
-#> [[10]]
-#> [1] "00c7f841-f909c088-9732704b-4a533ea3-c2f2be2c"
-#> 
-#>  [ reached 'max' / getOption("max.print") -- omitted 2542 entries ]
+#>  [ reached 'max' / getOption("max.print") -- omitted 2547 entries ]
 #> attr(,"class")
 #> [1] "orthanc_response" "list"
+```
+
+``` r
+instance <- Instance$new(instances[[1]], client)
+instance
+#> <Instance: 001a7d82-54008387-7b23ad57-8fb6202a-6d3b305b>
+
+instance$main_dicom_tags
+#> $AcquisitionNumber
+#> [1] "4"
+#> 
+#> $ImageOrientationPatient
+#> [1] "1\\0\\0\\0\\1\\0"
+#> 
+#> $ImagePositionPatient
+#> [1] "-249.51171875\\-458.51171875\\364"
+#> 
+#> $InstanceCreationDate
+#> [1] "20151217"
+#> 
+#> $InstanceCreationTime
+#> [1] "125203.943000"
+#> 
+#>  [ reached 'max' / getOption("max.print") -- omitted 2 entries ]
 ```
 
 # Package index
@@ -101,4 +112,6 @@ client$get_instances()
   : Finds series in Orthanc according to queries and labels
 - [`find_instances()`](https://mattwarkentin.github.io/orthanc/reference/find_instances.md)
   : Finds instances in Orthanc according to queries and labels
+- [`find_and_filter_patients()`](https://mattwarkentin.github.io/orthanc/reference/find_and_filter_patients.md)
+  : Find and filter patients
 

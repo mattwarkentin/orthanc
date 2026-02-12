@@ -26,6 +26,8 @@ An R6 instance of class `"Resource"`.
 
 - [`Resource$print()`](#method-Resource-print)
 
+- [`Resource$set_child_resources()`](#method-Resource-set_child_resources)
+
 ------------------------------------------------------------------------
 
 ### Method `new()`
@@ -78,3 +80,19 @@ Print a `Resource` object.
 - `...`:
 
   Not currently used.
+
+------------------------------------------------------------------------
+
+### Method `set_child_resources()`
+
+Set child resources.
+
+#### Usage
+
+    Resource$set_child_resources(resources)
+
+#### Arguments
+
+- `resources`:
+
+  List of resources.

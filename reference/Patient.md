@@ -83,10 +83,13 @@ An R6 instance of class `"Patient"`.
 
 - [`Patient$get_shared_tags()`](#method-Patient-get_shared_tags)
 
+- [`Patient$remove_empty_studies()`](#method-Patient-remove_empty_studies)
+
 Inherited methods
 
 - [`orthanc::Resource$initialize()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-initialize)
 - [`orthanc::Resource$print()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-print)
+- [`orthanc::Resource$set_child_resources()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-set_child_resources)
 
 ------------------------------------------------------------------------
 
@@ -417,3 +420,13 @@ Retrieve the shared tags of the patient.
 #### Usage
 
     Patient$get_shared_tags()
+
+------------------------------------------------------------------------
+
+### Method `remove_empty_studies()`
+
+Remove empty studies from patient.
+
+#### Usage
+
+    Patient$remove_empty_studies()
