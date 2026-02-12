@@ -186,3 +186,23 @@ check_scalar_logical <- function(x, x_nm = NULL) {
     call = rlang::caller_env()
   )
 }
+
+check_function <- function(x, x_nm = NULL) {
+  if (rlang::is_null(x_nm)) {
+    x_nm <- deparse(substitute(x))
+  }
+
+  if (rlang::is_function(x)) {
+    return(TRUE)
+  }
+  rlang::abort(
+    message = glue::glue(
+      "`{x_nm}` must be a function."
+    ),
+    call = rlang::caller_env()
+  )
+}
+
+is_empty_list <- function(x) {
+  rlang::is_list(x) && rlang::is_empty(x)
+}

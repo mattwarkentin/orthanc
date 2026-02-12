@@ -35,6 +35,8 @@ make_orthanc_id <- function(
 ) {
   ids <- list(patient_id, study_uid, series_uid, instance_uid)
 
+  ids <- purrr::compact(ids)
+
   ids_string <- glue::glue_collapse(ids, sep = "|")
 
   uid <- digest::digest(ids_string, algo = "sha1", serialize = FALSE)
