@@ -34,7 +34,7 @@ pak::pak("mattwarkentin/orthanc")
 ```{r}
 #| label: setup
 #| include: false
-options(max.print = 10)
+options(max.print = 5)
 ```
 
 ```{r}
@@ -42,5 +42,14 @@ library(orthanc)
 
 client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 
-client$get_instances()
+instances <- client$get_instances()
+
+instances
+```
+
+```{r}
+instance <- Instance$new(instances[[1]], client)
+instance
+
+instance$main_dicom_tags
 ```
