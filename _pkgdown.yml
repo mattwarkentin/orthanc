@@ -30,3 +30,4 @@ reference:
   - find_studies
   - find_series
   - find_instances
+  - find_and_filter_patients
