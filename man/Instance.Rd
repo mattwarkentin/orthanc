@@ -72,6 +72,7 @@ An abstract class for a DICOM Instance resource.
 <ul>
 <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="initialize"><a href='../../orthanc/html/Resource.html#method-Resource-initialize'><code>orthanc::Resource$initialize()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="print"><a href='../../orthanc/html/Resource.html#method-Resource-print'><code>orthanc::Resource$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="set_child_resources"><a href='../../orthanc/html/Resource.html#method-Resource-set_child_resources'><code>orthanc::Resource$set_child_resources()</code></a></span></li>
 </ul>
 </details>
 }}

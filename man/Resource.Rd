@@ -24,6 +24,7 @@ An abstract class for a DICOM Resource in the Orthanc API Client.
 \item \href{#method-Resource-new}{\code{Resource$new()}}
 \item \href{#method-Resource-get_main_information}{\code{Resource$get_main_information()}}
 \item \href{#method-Resource-print}{\code{Resource$print()}}
+\item \href{#method-Resource-set_child_resources}{\code{Resource$set_child_resources()}}
 }
 }
 \if{html}{\out{<hr>}}
@@ -74,6 +75,23 @@ Print a \code{Resource} object.
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{...}}{Not currently used.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Resource-set_child_resources"></a>}}
+\if{latex}{\out{\hypertarget{method-Resource-set_child_resources}{}}}
+\subsection{Method \code{set_child_resources()}}{
+Set child resources.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Resource$set_child_resources(resources)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{resources}}{List of resources.}
 }
 \if{html}{\out{</div>}}
 }

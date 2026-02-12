@@ -299,6 +299,28 @@ Study <- R6::R6Class(
         private$id,
         params = list(simplify = TRUE)
       )
+    },
+
+    #' @description Remove empty series from study.
+    remove_empty_series = function() {
+      if (rlang::is_empty(private$child_resources)) {
+        return(invisible(self))
+      }
+
+      purrr::walk(private$child_resources, \(series) {
+        series$remove_empty_instances()
+      })
+
+      resources <- purrr::discard(
+        .x = private$child_resources,
+        .p = \(series) {
+          is_empty_list(series$private$child_resources)
+        }
+      )
+
+      self$set_child_resources(resources)
+
+      invisible(self)
     }
   ),
   private = list(
@@ -351,7 +373,7 @@ Study <- R6::R6Class(
         if (rlang::is_null(private$child_resources)) {
           series_ids = self$get_main_information()[["Series"]]
           private$child_resources = purrr::map(series_ids, \(id) {
-            Series$new(i, private$client, private$lock_children)
+            Series$new(id, private$client, private$lock_children)
           })
         }
         return(private$child_resources)

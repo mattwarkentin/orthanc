@@ -307,6 +307,28 @@ Patient <- R6::R6Class(
         private$id,
         params = list(simplify = TRUE)
       )
+    },
+
+    #' @description Remove empty studies from patient.
+    remove_empty_studies = function() {
+      if (rlang::is_empty(private$child_resources)) {
+        return(invisible(self))
+      }
+
+      purrr::walk(private$child_resources, \(study) {
+        study$remove_empty_series()
+      })
+
+      resources <- purrr::discard(
+        .x = private$child_resources,
+        .p = \(study) {
+          is_empty_list(study$private$child_resources)
+        }
+      )
+
+      self$set_child_resources(resources)
+
+      invisible(self)
     }
   ),
   active = list(
@@ -364,7 +386,7 @@ Patient <- R6::R6Class(
         if (rlang::is_null(private$child_resources)) {
           studies_ids = self$get_main_information()[["Studies"]]
           private$child_resources = purrr::map(studies_ids, \(id) {
-            Study$new(i, private$client, private$lock_children)
+            Study$new(id, private$client, private$lock_children)
           })
         }
         return(private$child_resources)

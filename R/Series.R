@@ -297,6 +297,14 @@ Series <- R6::R6Class(
       )
     },
 
+    #' @description Remove empty instances from series.
+    remove_empty_instances = function() {
+      if (!rlang::is_empty(private$child_resources)) {
+        self$set_child_resources(purrr::compact(private$child_resources))
+      }
+      invisible(self)
+    },
+
     #' @description Download series as NIfTI.
     #' @param path Path on disk.
     #' @param compress Compress to gzip.
@@ -343,7 +351,7 @@ Series <- R6::R6Class(
         if (rlang::is_null(private$child_resources)) {
           instances_ids <- self$get_main_information()[["Instances"]]
           private$child_resources = purrr::map(instances_ids, \(id) {
-            Instance$new(i, private$client, private$lock_children)
+            Instance$new(id, private$client, private$lock_children)
           })
         }
         return(private$child_resources)

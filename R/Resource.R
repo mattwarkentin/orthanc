@@ -38,6 +38,16 @@ Resource <- R6::R6Class(
     #' @param ... Not currently used.
     print = function(...) {
       cat(glue::glue("<{private$resource_type}: {private$id}>"))
+    },
+
+    #' @description Set child resources.
+    #' @param resources List of resources.
+    set_child_resources = function(resources) {
+      if (private$lock_children) {
+        private$child_resources <- resources
+        return(invisible(self))
+      }
+      rlang::abort("Can only set child resources if `lock_children` is `TRUE`.")
     }
   ),
   active = list(

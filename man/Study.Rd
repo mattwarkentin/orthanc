@@ -65,6 +65,7 @@ description.}
 \item \href{#method-Study-get_zip}{\code{Study$get_zip()}}
 \item \href{#method-Study-download}{\code{Study$download()}}
 \item \href{#method-Study-get_shared_tags}{\code{Study$get_shared_tags()}}
+\item \href{#method-Study-remove_empty_series}{\code{Study$remove_empty_series()}}
 }
 }
 \if{html}{\out{
@@ -72,6 +73,7 @@ description.}
 <ul>
 <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="initialize"><a href='../../orthanc/html/Resource.html#method-Resource-initialize'><code>orthanc::Resource$initialize()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="print"><a href='../../orthanc/html/Resource.html#method-Resource-print'><code>orthanc::Resource$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="set_child_resources"><a href='../../orthanc/html/Resource.html#method-Resource-set_child_resources'><code>orthanc::Resource$set_child_resources()</code></a></span></li>
 </ul>
 </details>
 }}
@@ -337,6 +339,16 @@ Download the zip file to a path.
 Retrieve the shared tags of the study.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Study$get_shared_tags()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Study-remove_empty_series"></a>}}
+\if{latex}{\out{\hypertarget{method-Study-remove_empty_series}{}}}
+\subsection{Method \code{remove_empty_series()}}{
+Remove empty series from study.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Study$remove_empty_series()}\if{html}{\out{</div>}}
 }
 
 }

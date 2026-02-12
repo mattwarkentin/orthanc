@@ -53,6 +53,7 @@ An abstract class for a DICOM Patient resource.
 \item \href{#method-Patient-modify}{\code{Patient$modify()}}
 \item \href{#method-Patient-modify_as_job}{\code{Patient$modify_as_job()}}
 \item \href{#method-Patient-get_shared_tags}{\code{Patient$get_shared_tags()}}
+\item \href{#method-Patient-remove_empty_studies}{\code{Patient$remove_empty_studies()}}
 }
 }
 \if{html}{\out{
@@ -60,6 +61,7 @@ An abstract class for a DICOM Patient resource.
 <ul>
 <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="initialize"><a href='../../orthanc/html/Resource.html#method-Resource-initialize'><code>orthanc::Resource$initialize()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="print"><a href='../../orthanc/html/Resource.html#method-Resource-print'><code>orthanc::Resource$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="set_child_resources"><a href='../../orthanc/html/Resource.html#method-Resource-set_child_resources'><code>orthanc::Resource$set_child_resources()</code></a></span></li>
 </ul>
 </details>
 }}
@@ -335,6 +337,16 @@ replace.}
 Retrieve the shared tags of the patient.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Patient$get_shared_tags()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Patient-remove_empty_studies"></a>}}
+\if{latex}{\out{\hypertarget{method-Patient-remove_empty_studies}{}}}
+\subsection{Method \code{remove_empty_studies()}}{
+Remove empty studies from patient.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Patient$remove_empty_studies()}\if{html}{\out{</div>}}
 }
 
 }

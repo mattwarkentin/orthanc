@@ -90,6 +90,7 @@ processing description.}
 \item \href{#method-Series-get_zip}{\code{Series$get_zip()}}
 \item \href{#method-Series-download}{\code{Series$download()}}
 \item \href{#method-Series-get_shared_tags}{\code{Series$get_shared_tags()}}
+\item \href{#method-Series-remove_empty_instances}{\code{Series$remove_empty_instances()}}
 \item \href{#method-Series-download_nifti}{\code{Series$download_nifti()}}
 }
 }
@@ -98,6 +99,7 @@ processing description.}
 <ul>
 <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="initialize"><a href='../../orthanc/html/Resource.html#method-Resource-initialize'><code>orthanc::Resource$initialize()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="print"><a href='../../orthanc/html/Resource.html#method-Resource-print'><code>orthanc::Resource$print()</code></a></span></li>
+<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="set_child_resources"><a href='../../orthanc/html/Resource.html#method-Resource-set_child_resources'><code>orthanc::Resource$set_child_resources()</code></a></span></li>
 </ul>
 </details>
 }}
@@ -363,6 +365,16 @@ Download the zip file to a path.
 Retrieve the shared tags of the series.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Series$get_shared_tags()}\if{html}{\out{</div>}}
+}
+
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Series-remove_empty_instances"></a>}}
+\if{latex}{\out{\hypertarget{method-Series-remove_empty_instances}{}}}
+\subsection{Method \code{remove_empty_instances()}}{
+Remove empty instances from series.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Series$remove_empty_instances()}\if{html}{\out{</div>}}
 }
 
 }
