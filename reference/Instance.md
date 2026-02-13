@@ -85,6 +85,10 @@ An R6 instance of class `"Instance"`.
 
   Get instance labels.
 
+- `statistics`:
+
+  Instance statistics.
+
 ## Methods
 
 ### Public methods

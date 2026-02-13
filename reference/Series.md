@@ -17,6 +17,14 @@ An R6 instance of class `"Series"`.
 
   Get series instances.
 
+- `instances_ids`:
+
+  Instances IDs.
+
+- `instances_tags`:
+
+  Get series's instances tags
+
 - `uid`:
 
   Get SeriesInstanceUID.
@@ -128,6 +136,10 @@ An R6 instance of class `"Series"`.
 - `shared_tags`:
 
   Shared tags.
+
+- `statistics`:
+
+  Series statistics.
 
 ## Methods
 

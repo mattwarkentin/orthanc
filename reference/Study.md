@@ -45,9 +45,25 @@ An R6 instance of class `"Study"`.
 
   Patient Main DICOM Tags
 
+- `series_ids`:
+
+  Series IDs.
+
+- `instances_ids`:
+
+  Instances IDs.
+
 - `series`:
 
   Get patient's series
+
+- `instances`:
+
+  Get patient's instances
+
+- `instances_tags`:
+
+  Get study's instances tags
 
 - `accession_number`:
 
@@ -80,6 +96,10 @@ An R6 instance of class `"Study"`.
 - `shared_tags`:
 
   Shared tags.
+
+- `statistics`:
+
+  Study statistics.
 
 ## Methods
 

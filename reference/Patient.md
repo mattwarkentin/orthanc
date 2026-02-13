@@ -49,13 +49,41 @@ An R6 instance of class `"Patient"`.
 
   Get or set if patient is protected against recycling.
 
+- `studies_ids`:
+
+  Studies IDs.
+
+- `series_ids`:
+
+  Series IDs.
+
+- `instances_ids`:
+
+  Instances IDs.
+
 - `studies`:
 
   Get patient's studies.
 
+- `series`:
+
+  Get patient's series
+
+- `instances`:
+
+  Get patient's instances
+
+- `instances_tags`:
+
+  Get patient's instances tags
+
 - `shared_tags`:
 
   Shared tags.
+
+- `statistics`:
+
+  Patient statistics.
 
 ## Methods
 
