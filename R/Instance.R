@@ -194,87 +194,87 @@ Instance <- R6::R6Class(
     resource_type = "Instance"
   ),
   active = list(
-    #' @field uid Get the `SOPInstanceUID`.
+    #' @field uid SOPInstanceUID
     uid = function() {
       private$get_main_dicom_tag_value("SOPInstanceUID")
     },
 
-    #' @field file_size Get the file size.
+    #' @field file_size File size
     file_size = function() {
       self$get_main_information()[["FileSize"]]
     },
 
-    #' @field creation_date Get creation date.
+    #' @field creation_date Creation Date
     creation_date = function() {
       private$get_main_dicom_tag_value("InstanceCreationDate")
     },
 
-    #' @field series_identifier Get parent series identifier.
+    #' @field series_identifier Parent series identifier
     series_identifier = function() {
       self$get_main_information()[["ParentSeries"]]
     },
 
-    #' @field parent_series Get parent series.
+    #' @field parent_series Parent series
     parent_series = function() {
       Series$new(self$series_identifier, private$client)
     },
 
-    #' @field parent_study Get parent study
+    #' @field parent_study Parent study
     parent_study = function() {
       self$parent_series$parent_study
     },
 
-    #' @field parent_patient Get parent patient
+    #' @field parent_patient Parent patient
     parent_patient = function() {
       self$parent_study$parent_patient
     },
 
-    #' @field acquisition_number Acquisition number.
+    #' @field acquisition_number Acquisition Number
     acquisition_number = function() {
       as.integer(private$get_main_dicom_tag_value("AcquisitionNumber"))
     },
 
-    #' @field image_index Image index.
+    #' @field image_index Image Index
     image_index = function() {
       as.integer(private$get_main_dicom_tag_value("ImageIndex"))
     },
 
-    #' @field image_orientation_patient Image orientation patient.
+    #' @field image_orientation_patient Image Orientation Patient
     image_orientation_patient = function() {
       private$get_main_dicom_tag_value("ImageOrientationPatient")
     },
 
-    #' @field image_position_patient Image position patient.
+    #' @field image_position_patient Image Position Patient
     image_position_patient = function() {
       private$get_main_dicom_tag_value("ImagePositionPatient")
     },
 
-    #' @field image_comments Image comments.
+    #' @field image_comments Image Comments
     image_comments = function() {
       private$get_main_dicom_tag_value("ImageComments")
     },
 
-    #' @field instance_number Instance number.
+    #' @field instance_number Instance Number
     instance_number = function() {
       private$get_main_dicom_tag_value("InstanceNumber")
     },
 
-    #' @field number_of_frames Number of frames.
+    #' @field number_of_frames Number of Frames
     number_of_frames = function() {
       private$get_main_dicom_tag_value("NumberOfFrames")
     },
 
-    #' @field temporal_position_identifier Temporal position identifier.
+    #' @field temporal_position_identifier Temporal Position Identifier
     temporal_position_identifier = function() {
       private$get_main_dicom_tag_value("TemporalPositionIdentifier")
     },
 
-    #' @field tags Get tags.
+    #' @field tags Tags
     tags = function() {
       private$client$get_instances_id_tags(private$id)
     },
 
-    #' @field simplified_tags Get simplified tags.
+    #' @field simplified_tags Simplified Tags
     simplified_tags = function() {
       private$client$get_instances_id_tags(
         private$id,
@@ -282,12 +282,12 @@ Instance <- R6::R6Class(
       )
     },
 
-    #' @field labels Get instance labels.
+    #' @field labels Labels
     labels = function() {
       self$get_main_information()[["Labels"]]
     },
 
-    #' @field statistics Instance statistics.
+    #' @field statistics Statistics
     statistics = function() {
       private$client$get_instances_id_statistics(self$identifier)
     }

@@ -15,41 +15,41 @@ An abstract class for a DICOM Patient resource.
 \section{Active bindings}{
 \if{html}{\out{<div class="r6-active-bindings">}}
 \describe{
-\item{\code{patient_id}}{Patient ID.}
+\item{\code{patient_id}}{Patient ID}
 
-\item{\code{name}}{Patient Name.}
+\item{\code{name}}{Patient Name}
 
-\item{\code{birth_date}}{Patient Birth Date.}
+\item{\code{birth_date}}{Patient Birth Date}
 
-\item{\code{sex}}{Patient Sex.}
+\item{\code{sex}}{Patient Sex}
 
-\item{\code{other_patient_ids}}{Other Patient IDs.}
+\item{\code{other_patient_ids}}{Other Patient IDs}
 
 \item{\code{is_stable}}{Is stable?}
 
-\item{\code{last_update}}{Last update.}
+\item{\code{last_update}}{Last Update}
 
-\item{\code{labels}}{Labels.}
+\item{\code{labels}}{Labels}
 
-\item{\code{protected}}{Get or set if patient is protected against recycling.}
+\item{\code{protected}}{Get or set if patient is protected against recycling}
 
-\item{\code{studies_ids}}{Studies IDs.}
+\item{\code{studies_ids}}{Studies identifiers}
 
-\item{\code{series_ids}}{Series IDs.}
+\item{\code{series_ids}}{Series identifiers}
 
-\item{\code{instances_ids}}{Instances IDs.}
+\item{\code{instances_ids}}{Instances identifiers}
 
-\item{\code{studies}}{Get patient's studies.}
+\item{\code{studies}}{Studies}
 
-\item{\code{series}}{Get patient's series}
+\item{\code{series}}{Series}
 
-\item{\code{instances}}{Get patient's instances}
+\item{\code{instances}}{Instances}
 
-\item{\code{instances_tags}}{Get patient's instances tags}
+\item{\code{instances_tags}}{Instances tags}
 
-\item{\code{shared_tags}}{Shared tags.}
+\item{\code{shared_tags}}{Shared tags}
 
-\item{\code{statistics}}{Patient statistics.}
+\item{\code{statistics}}{Statistics}
 }
 \if{html}{\out{</div>}}
 }

@@ -15,9 +15,9 @@ An abstract class for a DICOM Study resource.
 \section{Active bindings}{
 \if{html}{\out{<div class="r6-active-bindings">}}
 \describe{
-\item{\code{patient_identifier}}{Get parent patient identifier.}
+\item{\code{patient_identifier}}{Parent patient identifier}
 
-\item{\code{parent_patient}}{Get parent patient}
+\item{\code{parent_patient}}{Parent patient}
 
 \item{\code{referring_physician_name}}{Referring Physician Name}
 
@@ -31,15 +31,15 @@ An abstract class for a DICOM Study resource.
 
 \item{\code{patient_information}}{Patient Main DICOM Tags}
 
-\item{\code{series_ids}}{Series IDs.}
+\item{\code{series_ids}}{Series identifiers}
 
-\item{\code{instances_ids}}{Instances IDs.}
+\item{\code{instances_ids}}{Instances identifiers}
 
-\item{\code{series}}{Get patient's series}
+\item{\code{series}}{Series}
 
-\item{\code{instances}}{Get patient's instances}
+\item{\code{instances}}{Instances}
 
-\item{\code{instances_tags}}{Get study's instances tags}
+\item{\code{instances_tags}}{Instances tags}
 
 \item{\code{accession_number}}{Accession Number}
 
@@ -47,18 +47,18 @@ An abstract class for a DICOM Study resource.
 
 \item{\code{institution_name}}{Institution Name}
 
-\item{\code{requested_procedure_description}}{Requested procedure
-description.}
+\item{\code{requested_procedure_description}}{Requested Procedure
+Description.}
 
 \item{\code{is_stable}}{Is stable?}
 
-\item{\code{last_update}}{Last update.}
+\item{\code{last_update}}{Last Update}
 
-\item{\code{labels}}{Labels.}
+\item{\code{labels}}{Labels}
 
-\item{\code{shared_tags}}{Shared tags.}
+\item{\code{shared_tags}}{Shared Tags}
 
-\item{\code{statistics}}{Study statistics.}
+\item{\code{statistics}}{Statistics}
 }
 \if{html}{\out{</div>}}
 }

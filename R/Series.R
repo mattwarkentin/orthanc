@@ -345,7 +345,7 @@ Series <- R6::R6Class(
     resource_type = "Series"
   ),
   active = list(
-    #' @field instances Get series instances.
+    #' @field instances Instances
     instances = function() {
       if (private$lock_children) {
         if (rlang::is_null(private$child_resources)) {
@@ -361,7 +361,7 @@ Series <- R6::R6Class(
       purrr::map(instances_ids, \(id) Instance$new(id, private$client))
     },
 
-    #' @field instances_ids Instances IDs.
+    #' @field instances_ids Instances identifiers
     instances_ids = function() {
       purrr::map_chr(
         private$client$get_series_id_instances(self$identifier),
@@ -369,7 +369,7 @@ Series <- R6::R6Class(
       )
     },
 
-    #' @field instances_tags Get series's instances tags
+    #' @field instances_tags Instances tags
     instances_tags = function() {
       private$client$get_series_id_instances_tags(
         self$identifier,
@@ -377,111 +377,111 @@ Series <- R6::R6Class(
       )
     },
 
-    #' @field uid Get SeriesInstanceUID.
+    #' @field uid SeriesInstanceUID
     uid = function() {
       private$get_main_dicom_tag_value("SeriesInstanceUID")
     },
 
-    #' @field manufacturer Manufacturer.
+    #' @field manufacturer Manufacturer
     manufacturer = function() {
       private$get_main_dicom_tag_value("Manufacturer")
     },
 
-    #' @field date Date.
+    #' @field date Series Date
     date = function() {
       private$get_main_dicom_tag_value("SeriesDate")
     },
 
-    #' @field modality Modality.
+    #' @field modality Modality
     modality = function() {
       private$get_main_dicom_tag_value("Modality")
     },
 
-    #' @field series_number Series number.
+    #' @field series_number Series Number
     series_number = function() {
       private$get_main_dicom_tag_value("SeriesNumber")
     },
 
-    #' @field performed_procedure_step_description Performed procedure step
-    #'   description.
+    #' @field performed_procedure_step_description Performed Procedure Step
+    #'   Description
     performed_procedure_step_description = function() {
       private$get_main_dicom_tag_value("PerformedProcedureStepDescription")
     },
 
-    #' @field protocol_name Protocol name.
+    #' @field protocol_name Protocol Name
     protocol_name = function() {
       private$get_main_dicom_tag_value("ProtocolName")
     },
 
-    #' @field station_name Station name.
+    #' @field station_name Station Name
     station_name = function() {
       private$get_main_dicom_tag_value("StationName")
     },
 
-    #' @field description Description.
+    #' @field description Series Description
     description = function() {
       private$get_main_dicom_tag_value("SeriesDescription")
     },
 
-    #' @field body_part_examined Body part examined.
+    #' @field body_part_examined Body Part Examined
     body_part_examined = function() {
       private$get_main_dicom_tag_value("BodyPartExamined")
     },
 
-    #' @field sequence_name Sequence name.
+    #' @field sequence_name Sequence Name
     sequence_name = function() {
       private$get_main_dicom_tag_value("SequenceName")
     },
 
-    #' @field cardiac_number_of_images Cardiac number of images.
+    #' @field cardiac_number_of_images Cardiac Number of Images
     cardiac_number_of_images = function() {
       private$get_main_dicom_tag_value("CardiacNumberOfImages")
     },
 
-    #' @field image_in_acquisition Images in acquisition.
+    #' @field image_in_acquisition Images in Acquisition
     image_in_acquisition = function() {
       private$get_main_dicom_tag_value("ImagesInAcquisition")
     },
 
-    #' @field number_of_temporal_positions Number of temporal positions.
+    #' @field number_of_temporal_positions Number of Temporal Positions
     number_of_temporal_positions = function() {
       private$get_main_dicom_tag_value("NumberOfTemporalPositions")
     },
 
-    #' @field number_of_slices Number of slices.
+    #' @field number_of_slices Number of Slices
     number_of_slices = function() {
       private$get_main_dicom_tag_value("NumberOfSlices")
     },
 
-    #' @field number_of_time_slices Number of time slices.
+    #' @field number_of_time_slices Number of Time Slices
     number_of_time_slices = function() {
       private$get_main_dicom_tag_value("NumberOfTimeSlices")
     },
 
-    #' @field image_orientation_patient Image orientation patient.
+    #' @field image_orientation_patient Image Orientation Patient
     image_orientation_patient = function() {
       private$get_main_dicom_tag_value("ImageOrientationPatient")
     },
 
-    #' @field series_type Series type.
+    #' @field series_type Series Type
     series_type = function() {
       private$get_main_dicom_tag_value("SeriesType")
     },
 
-    #' @field operators_name Operators name.
+    #' @field operators_name Operators Name
     operators_name = function() {
       private$get_main_dicom_tag_value("OperatorsName")
     },
 
-    #' @field acquisition_device_processing_description Acquisition device
-    #'   processing description.
+    #' @field acquisition_device_processing_description Acquisition Device
+    #'   Processing Description
     acquisition_device_processing_description = function() {
       private$get_main_dicom_tag_value(
         "AcquisitionDeviceProcessingDescription"
       )
     },
 
-    #' @field contrast_bolus_agent Contrast bolus agent.
+    #' @field contrast_bolus_agent Contrast Bolus Agent
     contrast_bolus_agent = function() {
       private$get_main_dicom_tag_value("ContrastBolusAgent")
     },
@@ -491,37 +491,37 @@ Series <- R6::R6Class(
       self$get_main_information()[["IsStable"]]
     },
 
-    #' @field last_update Last update.
+    #' @field last_update Last Update
     last_update = function() {
       self$get_main_information()[["LastUpdate"]]
     },
 
-    #' @field labels Labels.
+    #' @field labels Labels
     labels = function() {
       self$get_main_information()[["Labels"]]
     },
 
-    #' @field study_identifier Get parent study identifier.
+    #' @field study_identifier Parent study identifier
     study_identifier = function() {
       self$get_main_information()[["ParentStudy"]]
     },
 
-    #' @field parent_study Get parent study.
+    #' @field parent_study Parent study
     parent_study = function() {
       Study$new(self$study_identifier, private$client)
     },
 
-    #' @field parent_patient Get parent patient.
+    #' @field parent_patient Parent patient
     parent_patient = function() {
       self$parent_study$parent_patient
     },
 
-    #' @field shared_tags Shared tags.
+    #' @field shared_tags Shared tags
     shared_tags = function() {
       self$get_shared_tags()
     },
 
-    #' @field statistics Series statistics.
+    #' @field statistics Statistics
     statistics = function() {
       private$client$get_series_id_statistics(self$identifier)
     }

@@ -332,27 +332,27 @@ Patient <- R6::R6Class(
     }
   ),
   active = list(
-    #' @field patient_id Patient ID.
+    #' @field patient_id Patient ID
     patient_id = function() {
       private$get_main_dicom_tag_value("PatientID")
     },
 
-    #' @field name Patient Name.
+    #' @field name Patient Name
     name = function() {
       private$get_main_dicom_tag_value("PatientName")
     },
 
-    #' @field birth_date Patient Birth Date.
+    #' @field birth_date Patient Birth Date
     birth_date = function() {
       private$get_main_dicom_tag_value("BirthDate")
     },
 
-    #' @field sex Patient Sex.
+    #' @field sex Patient Sex
     sex = function() {
       private$get_main_dicom_tag_value("PatientSex")
     },
 
-    #' @field other_patient_ids Other Patient IDs.
+    #' @field other_patient_ids Other Patient IDs
     other_patient_ids = function() {
       private$get_main_dicom_tag_value("OtherPatientIDs")
     },
@@ -362,17 +362,17 @@ Patient <- R6::R6Class(
       self$get_main_information()[["IsStable"]]
     },
 
-    #' @field last_update Last update.
+    #' @field last_update Last Update
     last_update = function() {
       self$get_main_information()[["LastUpdate"]]
     },
 
-    #' @field labels Labels.
+    #' @field labels Labels
     labels = function() {
       self$get_main_information()[["Labels"]]
     },
 
-    #' @field protected Get or set if patient is protected against recycling.
+    #' @field protected Get or set if patient is protected against recycling
     protected = function(x) {
       if (rlang::is_missing(x)) {
         return(private$client$get_patients_id_protected(private$id))
@@ -380,12 +380,12 @@ Patient <- R6::R6Class(
       private$client$put_patients_id_protected(private$id, json = list(x))
     },
 
-    #' @field studies_ids Studies IDs.
+    #' @field studies_ids Studies identifiers
     studies_ids = function() {
       as.character(self$get_main_information()[["Studies"]])
     },
 
-    #' @field series_ids Series IDs.
+    #' @field series_ids Series identifiers
     series_ids = function() {
       purrr::map_chr(
         private$client$get_patients_id_series(self$identifier),
@@ -393,7 +393,7 @@ Patient <- R6::R6Class(
       )
     },
 
-    #' @field instances_ids Instances IDs.
+    #' @field instances_ids Instances identifiers
     instances_ids = function() {
       purrr::map_chr(
         private$client$get_patients_id_instances(self$identifier),
@@ -401,7 +401,7 @@ Patient <- R6::R6Class(
       )
     },
 
-    #' @field studies Get patient's studies.
+    #' @field studies Studies
     studies = function() {
       if (private$lock_children) {
         if (rlang::is_null(private$child_resources)) {
@@ -417,21 +417,21 @@ Patient <- R6::R6Class(
       purrr::map(studies_ids, \(id) Study$new(id, private$client))
     },
 
-    #' @field series Get patient's series
+    #' @field series Series
     series = function() {
       purrr::map(self$series_ids, \(s) {
         Series$new(s, private$client, private$lock_children)
       })
     },
 
-    #' @field instances Get patient's instances
+    #' @field instances Instances
     instances = function() {
       purrr::map(self$instances_ids, \(i) {
         Instance$new(i, private$client, private$lock_children)
       })
     },
 
-    #' @field instances_tags Get patient's instances tags
+    #' @field instances_tags Instances tags
     instances_tags = function() {
       private$client$get_patients_id_instances_tags(
         self$identifier,
@@ -439,12 +439,12 @@ Patient <- R6::R6Class(
       )
     },
 
-    #' @field shared_tags Shared tags.
+    #' @field shared_tags Shared tags
     shared_tags = function() {
       self$get_shared_tags()
     },
 
-    #' @field statistics Patient statistics.
+    #' @field statistics Statistics
     statistics = function() {
       private$client$get_patients_id_statistics(self$identifier)
     }

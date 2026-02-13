@@ -15,43 +15,43 @@ An abstract class for a DICOM Instance resource.
 \section{Active bindings}{
 \if{html}{\out{<div class="r6-active-bindings">}}
 \describe{
-\item{\code{uid}}{Get the \code{SOPInstanceUID}.}
+\item{\code{uid}}{SOPInstanceUID}
 
-\item{\code{file_size}}{Get the file size.}
+\item{\code{file_size}}{File size}
 
-\item{\code{creation_date}}{Get creation date.}
+\item{\code{creation_date}}{Creation Date}
 
-\item{\code{series_identifier}}{Get parent series identifier.}
+\item{\code{series_identifier}}{Parent series identifier}
 
-\item{\code{parent_series}}{Get parent series.}
+\item{\code{parent_series}}{Parent series}
 
-\item{\code{parent_study}}{Get parent study}
+\item{\code{parent_study}}{Parent study}
 
-\item{\code{parent_patient}}{Get parent patient}
+\item{\code{parent_patient}}{Parent patient}
 
-\item{\code{acquisition_number}}{Acquisition number.}
+\item{\code{acquisition_number}}{Acquisition Number}
 
-\item{\code{image_index}}{Image index.}
+\item{\code{image_index}}{Image Index}
 
-\item{\code{image_orientation_patient}}{Image orientation patient.}
+\item{\code{image_orientation_patient}}{Image Orientation Patient}
 
-\item{\code{image_position_patient}}{Image position patient.}
+\item{\code{image_position_patient}}{Image Position Patient}
 
-\item{\code{image_comments}}{Image comments.}
+\item{\code{image_comments}}{Image Comments}
 
-\item{\code{instance_number}}{Instance number.}
+\item{\code{instance_number}}{Instance Number}
 
-\item{\code{number_of_frames}}{Number of frames.}
+\item{\code{number_of_frames}}{Number of Frames}
 
-\item{\code{temporal_position_identifier}}{Temporal position identifier.}
+\item{\code{temporal_position_identifier}}{Temporal Position Identifier}
 
-\item{\code{tags}}{Get tags.}
+\item{\code{tags}}{Tags}
 
-\item{\code{simplified_tags}}{Get simplified tags.}
+\item{\code{simplified_tags}}{Simplified Tags}
 
-\item{\code{labels}}{Get instance labels.}
+\item{\code{labels}}{Labels}
 
-\item{\code{statistics}}{Instance statistics.}
+\item{\code{statistics}}{Statistics}
 }
 \if{html}{\out{</div>}}
 }

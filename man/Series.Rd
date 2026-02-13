@@ -15,71 +15,71 @@ An abstract class for a DICOM Series resource.
 \section{Active bindings}{
 \if{html}{\out{<div class="r6-active-bindings">}}
 \describe{
-\item{\code{instances}}{Get series instances.}
+\item{\code{instances}}{Instances}
 
-\item{\code{instances_ids}}{Instances IDs.}
+\item{\code{instances_ids}}{Instances identifiers}
 
-\item{\code{instances_tags}}{Get series's instances tags}
+\item{\code{instances_tags}}{Instances tags}
 
-\item{\code{uid}}{Get SeriesInstanceUID.}
+\item{\code{uid}}{SeriesInstanceUID}
 
-\item{\code{manufacturer}}{Manufacturer.}
+\item{\code{manufacturer}}{Manufacturer}
 
-\item{\code{date}}{Date.}
+\item{\code{date}}{Series Date}
 
-\item{\code{modality}}{Modality.}
+\item{\code{modality}}{Modality}
 
-\item{\code{series_number}}{Series number.}
+\item{\code{series_number}}{Series Number}
 
-\item{\code{performed_procedure_step_description}}{Performed procedure step
-description.}
+\item{\code{performed_procedure_step_description}}{Performed Procedure Step
+Description}
 
-\item{\code{protocol_name}}{Protocol name.}
+\item{\code{protocol_name}}{Protocol Name}
 
-\item{\code{station_name}}{Station name.}
+\item{\code{station_name}}{Station Name}
 
-\item{\code{description}}{Description.}
+\item{\code{description}}{Series Description}
 
-\item{\code{body_part_examined}}{Body part examined.}
+\item{\code{body_part_examined}}{Body Part Examined}
 
-\item{\code{sequence_name}}{Sequence name.}
+\item{\code{sequence_name}}{Sequence Name}
 
-\item{\code{cardiac_number_of_images}}{Cardiac number of images.}
+\item{\code{cardiac_number_of_images}}{Cardiac Number of Images}
 
-\item{\code{image_in_acquisition}}{Images in acquisition.}
+\item{\code{image_in_acquisition}}{Images in Acquisition}
 
-\item{\code{number_of_temporal_positions}}{Number of temporal positions.}
+\item{\code{number_of_temporal_positions}}{Number of Temporal Positions}
 
-\item{\code{number_of_slices}}{Number of slices.}
+\item{\code{number_of_slices}}{Number of Slices}
 
-\item{\code{number_of_time_slices}}{Number of time slices.}
+\item{\code{number_of_time_slices}}{Number of Time Slices}
 
-\item{\code{image_orientation_patient}}{Image orientation patient.}
+\item{\code{image_orientation_patient}}{Image Orientation Patient}
 
-\item{\code{series_type}}{Series type.}
+\item{\code{series_type}}{Series Type}
 
-\item{\code{operators_name}}{Operators name.}
+\item{\code{operators_name}}{Operators Name}
 
-\item{\code{acquisition_device_processing_description}}{Acquisition device
-processing description.}
+\item{\code{acquisition_device_processing_description}}{Acquisition Device
+Processing Description}
 
-\item{\code{contrast_bolus_agent}}{Contrast bolus agent.}
+\item{\code{contrast_bolus_agent}}{Contrast Bolus Agent}
 
 \item{\code{is_stable}}{Is stable?}
 
-\item{\code{last_update}}{Last update.}
+\item{\code{last_update}}{Last Update}
 
-\item{\code{labels}}{Labels.}
+\item{\code{labels}}{Labels}
 
-\item{\code{study_identifier}}{Get parent study identifier.}
+\item{\code{study_identifier}}{Parent study identifier}
 
-\item{\code{parent_study}}{Get parent study.}
+\item{\code{parent_study}}{Parent study}
 
-\item{\code{parent_patient}}{Get parent patient.}
+\item{\code{parent_patient}}{Parent patient}
 
-\item{\code{shared_tags}}{Shared tags.}
+\item{\code{shared_tags}}{Shared tags}
 
-\item{\code{statistics}}{Series statistics.}
+\item{\code{statistics}}{Statistics}
 }
 \if{html}{\out{</div>}}
 }

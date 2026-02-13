@@ -327,12 +327,12 @@ Study <- R6::R6Class(
     resource_type = "Study"
   ),
   active = list(
-    #' @field patient_identifier Get parent patient identifier.
+    #' @field patient_identifier Parent patient identifier
     patient_identifier = function() {
       self$get_main_information()[["ParentPatient"]]
     },
 
-    #' @field parent_patient Get parent patient
+    #' @field parent_patient Parent patient
     parent_patient = function() {
       Patient$new(self$patient_identifier, private$client)
     },
@@ -367,7 +367,7 @@ Study <- R6::R6Class(
       self$get_main_information()[["PatientMainDicomTags"]]
     },
 
-    #' @field series_ids Series IDs.
+    #' @field series_ids Series identifiers
     series_ids = function() {
       purrr::map_chr(
         private$client$get_studies_id_series(self$identifier),
@@ -375,7 +375,7 @@ Study <- R6::R6Class(
       )
     },
 
-    #' @field instances_ids Instances IDs.
+    #' @field instances_ids Instances identifiers
     instances_ids = function() {
       purrr::map_chr(
         private$client$get_studies_id_instances(self$identifier),
@@ -383,7 +383,7 @@ Study <- R6::R6Class(
       )
     },
 
-    #' @field series Get patient's series
+    #' @field series Series
     series = function() {
       if (private$lock_children) {
         if (rlang::is_null(private$child_resources)) {
@@ -399,14 +399,14 @@ Study <- R6::R6Class(
       purrr::map(series_ids, \(id) Series$new(id, private$client))
     },
 
-    #' @field instances Get patient's instances
+    #' @field instances Instances
     instances = function() {
       purrr::map(self$instances_ids, \(i) {
         Instance$new(i, private$client, private$lock_children)
       })
     },
 
-    #' @field instances_tags Get study's instances tags
+    #' @field instances_tags Instances tags
     instances_tags = function() {
       private$client$get_studies_id_instances_tags(
         self$identifier,
@@ -429,8 +429,8 @@ Study <- R6::R6Class(
       private$get_main_dicom_tag_value("InstitutionName")
     },
 
-    #' @field requested_procedure_description Requested procedure
-    #'   description.
+    #' @field requested_procedure_description Requested Procedure
+    #'   Description.
     requested_procedure_description = function() {
       private$get_main_dicom_tag_value("RequestedProcedureDescription")
     },
@@ -440,22 +440,22 @@ Study <- R6::R6Class(
       self$get_main_information()[["IsStable"]]
     },
 
-    #' @field last_update Last update.
+    #' @field last_update Last Update
     last_update = function() {
       self$get_main_information()[["LastUpdate"]]
     },
 
-    #' @field labels Labels.
+    #' @field labels Labels
     labels = function() {
       self$get_main_information()[["Labels"]]
     },
 
-    #' @field shared_tags Shared tags.
+    #' @field shared_tags Shared Tags
     shared_tags = function() {
       self$get_shared_tags()
     },
 
-    #' @field statistics Study statistics.
+    #' @field statistics Statistics
     statistics = function() {
       private$client$get_studies_id_statistics(self$identifier)
     }
