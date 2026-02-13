@@ -380,6 +380,27 @@ Patient <- R6::R6Class(
       private$client$put_patients_id_protected(private$id, json = list(x))
     },
 
+    #' @field studies_ids Studies IDs.
+    studies_ids = function() {
+      as.character(self$get_main_information()[["Studies"]])
+    },
+
+    #' @field series_ids Series IDs.
+    series_ids = function() {
+      purrr::map_chr(
+        private$client$get_patients_id_series(self$identifier),
+        \(x) x$ID
+      )
+    },
+
+    #' @field instances_ids Instances IDs.
+    instances_ids = function() {
+      purrr::map_chr(
+        private$client$get_patients_id_instances(self$identifier),
+        \(x) x$ID
+      )
+    },
+
     #' @field studies Get patient's studies.
     studies = function() {
       if (private$lock_children) {
@@ -396,9 +417,36 @@ Patient <- R6::R6Class(
       purrr::map(studies_ids, \(id) Study$new(id, private$client))
     },
 
+    #' @field series Get patient's series
+    series = function() {
+      purrr::map(self$series_ids, \(s) {
+        Series$new(s, private$client, private$lock_children)
+      })
+    },
+
+    #' @field instances Get patient's instances
+    instances = function() {
+      purrr::map(self$instances_ids, \(i) {
+        Instance$new(i, private$client, private$lock_children)
+      })
+    },
+
+    #' @field instances_tags Get patient's instances tags
+    instances_tags = function() {
+      private$client$get_patients_id_instances_tags(
+        self$identifier,
+        params = list(simplify = TRUE)
+      )
+    },
+
     #' @field shared_tags Shared tags.
     shared_tags = function() {
       self$get_shared_tags()
+    },
+
+    #' @field statistics Patient statistics.
+    statistics = function() {
+      private$client$get_patients_id_statistics(self$identifier)
     }
   ),
   private = list(

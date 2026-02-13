@@ -33,9 +33,23 @@ An abstract class for a DICOM Patient resource.
 
 \item{\code{protected}}{Get or set if patient is protected against recycling.}
 
+\item{\code{studies_ids}}{Studies IDs.}
+
+\item{\code{series_ids}}{Series IDs.}
+
+\item{\code{instances_ids}}{Instances IDs.}
+
 \item{\code{studies}}{Get patient's studies.}
 
+\item{\code{series}}{Get patient's series}
+
+\item{\code{instances}}{Get patient's instances}
+
+\item{\code{instances_tags}}{Get patient's instances tags}
+
 \item{\code{shared_tags}}{Shared tags.}
+
+\item{\code{statistics}}{Patient statistics.}
 }
 \if{html}{\out{</div>}}
 }

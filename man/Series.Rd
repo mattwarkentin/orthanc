@@ -17,6 +17,10 @@ An abstract class for a DICOM Series resource.
 \describe{
 \item{\code{instances}}{Get series instances.}
 
+\item{\code{instances_ids}}{Instances IDs.}
+
+\item{\code{instances_tags}}{Get series's instances tags}
+
 \item{\code{uid}}{Get SeriesInstanceUID.}
 
 \item{\code{manufacturer}}{Manufacturer.}
@@ -74,6 +78,8 @@ processing description.}
 \item{\code{parent_patient}}{Get parent patient.}
 
 \item{\code{shared_tags}}{Shared tags.}
+
+\item{\code{statistics}}{Series statistics.}
 }
 \if{html}{\out{</div>}}
 }

@@ -367,6 +367,22 @@ Study <- R6::R6Class(
       self$get_main_information()[["PatientMainDicomTags"]]
     },
 
+    #' @field series_ids Series IDs.
+    series_ids = function() {
+      purrr::map_chr(
+        private$client$get_studies_id_series(self$identifier),
+        \(x) x$ID
+      )
+    },
+
+    #' @field instances_ids Instances IDs.
+    instances_ids = function() {
+      purrr::map_chr(
+        private$client$get_studies_id_instances(self$identifier),
+        \(x) x$ID
+      )
+    },
+
     #' @field series Get patient's series
     series = function() {
       if (private$lock_children) {
@@ -381,6 +397,21 @@ Study <- R6::R6Class(
 
       series_ids = self$get_main_information()[["Series"]]
       purrr::map(series_ids, \(id) Series$new(id, private$client))
+    },
+
+    #' @field instances Get patient's instances
+    instances = function() {
+      purrr::map(self$instances_ids, \(i) {
+        Instance$new(i, private$client, private$lock_children)
+      })
+    },
+
+    #' @field instances_tags Get study's instances tags
+    instances_tags = function() {
+      private$client$get_studies_id_instances_tags(
+        self$identifier,
+        params = list(simplify = TRUE)
+      )
     },
 
     #' @field accession_number Accession Number
@@ -422,6 +453,11 @@ Study <- R6::R6Class(
     #' @field shared_tags Shared tags.
     shared_tags = function() {
       self$get_shared_tags()
+    },
+
+    #' @field statistics Study statistics.
+    statistics = function() {
+      private$client$get_studies_id_statistics(self$identifier)
     }
   )
 )

@@ -361,6 +361,22 @@ Series <- R6::R6Class(
       purrr::map(instances_ids, \(id) Instance$new(id, private$client))
     },
 
+    #' @field instances_ids Instances IDs.
+    instances_ids = function() {
+      purrr::map_chr(
+        private$client$get_series_id_instances(self$identifier),
+        \(x) x$ID
+      )
+    },
+
+    #' @field instances_tags Get series's instances tags
+    instances_tags = function() {
+      private$client$get_series_id_instances_tags(
+        self$identifier,
+        params = list(simplify = TRUE)
+      )
+    },
+
     #' @field uid Get SeriesInstanceUID.
     uid = function() {
       private$get_main_dicom_tag_value("SeriesInstanceUID")
@@ -503,6 +519,11 @@ Series <- R6::R6Class(
     #' @field shared_tags Shared tags.
     shared_tags = function() {
       self$get_shared_tags()
+    },
+
+    #' @field statistics Series statistics.
+    statistics = function() {
+      private$client$get_series_id_statistics(self$identifier)
     }
   )
 )

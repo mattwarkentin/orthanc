@@ -285,6 +285,11 @@ Instance <- R6::R6Class(
     #' @field labels Get instance labels.
     labels = function() {
       self$get_main_information()[["Labels"]]
+    },
+
+    #' @field statistics Instance statistics.
+    statistics = function() {
+      private$client$get_instances_id_statistics(self$identifier)
     }
   )
 )

@@ -31,7 +31,15 @@ An abstract class for a DICOM Study resource.
 
 \item{\code{patient_information}}{Patient Main DICOM Tags}
 
+\item{\code{series_ids}}{Series IDs.}
+
+\item{\code{instances_ids}}{Instances IDs.}
+
 \item{\code{series}}{Get patient's series}
+
+\item{\code{instances}}{Get patient's instances}
+
+\item{\code{instances_tags}}{Get study's instances tags}
 
 \item{\code{accession_number}}{Accession Number}
 
@@ -49,6 +57,8 @@ description.}
 \item{\code{labels}}{Labels.}
 
 \item{\code{shared_tags}}{Shared tags.}
+
+\item{\code{statistics}}{Study statistics.}
 }
 \if{html}{\out{</div>}}
 }

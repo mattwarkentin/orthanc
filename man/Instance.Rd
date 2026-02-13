@@ -50,6 +50,8 @@ An abstract class for a DICOM Instance resource.
 \item{\code{simplified_tags}}{Get simplified tags.}
 
 \item{\code{labels}}{Get instance labels.}
+
+\item{\code{statistics}}{Instance statistics.}
 }
 \if{html}{\out{</div>}}
 }
