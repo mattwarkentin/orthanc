@@ -15,23 +15,23 @@ An R6 instance of class `"Patient"`.
 
 - `patient_id`:
 
-  Patient ID.
+  Patient ID
 
 - `name`:
 
-  Patient Name.
+  Patient Name
 
 - `birth_date`:
 
-  Patient Birth Date.
+  Patient Birth Date
 
 - `sex`:
 
-  Patient Sex.
+  Patient Sex
 
 - `other_patient_ids`:
 
-  Other Patient IDs.
+  Other Patient IDs
 
 - `is_stable`:
 
@@ -39,51 +39,51 @@ An R6 instance of class `"Patient"`.
 
 - `last_update`:
 
-  Last update.
+  Last Update
 
 - `labels`:
 
-  Labels.
+  Labels
 
 - `protected`:
 
-  Get or set if patient is protected against recycling.
+  Get or set if patient is protected against recycling
 
 - `studies_ids`:
 
-  Studies IDs.
+  Studies identifiers
 
 - `series_ids`:
 
-  Series IDs.
+  Series identifiers
 
 - `instances_ids`:
 
-  Instances IDs.
+  Instances identifiers
 
 - `studies`:
 
-  Get patient's studies.
+  Studies
 
 - `series`:
 
-  Get patient's series
+  Series
 
 - `instances`:
 
-  Get patient's instances
+  Instances
 
 - `instances_tags`:
 
-  Get patient's instances tags
+  Instances tags
 
 - `shared_tags`:
 
-  Shared tags.
+  Shared tags
 
 - `statistics`:
 
-  Patient statistics.
+  Statistics
 
 ## Methods
 

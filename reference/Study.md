@@ -15,11 +15,11 @@ An R6 instance of class `"Study"`.
 
 - `patient_identifier`:
 
-  Get parent patient identifier.
+  Parent patient identifier
 
 - `parent_patient`:
 
-  Get parent patient
+  Parent patient
 
 - `referring_physician_name`:
 
@@ -47,23 +47,23 @@ An R6 instance of class `"Study"`.
 
 - `series_ids`:
 
-  Series IDs.
+  Series identifiers
 
 - `instances_ids`:
 
-  Instances IDs.
+  Instances identifiers
 
 - `series`:
 
-  Get patient's series
+  Series
 
 - `instances`:
 
-  Get patient's instances
+  Instances
 
 - `instances_tags`:
 
-  Get study's instances tags
+  Instances tags
 
 - `accession_number`:
 
@@ -79,7 +79,7 @@ An R6 instance of class `"Study"`.
 
 - `requested_procedure_description`:
 
-  Requested procedure description.
+  Requested Procedure Description.
 
 - `is_stable`:
 
@@ -87,19 +87,19 @@ An R6 instance of class `"Study"`.
 
 - `last_update`:
 
-  Last update.
+  Last Update
 
 - `labels`:
 
-  Labels.
+  Labels
 
 - `shared_tags`:
 
-  Shared tags.
+  Shared Tags
 
 - `statistics`:
 
-  Study statistics.
+  Statistics
 
 ## Methods
 

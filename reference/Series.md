@@ -15,99 +15,99 @@ An R6 instance of class `"Series"`.
 
 - `instances`:
 
-  Get series instances.
+  Instances
 
 - `instances_ids`:
 
-  Instances IDs.
+  Instances identifiers
 
 - `instances_tags`:
 
-  Get series's instances tags
+  Instances tags
 
 - `uid`:
 
-  Get SeriesInstanceUID.
+  SeriesInstanceUID
 
 - `manufacturer`:
 
-  Manufacturer.
+  Manufacturer
 
 - `date`:
 
-  Date.
+  Series Date
 
 - `modality`:
 
-  Modality.
+  Modality
 
 - `series_number`:
 
-  Series number.
+  Series Number
 
 - `performed_procedure_step_description`:
 
-  Performed procedure step description.
+  Performed Procedure Step Description
 
 - `protocol_name`:
 
-  Protocol name.
+  Protocol Name
 
 - `station_name`:
 
-  Station name.
+  Station Name
 
 - `description`:
 
-  Description.
+  Series Description
 
 - `body_part_examined`:
 
-  Body part examined.
+  Body Part Examined
 
 - `sequence_name`:
 
-  Sequence name.
+  Sequence Name
 
 - `cardiac_number_of_images`:
 
-  Cardiac number of images.
+  Cardiac Number of Images
 
 - `image_in_acquisition`:
 
-  Images in acquisition.
+  Images in Acquisition
 
 - `number_of_temporal_positions`:
 
-  Number of temporal positions.
+  Number of Temporal Positions
 
 - `number_of_slices`:
 
-  Number of slices.
+  Number of Slices
 
 - `number_of_time_slices`:
 
-  Number of time slices.
+  Number of Time Slices
 
 - `image_orientation_patient`:
 
-  Image orientation patient.
+  Image Orientation Patient
 
 - `series_type`:
 
-  Series type.
+  Series Type
 
 - `operators_name`:
 
-  Operators name.
+  Operators Name
 
 - `acquisition_device_processing_description`:
 
-  Acquisition device processing description.
+  Acquisition Device Processing Description
 
 - `contrast_bolus_agent`:
 
-  Contrast bolus agent.
+  Contrast Bolus Agent
 
 - `is_stable`:
 
@@ -115,31 +115,31 @@ An R6 instance of class `"Series"`.
 
 - `last_update`:
 
-  Last update.
+  Last Update
 
 - `labels`:
 
-  Labels.
+  Labels
 
 - `study_identifier`:
 
-  Get parent study identifier.
+  Parent study identifier
 
 - `parent_study`:
 
-  Get parent study.
+  Parent study
 
 - `parent_patient`:
 
-  Get parent patient.
+  Parent patient
 
 - `shared_tags`:
 
-  Shared tags.
+  Shared tags
 
 - `statistics`:
 
-  Series statistics.
+  Statistics
 
 ## Methods
 

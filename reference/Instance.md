@@ -15,79 +15,79 @@ An R6 instance of class `"Instance"`.
 
 - `uid`:
 
-  Get the `SOPInstanceUID`.
+  SOPInstanceUID
 
 - `file_size`:
 
-  Get the file size.
+  File size
 
 - `creation_date`:
 
-  Get creation date.
+  Creation Date
 
 - `series_identifier`:
 
-  Get parent series identifier.
+  Parent series identifier
 
 - `parent_series`:
 
-  Get parent series.
+  Parent series
 
 - `parent_study`:
 
-  Get parent study
+  Parent study
 
 - `parent_patient`:
 
-  Get parent patient
+  Parent patient
 
 - `acquisition_number`:
 
-  Acquisition number.
+  Acquisition Number
 
 - `image_index`:
 
-  Image index.
+  Image Index
 
 - `image_orientation_patient`:
 
-  Image orientation patient.
+  Image Orientation Patient
 
 - `image_position_patient`:
 
-  Image position patient.
+  Image Position Patient
 
 - `image_comments`:
 
-  Image comments.
+  Image Comments
 
 - `instance_number`:
 
-  Instance number.
+  Instance Number
 
 - `number_of_frames`:
 
-  Number of frames.
+  Number of Frames
 
 - `temporal_position_identifier`:
 
-  Temporal position identifier.
+  Temporal Position Identifier
 
 - `tags`:
 
-  Get tags.
+  Tags
 
 - `simplified_tags`:
 
-  Get simplified tags.
+  Simplified Tags
 
 - `labels`:
 
-  Get instance labels.
+  Labels
 
 - `statistics`:
 
-  Instance statistics.
+  Statistics
 
 ## Methods
 
