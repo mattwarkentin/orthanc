@@ -1,4 +1,4 @@
-#' Retrieve and write \link{Patient}s to given path
+#' Retrieve and write patients to a given path
 #'
 #' @param patients List of \link{Patient}s
 #' @param path Path where you want to write the patients (files).

@@ -2,7 +2,7 @@
 % Please edit documentation in R/filtering.R
 \name{find_and_filter_patients}
 \alias{find_and_filter_patients}
-\title{Find and filter patients}
+\title{Find and filter patients using predicate functions}
 \usage{
 find_and_filter_patients(
   client,

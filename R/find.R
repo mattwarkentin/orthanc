@@ -102,6 +102,7 @@ find_series <- function(
 #' @export
 #'
 #' @examples
+#' \dontshow{options(max.print = 10)}
 #' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 #'
 #' find_instances(client, query = list(BodyPartExamined = 'CHEST'))

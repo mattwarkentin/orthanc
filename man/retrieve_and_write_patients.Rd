@@ -2,7 +2,7 @@
 % Please edit documentation in R/retrieve.R
 \name{retrieve_and_write_patients}
 \alias{retrieve_and_write_patients}
-\title{Retrieve and write \link{Patient}s to given path}
+\title{Retrieve and write patients to a given path}
 \usage{
 retrieve_and_write_patients(patients, path, progress = FALSE)
 }
@@ -19,7 +19,7 @@ a basic progress bar, use a string to give it a name, or see
 Nothing, invisibly.
 }
 \description{
-Retrieve and write \link{Patient}s to given path
+Retrieve and write patients to a given path
 }
 \examples{
 \dontrun{

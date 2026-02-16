@@ -3,7 +3,7 @@ template:
   bootstrap: 5
 
 reference:
-- title: Orthanc API Clients
+- title: API Clients
   contents:
   - Orthanc
   - OrthancAsync
@@ -24,10 +24,10 @@ reference:
 
 - title: Utilities
   contents:
-  - retrieve_and_write_patients
-  - query_orthanc
   - find_patients
   - find_studies
   - find_series
   - find_instances
+  - query_orthanc
   - find_and_filter_patients
+  - retrieve_and_write_patients

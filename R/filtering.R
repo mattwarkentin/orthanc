@@ -1,4 +1,4 @@
-#' Find and filter patients
+#' Find and filter patients using predicate functions
 #'
 #' Find desired Patient/Study/Series/Instance in an Orthanc server. Predicate
 #'   functions (filters) take a single Patient/Study/Series/Instance as the
