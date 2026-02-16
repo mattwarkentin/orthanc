@@ -30,3 +30,8 @@ A \code{list} of \link{Series} objects.
 \description{
 Finds series in Orthanc according to queries and labels
 }
+\examples{
+client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
+
+find_series(client, query = list(SeriesDescription = "HEAD/NECK  2.0  B30s"))
+}

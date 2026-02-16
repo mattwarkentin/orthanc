@@ -30,3 +30,8 @@ A \code{list} of \link{Instance} objects.
 \description{
 Finds instances in Orthanc according to queries and labels
 }
+\examples{
+client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
+
+find_instances(client, query = list(BodyPartExamined = 'CHEST'))
+}

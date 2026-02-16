@@ -2,14 +2,14 @@
 % Please edit documentation in R/retrieve.R
 \name{retrieve_and_write_patients}
 \alias{retrieve_and_write_patients}
-\title{Retrieve and write patients to given path}
+\title{Retrieve and write \link{Patient}s to given path}
 \usage{
 retrieve_and_write_patients(patients, path, progress = FALSE)
 }
 \arguments{
 \item{patients}{List of \link{Patient}s}
 
-\item{path}{Path where you want to write the files.}
+\item{path}{Path where you want to write the patients (files).}
 
 \item{progress}{Whether to show a progress bar. Use \code{TRUE} to turn on
 a basic progress bar, use a string to give it a name, or see
@@ -19,5 +19,14 @@ a basic progress bar, use a string to give it a name, or see
 Nothing, invisibly.
 }
 \description{
-Retrieve and write patients to given path
+Retrieve and write \link{Patient}s to given path
+}
+\examples{
+\dontrun{
+client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
+
+patients <- find_patients(client, query = list(PatientName = "HN_P001"))
+
+retrieve_and_write_patients(patients, tempdir())
+}
 }

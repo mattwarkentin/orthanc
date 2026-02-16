@@ -30,3 +30,8 @@ A \code{list} of \link{Study} objects.
 \description{
 Finds studies in Orthanc according to queries and labels
 }
+\examples{
+client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
+
+find_studies(client, query = list(StudyDescription = "RT^HEAD_NECK (Adult)"))
+}

@@ -18,6 +18,7 @@ Imports:
     glue,
     fs,
     httr2,
+    jsonlite,
     mirai,
     purrr,
     R6,

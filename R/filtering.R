@@ -1,21 +1,33 @@
 #' Find and filter patients
 #'
-#' Find desired Patients/Study/Series/Instance in an Orthanc server
+#' Find desired Patient/Study/Series/Instance in an Orthanc server. Predicate
+#'   functions (filters) take a single Patient/Study/Series/Instance as the
+#'   first argument and return a single `TRUE` or `FALSE` for whether the
+#'   resource should be kept or discarded, respectively.
 #'
-#' This function builds a series of tree structure. Each tree correspond to a
+#' @param client Orthanc client.
+#' @param patient_filter Predicate function to filter \link{Patient}s.
+#' @param study_filter Predicate function to filter \link{Study}s.
+#' @param series_filter Predicate function to filer \link{Series}.
+#' @param instance_filter Predicate function to filter \link{Instance}s.
+#'
+#' @details
+#' This function builds a series of tree structures. Each tree corresponds to a
 #'   patient. The layers in the tree correspond to:
 #'
 #'   `Patient -> Studies -> Series -> Instances`
 #'
-#' @param client Orthanc client.
-#' @param patient_filter Predicate function to filter Patients.
-#' @param study_filter Predicate function to filter Studies.
-#' @param series_filter Predicate function to filer Series.
-#' @param instance_filter Predicate function to filter Instances.
-#'
-#' @return A `list` of \link{Patient}s.
+#' @return A `list` of filtered \link{Patient}s.
 #'
 #' @export
+#'
+#' @examples
+#' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
+#'
+#' find_and_filter_patients(
+#'   client = client,
+#'   series_filter = \(serie) serie$modality == "CT"
+#' )
 find_and_filter_patients <- function(
   client,
   patient_filter = NULL,

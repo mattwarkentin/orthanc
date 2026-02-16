@@ -30,3 +30,8 @@ A \code{list} of \link{Patient} objects.
 \description{
 Finds patients in Orthanc according to queries and labels
 }
+\examples{
+client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
+
+find_patients(client, query = list(PatientName = "HN_P001"))
+}

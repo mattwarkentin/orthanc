@@ -10,6 +10,11 @@
 #' @return A `list` of \link{Patient} objects.
 #'
 #' @export
+#'
+#' @examples
+#' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
+#'
+#' find_patients(client, query = list(PatientName = "HN_P001"))
 find_patients <- function(
   client,
   query = list(),
@@ -30,16 +35,16 @@ find_patients <- function(
 
 #' Finds studies in Orthanc according to queries and labels
 #'
-#' @param client Orthanc API client.
-#' @param query Named-list that specifies the filters on the level related DICOM
-#'   tags.
-#' @param labels Character vector of labels to look for in resources.
-#' @param labels_constraint Contraint on the labels ('All', 'Any', 'None').
-#' @param ... Additional arguments passed to `query_orthanc`.
+#' @inheritParams find_patients
 #'
 #' @return A `list` of \link{Study} objects.
 #'
 #' @export
+#'
+#' @examples
+#' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
+#'
+#' find_studies(client, query = list(StudyDescription = "RT^HEAD_NECK (Adult)"))
 find_studies <- function(
   client,
   query = list(),
@@ -60,16 +65,16 @@ find_studies <- function(
 
 #' Finds series in Orthanc according to queries and labels
 #'
-#' @param client Orthanc API client.
-#' @param query Named-list that specifies the filters on the level related DICOM
-#'   tags.
-#' @param labels Character vector of labels to look for in resources.
-#' @param labels_constraint Contraint on the labels ('All', 'Any', 'None').
-#' @param ... Additional arguments passed to `query_orthanc`.
+#' @inheritParams find_patients
 #'
 #' @return A `list` of \link{Series} objects.
 #'
 #' @export
+#'
+#' @examples
+#' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
+#'
+#' find_series(client, query = list(SeriesDescription = "HEAD/NECK  2.0  B30s"))
 find_series <- function(
   client,
   query = list(),
@@ -90,16 +95,16 @@ find_series <- function(
 
 #' Finds instances in Orthanc according to queries and labels
 #'
-#' @param client Orthanc API client.
-#' @param query Named-list that specifies the filters on the level related DICOM
-#'   tags.
-#' @param labels Character vector of labels to look for in resources.
-#' @param labels_constraint Contraint on the labels ('All', 'Any', 'None').
-#' @param ... Additional arguments passed to `query_orthanc`.
+#' @inheritParams find_patients
 #'
 #' @return A `list` of \link{Instance} objects.
 #'
 #' @export
+#'
+#' @examples
+#' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
+#'
+#' find_instances(client, query = list(BodyPartExamined = 'CHEST'))
 find_instances <- function(
   client,
   query = list(),

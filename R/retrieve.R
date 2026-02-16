@@ -1,14 +1,27 @@
-#' Retrieve and write patients to given path
+#' Retrieve and write \link{Patient}s to given path
 #'
 #' @param patients List of \link{Patient}s
-#' @param path Path where you want to write the files.
+#' @param path Path where you want to write the patients (files).
 #'
 #' @inheritParams purrr::walk
 #'
 #' @return Nothing, invisibly.
 #'
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
+#'
+#' patients <- find_patients(client, query = list(PatientName = "HN_P001"))
+#'
+#' retrieve_and_write_patients(patients, tempdir())
+#' }
 retrieve_and_write_patients = function(patients, path, progress = FALSE) {
+  check_list(patients)
+  check_scalar_character(path)
+  check_scalar_logical(progress)
+
   if (!fs::dir_exists(path)) {
     rlang::abort("`path` does not exist.")
   }

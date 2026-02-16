@@ -18,6 +18,7 @@
 #'   req_perform_connection resp_content_type resp_body_json resp_body_html
 #'   resp_body_string resp_body_raw resp_stream_is_complete resp_stream_raw
 #' @importFrom glue glue
+#' @import jsonlite
 #'
 #' @export
 Orthanc <-

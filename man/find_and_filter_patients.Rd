@@ -15,23 +15,34 @@ find_and_filter_patients(
 \arguments{
 \item{client}{Orthanc client.}
 
-\item{patient_filter}{Predicate function to filter Patients.}
+\item{patient_filter}{Predicate function to filter \link{Patient}s.}
 
-\item{study_filter}{Predicate function to filter Studies.}
+\item{study_filter}{Predicate function to filter \link{Study}s.}
 
-\item{series_filter}{Predicate function to filer Series.}
+\item{series_filter}{Predicate function to filer \link{Series}.}
 
-\item{instance_filter}{Predicate function to filter Instances.}
+\item{instance_filter}{Predicate function to filter \link{Instance}s.}
 }
 \value{
-A \code{list} of \link{Patient}s.
+A \code{list} of filtered \link{Patient}s.
 }
 \description{
-Find desired Patients/Study/Series/Instance in an Orthanc server
+Find desired Patient/Study/Series/Instance in an Orthanc server. Predicate
+functions (filters) take a single Patient/Study/Series/Instance as the
+first argument and return a single \code{TRUE} or \code{FALSE} for whether the
+resource should be kept or discarded, respectively.
 }
 \details{
-This function builds a series of tree structure. Each tree correspond to a
+This function builds a series of tree structures. Each tree corresponds to a
 patient. The layers in the tree correspond to:
 
 \code{Patient -> Studies -> Series -> Instances}
+}
+\examples{
+client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
+
+find_and_filter_patients(
+  client = client,
+  series_filter = \(serie) serie$modality == "CT"
+)
 }
