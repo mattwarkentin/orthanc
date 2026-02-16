@@ -1,18 +1,29 @@
-check_orthanc_client <- function(x, x_nm = NULL) {
-  if (rlang::inherits_all(x, "Orthanc")) {
-    return(TRUE)
-  }
-
+check_orthanc_client <- function(x, x_nm = NULL, async_allowed = FALSE) {
   if (rlang::is_null(x_nm)) {
     x_nm <- deparse(substitute(x))
   }
 
-  rlang::abort(
-    message = glue::glue(
-      "`{x_nm}` must be an Orthanc client object."
-    ),
-    call = rlang::caller_env()
-  )
+  if (async_allowed) {
+    if (!rlang::inherits_any(x, c("OrthancAsync", "Orthanc"))) {
+      return(rlang::abort(
+        message = glue::glue(
+          "`{x_nm}` must be an `Orthanc` or `OrthancAsync` client object."
+        ),
+        call = rlang::caller_env()
+      ))
+    }
+  } else {
+    if (!rlang::inherits_only(x, c("Orthanc", "R6"))) {
+      return(rlang::abort(
+        message = glue::glue(
+          "`{x_nm}` must be an `Orthanc` client object."
+        ),
+        call = rlang::caller_env()
+      ))
+    }
+  }
+
+  TRUE
 }
 
 check_list <- function(x, x_nm = NULL) {
