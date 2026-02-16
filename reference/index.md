@@ -1,6 +1,6 @@
 # Package index
 
-## Orthanc API Clients
+## API Clients
 
 - [`Orthanc`](https://mattwarkentin.github.io/orthanc/reference/Orthanc.md)
   : Orthanc API Client
@@ -31,10 +31,6 @@
 
 ## Utilities
 
-- [`retrieve_and_write_patients()`](https://mattwarkentin.github.io/orthanc/reference/retrieve_and_write_patients.md)
-  : Retrieve and write Patients to given path
-- [`query_orthanc()`](https://mattwarkentin.github.io/orthanc/reference/query_orthanc.md)
-  : Query data in the Orthanc server
 - [`find_patients()`](https://mattwarkentin.github.io/orthanc/reference/find_patients.md)
   : Finds patients in Orthanc according to queries and labels
 - [`find_studies()`](https://mattwarkentin.github.io/orthanc/reference/find_studies.md)
@@ -43,5 +39,9 @@
   : Finds series in Orthanc according to queries and labels
 - [`find_instances()`](https://mattwarkentin.github.io/orthanc/reference/find_instances.md)
   : Finds instances in Orthanc according to queries and labels
+- [`query_orthanc()`](https://mattwarkentin.github.io/orthanc/reference/query_orthanc.md)
+  : Query data in the Orthanc server
 - [`find_and_filter_patients()`](https://mattwarkentin.github.io/orthanc/reference/find_and_filter_patients.md)
-  : Find and filter patients
+  : Find and filter patients using predicate functions
+- [`retrieve_and_write_patients()`](https://mattwarkentin.github.io/orthanc/reference/retrieve_and_write_patients.md)
+  : Retrieve and write patients to a given path

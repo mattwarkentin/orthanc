@@ -1,8 +1,6 @@
-# Retrieve and write [Patient](https://mattwarkentin.github.io/orthanc/reference/Patient.md)s to given path
+# Retrieve and write patients to a given path
 
-Retrieve and write
-[Patient](https://mattwarkentin.github.io/orthanc/reference/Patient.md)s
-to given path
+Retrieve and write patients to a given path
 
 ## Usage
 
