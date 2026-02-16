@@ -1,6 +1,8 @@
-# Retrieve and write patients to given path
+# Retrieve and write [Patient](https://mattwarkentin.github.io/orthanc/reference/Patient.md)s to given path
 
-Retrieve and write patients to given path
+Retrieve and write
+[Patient](https://mattwarkentin.github.io/orthanc/reference/Patient.md)s
+to given path
 
 ## Usage
 
@@ -17,7 +19,7 @@ retrieve_and_write_patients(patients, path, progress = FALSE)
 
 - path:
 
-  Path where you want to write the files.
+  Path where you want to write the patients (files).
 
 - progress:
 
@@ -29,3 +31,15 @@ retrieve_and_write_patients(patients, path, progress = FALSE)
 ## Value
 
 Nothing, invisibly.
+
+## Examples
+
+``` r
+if (FALSE) { # \dontrun{
+client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
+
+patients <- find_patients(client, query = list(PatientName = "HN_P001"))
+
+retrieve_and_write_patients(patients, tempdir())
+} # }
+```
