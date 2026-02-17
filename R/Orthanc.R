@@ -24,8 +24,6 @@
 Orthanc <-
   R6::R6Class(
     classname = 'Orthanc',
-    cloneable = FALSE,
-    portable = FALSE,
     public = list(
       #' @field url URL for Orthanc REST API.
       url = NULL,

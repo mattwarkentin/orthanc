@@ -21,8 +21,6 @@ OrthancAsync <-
   R6::R6Class(
     classname = 'OrthancAsync',
     inherit = Orthanc,
-    cloneable = FALSE,
-    portable = FALSE,
     public = list(
       #' @description Print method for `Orthanc`.
       #' @param x Object to print.

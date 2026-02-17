@@ -350,6 +350,7 @@ The full documentation of the Orthanc API can be found here:
 \item \href{#method-Orthanc-post_tools_shutdown}{\code{Orthanc$post_tools_shutdown()}}
 \item \href{#method-Orthanc-get_tools_unknown_sop_class_accepted}{\code{Orthanc$get_tools_unknown_sop_class_accepted()}}
 \item \href{#method-Orthanc-put_tools_unknown_sop_class_accepted}{\code{Orthanc$put_tools_unknown_sop_class_accepted()}}
+\item \href{#method-Orthanc-clone}{\code{Orthanc$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
@@ -11730,6 +11731,23 @@ Request body: \code{1} if accepted, \code{0} if not accepted
 
 \subsection{Returns}{
 Nothing, invisibly.
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Orthanc-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Orthanc-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Orthanc$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
 }
 }
 }

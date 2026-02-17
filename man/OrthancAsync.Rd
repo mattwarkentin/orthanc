@@ -25,6 +25,7 @@ See \link{Orthanc} for more information.
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-OrthancAsync-print}{\code{OrthancAsync$print()}}
+\item \href{#method-OrthancAsync-clone}{\code{OrthancAsync$clone()}}
 }
 }
 \if{html}{\out{
@@ -347,6 +348,23 @@ Print method for \code{Orthanc}.
 \item{\code{x}}{Object to print.}
 
 \item{\code{...}}{Further arguments passed to or from other methods.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-OrthancAsync-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-OrthancAsync-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{OrthancAsync$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
 }
 \if{html}{\out{</div>}}
 }
