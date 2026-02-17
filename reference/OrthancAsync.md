@@ -29,6 +29,8 @@ for more information.
 
 - [`OrthancAsync$print()`](#method-OrthancAsync-print)
 
+- [`OrthancAsync$clone()`](#method-OrthancAsync-clone)
+
 Inherited methods
 
 - [`orthanc::Orthanc$DELETE()`](https://mattwarkentin.github.io/orthanc/reference/Orthanc.html#method-DELETE)
@@ -350,3 +352,19 @@ Print method for `Orthanc`.
 - `...`:
 
   Further arguments passed to or from other methods.
+
+------------------------------------------------------------------------
+
+### Method `clone()`
+
+The objects of this class are cloneable with this method.
+
+#### Usage
+
+    OrthancAsync$clone(deep = FALSE)
+
+#### Arguments
+
+- `deep`:
+
+  Whether to make a deep clone.

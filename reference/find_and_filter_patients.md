@@ -63,7 +63,7 @@ client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 
 find_and_filter_patients(
   client = client,
-  series_filter = \(serie) serie$modality == "CT"
+  series_filter = \(series) series$modality == "CT"
 )
 #> [[1]]
 #> <Patient: 0946fcb6-cf12ab43-bad958c1-bf057ad5-0fc6f54c>

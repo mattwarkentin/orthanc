@@ -1,6 +1,6 @@
-# Retrieve and write patients to a given path
+# Retrieve and write patients to a path
 
-Retrieve and write patients to a given path
+Retrieve and write patients to a path
 
 ## Usage
 

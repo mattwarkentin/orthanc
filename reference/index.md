@@ -25,9 +25,9 @@
 - [`Job`](https://mattwarkentin.github.io/orthanc/reference/Job.md) :
   Job class to follow a Job in Orthanc
 - [`Modality`](https://mattwarkentin.github.io/orthanc/reference/Modality.md)
-  : Wrapper around Orthanc API when dealing with a modality.
+  : Wrapper around Orthanc API when dealing with a modality
 - [`RemoteModality`](https://mattwarkentin.github.io/orthanc/reference/RemoteModality.md)
-  : Wrapper around Orthanc API when dealing with a modality.
+  : Wrapper around Orthanc API when dealing with a modality
 
 ## Utilities
 
@@ -44,4 +44,4 @@
 - [`find_and_filter_patients()`](https://mattwarkentin.github.io/orthanc/reference/find_and_filter_patients.md)
   : Find and filter patients using predicate functions
 - [`retrieve_and_write_patients()`](https://mattwarkentin.github.io/orthanc/reference/retrieve_and_write_patients.md)
-  : Retrieve and write patients to a given path
+  : Retrieve and write patients to a path

@@ -1,6 +1,6 @@
 # DICOM Resource Class
 
-An abstract class for a DICOM Resource in the Orthanc API Client.
+An abstract class for a DICOM Resource
 
 ## Value
 

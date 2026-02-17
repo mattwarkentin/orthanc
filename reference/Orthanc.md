@@ -644,6 +644,8 @@ An `Orthanc` instance.
 
 - [`Orthanc$put_tools_unknown_sop_class_accepted()`](#method-Orthanc-put_tools_unknown_sop_class_accepted)
 
+- [`Orthanc$clone()`](#method-Orthanc-clone)
+
 ------------------------------------------------------------------------
 
 ### Method `new()`
@@ -12410,3 +12412,19 @@ Request body: `1` if accepted, `0` if not accepted (text/plain).
 #### Returns
 
 Nothing, invisibly.
+
+------------------------------------------------------------------------
+
+### Method `clone()`
+
+The objects of this class are cloneable with this method.
+
+#### Usage
+
+    Orthanc$clone(deep = FALSE)
+
+#### Arguments
+
+- `deep`:
+
+  Whether to make a deep clone.
