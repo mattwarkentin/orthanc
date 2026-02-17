@@ -26,7 +26,7 @@
 #'
 #' find_and_filter_patients(
 #'   client = client,
-#'   series_filter = \(serie) serie$modality == "CT"
+#'   series_filter = \(series) series$modality == "CT"
 #' )
 find_and_filter_patients <- function(
   client,

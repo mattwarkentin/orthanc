@@ -2,11 +2,11 @@
 % Please edit documentation in R/Modality.R
 \name{Modality}
 \alias{Modality}
-\title{Wrapper around Orthanc API when dealing with a modality.}
+\title{Wrapper around Orthanc API when dealing with a modality}
 \description{
-Wrapper around Orthanc API when dealing with a modality.
+Wrapper around Orthanc API when dealing with a modality
 
-Wrapper around Orthanc API when dealing with a modality.
+Wrapper around Orthanc API when dealing with a modality
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

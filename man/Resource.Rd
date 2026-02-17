@@ -7,7 +7,7 @@
 An R6 instance of class \code{"Resource"}.
 }
 \description{
-An abstract class for a DICOM Resource in the Orthanc API Client.
+An abstract class for a DICOM Resource
 }
 \section{Active bindings}{
 \if{html}{\out{<div class="r6-active-bindings">}}

@@ -1,4 +1,4 @@
-#' Wrapper around Orthanc API when dealing with a modality.
+#' Wrapper around Orthanc API when dealing with a modality
 #'
 #' @export
 Modality <-

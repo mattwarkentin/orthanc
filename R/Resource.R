@@ -2,7 +2,7 @@
 #'
 #' @description
 #'
-#' An abstract class for a DICOM Resource in the Orthanc API Client.
+#' An abstract class for a DICOM Resource
 #'
 #' @return An R6 instance of class `"Resource"`.
 #'
