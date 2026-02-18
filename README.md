@@ -8,21 +8,42 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![R-CMD-check](https://github.com/mattwarkentin/orthanc/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mattwarkentin/orthanc/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of `orthanc` is to provide programmatic access to the
-[Orthanc](https://orthanc.uclouvain.be) DICOM Server REST API for the R
-language.
+`orthanc` is an R package that provides a programmatic interface to
+[Orthanc](https://orthanc.uclouvain.be) DICOM Servers to support medical
+imaging workflows for the R language. Inspired by the design and
+usability of the [`PyOrthanc`](https://github.com/gacou54/pyorthanc)
+Python package, `orthanc` enables R users to interact with Orthanc
+servers using familiar R paradigms.
+
+The package provides comprehensive and user-friendly access to the
+Orthanc REST API, designed to align with idiomatic R workflows while
+preserving the structure and semantics of DICOM resources.
+
+`orthanc` provides:
+
+- Comprehensive wrapping of the Orthanc REST API endpoints using
+  [`httr2`](https://httr2.r-lib.org)
+
+- Asynchronous client support using [`mirai`](https://mirai.r-lib.org)
+
+- Object-oriented representations of hierarchical DICOM resources using
+  [`R6`](https://r6.r-lib.org)
+
+- High-level utility functions for performing common DICOM operations
+  including querying, filtering, managing, modifying, and exporting
+  DICOM data
 
 ## Installation
 
 You can install the development version of `orthanc` from
-[GitHub](https://github.com/) with:
+[GitHub](https://github.com/mattwarkentin/orthanc) with:
 
 ``` r
 # install.packages("pak")
 pak::pak("mattwarkentin/orthanc")
 ```
 
-## Usage
+## Basic Usage
 
 ``` r
 library(orthanc)
@@ -75,6 +96,14 @@ instance$main_dicom_tags
 #> 
 #>  [ reached 'max' / getOption("max.print") -- omitted 2 entries ]
 ```
+
+## Acknowledgements
+
+I gratefully acknowledge the authors and maintainers of Orthanc for
+developing and maintaining an open-source, standards-compliant DICOM
+server that has become an essential tool in medical imaging research. I
+also thank the authors and contributors of `PyOrthanc`, whose work
+provided important conceptual and design inspiration for this package.
 
 ## Code of Conduct
 
