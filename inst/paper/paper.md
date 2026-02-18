@@ -125,8 +125,8 @@ In summary, `orthanc` fills a critical gap in the R ecosystem by providing a rob
 
 # Acknowledgements
 
-We gratefully acknowledge the authors and maintainers of Orthanc for developing and maintaining an open-source, standards-compliant DICOM server that has become an essential tool in medical imaging research. Orthanc’s thoughtful design, comprehensive REST API, and commitment to openness have made it possible for researchers to build reproducible and extensible imaging workflows across institutions and disciplines. The continued development of open-source infrastructure is foundational to collaborative, transparent, and reproducible research in medical imaging.
+I gratefully acknowledge the authors and maintainers of Orthanc for developing and maintaining an open-source, standards-compliant DICOM server that has become an essential tool in medical imaging research. Orthanc’s thoughtful design, comprehensive REST API, and commitment to openness have made it possible for researchers to build reproducible and extensible imaging workflows across institutions and disciplines. The continued development of open-source infrastructure is foundational to collaborative, transparent, and reproducible research in medical imaging.
 
-We also thank the authors and contributors of PyOrthanc, whose work provided important conceptual and design inspiration for this package. Their efforts in creating a clear and accessible programmatic interface to Orthanc in the Python ecosystem helped inform the structure and usability goals of the `orthanc` R package.
+I also thank the authors and contributors of PyOrthanc, whose work provided important conceptual and design inspiration for this package. Their efforts in creating a clear and accessible programmatic interface to Orthanc in the Python ecosystem helped inform the structure and usability goals of the `orthanc` R package.
 
 # References
