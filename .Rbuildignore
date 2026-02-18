@@ -1,6 +1,12 @@
 ^README\.Rmd$
+^\.git$
 ^\.github$
+^\.gitignore$
 ^LICENSE\.md$
 ^_pkgdown\.yml$
 ^docs$
+^\.DS_Store
 ^pkgdown$
+^paper\.md$
+^paper\.bib$
+^paper\.pdf$
