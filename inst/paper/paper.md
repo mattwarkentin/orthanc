@@ -106,7 +106,7 @@ Binary handling is abstracted so users can focus on analysis rather than low-lev
 
 To support high-throughput imaging workflows, `orthanc` integrates asynchronous execution via the `mirai` R package [@mirai]. This enables non-blocking API requests and concurrent operations across multiple Orthanc resources, which is particularly valuable when querying large cohorts, uploading or retrieveing many DICOM resources, or performing repeated metadata lookups. By allowing requests to be dispatched and resolved in parallel using background R processes, the package improves responsiveness and overall throughput in data-intensive research settings.
 
-The `mirai` framework is built on top of `nanonext` [@nanonext], an R interface to the NanoMsg Next Generation (NNG) messaging library. This architecture provides a lightweight, high-performance, message-passing infrastructure that supports scalable parallel computation with minimal overhead. By leveraging `mirai` and its NNG-based backend, `orthanc` offers a robust and efficient asynchronous client model that scales from local multicore environments to distributed systems, while maintaining a simple and idiomatic R interface. 
+The `mirai` framework is built on top of `nanonext` [@nanonext], an R interface to the Nanomsg Next Generation (NNG) messaging library. This architecture provides a lightweight, high-performance, message-passing infrastructure that supports scalable parallel computation with minimal overhead. By leveraging `mirai` and its NNG-based backend, `orthanc` offers a robust and efficient asynchronous client model that scales from local multicore environments to distributed systems, while maintaining a simple and idiomatic R interface. 
 
 ## Integration with the R Ecosystem
 
