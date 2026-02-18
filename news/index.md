@@ -1,5 +1,5 @@
 # Changelog
 
-## orthanc 0.0.0.9000
+## orthanc 0.0.1
 
 - Initial package development.
