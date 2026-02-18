@@ -1,11 +1,11 @@
 ---
-title: 'orthanc: An R Interface for Orthanc DICOM Servers'
+title: 'orthanc: An R Interface to Orthanc DICOM Servers for Medical Imaging Workflows'
 tags:
 - R
 - Orthanc
 - Medical physics
 - Medical imaging
-date: "4 February 2026"
+date: "18 February 2026"
 authors:
 - name: Matthew T. Warkentin
   corresponding: true
@@ -26,7 +26,7 @@ Over the past decade, there has been an explosion in the volume of medical imagi
 
 Orthanc is a lightweight, open-source DICOM server that exposes a comprehensive REST API for managing, querying, retrieving, and modifying DICOM resources [@jodogne2018orthanc]. It is widely adopted in research settings due to its ease of deployment, extensibility, and compliance with DICOM standards. While Orthanc provides a powerful HTTP-based interface, interacting with its REST API directly requires manual construction of requests, careful handling of authentication and responses, and detailed knowledge of Orthanc’s resource hierarchy.
 
-The `orthanc` R package provides a high-level, idiomatic interface to the Orthanc REST API for the R language [@orthanc]. Inspired by the design and usability of the PyOrthanc Python package [@couture2025pyorthanc], `orthanc` enables R users to interact programmatically with Orthanc servers using familiar R paradigms. The package abstracts HTTP details, models DICOM resources as structured R objects, and supports reproducible workflows for querying, retrieving, filtering, and managing imaging data. By bridging Orthanc and R ecosystems, `orthanc` facilitates imaging-based research, statistical analysis, and AI development within a unified environment.
+The `orthanc` R package provides a high-level, idiomatic interface to the Orthanc REST API for the R language [@orthanc]. Inspired by the design and usability of the `PyOrthanc` Python package [@couture2025pyorthanc], `orthanc` enables R users to interact programmatically with Orthanc servers using familiar R paradigms. The package abstracts HTTP details, models DICOM resources as structured R objects, and supports reproducible workflows for querying, retrieving, filtering, and managing imaging data. By bridging Orthanc and R ecosystems, `orthanc` facilitates imaging-based research, statistical analysis, and AI development within a unified environment.
 
 # Statement of Need
 
@@ -46,7 +46,7 @@ Despite its strengths, interacting directly with the Orthanc REST API presents s
 
 4. Reproducibility and abstraction: Embedding raw HTTP calls within analytical scripts can reduce clarity and hinder maintainability.
 
-In the Python ecosystem, packages such as PyOrthanc provide higher-level abstractions that simplify these interactions. However, the R ecosystem has lacked a comparable, dedicated interface to Orthanc. The `orthanc` R package has been designed with the goal of achieving feature parity with PyOrthanc, providing comparable resource abstractions, querying capabilities, and server interactions so that R users can access a similarly complete and expressive interface to the Orthanc REST API.
+In the Python ecosystem, packages such as `PyOrthanc` provide higher-level abstractions that simplify these interactions. However, the R ecosystem has lacked a comparable, dedicated interface to Orthanc. The `orthanc` R package has been designed with the goal of achieving feature parity with `PyOrthanc`, providing comparable resource abstractions, querying capabilities, and server interactions so that R users can access a similarly complete and expressive interface to the Orthanc REST API.
 
 Without a dedicated interface, R users must either rely on _ad hoc_ HTTP code, external scripts in other languages, or manual exports from Orthanc, introducing inefficiencies and potential reproducibility issues. The `orthanc` package addresses this gap by providing an R-native, object-oriented interface to the Orthanc REST API. It enables researchers to remain within the R environment for the entire imaging workflow: from data discovery and retrieval to downstream statistical analysis and AI model development. By reducing boilerplate HTTP code and encapsulating Orthanc’s resource model in intuitive R classes and functions, `orthanc` lowers the barrier to entry and promotes reproducible imaging research.
 
@@ -127,6 +127,6 @@ In summary, `orthanc` fills a critical gap in the R ecosystem by providing a rob
 
 I gratefully acknowledge the authors and maintainers of Orthanc for developing and maintaining an open-source, standards-compliant DICOM server that has become an essential tool in medical imaging research. Orthanc’s thoughtful design, comprehensive REST API, and commitment to openness have made it possible for researchers to build reproducible and extensible imaging workflows across institutions and disciplines. The continued development of open-source infrastructure is foundational to collaborative, transparent, and reproducible research in medical imaging.
 
-I also thank the authors and contributors of PyOrthanc, whose work provided important conceptual and design inspiration for this package. Their efforts in creating a clear and accessible programmatic interface to Orthanc in the Python ecosystem helped inform the structure and usability goals of the `orthanc` R package.
+I also thank the authors and contributors of `PyOrthanc`, whose work provided important conceptual and design inspiration for this package. Their efforts in creating a clear and accessible programmatic interface to Orthanc in the Python ecosystem helped inform the structure and usability goals of the `orthanc` R package.
 
 # References
