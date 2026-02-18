@@ -82,27 +82,10 @@ tags.</p></dd>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">client</span> <span class="op">&lt;-</span> <span class="va"><a href="Orthanc.html">Orthanc</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="st">"https://orthanc.uclouvain.be/demo"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">find_instances</span><span class="op">(</span><span class="va">client</span>, query <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>BodyPartExamined <span class="op">=</span> <span class="st">'CHEST'</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[1]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;Instance: 001a7d82-54008387-7b23ad57-8fb6202a-6d3b305b&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[2]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;Instance: 005f747f-edbb7c3a-9174bcfa-5591350a-0866aa35&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[3]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;Instance: 0092ce4b-9d4b0966-f5fd8c6a-beb6daa7-2e6bcda9&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[4]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;Instance: 00cc35c5-f7e8bbe1-aa784413-87e00620-001104cc&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[5]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;Instance: 02184370-1bdd3c2e-5d14690c-4f7d6173-62c47724&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[6]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;Instance: 025c7cfa-28037c29-f7028d01-527ddac5-a7cc5bf8&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[7]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;Instance: 0363a0de-f443d8f8-1a9790fe-d79740f2-00c0724e&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[8]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;Instance: 079d5889-85cb07a3-d3608b8c-d5863ea4-39bdcd37&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[9]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;Instance: 08575e68-7d723709-c4590d0c-950bb164-096f8585&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [[10]]</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;Instance: 085f66d7-b3cdc15a-c3a14f4c-8cc4d611-e2086505&gt;</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [ reached 'max' / getOption("max.print") -- omitted 414 entries ]</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in httr2::req_perform(req):</span> Failed to perform HTTP request.</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="font-weight: bold;">Caused by error in `curl::curl_fetch_memory()`:</span></span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">!</span> Timeout was reached [orthanc.uclouvain.be]:</span>
+<span class="r-err co"><span class="r-pr">#&gt;</span> Failed to connect to orthanc.uclouvain.be port 443 after 10002 ms: Timeout was reached</span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

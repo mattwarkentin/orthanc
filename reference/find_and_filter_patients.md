@@ -65,16 +65,8 @@ find_and_filter_patients(
   client = client,
   series_filter = \(series) series$modality == "CT"
 )
-#> [[1]]
-#> <Patient: 0946fcb6-cf12ab43-bad958c1-bf057ad5-0fc6f54c>
-#> [[2]]
-#> <Patient: 2f74083e-9b042648-10edac14-b26950f8-f82ec3a0>
-#> [[3]]
-#> <Patient: 46e6332c-677825b6-202fcf7c-f787bc5f-7b07c382>
-#> [[4]]
-#> <Patient: 65ce8003-696b2eb6-03adeee7-6561ce8e-3e03f13a>
-#> [[5]]
-#> <Patient: a8d72883-45661eab-168bafbf-d799b4dc-4fc83a26>
-#> [[6]]
-#> <Patient: da39a3ee-5e6b4b0d-3255bfef-95601890-afd80709>
+#> Error in httr2::req_perform(req): Failed to perform HTTP request.
+#> Caused by error in `curl::curl_fetch_memory()`:
+#> ! Timeout was reached [orthanc.uclouvain.be]:
+#> Failed to connect to orthanc.uclouvain.be port 443 after 10000 ms: Timeout was reached
 ```
