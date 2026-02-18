@@ -8,8 +8,9 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 [![R-CMD-check](https://github.com/mattwarkentin/orthanc/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mattwarkentin/orthanc/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-The goal of `orthanc` is to provide programmatic access to the Orthanc
-DICOM Server REST API for the R language.
+The goal of `orthanc` is to provide programmatic access to the
+[Orthanc](https://orthanc.uclouvain.be) DICOM Server REST API for the R
+language.
 
 ## Installation
 
@@ -74,3 +75,10 @@ instance$main_dicom_tags
 #> 
 #>  [ reached 'max' / getOption("max.print") -- omitted 2 entries ]
 ```
+
+## Code of Conduct
+
+Please note that the orthanc project is released with a [Contributor
+Code of
+Conduct](https://mattwarkentin.github.io/orthanc/CODE_OF_CONDUCT.html).
+By contributing to this project, you agree to abide by its terms.
