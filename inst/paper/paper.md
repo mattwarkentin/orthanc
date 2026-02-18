@@ -119,6 +119,8 @@ By operating natively in R, `orthanc` enables seamless integration with:
 
 This integration is particularly valuable for imaging-based AI workflows, where DICOM metadata and derived features must be linked to clinical outcomes and analyzed statistically.
 
+# Conclusion
+
 In summary, `orthanc` fills a critical gap in the R ecosystem by providing a robust, high-level interface to the Orthanc DICOM server. As medical imaging continues to drive innovation in AI and quantitative research, accessible and reproducible tools for managing DICOM data are essential. By simplifying interaction with Orthanc and embedding imaging workflows directly within R, `orthanc` supports the growing community of researchers working at the intersection of imaging, statistics, and data science.
 
 # Acknowledgements
