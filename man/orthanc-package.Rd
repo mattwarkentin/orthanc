@@ -8,7 +8,7 @@
 \description{
 \if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-An R Interface to 'Orthanc' DICOM servers for medical imaging workflows. 'Orthanc' is a lightweight, open-source DICOM server that exposes a comprehensive REST API for managing, querying, retrieving, and modifying DICOM resources (https://www.orthanc-server.com). The goal of this package is to provide comprehensive and user-friendly access to the 'Orthanc' REST API, designed to align with idiomatic R workflows while preserving the structure and semantics of DICOM resources.
+An R Interface to 'Orthanc' DICOM servers for medical imaging workflows. 'Orthanc' is a lightweight, open-source DICOM server that exposes a comprehensive REST API for managing, querying, retrieving, and modifying DICOM resources (\url{https://www.orthanc-server.com}). The goal of this package is to provide comprehensive and user-friendly access to the 'Orthanc' REST API, designed to align with idiomatic R workflows while preserving the structure and semantics of DICOM resources.
 }
 \seealso{
 Useful links:
