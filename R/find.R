@@ -145,6 +145,10 @@ find_instances <- function(
 #'
 #' @return A `list` of resources.
 #'
+#' @examples
+#' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
+#' query_orthanc(client, "Patient", list(PatientName = "HN_P001"))
+#'
 #' @export
 query_orthanc = function(
   client,

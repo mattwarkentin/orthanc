@@ -1,4 +1,6 @@
-#' Job class to follow a Job in Orthanc
+#' Job Class
+#'
+#' @description Job class to follow a Job in Orthanc
 #'
 #' @return An instance of `Job`.
 #'
@@ -13,6 +15,8 @@ Job <-
       #' @param id Job ID.
       #' @param client Orthanc API client.
       initialize = function(id, client) {
+        check_orthanc_client(client)
+        check_scalar_character(id)
         private$id <- id
         private$client <- client
       },
@@ -20,6 +24,7 @@ Job <-
       #' @description Stop execution until job is not Pending/Running.
       #' @param interval Time interval to check the job status, default is 2s.
       wait_until_completion = function(interval = 2L) {
+        check_scalar_integer(interval)
         while (self$state. %in% c(JobStates()$pending, JobStates()$running)) {
           Sys.sleep(interval)
         }

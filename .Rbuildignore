@@ -11,3 +11,4 @@
 ^paper\.bib$
 ^paper\.pdf$
 ^CODE_OF_CONDUCT\.md$
+^cran-comments\.md$

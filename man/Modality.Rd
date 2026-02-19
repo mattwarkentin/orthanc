@@ -2,17 +2,17 @@
 % Please edit documentation in R/Modality.R
 \name{Modality}
 \alias{Modality}
-\title{Wrapper around Orthanc API when dealing with a modality}
+\title{Modality Class}
+\value{
+An instance of \code{Modality}.
+}
 \description{
-Wrapper around Orthanc API when dealing with a modality
-
 Wrapper around Orthanc API when dealing with a modality
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
-\item{\code{modality}}{Modality.
-Create a new Modality instance.}
+\item{\code{modality}}{Modality.}
 }
 \if{html}{\out{</div>}}
 }
@@ -32,6 +32,7 @@ Create a new Modality instance.}
 \if{html}{\out{<a id="method-Modality-initalize"></a>}}
 \if{latex}{\out{\hypertarget{method-Modality-initalize}{}}}
 \subsection{Method \code{initalize()}}{
+Create a new Modality instance.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Modality$initalize(client, modality)}\if{html}{\out{</div>}}
 }
@@ -41,7 +42,7 @@ Create a new Modality instance.}
 \describe{
 \item{\code{client}}{Orthanc API client.}
 
-\item{\code{modality}}{Modality.}
+\item{\code{modality}}{Remote modality.}
 }
 \if{html}{\out{</div>}}
 }

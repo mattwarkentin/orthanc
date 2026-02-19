@@ -2,13 +2,11 @@
 % Please edit documentation in R/Job.R
 \name{Job}
 \alias{Job}
-\title{Job class to follow a Job in Orthanc}
+\title{Job Class}
 \value{
 An instance of \code{Job}.
 }
 \description{
-Job class to follow a Job in Orthanc
-
 Job class to follow a Job in Orthanc
 }
 \section{Active bindings}{

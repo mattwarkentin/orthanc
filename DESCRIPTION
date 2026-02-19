@@ -1,12 +1,16 @@
 Package: orthanc
-Title: Programmatic Interface to 'Orthanc' REST API
+Title: Programmatic Interface to 'Orthanc' DICOM Servers
 Version: 0.0.1
 Authors@R: 
-    person("Matthew T.", "Warkentin", , "matthew.warkentin@ucalgary.ca", role = c("aut", "cre"),
+    person("Matthew T.", "Warkentin", , "matthew.warkentin@ucalgary.ca", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-8730-3511"))
-Description: A programmatic interface to the 'Orthanc' (https://www.orthanc-server.com).
-  The primary goal of this package is to wrap the 'Orthanc' DICOM Server REST API
-  to provide 'Orthanc' users a programmatic interface for the R langauge.
+Description: An R Interface to 'Orthanc' DICOM servers for medical imaging workflows.
+    'Orthanc' is a lightweight, open-source DICOM server that exposes a comprehensive
+    REST API for managing, querying, retrieving, and modifying DICOM resources 
+    (https://www.orthanc-server.com). The goal of this package is to provide 
+    comprehensive and user-friendly access to the 'Orthanc' REST API, designed to 
+    align with idiomatic R workflows while preserving the structure and semantics
+    of DICOM resources.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

@@ -2,11 +2,12 @@
 % Please edit documentation in R/Modality.R
 \name{RemoteModality}
 \alias{RemoteModality}
-\title{Wrapper around Orthanc API when dealing with a modality}
+\title{Remote Modality Class}
+\value{
+An instance of \code{RemoteModality}.
+}
 \description{
-Wrapper around Orthanc API when dealing with a modality
-
-Wrapper around Orthanc API when dealing with a modality
+Wrapper around Orthanc API when dealing with a remote modality
 }
 \section{Super class}{
 \code{\link[orthanc:Modality]{orthanc::Modality}} -> \code{RemoteModality}

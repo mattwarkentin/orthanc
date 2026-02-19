@@ -1,4 +1,8 @@
-#' Wrapper around Orthanc API when dealing with a modality
+#' Modality Class
+#'
+#' @description Wrapper around Orthanc API when dealing with a modality
+#'
+#' @return An instance of `Modality`.
 #'
 #' @export
 Modality <-
@@ -10,10 +14,12 @@ Modality <-
       #' @field modality Modality.
       modality = NULL,
 
-      #' Create a new Modality instance.
+      #' @description Create a new Modality instance.
       #' @param client Orthanc API client.
-      #' @param modality Modality.
+      #' @param modality Remote modality.
       initalize = function(client, modality) {
+        check_orthanc_client(client)
+        check_scalar_character(modality)
         private$client <- client
         self$modality <- modality
         self$query <- self$find
@@ -97,7 +103,12 @@ Modality <-
     )
   )
 
-#' @inherit Modality
+#' Remote Modality Class
+#'
+#' @description Wrapper around Orthanc API when dealing with a remote modality
+#'
+#' @return An instance of `RemoteModality`.
+#'
 #' @export
 RemoteModality <-
   R6::R6Class(
