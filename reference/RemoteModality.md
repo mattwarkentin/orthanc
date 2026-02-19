@@ -1,8 +1,10 @@
-# Wrapper around Orthanc API when dealing with a modality
+# Remote Modality Class
 
-Wrapper around Orthanc API when dealing with a modality
+Wrapper around Orthanc API when dealing with a remote modality
 
-Wrapper around Orthanc API when dealing with a modality
+## Value
+
+An instance of `RemoteModality`.
 
 ## Super class
 

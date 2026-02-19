@@ -23,11 +23,11 @@
 ## Other Classes
 
 - [`Job`](https://mattwarkentin.github.io/orthanc/reference/Job.md) :
-  Job class to follow a Job in Orthanc
+  Job Class
 - [`Modality`](https://mattwarkentin.github.io/orthanc/reference/Modality.md)
-  : Wrapper around Orthanc API when dealing with a modality
+  : Modality Class
 - [`RemoteModality`](https://mattwarkentin.github.io/orthanc/reference/RemoteModality.md)
-  : Wrapper around Orthanc API when dealing with a modality
+  : Remote Modality Class
 
 ## Utilities
 

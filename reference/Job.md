@@ -1,6 +1,4 @@
-# Job class to follow a Job in Orthanc
-
-Job class to follow a Job in Orthanc
+# Job Class
 
 Job class to follow a Job in Orthanc
 

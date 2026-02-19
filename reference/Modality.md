@@ -1,14 +1,16 @@
-# Wrapper around Orthanc API when dealing with a modality
+# Modality Class
 
 Wrapper around Orthanc API when dealing with a modality
 
-Wrapper around Orthanc API when dealing with a modality
+## Value
+
+An instance of `Modality`.
 
 ## Public fields
 
 - `modality`:
 
-  Modality. Create a new Modality instance.
+  Modality.
 
 ## Methods
 
@@ -32,6 +34,8 @@ Wrapper around Orthanc API when dealing with a modality
 
 ### Method `initalize()`
 
+Create a new Modality instance.
+
 #### Usage
 
     Modality$initalize(client, modality)
@@ -44,7 +48,7 @@ Wrapper around Orthanc API when dealing with a modality
 
 - `modality`:
 
-  Modality.
+  Remote modality.
 
 ------------------------------------------------------------------------
 
