@@ -4,22 +4,26 @@
 \alias{retrieve_and_write_patients}
 \title{Retrieve and write patients to a path}
 \usage{
-retrieve_and_write_patients(patients, path, progress = FALSE)
+retrieve_and_write_patients(patients, path, progress = rlang::is_interactive())
 }
 \arguments{
 \item{patients}{List of \link{Patient}s}
 
 \item{path}{Path where you want to write the patients (files).}
 
-\item{progress}{Whether to show a progress bar. Use \code{TRUE} to turn on
-a basic progress bar, use a string to give it a name, or see
-\link[purrr]{progress_bars} for more details.}
+\item{progress}{Whether to show progress bars. By default, progress bars are
+enabled in interactive sessions (i.e., if \code{rlang::is_interactive()}
+returns \code{TRUE}).}
 }
 \value{
 Nothing, invisibly.
 }
 \description{
-Retrieve and write patients to a path
+Retrieve the DICOM file contents for a list of \link{Patient}s and write them
+to a \code{path} on disk. DICOM files are saved to disk in a directory structure
+of \code{Patient -> Study -> Series -> File}. If \code{\link[mirai:daemons]{mirai::daemons()}} has
+been used to set persistent background processes, this function will write
+patients to disk in parallel using all available processes.
 }
 \examples{
 \dontrun{

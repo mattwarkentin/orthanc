@@ -1,6 +1,6 @@
 Package: orthanc
 Title: Programmatic Interface to 'Orthanc' DICOM Servers
-Version: 0.0.1
+Version: 0.1.0
 Authors@R: 
     person("Matthew T.", "Warkentin", , "matthew.warkentin@ucalgary.ca", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0000-0001-8730-3511"))
@@ -18,13 +18,14 @@ RoxygenNote: 7.3.3.9000
 Depends:
     R (>= 4.1.0)
 Imports: 
+    carrier (>= 0.3.0),
     digest,
     glue,
     fs,
     httr2,
     jsonlite,
-    mirai,
-    purrr,
+    mirai (>= 2.5.1),
+    purrr (>= 1.1.0),
     R6,
     rlang
 URL: https://github.com/mattwarkentin/orthanc, https://mattwarkentin.github.io/orthanc/

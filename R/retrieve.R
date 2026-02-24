@@ -1,9 +1,16 @@
 #' Retrieve and write patients to a path
 #'
-#' @param patients List of \link{Patient}s
-#' @param path Path where you want to write the patients (files).
+#' Retrieve the DICOM file contents for a list of [Patient]s and write them
+#'   to a `path` on disk. DICOM files are saved to disk in a directory structure
+#'   of `Patient -> Study -> Series -> File`. If [mirai::daemons()] has
+#'   been used to set persistent background processes, this function will write
+#'   patients to disk in parallel using all available processes.
 #'
-#' @inheritParams purrr::walk
+#' @param patients List of [Patient]s
+#' @param path Path where you want to write the patients (files).
+#' @param progress Whether to show progress bars. By default, progress bars are
+#'   enabled in interactive sessions (i.e., if `rlang::is_interactive()`
+#'   returns `TRUE`).
 #'
 #' @return Nothing, invisibly.
 #'
@@ -17,7 +24,11 @@
 #'
 #' retrieve_and_write_patients(patients, tempdir())
 #' }
-retrieve_and_write_patients = function(patients, path, progress = FALSE) {
+retrieve_and_write_patients = function(
+  patients,
+  path,
+  progress = rlang::is_interactive()
+) {
   check_list(patients)
   check_scalar_character(path)
   check_scalar_logical(progress)
@@ -26,9 +37,16 @@ retrieve_and_write_patients = function(patients, path, progress = FALSE) {
     rlang::abort("`path` does not exist.")
   }
   purrr::walk(
-    patients,
-    \(x) retrieve_and_write_patient(x, path),
-    .progress = progress
+    .x = patients,
+    .f = purrr::in_parallel(
+      .f = \(x) retrieve_and_write_patient(x, path),
+      path = path,
+      retrieve_and_write_patient = retrieve_and_write_patient,
+      retrieve_and_write_study = retrieve_and_write_study,
+      retrieve_and_write_series = retrieve_and_write_series,
+      retrieve_and_write_instance = retrieve_and_write_instance
+    ),
+    .progress = ifelse(progress, "Exporting Patients", FALSE)
   )
   invisible()
 }

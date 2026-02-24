@@ -12,7 +12,7 @@
 #' @return An `OrthancAsync` instance.
 #'
 #' @details
-#' See \link{Orthanc} for more information.
+#' See [Orthanc] for more information.
 #'
 #' @importFrom mirai mirai
 #'

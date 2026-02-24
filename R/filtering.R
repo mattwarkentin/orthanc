@@ -3,13 +3,18 @@
 #' Find desired Patient/Study/Series/Instance in an Orthanc server. Predicate
 #'   functions (filters) take a single Patient/Study/Series/Instance as the
 #'   first argument and return a single `TRUE` or `FALSE` for whether the
-#'   resource should be kept or discarded, respectively.
+#'   resource should be kept or discarded, respectively. If [mirai::daemons()]
+#'   has been used to set persistent background processes, this function will
+#'   apply filters in parallel using all available processes.
 #'
 #' @param client Orthanc client.
-#' @param patient_filter Predicate function to filter \link{Patient}s.
-#' @param study_filter Predicate function to filter \link{Study}s.
-#' @param series_filter Predicate function to filer \link{Series}.
-#' @param instance_filter Predicate function to filter \link{Instance}s.
+#' @param patient_filter Predicate function to filter [Patient]s.
+#' @param study_filter Predicate function to filter [Study]s.
+#' @param series_filter Predicate function to filer [Series].
+#' @param instance_filter Predicate function to filter [Instance]s.
+#' @param progress Whether to show progress bars. By default, progress bars are
+#'   enabled in interactive sessions (i.e., if `rlang::is_interactive()`
+#'   returns `TRUE`).
 #'
 #' @details
 #' This function builds a series of tree structures. Each tree corresponds to a
@@ -17,7 +22,9 @@
 #'
 #'   `Patient -> Studies -> Series -> Instances`
 #'
-#' @return A `list` of filtered \link{Patient}s.
+#' @return A `list` of filtered [Patient]s.
+#'
+#' @import carrier
 #'
 #' @export
 #'
@@ -33,17 +40,31 @@ find_and_filter_patients <- function(
   patient_filter = NULL,
   study_filter = NULL,
   series_filter = NULL,
-  instance_filter = NULL
+  instance_filter = NULL,
+  progress = rlang::is_interactive()
 ) {
   check_orthanc_client(client)
+  check_scalar_logical(progress)
 
-  patients <- purrr::map(client$get_patients(), \(x) {
-    Patient$new(x, client, TRUE)
-  })
+  patients <- purrr::map(
+    client$get_patients(),
+    \(x) {
+      Patient$new(x, client, TRUE)
+    },
+    .progress = ifelse(progress, "Getting Patients", FALSE)
+  )
 
   if (!rlang::is_null(patient_filter)) {
     check_function(patient_filter)
-    patients <- purrr::keep(patients, patient_filter)
+    patients_to_keep <- purrr::map_lgl(
+      .x = patients,
+      .f = purrr::in_parallel(
+        .f = \(patient) patient_filter(patient),
+        patient_filter = patient_filter
+      ),
+      .progress = ifelse(progress, "Filtering Patients", FALSE)
+    )
+    patients <- patients[patients_to_keep]
   }
 
   for (patient in patients) {
@@ -51,7 +72,8 @@ find_and_filter_patients <- function(
       check_function(study_filter)
       resources <- purrr::keep(
         .x = patient$studies,
-        .p = study_filter
+        .p = study_filter,
+        .progress = ifelse(progress, "Filtering Studies", FALSE)
       )
       patient$set_child_resources(resources)
     }
@@ -61,7 +83,8 @@ find_and_filter_patients <- function(
         check_function(series_filter)
         resources <- purrr::keep(
           .x = study$series,
-          .p = series_filter
+          .p = series_filter,
+          .progress = ifelse(progress, "Filtering Series", FALSE)
         )
         study$set_child_resources(resources)
       }
@@ -71,7 +94,8 @@ find_and_filter_patients <- function(
           check_function(instance_filter)
           resources <- purrr::keep(
             .x = series$instances,
-            .p = instance_filter
+            .p = instance_filter,
+            .progress = ifelse(progress, "Filtering Instances", FALSE)
           )
           series$set_child_resources(resources)
         }
@@ -79,11 +103,16 @@ find_and_filter_patients <- function(
     }
   }
 
-  trim_patients(patients)
+  trim_patients(patients, progress)
 }
 
-trim_patients <- function(patients) {
-  purrr::walk(patients, \(pt) pt$remove_empty_studies())
-  patients <- purrr::discard(patients, \(pt) is_empty_list(pt$studies))
-  patients
+trim_patients <- function(patients, progress) {
+  purrr::discard(
+    .x = patients,
+    .p = \(pt) {
+      pt$remove_empty_studies()
+      is_empty_list(pt)
+    },
+    .progress = ifelse(progress, "Trimming Patients", FALSE)
+  )
 }

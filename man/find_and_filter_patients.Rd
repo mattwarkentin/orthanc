@@ -9,7 +9,8 @@ find_and_filter_patients(
   patient_filter = NULL,
   study_filter = NULL,
   series_filter = NULL,
-  instance_filter = NULL
+  instance_filter = NULL,
+  progress = rlang::is_interactive()
 )
 }
 \arguments{
@@ -22,6 +23,10 @@ find_and_filter_patients(
 \item{series_filter}{Predicate function to filer \link{Series}.}
 
 \item{instance_filter}{Predicate function to filter \link{Instance}s.}
+
+\item{progress}{Whether to show progress bars. By default, progress bars are
+enabled in interactive sessions (i.e., if \code{rlang::is_interactive()}
+returns \code{TRUE}).}
 }
 \value{
 A \code{list} of filtered \link{Patient}s.
@@ -30,7 +35,9 @@ A \code{list} of filtered \link{Patient}s.
 Find desired Patient/Study/Series/Instance in an Orthanc server. Predicate
 functions (filters) take a single Patient/Study/Series/Instance as the
 first argument and return a single \code{TRUE} or \code{FALSE} for whether the
-resource should be kept or discarded, respectively.
+resource should be kept or discarded, respectively. If \code{\link[mirai:daemons]{mirai::daemons()}}
+has been used to set persistent background processes, this function will
+apply filters in parallel using all available processes.
 }
 \details{
 This function builds a series of tree structures. Each tree corresponds to a

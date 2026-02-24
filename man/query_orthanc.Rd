@@ -51,5 +51,4 @@ Query data in the Orthanc server
 \examples{
 client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 query_orthanc(client, "Patient", list(PatientName = "HN_P001"))
-
 }
