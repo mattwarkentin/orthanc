@@ -7,13 +7,12 @@
 #' @param labels_constraint Contraint on the labels ('All', 'Any', 'None').
 #' @param ... Additional arguments passed to `query_orthanc`.
 #'
-#' @return A `list` of \link{Patient} objects.
+#' @return A `list` of [Patient] objects.
 #'
 #' @export
 #'
 #' @examples
 #' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
-#'
 #' find_patients(client, query = list(PatientName = "HN_P001"))
 find_patients <- function(
   client,
@@ -37,13 +36,12 @@ find_patients <- function(
 #'
 #' @inheritParams find_patients
 #'
-#' @return A `list` of \link{Study} objects.
+#' @return A `list` of [Study] objects.
 #'
 #' @export
 #'
 #' @examples
 #' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
-#'
 #' find_studies(client, query = list(StudyDescription = "RT^HEAD_NECK (Adult)"))
 find_studies <- function(
   client,
@@ -67,13 +65,12 @@ find_studies <- function(
 #'
 #' @inheritParams find_patients
 #'
-#' @return A `list` of \link{Series} objects.
+#' @return A `list` of [Series] objects.
 #'
 #' @export
 #'
 #' @examples
 #' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
-#'
 #' find_series(client, query = list(SeriesDescription = "HEAD/NECK  2.0  B30s"))
 find_series <- function(
   client,
@@ -97,15 +94,16 @@ find_series <- function(
 #'
 #' @inheritParams find_patients
 #'
-#' @return A `list` of \link{Instance} objects.
+#' @return A `list` of [Instance] objects.
 #'
 #' @export
 #'
 #' @examples
-#' \dontshow{options(max.print = 10)}
 #' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
-#'
-#' find_instances(client, query = list(BodyPartExamined = 'CHEST'))
+#' find_instances(
+#'   client = client,
+#'   query = list(SOPInstanceUID = "1.3.6.1.4.1.14519.5.2.1.2193.7172.260209224923274040650639981398")
+#' )
 find_instances <- function(
   client,
   query = list(),
@@ -145,11 +143,11 @@ find_instances <- function(
 #'
 #' @return A `list` of resources.
 #'
+#' @export
+#'
 #' @examples
 #' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 #' query_orthanc(client, "Patient", list(PatientName = "HN_P001"))
-#'
-#' @export
 query_orthanc = function(
   client,
   level,
