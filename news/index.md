@@ -1,5 +1,5 @@
 # Changelog
 
-## orthanc 0.0.1
+## orthanc 0.1.0
 
-- Initial package development.
+- Initial public release.

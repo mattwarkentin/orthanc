@@ -46,7 +46,6 @@ objects.
 
 ``` r
 client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
-
 find_patients(client, query = list(PatientName = "HN_P001"))
 #> [[1]]
 #> <Patient: 65ce8003-696b2eb6-03adeee7-6561ce8e-3e03f13a>

@@ -4,7 +4,10 @@ Find desired Patient/Study/Series/Instance in an Orthanc server.
 Predicate functions (filters) take a single
 Patient/Study/Series/Instance as the first argument and return a single
 `TRUE` or `FALSE` for whether the resource should be kept or discarded,
-respectively.
+respectively. If
+[`mirai::daemons()`](https://mirai.r-lib.org/reference/daemons.html) has
+been used to set persistent background processes, this function will
+apply filters in parallel using all available processes.
 
 ## Usage
 
@@ -14,7 +17,8 @@ find_and_filter_patients(
   patient_filter = NULL,
   study_filter = NULL,
   series_filter = NULL,
-  instance_filter = NULL
+  instance_filter = NULL,
+  progress = rlang::is_interactive()
 )
 ```
 
@@ -43,6 +47,13 @@ find_and_filter_patients(
 
   Predicate function to filter
   [Instance](https://mattwarkentin.github.io/orthanc/reference/Instance.md)s.
+
+- progress:
+
+  Whether to show progress bars. By default, progress bars are enabled
+  in interactive sessions (i.e., if
+  [`rlang::is_interactive()`](https://rlang.r-lib.org/reference/is_interactive.html)
+  returns `TRUE`).
 
 ## Value
 

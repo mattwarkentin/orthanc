@@ -46,7 +46,6 @@ objects.
 
 ``` r
 client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
-
 find_studies(client, query = list(StudyDescription = "RT^HEAD_NECK (Adult)"))
 #> [[1]]
 #> <Study: 1c379a23-9fd28bba-02b60e5b-850ff34e-4349f09b>
