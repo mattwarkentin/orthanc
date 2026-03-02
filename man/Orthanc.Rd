@@ -30,7 +30,7 @@ The full documentation of the Orthanc API can be found here:
 \describe{
 \item{\code{url}}{URL for Orthanc REST API.}
 
-\item{\code{api_version}}{Orthanc API version.}
+\item{\code{api_version}}{Orthanc REST API version.}
 }
 \if{html}{\out{</div>}}
 }

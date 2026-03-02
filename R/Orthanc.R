@@ -28,7 +28,7 @@ Orthanc <-
       #' @field url URL for Orthanc REST API.
       url = NULL,
 
-      #' @field api_version Orthanc API version.
+      #' @field api_version Orthanc REST API version.
       api_version = "1.12.10",
 
       #' @description
