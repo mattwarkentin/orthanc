@@ -15,6 +15,8 @@ An abstract class for a DICOM Resource
 \item{\code{identifier}}{Orthanc identifier of the resource.}
 
 \item{\code{main_dicom_tags}}{Main DICOM tags for the resource.}
+
+\item{\code{is_locked}}{Get or set whether resource is locked.}
 }
 \if{html}{\out{</div>}}
 }
@@ -25,6 +27,7 @@ An abstract class for a DICOM Resource
 \item \href{#method-Resource-get_main_information}{\code{Resource$get_main_information()}}
 \item \href{#method-Resource-print}{\code{Resource$print()}}
 \item \href{#method-Resource-set_child_resources}{\code{Resource$set_child_resources()}}
+\item \href{#method-Resource-clone}{\code{Resource$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
@@ -92,6 +95,23 @@ Set child resources.
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{resources}}{List of resources.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Resource-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Resource-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Resource$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
 }
 \if{html}{\out{</div>}}
 }

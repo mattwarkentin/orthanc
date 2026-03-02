@@ -9,8 +9,6 @@
 #' @export
 Resource <- R6::R6Class(
   classname = "Resource",
-  portable = FALSE,
-  cloneable = FALSE,
   public = list(
     #' @description Create a new Resource.
     #' @param id Orthanc identifier of the resource.
@@ -37,7 +35,12 @@ Resource <- R6::R6Class(
     #' @description Print a `Resource` object.
     #' @param ... Not currently used.
     print = function(...) {
-      cat(glue::glue("<{private$resource_type}: {private$id}>"))
+      if (self$is_locked) {
+        lock_str <- " [locked]"
+      } else {
+        lock_str <- ""
+      }
+      cat(glue::glue("<{private$resource_type}: {private$id}{lock_str}>"))
     },
 
     #' @description Set child resources.
@@ -50,21 +53,6 @@ Resource <- R6::R6Class(
       rlang::abort("Can only set child resources if `lock_children` is `TRUE`.")
     }
   ),
-  active = list(
-    #' @field identifier Orthanc identifier of the resource.
-    identifier = function() {
-      private$id
-    },
-    #' @field main_dicom_tags Main DICOM tags for the resource.
-    main_dicom_tags = function() {
-      if (rlang::is_null(private$.main_dicom_tags)) {
-        private$.main_dicom_tags <- self$get_main_information()[[
-          "MainDicomTags"
-        ]]
-      }
-      private$.main_dicom_tags
-    }
-  ),
   private = list(
     resource_type = "Resource",
     id = NULL,
@@ -75,7 +63,15 @@ Resource <- R6::R6Class(
     get_main_dicom_tag_value = function(x) {
       self$main_dicom_tags[[x]]
     },
-    download_file = function(method, route, file, params = NULL) {
+    download_file_whole = function(content, file) {
+      file_con <- file(file, "wb")
+      on.exit({
+        close(file_con)
+      })
+      writeBin(as.raw(content), file_con)
+      invisible()
+    },
+    download_file_stream = function(method, route, file, params = NULL) {
       resp_con <- private$client$stream(method, route, params = params)
       file_con <- file(file, "wb")
       on.exit({
@@ -83,10 +79,34 @@ Resource <- R6::R6Class(
         close(file_con)
       })
       while (!httr2::resp_stream_is_complete(resp_con)) {
-        chunk <- httr2::resp_stream_raw(resp_con)
-        writeBin(chunk, file_con)
+        writeBin(httr2::resp_stream_raw(resp_con), file_con)
       }
       invisible()
+    }
+  ),
+  active = list(
+    #' @field identifier Orthanc identifier of the resource.
+    identifier = function() {
+      private$id
+    },
+
+    #' @field main_dicom_tags Main DICOM tags for the resource.
+    main_dicom_tags = function() {
+      if (rlang::is_null(private$.main_dicom_tags)) {
+        private$.main_dicom_tags <- self$get_main_information()[[
+          "MainDicomTags"
+        ]]
+      }
+      private$.main_dicom_tags
+    },
+
+    #' @field is_locked Get or set whether resource is locked.
+    is_locked = function(x) {
+      if (rlang::is_missing(x)) {
+        return(private$lock_children)
+      }
+      check_scalar_logical(x)
+      private$lock_children <- x
     }
   )
 )
