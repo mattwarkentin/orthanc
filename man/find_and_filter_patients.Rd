@@ -37,7 +37,7 @@ functions (filters) take a single Patient/Study/Series/Instance as the
 first argument and return a single \code{TRUE} or \code{FALSE} for whether the
 resource should be kept or discarded, respectively. If \code{\link[mirai:daemons]{mirai::daemons()}}
 has been used to set persistent background processes, this function will
-apply filters in parallel using all available processes.
+apply filters in parallel (over patients) using all available processes.
 }
 \details{
 This function builds a series of tree structures. Each tree corresponds to a

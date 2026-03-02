@@ -5,7 +5,7 @@
 #'   first argument and return a single `TRUE` or `FALSE` for whether the
 #'   resource should be kept or discarded, respectively. If [mirai::daemons()]
 #'   has been used to set persistent background processes, this function will
-#'   apply filters in parallel using all available processes.
+#'   apply filters in parallel (over patients) using all available processes.
 #'
 #' @param client Orthanc client.
 #' @param patient_filter Predicate function to filter [Patient]s.
@@ -65,43 +65,55 @@ find_and_filter_patients <- function(
       .progress = ifelse(progress, "Filtering Patients", FALSE)
     )
     patients <- patients[patients_to_keep]
+
+    if (is_empty_list(patients)) {
+      return(list())
+    }
   }
 
-  for (patient in patients) {
-    if (!rlang::is_null(study_filter)) {
-      check_function(study_filter)
-      resources <- purrr::keep(
-        .x = patient$studies,
-        .p = study_filter,
-        .progress = ifelse(progress, "Filtering Studies", FALSE)
-      )
-      patient$set_child_resources(resources)
-    }
-
-    for (study in patient$studies) {
-      if (!rlang::is_null(series_filter)) {
-        check_function(series_filter)
-        resources <- purrr::keep(
-          .x = study$series,
-          .p = series_filter,
-          .progress = ifelse(progress, "Filtering Series", FALSE)
-        )
-        study$set_child_resources(resources)
-      }
-
-      for (series in study$series) {
-        if (!rlang::is_null(instance_filter)) {
-          check_function(instance_filter)
+  patients <- purrr::map(
+    .x = patients,
+    .f = purrr::in_parallel(
+      \(patient) {
+        if (!rlang::is_null(study_filter)) {
+          check_function(study_filter)
           resources <- purrr::keep(
-            .x = series$instances,
-            .p = instance_filter,
-            .progress = ifelse(progress, "Filtering Instances", FALSE)
+            .x = patient$studies,
+            .p = study_filter
           )
-          series$set_child_resources(resources)
+          patient$set_child_resources(resources)
         }
-      }
-    }
-  }
+
+        for (study in patient$studies) {
+          if (!rlang::is_null(series_filter)) {
+            check_function(series_filter)
+            resources <- purrr::keep(
+              .x = study$series,
+              .p = series_filter
+            )
+            study$set_child_resources(resources)
+          }
+
+          for (series in study$series) {
+            if (!rlang::is_null(instance_filter)) {
+              check_function(instance_filter)
+              resources <- purrr::keep(
+                .x = series$instances,
+                .p = instance_filter
+              )
+              series$set_child_resources(resources)
+            }
+          }
+        }
+        patient
+      },
+      study_filter = study_filter,
+      series_filter = series_filter,
+      instance_filter = instance_filter,
+      check_function = check_function
+    ),
+    .progress = ifelse(progress, "Filtering Resources", FALSE)
+  )
 
   trim_patients(patients, progress)
 }
@@ -111,7 +123,7 @@ trim_patients <- function(patients, progress) {
     .x = patients,
     .p = \(pt) {
       pt$remove_empty_studies()
-      is_empty_list(pt)
+      is_empty_list(pt$studies)
     },
     .progress = ifelse(progress, "Trimming Patients", FALSE)
   )
