@@ -23,14 +23,27 @@ Series <- R6::R6Class(
     #' @param label Label.
     add_label = function(label) {
       check_scalar_character(label)
-      private$client$put_series_id_labels_label(private$id, label)
+      private$client$put_series_id_labels_label(self$identifier, label)
+    },
+
+    #' @description Test if resource has label.
+    #' @param label Label.
+    has_label = function(label) {
+      check_scalar_character(label)
+      tryCatch(
+        {
+          private$client$get_instances_id_labels_label(self$identifier, label)
+          return(TRUE)
+        },
+        httr2_http_404 = function(e) return(FALSE)
+      )
     },
 
     #' @description Delete label from resource.
     #' @param label Label.
     remove_label = function(label) {
       check_scalar_character(label)
-      private$client$delete_series_id_labels_label(private$id, label)
+      private$client$delete_series_id_labels_label(self$identifier, label)
     },
 
     #' @description Anonymize Series
@@ -496,9 +509,12 @@ Series <- R6::R6Class(
       parse_dicom_date(self$get_main_information()[["LastUpdate"]])
     },
 
-    #' @field labels Labels
-    labels = function() {
-      self$get_main_information()[["Labels"]]
+    #' @field labels Get or add labels
+    labels = function(label) {
+      if (rlang::is_missing(label)) {
+        return(self$get_main_information()[["Labels"]])
+      }
+      self$add_label(label)
     },
 
     #' @field study_identifier Parent study identifier

@@ -5,6 +5,8 @@
 #'
 #' @return An R6 instance of class `"Instance"`.
 #'
+#' @importFrom prettyunits pretty_bytes
+#'
 #' @export
 Instance <- R6::R6Class(
   classname = "Instance",
@@ -39,14 +41,27 @@ Instance <- R6::R6Class(
     #' @param label Label.
     add_label = function(label) {
       check_scalar_character(label)
-      private$client$put_instances_id_labels_label(private$id, label)
+      private$client$put_instances_id_labels_label(self$identifier, label)
+    },
+
+    #' @description Test if resource has label.
+    #' @param label Label.
+    has_label = function(label) {
+      check_scalar_character(label)
+      tryCatch(
+        {
+          private$client$get_instances_id_labels_label(self$identifier, label)
+          return(TRUE)
+        },
+        httr2_http_404 = function(e) return(FALSE)
+      )
     },
 
     #' @description Delete label from resource.
     #' @param label Label.
     remove_label = function(label) {
       check_scalar_character(label)
-      private$client$delete_instances_id_labels_label(private$id, label)
+      private$client$delete_instances_id_labels_label(self$identifier, label)
     },
 
     #' @description Get content by tag.
@@ -289,9 +304,12 @@ Instance <- R6::R6Class(
       )
     },
 
-    #' @field labels Labels
-    labels = function() {
-      self$get_main_information()[["Labels"]]
+    #' @field labels Get or add labels
+    labels = function(label) {
+      if (rlang::is_missing(label)) {
+        return(self$get_main_information()[["Labels"]])
+      }
+      self$add_label(label)
     },
 
     #' @field statistics Statistics
