@@ -68,7 +68,7 @@ check_equal_length <- function(x, y) {
   }
   rlang::abort(
     message = glue::glue(
-      "Length of `{x_nm}` must be equal to length of `{y_nm}`."
+      "Length of `{x_nm}` and `{y_nm}` must be equal."
     ),
     call = rlang::caller_env()
   )
@@ -207,13 +207,43 @@ check_function <- function(x, x_nm = NULL) {
     return(TRUE)
   }
   rlang::abort(
-    message = glue::glue(
-      "`{x_nm}` must be a function."
-    ),
+    message = glue::glue("`{x_nm}` must be a function."),
     call = rlang::caller_env()
   )
 }
 
 is_empty_list <- function(x) {
   rlang::is_list(x) && rlang::is_empty(x)
+}
+
+check_path_exists <- function(path) {
+  check_scalar_character(path)
+  if (fs::dir_exists(path)) {
+    return(TRUE)
+  }
+  rlang::abort("`path` does not exist.", call = rlang::caller_env())
+}
+
+check_class_any <- function(x, class) {
+  x_nm <- deparse(substitute(x))
+  class_str <- glue::glue_collapse(glue::glue('"{class}"'), " or ")
+  if (rlang::inherits_any(x, class)) {
+    return(TRUE)
+  }
+  rlang::abort(
+    glue::glue("`{x_nm}` must inherit one of class: {class_str}"),
+    call = rlang::caller_env()
+  )
+}
+
+check_list_of_class_any <- function(x, class) {
+  x_nm <- deparse(substitute(x))
+  class_str <- glue::glue_collapse(glue::glue('"{class}"'), " or ")
+  if (is.list(x) && purrr::every(x, \(x) rlang::inherits_any(x, class))) {
+    return(TRUE)
+  }
+  rlang::abort(
+    glue::glue('All elements of `{x_nm}` must inherit from class {class_str}.'),
+    call = rlang::caller_env()
+  )
 }

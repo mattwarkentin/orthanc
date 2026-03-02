@@ -43,3 +43,13 @@ make_orthanc_id <- function(
 
   sub("(\\S{8})(\\S{8})(\\S{8})(\\S{8})(\\S{8})", "\\1-\\2-\\3-\\4-\\5", uid)
 }
+
+parse_dicom_numeric_vecs <- function(x, split = "\\\\") {
+  strsplit(x, split = split) |>
+    unlist() |>
+    as.numeric()
+}
+
+parse_dicom_date <- function(x) {
+  clock::date_parse(x, format = "%Y%m%d")
+}
