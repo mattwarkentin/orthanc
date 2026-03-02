@@ -19,14 +19,19 @@ Depends:
     R (>= 4.1.0)
 Imports: 
     carrier (>= 0.3.0),
+    clock,
     digest,
     glue,
     fs,
     httr2,
     jsonlite,
     mirai (>= 2.5.1),
+    prettyunits,
     purrr (>= 1.1.0),
     R6,
     rlang
+Suggests:
+    png,
+    jpeg
 URL: https://github.com/mattwarkentin/orthanc, https://mattwarkentin.github.io/orthanc/
 BugReports: https://github.com/mattwarkentin/orthanc/issues
