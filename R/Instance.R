@@ -14,22 +14,37 @@ Instance <- R6::R6Class(
   portable = FALSE,
   cloneable = FALSE,
   public = list(
-    #' @description Retrieves DICOM file
+    #' @description Retrieves bytes of DICOM file content
     #'
-    #' This method retrieves bytes corresponding to DICOM file.
+    #' This method retrieves bytes corresponding to the DICOM file.
     get_dicom_file_content = function() {
-      private$client$get_instances_id_file(private$id)
+      private$client$get_instances_id_file(self$identifier)
     },
 
     #' @description Download DICOM file to a path.
-    #' @param file File path on disk.
-    download = function(file) {
-      check_scalar_character(file)
-      private$download_file(
-        "GET",
-        glue::glue("/instances/{private$id}/file"),
-        file
+    #' @param path Path on disk.
+    #' @param stream Should the resource be streamed and written to disk in
+    #'   chunks? Default is `FALSE`, which means the resource file contents are
+    #'   retrieved in their entirety and written to disk all at once.
+    download_dicom = function(path, stream = FALSE) {
+      check_path_exists(path)
+
+      path <- glue::glue("{path}/{self$uid}.dcm")
+
+      route <- glue::glue("/instances/{self$identifier}/file")
+
+      if (stream) {
+        private$download_file_stream(
+          method = "GET",
+          route = route,
+          file = path
+        )
+      } else {
+        private$download_file_whole(
+          content = self$get_dicom_file_content(),
+          file = path
       )
+      }
     },
 
     #' @description Get instance information.
@@ -64,12 +79,12 @@ Instance <- R6::R6Class(
       private$client$delete_instances_id_labels_label(self$identifier, label)
     },
 
-    #' @description Get content by tag.
+    #' @description Get raw content of one DICOM tag.
     #' @param tag tag.
-    get_content_by_tag = function(tag) {
+    get_raw_content_by_tag = function(tag) {
       check_scalar_character(tag)
       private$client$get_instances_id_content_path(
-        private$id,
+        self$identifier,
         path = tag
       )
     },
@@ -167,24 +182,47 @@ Instance <- R6::R6Class(
         data["PrivateCreator"] <- private_creator
       }
 
-      private$client$post_instances_id_modify(private$id, data)
+      private$client$post_instances_id_modify(self$identifier, data)
     },
-    #' @description Download instance as NIfTI.
-    #' @param path Path on disk.
-    #' @param compress Compress to gzip.
-    download_nifti = function(path, compress = FALSE) {
-      check_scalar_character(path)
-      check_scalar_logical(compress)
 
+    #' @description Get bytes of NIfTI file content.
+    #' @param compress Compress to gzip (nii.gz) Default is `TRUE`.
+    get_nifti_file_content = function(compress = TRUE) {
       if (!client_has_plugin(private$client, "neuro")) {
         rlang::abort(
           glue::glue("Orthanc client does not have required plugin `{plugin}`.")
         )
       }
 
-      if (!fs::dir_exists(path)) {
-        rlang::abort("`path` does not exist.")
+      params <- NULL
+
+      if (compress) {
+        params <- list(compress = "")
       }
+
+      private$client$GET(
+        route = glue::glue("/instances/{self$identifier}/nifti"),
+        params = params
+      )
+    },
+
+    #' @description Download instance as NIfTI.
+    #' @param path Path on disk.
+    #' @param compress Compress to gzip (nii.gz) Default is `TRUE`.
+    #' @param stream Should the resource be streamed and written to disk in
+    #'   chunks? Default is `FALSE`, which means the resource file contents are
+    #'   retrieved in their entirety and written to disk all at once.
+    download_nifti = function(path, compress = TRUE, stream = FALSE) {
+      if (!client_has_plugin(private$client, "neuro")) {
+        rlang::abort(
+          glue::glue("Orthanc client does not have required plugin `{plugin}`.")
+        )
+      }
+
+      check_path_exists(path)
+      check_scalar_logical(compress)
+      check_scalar_logical(stream)
+
       path <- fs::path_expand(path)
 
       params <- NULL
@@ -196,13 +234,90 @@ Instance <- R6::R6Class(
         file <- glue::glue("{path}/{self$uid}.nii")
       }
 
-      bytes <- private$client$GET(
-        glue::glue("/instances/{self$identifier}/nifti"),
+      route <- glue::glue("/instances/{self$identifier}/nifti")
+
+      if (stream) {
+        private$download_file_stream(
+          method = "GET",
+          route = route,
+          file = file,
         params = params
       )
+} else {
+        private$download_file_whole(
+          self$get_nifti_file_content(compress),
+          file
+        )
+      }
+    },
 
-      file_con <- file(file, "wb")
-      writeBin(as.raw(bytes), file_con)
+    #' @description Download instance as an image.
+    #' @param path Path on disk.
+    #' @param frame Index of the frame (starts at `0L`). Default is `0L`.
+    #' @param format One of `"png"` or `"jpeg"`. Default is `"png"`.
+    #' @param render Should the image be scaled (with `RescaleSlope` and
+    #'   `RescaleIntercept`) and windowed (with `WindowCenter`
+    #'   and `WindowWidth`, if available). Default is `TRUE`.
+    #' @param params Optional named-list of query parameters.
+    #' @param ... Optional arguments passed on to `png::writePNG()` or
+    #'   `jpeg::writeJPEG()`.
+    download_image = function(
+      path,
+      frame = 0L,
+      format = c("png", "jpeg"),
+      render = TRUE,
+      params = NULL,
+      ...
+    ) {
+      check_path_exists(path)
+      check_scalar_integer(frame)
+      check_scalar_logical(render)
+      format <- rlang::arg_match(format)
+
+      if (format == "png") {
+        rlang::check_installed("png")
+        path <- glue::glue("{path}/{self$uid}.png")
+
+        if (render) {
+          png <- private$client$get_instances_id_frames_frame_rendered(
+            id = self$identifier,
+            frame = frame,
+            params = params,
+            headers = list(Accept = "image/png")
+          )
+        } else {
+          png <- private$client$get_instances_id_frames_frame_preview(
+            id = self$identifier,
+            frame = frame,
+            params = params,
+            headers = list(Accept = "image/png")
+          )
+        }
+        png::writePNG(image = png::readPNG(png), target = path, ...)
+      }
+
+      if (format == "jpeg") {
+        rlang::check_installed("jpeg")
+        path <- glue::glue("{path}/{self$uid}.jpeg")
+
+        if (render) {
+          jpeg <- private$client$get_instances_id_frames_frame_rendered(
+            id = self$identifier,
+            frame = frame,
+            params = params,
+            headers = list(Accept = "image/jpeg")
+          )
+        } else {
+          jpeg <- private$client$get_instances_id_frames_frame_preview(
+            id = self$identifier,
+            frame = frame,
+            params = params,
+            headers = list(Accept = "image/jpeg")
+          )
+        }
+        jpeg::writeJPEG(image = jpeg::readJPEG(jpeg), target = path, ...)
+      }
+      invisible()
     }
   ),
   private = list(

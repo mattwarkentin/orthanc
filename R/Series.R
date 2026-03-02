@@ -286,26 +286,34 @@ Series <- R6::R6Class(
       Job$new(mod_series[["ID"]], private$client)
     },
 
-    #' @description Get the bytes of the zip file.
-    get_zip = function() {
-      private$client$get_series_id_archive(private$id)
+    #' @description Get bytes of the zip archive.
+    get_zip_archive_content = function() {
+      private$client$get_series_id_archive(self$identifier)
     },
 
-    #' @description Download the zip file to a path.
-    #' @param file File path on disk.
-    download = function(file) {
-      check_scalar_character(file)
-      private$download_file(
+    #' @description Download zip archive to `path`.
+    #' @param path Path on disk.
+    #' @param stream Should the resource be streamed and written to disk in
+    #'   chunks? Default is `FALSE`, which means the resource file contents are
+    #'   retrieved in their entirety and written to disk all at once.
+    download_archive = function(path, stream = FALSE) {
+      check_path_exists(path)
+      file <- glue::glue("{path}/{self$uid}.zip")
+      if (stream) {
+        private$download_file_stream(
         "GET",
-        glue::glue("/series/{private$id}/archive"),
+          glue::glue("/series/{self$identifier}/archive"),
         file
       )
+      } else {
+        private$download_file_whole(self$get_zip_archive_content(), file)
+      }
     },
 
     #' @description Retrieve the shared tags of the series.
     get_shared_tags = function() {
       private$client$get_series_id_shared_tags(
-        private$id,
+        self$identifier,
         params = list(simplify = TRUE)
       )
     },
@@ -318,44 +326,74 @@ Series <- R6::R6Class(
       invisible(self)
     },
 
-    #' @description Download series as NIfTI.
-    #' @param path Path on disk.
-    #' @param compress Compress to gzip.
-    download_nifti = function(path, compress = FALSE) {
+    #' @description Get bytes of NIfTI file content.
+    #' @param compress Compress to gzip (nii.gz) Default is `TRUE`.
+    get_nifti_file_content = function(compress = TRUE) {
       if (!client_has_plugin(private$client, "neuro")) {
         rlang::abort(
           glue::glue("Orthanc client does not have required plugin `{plugin}`.")
         )
       }
 
-      check_scalar_character(path)
-      check_scalar_logical(compress)
+      params <- NULL
 
-      if (!fs::dir_exists(path)) {
-        rlang::abort("`path` does not exist.")
+      if (compress) {
+        params <- list(compress = "")
       }
-      path <- fs::path_expand(path)
+
+      private$client$GET(
+        route = glue::glue("/series/{self$identifier}/nifti"),
+        params = params
+      )
+    },
+
+    #' @description Download series as NIfTI.
+    #' @param path Path on disk.
+    #' @param compress Compress to gzip (`nii.gz`) Default is `TRUE`.
+    #' @param stream Should the resource be streamed and written to disk in
+    #'   chunks? Default is `FALSE`, which means the resource contents are
+    #'   retrieved in their entirety and written to disk all at once.
+    download_nifti = function(path, compress = TRUE, stream = FALSE) {
+      if (!client_has_plugin(private$client, "neuro")) {
+        rlang::abort(
+          glue::glue("Orthanc client does not have required plugin `{plugin}`.")
+        )
+      }
+
+      check_path_exists(path)
+      check_scalar_logical(compress)
 
       params <- NULL
 
       if (compress) {
         file <- glue::glue("{path}/{self$uid}.nii.gz")
-        params <- list(compress = "")
       } else {
         file <- glue::glue("{path}/{self$uid}.nii")
       }
 
-      bytes <- private$client$GET(
-        glue::glue("/series/{self$identifier}/nifti"),
+      route <- glue::glue("/series/{self$identifier}/nifti")
+
+      if (stream) {
+        private$download_file_stream(
+          method = "GET",
+          route = route,
+          file = file,
         params = params
       )
-
-      file_con <- file(file, "wb")
-      writeBin(as.raw(bytes), file_con)
+      } else {
+        private$download_file_whole(self$get_nifti_file_content(), file)
+      }
     }
   ),
   private = list(
-    resource_type = "Series"
+    resource_type = "Series",
+    populate_child_resources = function() {
+      instances_ids <- self$get_main_information()[["Instances"]]
+      private$child_resources = purrr::map(instances_ids, \(id) {
+        Instance$new(id, private$client, private$lock_children)
+      })
+      invisible(self)
+    }
   ),
   active = list(
     #' @field instances Instances

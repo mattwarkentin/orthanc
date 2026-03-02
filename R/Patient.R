@@ -44,20 +44,28 @@ Patient <- R6::R6Class(
       private$client$delete_patients_id_labels_label(self$identifier, label)
     },
 
-    #' @description Get the bytes of the zip file.
-    get_zip = function() {
-      private$client$get_patients_id_archive(private$id)
+    #' @description Get bytes of the zip archive.
+    get_zip_archive_content = function() {
+      private$client$get_patients_id_archive(self$identifier)
     },
 
-    #' @description Download the zip file to a path.
-    #' @param file File path on disk.
-    download = function(file) {
-      check_scalar_character(file)
-      private$download_file(
+    #' @description Download zip archive to `path`.
+    #' @param path Path on disk.
+    #' @param stream Should the resource be streamed and written to disk in
+    #'   chunks? Default is `FALSE`, which means the resource file contents are
+    #'   retrieved in their entirety and written to disk all at once.
+    download_archive = function(path, stream = FALSE) {
+      check_path_exists(path)
+      file <- glue::glue("{path}/{self$patient_id}.zip")
+      if (stream) {
+        private$download_file_stream(
         "GET",
-        glue::glue("/patients/{private$id}/archive"),
+          glue::glue("/patients/{self$identifier}/archive"),
         file
       )
+      } else {
+        private$download_file_whole(self$get_zip_archive_content(), file)
+      }
     },
 
     #' @description Get patient module in a simplified version
