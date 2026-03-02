@@ -11,7 +11,12 @@ write patients to disk in parallel using all available processes.
 ## Usage
 
 ``` r
-retrieve_and_write_patients(patients, path, progress = rlang::is_interactive())
+retrieve_and_write_patients(
+  patients,
+  path,
+  stream = FALSE,
+  progress = rlang::is_interactive()
+)
 ```
 
 ## Arguments
@@ -19,11 +24,17 @@ retrieve_and_write_patients(patients, path, progress = rlang::is_interactive())
 - patients:
 
   List of
-  [Patient](https://mattwarkentin.github.io/orthanc/reference/Patient.md)s
+  [Patient](https://mattwarkentin.github.io/orthanc/reference/Patient.md)s.
 
 - path:
 
   Path where you want to write the patients (files).
+
+- stream:
+
+  Should the resources be streamed and written to disk in chunks?
+  Default is `FALSE`, which means the resource file contents are
+  retrieved in their entirety and written to disk all at once.
 
 - progress:
 

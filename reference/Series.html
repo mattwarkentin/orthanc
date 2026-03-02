@@ -55,6 +55,10 @@
 <dd><p>Instances identifiers</p></dd>
 
 
+<dt><code>num_instances</code></dt>
+<dd><p>Number of instances</p></dd>
+
+
 <dt><code>instances_tags</code></dt>
 <dd><p>Instances tags</p></dd>
 
@@ -154,7 +158,7 @@ Processing Description</p></dd>
 
 
 <dt><code>labels</code></dt>
-<dd><p>Labels</p></dd>
+<dd><p>Get or add labels</p></dd>
 
 
 <dt><code>study_identifier</code></dt>
@@ -187,16 +191,19 @@ Processing Description</p></dd>
 
 <ul><li><p><a href="#method-Series-get_main_information"><code>Series$get_main_information()</code></a></p></li>
 <li><p><a href="#method-Series-add_label"><code>Series$add_label()</code></a></p></li>
+<li><p><a href="#method-Series-has_label"><code>Series$has_label()</code></a></p></li>
 <li><p><a href="#method-Series-remove_label"><code>Series$remove_label()</code></a></p></li>
 <li><p><a href="#method-Series-anonymize"><code>Series$anonymize()</code></a></p></li>
 <li><p><a href="#method-Series-anonymize_as_job"><code>Series$anonymize_as_job()</code></a></p></li>
 <li><p><a href="#method-Series-modify"><code>Series$modify()</code></a></p></li>
 <li><p><a href="#method-Series-modify_as_job"><code>Series$modify_as_job()</code></a></p></li>
-<li><p><a href="#method-Series-get_zip"><code>Series$get_zip()</code></a></p></li>
-<li><p><a href="#method-Series-download"><code>Series$download()</code></a></p></li>
+<li><p><a href="#method-Series-get_zip_archive_content"><code>Series$get_zip_archive_content()</code></a></p></li>
+<li><p><a href="#method-Series-download_archive"><code>Series$download_archive()</code></a></p></li>
 <li><p><a href="#method-Series-get_shared_tags"><code>Series$get_shared_tags()</code></a></p></li>
 <li><p><a href="#method-Series-remove_empty_instances"><code>Series$remove_empty_instances()</code></a></p></li>
+<li><p><a href="#method-Series-get_nifti_file_content"><code>Series$get_nifti_file_content()</code></a></p></li>
 <li><p><a href="#method-Series-download_nifti"><code>Series$download_nifti()</code></a></p></li>
+<li><p><a href="#method-Series-clone"><code>Series$clone()</code></a></p></li>
 </ul></div><p><details open><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="initialize"><a href="Resource.html#method-initialize"><code>orthanc::Resource$initialize()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="print"><a href="Resource.html#method-print"><code>orthanc::Resource$print()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="set_child_resources"><a href="Resource.html#method-set_child_resources"><code>orthanc::Resource$set_child_resources()</code></a></span></li>
@@ -224,11 +231,11 @@ Processing Description</p></dd>
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Series-remove_label"></a><div class="section">
-<h3 id="method-remove-label-">Method <code>remove_label()</code><a class="anchor" aria-label="anchor" href="#method-remove-label-"></a></h3>
-<p>Delete label from resource.</p><div class="section">
+</div><p></p><hr><a id="method-Series-has_label"></a><div class="section">
+<h3 id="method-has-label-">Method <code>has_label()</code><a class="anchor" aria-label="anchor" href="#method-has-label-"></a></h3>
+<p>Test if resource has label.</p><div class="section">
 <h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">remove_label</span><span class="op">(</span><span class="va">label</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">has_label</span><span class="op">(</span><span class="va">label</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -240,76 +247,27 @@ Processing Description</p></dd>
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Series-anonymize"></a><div class="section">
-<h3 id="method-anonymize-">Method <code>anonymize()</code><a class="anchor" aria-label="anchor" href="#method-anonymize-"></a></h3>
-<p>Anonymize Series</p><div class="section">
+</div><p></p><hr><a id="method-Series-remove_label"></a><div class="section">
+<h3 id="method-remove-label-">Method <code>remove_label()</code><a class="anchor" aria-label="anchor" href="#method-remove-label-"></a></h3>
+<p>Delete label from resource.</p><div class="section">
 <h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">anonymize</span><span class="op">(</span></span>
-<span>  remove <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>  replace <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>  keep <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>  keep_private_tags <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>  keep_source <span class="op">=</span> <span class="cn">TRUE</span>,</span>
-<span>  priority <span class="op">=</span> <span class="fl">0L</span>,</span>
-<span>  permissive <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>  private_creator <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  force <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>  dicom_version <span class="op">=</span> <span class="cn">NULL</span></span>
-<span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">remove_label</span><span class="op">(</span><span class="va">label</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>remove</code></dt>
-<dd><p>List of tags to remove.</p></dd>
-
-
-<dt><code>replace</code></dt>
-<dd><p>Named-list of tags to replce.</p></dd>
-
-
-<dt><code>keep</code></dt>
-<dd><p>List of tags to keep unchanged.</p></dd>
-
-
-<dt><code>keep_private_tags</code></dt>
-<dd><p>Keep private tags from DICOM instance.</p></dd>
-
-
-<dt><code>keep_source</code></dt>
-<dd><p>Keep original resource.</p></dd>
-
-
-<dt><code>priority</code></dt>
-<dd><p>Priority of the job.</p></dd>
-
-
-<dt><code>permissive</code></dt>
-<dd><p>Ignore errors during individual steps of the job?</p></dd>
-
-
-<dt><code>private_creator</code></dt>
-<dd><p>Private creator to be used for private tags in
-replace.</p></dd>
-
-
-<dt><code>force</code></dt>
-<dd><p>Force tags to be changed.</p></dd>
-
-
-<dt><code>dicom_version</code></dt>
-<dd><p>Version of the DICOM standard to use for
-anonymization.</p></dd>
+<p></p><div class="arguments"><dl><dt><code>label</code></dt>
+<dd><p>Label.</p></dd>
 
 
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Series-anonymize_as_job"></a><div class="section">
-<h3 id="method-anonymize-as-job-">Method <code>anonymize_as_job()</code><a class="anchor" aria-label="anchor" href="#method-anonymize-as-job-"></a></h3>
+</div><p></p><hr><a id="method-Series-anonymize"></a><div class="section">
+<h3 id="method-anonymize-">Method <code>anonymize()</code><a class="anchor" aria-label="anchor" href="#method-anonymize-"></a></h3>
 <p>Anonymize Series</p><div class="section">
 <h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">anonymize_as_job</span><span class="op">(</span></span>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">anonymize</span><span class="op">(</span></span>
 <span>  remove <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  replace <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  keep <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
@@ -370,20 +328,21 @@ anonymization.</p></dd>
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Series-modify"></a><div class="section">
-<h3 id="method-modify-">Method <code>modify()</code><a class="anchor" aria-label="anchor" href="#method-modify-"></a></h3>
-<p>Modify Series</p><div class="section">
+</div><p></p><hr><a id="method-Series-anonymize_as_job"></a><div class="section">
+<h3 id="method-anonymize-as-job-">Method <code>anonymize_as_job()</code><a class="anchor" aria-label="anchor" href="#method-anonymize-as-job-"></a></h3>
+<p>Anonymize Series</p><div class="section">
 <h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">modify</span><span class="op">(</span></span>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">anonymize_as_job</span><span class="op">(</span></span>
 <span>  remove <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  replace <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  keep <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
-<span>  remove_private_tags <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  keep_private_tags <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  keep_source <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  priority <span class="op">=</span> <span class="fl">0L</span>,</span>
 <span>  permissive <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  private_creator <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>  force <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span>  force <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  dicom_version <span class="op">=</span> <span class="cn">NULL</span></span>
 <span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
@@ -401,8 +360,8 @@ anonymization.</p></dd>
 <dd><p>List of tags to keep unchanged.</p></dd>
 
 
-<dt><code>remove_private_tags</code></dt>
-<dd><p>Remove private tags from DICOM instance.</p></dd>
+<dt><code>keep_private_tags</code></dt>
+<dd><p>Keep private tags from DICOM instance.</p></dd>
 
 
 <dt><code>keep_source</code></dt>
@@ -426,14 +385,19 @@ replace.</p></dd>
 <dd><p>Force tags to be changed.</p></dd>
 
 
+<dt><code>dicom_version</code></dt>
+<dd><p>Version of the DICOM standard to use for
+anonymization.</p></dd>
+
+
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Series-modify_as_job"></a><div class="section">
-<h3 id="method-modify-as-job-">Method <code>modify_as_job()</code><a class="anchor" aria-label="anchor" href="#method-modify-as-job-"></a></h3>
+</div><p></p><hr><a id="method-Series-modify"></a><div class="section">
+<h3 id="method-modify-">Method <code>modify()</code><a class="anchor" aria-label="anchor" href="#method-modify-"></a></h3>
 <p>Modify Series</p><div class="section">
 <h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">modify_as_job</span><span class="op">(</span></span>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">modify</span><span class="op">(</span></span>
 <span>  remove <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  replace <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  keep <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
@@ -488,51 +452,78 @@ replace.</p></dd>
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Series-get_zip"></a><div class="section">
-<h3 id="method-get-zip-">Method <code>get_zip()</code><a class="anchor" aria-label="anchor" href="#method-get-zip-"></a></h3>
-<p>Get the bytes of the zip file.</p><div class="section">
+</div><p></p><hr><a id="method-Series-modify_as_job"></a><div class="section">
+<h3 id="method-modify-as-job-">Method <code>modify_as_job()</code><a class="anchor" aria-label="anchor" href="#method-modify-as-job-"></a></h3>
+<p>Modify Series</p><div class="section">
 <h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">get_zip</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-
-</div><p></p><hr><a id="method-Series-download"></a><div class="section">
-<h3 id="method-download-">Method <code>download()</code><a class="anchor" aria-label="anchor" href="#method-download-"></a></h3>
-<p>Download the zip file to a path.</p><div class="section">
-<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">download</span><span class="op">(</span><span class="va">file</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">modify_as_job</span><span class="op">(</span></span>
+<span>  remove <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  replace <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  keep <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  remove_private_tags <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  keep_source <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  priority <span class="op">=</span> <span class="fl">0L</span>,</span>
+<span>  permissive <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  private_creator <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  force <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>file</code></dt>
-<dd><p>File path on disk.</p></dd>
+<p></p><div class="arguments"><dl><dt><code>remove</code></dt>
+<dd><p>List of tags to remove.</p></dd>
+
+
+<dt><code>replace</code></dt>
+<dd><p>Named-list of tags to replce.</p></dd>
+
+
+<dt><code>keep</code></dt>
+<dd><p>List of tags to keep unchanged.</p></dd>
+
+
+<dt><code>remove_private_tags</code></dt>
+<dd><p>Remove private tags from DICOM instance.</p></dd>
+
+
+<dt><code>keep_source</code></dt>
+<dd><p>Keep original resource.</p></dd>
+
+
+<dt><code>priority</code></dt>
+<dd><p>Priority of the job.</p></dd>
+
+
+<dt><code>permissive</code></dt>
+<dd><p>Ignore errors during individual steps of the job?</p></dd>
+
+
+<dt><code>private_creator</code></dt>
+<dd><p>Private creator to be used for private tags in
+replace.</p></dd>
+
+
+<dt><code>force</code></dt>
+<dd><p>Force tags to be changed.</p></dd>
 
 
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Series-get_shared_tags"></a><div class="section">
-<h3 id="method-get-shared-tags-">Method <code>get_shared_tags()</code><a class="anchor" aria-label="anchor" href="#method-get-shared-tags-"></a></h3>
-<p>Retrieve the shared tags of the series.</p><div class="section">
+</div><p></p><hr><a id="method-Series-get_zip_archive_content"></a><div class="section">
+<h3 id="method-get-zip-archive-content-">Method <code>get_zip_archive_content()</code><a class="anchor" aria-label="anchor" href="#method-get-zip-archive-content-"></a></h3>
+<p>Get bytes of the zip archive.</p><div class="section">
+<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">get_zip_archive_content</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+
+</div><p></p><hr><a id="method-Series-download_archive"></a><div class="section">
+<h3 id="method-download-archive-">Method <code>download_archive()</code><a class="anchor" aria-label="anchor" href="#method-download-archive-"></a></h3>
+<p>Download zip archive to <code>path</code>.</p><div class="section">
 <h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">get_shared_tags</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-
-</div><p></p><hr><a id="method-Series-remove_empty_instances"></a><div class="section">
-<h3 id="method-remove-empty-instances-">Method <code>remove_empty_instances()</code><a class="anchor" aria-label="anchor" href="#method-remove-empty-instances-"></a></h3>
-<p>Remove empty instances from series.</p><div class="section">
-<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">remove_empty_instances</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-
-</div><p></p><hr><a id="method-Series-download_nifti"></a><div class="section">
-<h3 id="method-download-nifti-">Method <code>download_nifti()</code><a class="anchor" aria-label="anchor" href="#method-download-nifti-"></a></h3>
-<p>Download series as NIfTI.</p><div class="section">
-<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">download_nifti</span><span class="op">(</span><span class="va">path</span>, compress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">download_archive</span><span class="op">(</span><span class="va">path</span>, stream <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -541,8 +532,84 @@ replace.</p></dd>
 <dd><p>Path on disk.</p></dd>
 
 
+<dt><code>stream</code></dt>
+<dd><p>Should the resource be streamed and written to disk in
+chunks? Default is <code>FALSE</code>, which means the resource file contents are
+retrieved in their entirety and written to disk all at once.</p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-Series-get_shared_tags"></a><div class="section">
+<h3 id="method-get-shared-tags-">Method <code>get_shared_tags()</code><a class="anchor" aria-label="anchor" href="#method-get-shared-tags-"></a></h3>
+<p>Retrieve the shared tags of the series.</p><div class="section">
+<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">get_shared_tags</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+
+</div><p></p><hr><a id="method-Series-remove_empty_instances"></a><div class="section">
+<h3 id="method-remove-empty-instances-">Method <code>remove_empty_instances()</code><a class="anchor" aria-label="anchor" href="#method-remove-empty-instances-"></a></h3>
+<p>Remove empty instances from series.</p><div class="section">
+<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">remove_empty_instances</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+
+</div><p></p><hr><a id="method-Series-get_nifti_file_content"></a><div class="section">
+<h3 id="method-get-nifti-file-content-">Method <code>get_nifti_file_content()</code><a class="anchor" aria-label="anchor" href="#method-get-nifti-file-content-"></a></h3>
+<p>Get bytes of NIfTI file content.</p><div class="section">
+<h4 id="usage-12">Usage<a class="anchor" aria-label="anchor" href="#usage-12"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">get_nifti_file_content</span><span class="op">(</span>compress <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>compress</code></dt>
+<dd><p>Compress to gzip (nii.gz) Default is <code>TRUE</code>.</p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-Series-download_nifti"></a><div class="section">
+<h3 id="method-download-nifti-">Method <code>download_nifti()</code><a class="anchor" aria-label="anchor" href="#method-download-nifti-"></a></h3>
+<p>Download series as NIfTI.</p><div class="section">
+<h4 id="usage-13">Usage<a class="anchor" aria-label="anchor" href="#usage-13"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">download_nifti</span><span class="op">(</span><span class="va">path</span>, compress <span class="op">=</span> <span class="cn">TRUE</span>, stream <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>path</code></dt>
+<dd><p>Path on disk.</p></dd>
+
+
 <dt><code>compress</code></dt>
-<dd><p>Compress to gzip.</p></dd>
+<dd><p>Compress to gzip (<code>nii.gz</code>) Default is <code>TRUE</code>.</p></dd>
+
+
+<dt><code>stream</code></dt>
+<dd><p>Should the resource be streamed and written to disk in
+chunks? Default is <code>FALSE</code>, which means the resource contents are
+retrieved in their entirety and written to disk all at once.</p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-Series-clone"></a><div class="section">
+<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
+<p>The objects of this class are cloneable with this method.</p><div class="section">
+<h4 id="usage-14">Usage<a class="anchor" aria-label="anchor" href="#usage-14"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Series</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>deep</code></dt>
+<dd><p>Whether to make a deep clone.</p></dd>
 
 
 </dl><p></p></div>

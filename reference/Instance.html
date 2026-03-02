@@ -99,10 +99,6 @@
 <dd><p>Instance Number</p></dd>
 
 
-<dt><code>number_of_frames</code></dt>
-<dd><p>Number of Frames</p></dd>
-
-
 <dt><code>temporal_position_identifier</code></dt>
 <dd><p>Temporal Position Identifier</p></dd>
 
@@ -116,11 +112,43 @@
 
 
 <dt><code>labels</code></dt>
-<dd><p>Labels</p></dd>
+<dd><p>Get or add labels</p></dd>
 
 
 <dt><code>statistics</code></dt>
 <dd><p>Statistics</p></dd>
+
+
+<dt><code>list_frames</code></dt>
+<dd><p>List frames (zero-based indexing)</p></dd>
+
+
+<dt><code>frames</code></dt>
+<dd><p>Number of frames</p></dd>
+
+
+<dt><code>rows</code></dt>
+<dd><p>Number of rows</p></dd>
+
+
+<dt><code>columns</code></dt>
+<dd><p>Number of columns</p></dd>
+
+
+<dt><code>shape</code></dt>
+<dd><p>Shape (rows x columns x frames (if multi-frame))</p></dd>
+
+
+<dt><code>dim</code></dt>
+<dd><p>Number of dimensions</p></dd>
+
+
+<dt><code>slice_thickness</code></dt>
+<dd><p>Slice thickness</p></dd>
+
+
+<dt><code>pixel_spacing</code></dt>
+<dd><p>Pixel spacing</p></dd>
 
 
 </dl><p></p></div>
@@ -132,37 +160,47 @@
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
 
 <ul><li><p><a href="#method-Instance-get_dicom_file_content"><code>Instance$get_dicom_file_content()</code></a></p></li>
-<li><p><a href="#method-Instance-download"><code>Instance$download()</code></a></p></li>
+<li><p><a href="#method-Instance-download_dicom"><code>Instance$download_dicom()</code></a></p></li>
 <li><p><a href="#method-Instance-get_main_information"><code>Instance$get_main_information()</code></a></p></li>
 <li><p><a href="#method-Instance-add_label"><code>Instance$add_label()</code></a></p></li>
+<li><p><a href="#method-Instance-has_label"><code>Instance$has_label()</code></a></p></li>
 <li><p><a href="#method-Instance-remove_label"><code>Instance$remove_label()</code></a></p></li>
-<li><p><a href="#method-Instance-get_content_by_tag"><code>Instance$get_content_by_tag()</code></a></p></li>
+<li><p><a href="#method-Instance-get_raw_content_by_tag"><code>Instance$get_raw_content_by_tag()</code></a></p></li>
 <li><p><a href="#method-Instance-anonymize"><code>Instance$anonymize()</code></a></p></li>
 <li><p><a href="#method-Instance-modify"><code>Instance$modify()</code></a></p></li>
+<li><p><a href="#method-Instance-get_nifti_file_content"><code>Instance$get_nifti_file_content()</code></a></p></li>
 <li><p><a href="#method-Instance-download_nifti"><code>Instance$download_nifti()</code></a></p></li>
+<li><p><a href="#method-Instance-download_image"><code>Instance$download_image()</code></a></p></li>
+<li><p><a href="#method-Instance-clone"><code>Instance$clone()</code></a></p></li>
 </ul></div><p><details open><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="initialize"><a href="Resource.html#method-initialize"><code>orthanc::Resource$initialize()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="print"><a href="Resource.html#method-print"><code>orthanc::Resource$print()</code></a></span></li>
 <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="set_child_resources"><a href="Resource.html#method-set_child_resources"><code>orthanc::Resource$set_child_resources()</code></a></span></li>
 </ul></details></p><hr><a id="method-Instance-get_dicom_file_content"></a><div class="section">
 <h3 id="method-get-dicom-file-content-">Method <code>get_dicom_file_content()</code><a class="anchor" aria-label="anchor" href="#method-get-dicom-file-content-"></a></h3>
-<p>Retrieves DICOM file</p>
-<p>This method retrieves bytes corresponding to DICOM file.</p><div class="section">
+<p>Retrieves bytes of DICOM file content</p>
+<p>This method retrieves bytes corresponding to the DICOM file.</p><div class="section">
 <h4 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Instance</span><span class="op">$</span><span class="fu">get_dicom_file_content</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 
-</div><p></p><hr><a id="method-Instance-download"></a><div class="section">
-<h3 id="method-download-">Method <code>download()</code><a class="anchor" aria-label="anchor" href="#method-download-"></a></h3>
+</div><p></p><hr><a id="method-Instance-download_dicom"></a><div class="section">
+<h3 id="method-download-dicom-">Method <code>download_dicom()</code><a class="anchor" aria-label="anchor" href="#method-download-dicom-"></a></h3>
 <p>Download DICOM file to a path.</p><div class="section">
 <h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Instance</span><span class="op">$</span><span class="fu">download</span><span class="op">(</span><span class="va">file</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Instance</span><span class="op">$</span><span class="fu">download_dicom</span><span class="op">(</span><span class="va">path</span>, stream <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h4>
-<p></p><div class="arguments"><dl><dt><code>file</code></dt>
-<dd><p>File path on disk.</p></dd>
+<p></p><div class="arguments"><dl><dt><code>path</code></dt>
+<dd><p>Path on disk.</p></dd>
+
+
+<dt><code>stream</code></dt>
+<dd><p>Should the resource be streamed and written to disk in
+chunks? Default is <code>FALSE</code>, which means the resource file contents are
+retrieved in their entirety and written to disk all at once.</p></dd>
 
 
 </dl><p></p></div>
@@ -192,11 +230,11 @@
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Instance-remove_label"></a><div class="section">
-<h3 id="method-remove-label-">Method <code>remove_label()</code><a class="anchor" aria-label="anchor" href="#method-remove-label-"></a></h3>
-<p>Delete label from resource.</p><div class="section">
+</div><p></p><hr><a id="method-Instance-has_label"></a><div class="section">
+<h3 id="method-has-label-">Method <code>has_label()</code><a class="anchor" aria-label="anchor" href="#method-has-label-"></a></h3>
+<p>Test if resource has label.</p><div class="section">
 <h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Instance</span><span class="op">$</span><span class="fu">remove_label</span><span class="op">(</span><span class="va">label</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Instance</span><span class="op">$</span><span class="fu">has_label</span><span class="op">(</span><span class="va">label</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -208,15 +246,31 @@
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Instance-get_content_by_tag"></a><div class="section">
-<h3 id="method-get-content-by-tag-">Method <code>get_content_by_tag()</code><a class="anchor" aria-label="anchor" href="#method-get-content-by-tag-"></a></h3>
-<p>Get content by tag.</p><div class="section">
+</div><p></p><hr><a id="method-Instance-remove_label"></a><div class="section">
+<h3 id="method-remove-label-">Method <code>remove_label()</code><a class="anchor" aria-label="anchor" href="#method-remove-label-"></a></h3>
+<p>Delete label from resource.</p><div class="section">
 <h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Instance</span><span class="op">$</span><span class="fu">get_content_by_tag</span><span class="op">(</span><span class="va">tag</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Instance</span><span class="op">$</span><span class="fu">remove_label</span><span class="op">(</span><span class="va">label</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
 <h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>label</code></dt>
+<dd><p>Label.</p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-Instance-get_raw_content_by_tag"></a><div class="section">
+<h3 id="method-get-raw-content-by-tag-">Method <code>get_raw_content_by_tag()</code><a class="anchor" aria-label="anchor" href="#method-get-raw-content-by-tag-"></a></h3>
+<p>Get raw content of one DICOM tag.</p><div class="section">
+<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Instance</span><span class="op">$</span><span class="fu">get_raw_content_by_tag</span><span class="op">(</span><span class="va">tag</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>tag</code></dt>
 <dd><p>tag.</p></dd>
 
@@ -227,7 +281,7 @@
 </div><p></p><hr><a id="method-Instance-anonymize"></a><div class="section">
 <h3 id="method-anonymize-">Method <code>anonymize()</code><a class="anchor" aria-label="anchor" href="#method-anonymize-"></a></h3>
 <p>Anonymize Instance</p><div class="section">
-<h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
+<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Instance</span><span class="op">$</span><span class="fu">anonymize</span><span class="op">(</span></span>
 <span>  remove <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  replace <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
@@ -241,7 +295,7 @@
 </div>
 
 <div class="section">
-<h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
+<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>remove</code></dt>
 <dd><p>List of tags to remove.</p></dd>
 
@@ -282,7 +336,7 @@ anonymization.</p></dd>
 </div><p></p><hr><a id="method-Instance-modify"></a><div class="section">
 <h3 id="method-modify-">Method <code>modify()</code><a class="anchor" aria-label="anchor" href="#method-modify-"></a></h3>
 <p>Modify an Instance</p><div class="section">
-<h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
+<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Instance</span><span class="op">$</span><span class="fu">modify</span><span class="op">(</span></span>
 <span>  remove <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  replace <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="op">)</span>,</span>
@@ -295,7 +349,7 @@ anonymization.</p></dd>
 </div>
 
 <div class="section">
-<h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
+<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>remove</code></dt>
 <dd><p>List of tags to remove.</p></dd>
 
@@ -328,21 +382,105 @@ replace.</p></dd>
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Instance-download_nifti"></a><div class="section">
-<h3 id="method-download-nifti-">Method <code>download_nifti()</code><a class="anchor" aria-label="anchor" href="#method-download-nifti-"></a></h3>
-<p>Download instance as NIfTI.</p><div class="section">
-<h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Instance</span><span class="op">$</span><span class="fu">download_nifti</span><span class="op">(</span><span class="va">path</span>, compress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div><p></p><hr><a id="method-Instance-get_nifti_file_content"></a><div class="section">
+<h3 id="method-get-nifti-file-content-">Method <code>get_nifti_file_content()</code><a class="anchor" aria-label="anchor" href="#method-get-nifti-file-content-"></a></h3>
+<p>Get bytes of NIfTI file content.</p><div class="section">
+<h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Instance</span><span class="op">$</span><span class="fu">get_nifti_file_content</span><span class="op">(</span>compress <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
-<h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
+<h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>compress</code></dt>
+<dd><p>Compress to gzip (nii.gz) Default is <code>TRUE</code>.</p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-Instance-download_nifti"></a><div class="section">
+<h3 id="method-download-nifti-">Method <code>download_nifti()</code><a class="anchor" aria-label="anchor" href="#method-download-nifti-"></a></h3>
+<p>Download instance as NIfTI.</p><div class="section">
+<h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Instance</span><span class="op">$</span><span class="fu">download_nifti</span><span class="op">(</span><span class="va">path</span>, compress <span class="op">=</span> <span class="cn">TRUE</span>, stream <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>path</code></dt>
 <dd><p>Path on disk.</p></dd>
 
 
 <dt><code>compress</code></dt>
-<dd><p>Compress to gzip.</p></dd>
+<dd><p>Compress to gzip (nii.gz) Default is <code>TRUE</code>.</p></dd>
+
+
+<dt><code>stream</code></dt>
+<dd><p>Should the resource be streamed and written to disk in
+chunks? Default is <code>FALSE</code>, which means the resource file contents are
+retrieved in their entirety and written to disk all at once.</p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-Instance-download_image"></a><div class="section">
+<h3 id="method-download-image-">Method <code>download_image()</code><a class="anchor" aria-label="anchor" href="#method-download-image-"></a></h3>
+<p>Download instance as an image.</p><div class="section">
+<h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Instance</span><span class="op">$</span><span class="fu">download_image</span><span class="op">(</span></span>
+<span>  <span class="va">path</span>,</span>
+<span>  frame <span class="op">=</span> <span class="fl">0L</span>,</span>
+<span>  format <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"png"</span>, <span class="st">"jpeg"</span><span class="op">)</span>,</span>
+<span>  render <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  params <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-9">Arguments<a class="anchor" aria-label="anchor" href="#arguments-9"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>path</code></dt>
+<dd><p>Path on disk.</p></dd>
+
+
+<dt><code>frame</code></dt>
+<dd><p>Index of the frame (starts at <code>0L</code>). Default is <code>0L</code>.</p></dd>
+
+
+<dt><code>format</code></dt>
+<dd><p>One of <code>"png"</code> or <code>"jpeg"</code>. Default is <code>"png"</code>.</p></dd>
+
+
+<dt><code>render</code></dt>
+<dd><p>Should the image be scaled (with <code>RescaleSlope</code> and
+<code>RescaleIntercept</code>) and windowed (with <code>WindowCenter</code>
+and <code>WindowWidth</code>, if available). Default is <code>TRUE</code>.</p></dd>
+
+
+<dt><code>params</code></dt>
+<dd><p>Optional named-list of query parameters.</p></dd>
+
+
+<dt><code>...</code></dt>
+<dd><p>Optional arguments passed on to <code><a href="https://rdrr.io/pkg/png/man/writePNG.html" class="external-link">png::writePNG()</a></code> or
+<code><a href="https://rdrr.io/pkg/jpeg/man/writeJPEG.html" class="external-link">jpeg::writeJPEG()</a></code>.</p></dd>
+
+
+</dl><p></p></div>
+</div>
+
+</div><p></p><hr><a id="method-Instance-clone"></a><div class="section">
+<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
+<p>The objects of this class are cloneable with this method.</p><div class="section">
+<h4 id="usage-12">Usage<a class="anchor" aria-label="anchor" href="#usage-12"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Instance</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-10">Arguments<a class="anchor" aria-label="anchor" href="#arguments-10"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>deep</code></dt>
+<dd><p>Whether to make a deep clone.</p></dd>
 
 
 </dl><p></p></div>
