@@ -26,6 +26,7 @@ Wrapper around Orthanc API when dealing with a modality
 \item \href{#method-Modality-move}{\code{Modality$move()}}
 \item \href{#method-Modality-store}{\code{Modality$store()}}
 \item \href{#method-Modality-get_query_answers}{\code{Modality$get_query_answers()}}
+\item \href{#method-Modality-clone}{\code{Modality$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
@@ -145,6 +146,23 @@ Get query answers.
 \if{html}{\out{<div class="arguments">}}
 \describe{
 \item{\code{query_id}}{Query identifier.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Modality-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Modality-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Modality$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
 }
 \if{html}{\out{</div>}}
 }

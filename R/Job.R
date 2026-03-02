@@ -8,8 +8,6 @@
 Job <-
   R6::R6Class(
     classname = "Job",
-    portable = FALSE,
-    cloneable = FALSE,
     public = list(
       #' @description Create a new Job instance.
       #' @param id Job ID.

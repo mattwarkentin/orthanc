@@ -42,6 +42,7 @@ Job class to follow a Job in Orthanc
 \item \href{#method-Job-new}{\code{Job$new()}}
 \item \href{#method-Job-wait_until_completion}{\code{Job$wait_until_completion()}}
 \item \href{#method-Job-get_information}{\code{Job$get_information()}}
+\item \href{#method-Job-clone}{\code{Job$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
@@ -89,5 +90,22 @@ Get job information.
 \if{html}{\out{<div class="r">}}\preformatted{Job$get_information()}\if{html}{\out{</div>}}
 }
 
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Job-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Job-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Job$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
 }
 }

@@ -8,8 +8,6 @@
 Modality <-
   R6::R6Class(
     classname = "Modality",
-    portable = FALSE,
-    cloneable = FALSE,
     public = list(
       #' @field modality Modality.
       modality = NULL,
