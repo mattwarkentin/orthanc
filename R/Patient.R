@@ -344,7 +344,7 @@ Patient <- R6::R6Class(
 
     #' @field birth_date Patient Birth Date
     birth_date = function() {
-      private$get_main_dicom_tag_value("BirthDate")
+      parse_dicom_date(private$get_main_dicom_tag_value("PatientBirthDate"))
     },
 
     #' @field sex Patient Sex
@@ -364,7 +364,7 @@ Patient <- R6::R6Class(
 
     #' @field last_update Last Update
     last_update = function() {
-      self$get_main_information()[["LastUpdate"]]
+parse_dicom_date(      self$get_main_information()[["LastUpdate"]]
     },
 
     #' @field labels Labels

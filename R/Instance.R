@@ -209,7 +209,7 @@ Instance <- R6::R6Class(
 
     #' @field creation_date Creation Date
     creation_date = function() {
-      private$get_main_dicom_tag_value("InstanceCreationDate")
+      parse_dicom_date(private$get_main_dicom_tag_value("InstanceCreationDate"))
     },
 
     #' @field series_identifier Parent series identifier
@@ -244,12 +244,16 @@ Instance <- R6::R6Class(
 
     #' @field image_orientation_patient Image Orientation Patient
     image_orientation_patient = function() {
-      private$get_main_dicom_tag_value("ImageOrientationPatient")
+      parse_dicom_numeric_vecs(private$get_main_dicom_tag_value(
+        "ImageOrientationPatient"
+      ))
     },
 
     #' @field image_position_patient Image Position Patient
     image_position_patient = function() {
-      private$get_main_dicom_tag_value("ImagePositionPatient")
+      parse_dicom_numeric_vecs(private$get_main_dicom_tag_value(
+        "ImagePositionPatient"
+      ))
     },
 
     #' @field image_comments Image Comments

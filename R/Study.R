@@ -349,7 +349,7 @@ Study <- R6::R6Class(
 
     #' @field date Study Date
     date = function() {
-      private$get_main_dicom_tag_value("StudyDate")
+      parse_dicom_date(private$get_main_dicom_tag_value("StudyDate"))
     },
 
     #' @field study_id Study ID
@@ -442,7 +442,7 @@ Study <- R6::R6Class(
 
     #' @field last_update Last Update
     last_update = function() {
-      self$get_main_information()[["LastUpdate"]]
+      parse_dicom_date(self$get_main_information()[["LastUpdate"]])
     },
 
     #' @field labels Labels
