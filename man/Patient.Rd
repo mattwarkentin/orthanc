@@ -29,23 +29,29 @@ An abstract class for a DICOM Patient resource.
 
 \item{\code{last_update}}{Last Update}
 
-\item{\code{labels}}{Labels}
+\item{\code{labels}}{Get or add labels}
 
 \item{\code{protected}}{Get or set if patient is protected against recycling}
 
-\item{\code{studies_ids}}{Studies identifiers}
-
-\item{\code{series_ids}}{Series identifiers}
-
-\item{\code{instances_ids}}{Instances identifiers}
-
 \item{\code{studies}}{Studies}
+
+\item{\code{studies_ids}}{Studies identifiers}
 
 \item{\code{series}}{Series}
 
+\item{\code{series_ids}}{Series identifiers}
+
 \item{\code{instances}}{Instances}
 
+\item{\code{instances_ids}}{Instances identifiers}
+
 \item{\code{instances_tags}}{Instances tags}
+
+\item{\code{num_studies}}{Number of studies}
+
+\item{\code{num_series}}{Number of series}
+
+\item{\code{num_instances}}{Number of instances}
 
 \item{\code{shared_tags}}{Shared tags}
 
@@ -58,9 +64,10 @@ An abstract class for a DICOM Patient resource.
 \itemize{
 \item \href{#method-Patient-get_main_information}{\code{Patient$get_main_information()}}
 \item \href{#method-Patient-add_label}{\code{Patient$add_label()}}
+\item \href{#method-Patient-has_label}{\code{Patient$has_label()}}
 \item \href{#method-Patient-remove_label}{\code{Patient$remove_label()}}
-\item \href{#method-Patient-get_zip}{\code{Patient$get_zip()}}
-\item \href{#method-Patient-download}{\code{Patient$download()}}
+\item \href{#method-Patient-get_zip_archive_content}{\code{Patient$get_zip_archive_content()}}
+\item \href{#method-Patient-download_archive}{\code{Patient$download_archive()}}
 \item \href{#method-Patient-get_patient_module}{\code{Patient$get_patient_module()}}
 \item \href{#method-Patient-anonymize}{\code{Patient$anonymize()}}
 \item \href{#method-Patient-anonymize_as_job}{\code{Patient$anonymize_as_job()}}
@@ -68,6 +75,7 @@ An abstract class for a DICOM Patient resource.
 \item \href{#method-Patient-modify_as_job}{\code{Patient$modify_as_job()}}
 \item \href{#method-Patient-get_shared_tags}{\code{Patient$get_shared_tags()}}
 \item \href{#method-Patient-remove_empty_studies}{\code{Patient$remove_empty_studies()}}
+\item \href{#method-Patient-clone}{\code{Patient$clone()}}
 }
 }
 \if{html}{\out{
@@ -107,6 +115,23 @@ Add label to resource.
 }
 }
 \if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Patient-has_label"></a>}}
+\if{latex}{\out{\hypertarget{method-Patient-has_label}{}}}
+\subsection{Method \code{has_label()}}{
+Test if resource has label.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Patient$has_label(label)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{label}}{Label.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Patient-remove_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Patient-remove_label}{}}}
 \subsection{Method \code{remove_label()}}{
@@ -124,28 +149,32 @@ Delete label from resource.
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Patient-get_zip"></a>}}
-\if{latex}{\out{\hypertarget{method-Patient-get_zip}{}}}
-\subsection{Method \code{get_zip()}}{
-Get the bytes of the zip file.
+\if{html}{\out{<a id="method-Patient-get_zip_archive_content"></a>}}
+\if{latex}{\out{\hypertarget{method-Patient-get_zip_archive_content}{}}}
+\subsection{Method \code{get_zip_archive_content()}}{
+Get bytes of the zip archive.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Patient$get_zip()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Patient$get_zip_archive_content()}\if{html}{\out{</div>}}
 }
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Patient-download"></a>}}
-\if{latex}{\out{\hypertarget{method-Patient-download}{}}}
-\subsection{Method \code{download()}}{
-Download the zip file to a path.
+\if{html}{\out{<a id="method-Patient-download_archive"></a>}}
+\if{latex}{\out{\hypertarget{method-Patient-download_archive}{}}}
+\subsection{Method \code{download_archive()}}{
+Download zip archive to \code{path}.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Patient$download(file)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Patient$download_archive(path, stream = FALSE)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{file}}{File path on disk.}
+\item{\code{path}}{Path on disk.}
+
+\item{\code{stream}}{Should the resource be streamed and written to disk in
+chunks? Default is \code{FALSE}, which means the resource file contents are
+retrieved in their entirety and written to disk all at once.}
 }
 \if{html}{\out{</div>}}
 }
@@ -363,5 +392,22 @@ Remove empty studies from patient.
 \if{html}{\out{<div class="r">}}\preformatted{Patient$remove_empty_studies()}\if{html}{\out{</div>}}
 }
 
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Patient-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Patient-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Patient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
 }
 }

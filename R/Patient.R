@@ -9,12 +9,10 @@
 Patient <- R6::R6Class(
   classname = "Patient",
   inherit = Resource,
-  portable = FALSE,
-  cloneable = FALSE,
   public = list(
     #' @description Get patient information.
     get_main_information = function() {
-      private$client$get_patients_id(private$id)
+      private$client$get_patients_id(self$identifier)
     },
 
     #' @description Add label to resource.
@@ -59,10 +57,10 @@ Patient <- R6::R6Class(
       file <- glue::glue("{path}/{self$patient_id}.zip")
       if (stream) {
         private$download_file_stream(
-        "GET",
+          "GET",
           glue::glue("/patients/{self$identifier}/archive"),
-        file
-      )
+          file
+        )
       } else {
         private$download_file_whole(self$get_zip_archive_content(), file)
       }
@@ -71,7 +69,7 @@ Patient <- R6::R6Class(
     #' @description Get patient module in a simplified version
     get_patient_module = function() {
       private$client$get_patients_id_module(
-        private$id,
+        self$identifier,
         params = list(simplify = TRUE)
       )
     },
@@ -133,7 +131,7 @@ Patient <- R6::R6Class(
       }
 
       anon_patient <- private$client$post_patients_id_anonymize(
-        private$id,
+        self$identifier,
         data
       )
 
@@ -197,7 +195,7 @@ Patient <- R6::R6Class(
       }
 
       anon_patient <- private$client$post_patients_id_anonymize(
-        private$id,
+        self$identifier,
         data
       )
 
@@ -256,7 +254,10 @@ Patient <- R6::R6Class(
         data["PrivateCreator"] <- private_creator
       }
 
-      mod_patient <- private$client$post_patients_id_modify(private$id, data)
+      mod_patient <- private$client$post_patients_id_modify(
+        self$identifier,
+        data
+      )
 
       private$.main_dicom_tags <- NULL
 
@@ -315,7 +316,10 @@ Patient <- R6::R6Class(
         data["PrivateCreator"] <- private_creator
       }
 
-      mod_patient <- private$client$post_patients_id_modify(private$id, data)
+      mod_patient <- private$client$post_patients_id_modify(
+        self$identifier,
+        data
+      )
 
       private$.main_dicom_tags <- NULL
 
@@ -325,7 +329,7 @@ Patient <- R6::R6Class(
     #' @description Retrieve the shared tags of the patient.
     get_shared_tags = function() {
       private$client$get_patients_id_shared_tags(
-        private$id,
+        self$identifier,
         params = list(simplify = TRUE)
       )
     },
@@ -350,6 +354,15 @@ Patient <- R6::R6Class(
       self$set_child_resources(resources)
 
       invisible(self)
+    }
+  ),
+  private = list(
+    resource_type = "Patient",
+    populate_child_resources = function() {
+      studies_ids = self$get_main_information()[["Studies"]]
+      private$child_resources = purrr::map(studies_ids, \(id) {
+        Study$new(id, private$client, private$lock_children)
+      })
     }
   ),
   active = list(
@@ -385,7 +398,7 @@ Patient <- R6::R6Class(
 
     #' @field last_update Last Update
     last_update = function() {
-parse_dicom_date(      self$get_main_information()[["LastUpdate"]]
+      parse_dicom_date(self$get_main_information()[["LastUpdate"]])
     },
 
     #' @field labels Get or add labels
@@ -399,46 +412,32 @@ parse_dicom_date(      self$get_main_information()[["LastUpdate"]]
     #' @field protected Get or set if patient is protected against recycling
     protected = function(x) {
       if (rlang::is_missing(x)) {
-        return(private$client$get_patients_id_protected(private$id))
+        return(private$client$get_patients_id_protected(self$identifier))
       }
-      private$client$put_patients_id_protected(private$id, json = list(x))
-    },
-
-    #' @field studies_ids Studies identifiers
-    studies_ids = function() {
-      as.character(self$get_main_information()[["Studies"]])
-    },
-
-    #' @field series_ids Series identifiers
-    series_ids = function() {
-      purrr::map_chr(
-        private$client$get_patients_id_series(self$identifier),
-        \(x) x$ID
-      )
-    },
-
-    #' @field instances_ids Instances identifiers
-    instances_ids = function() {
-      purrr::map_chr(
-        private$client$get_patients_id_instances(self$identifier),
-        \(x) x$ID
-      )
+      check_scalar_logical(x)
+      private$client$put_patients_id_protected(self$identifier, json = list(x))
     },
 
     #' @field studies Studies
     studies = function() {
       if (private$lock_children) {
         if (rlang::is_null(private$child_resources)) {
-          studies_ids = self$get_main_information()[["Studies"]]
-          private$child_resources = purrr::map(studies_ids, \(id) {
-            Study$new(id, private$client, private$lock_children)
-          })
+          private$populate_child_resources()
         }
         return(private$child_resources)
       }
 
       studies_ids = self$get_main_information()[["Studies"]]
       purrr::map(studies_ids, \(id) Study$new(id, private$client))
+    },
+
+    #' @field studies_ids Studies identifiers
+    studies_ids = function() {
+      if (private$lock_children) {
+        ids <- unlist(purrr::map(self$studies, \(x) x$identifier))
+        return(ids)
+      }
+      as.character(self$get_main_information()[["Studies"]])
     },
 
     #' @field series Series
@@ -448,11 +447,35 @@ parse_dicom_date(      self$get_main_information()[["LastUpdate"]]
       })
     },
 
+    #' @field series_ids Series identifiers
+    series_ids = function() {
+      if (private$lock_children) {
+        ids <- unlist(purrr::map(self$studies, \(x) x$series_ids))
+        return(ids)
+      }
+      purrr::map_chr(
+        private$client$get_patients_id_series(self$identifier),
+        \(x) x$ID
+      )
+    },
+
     #' @field instances Instances
     instances = function() {
       purrr::map(self$instances_ids, \(i) {
         Instance$new(i, private$client, private$lock_children)
       })
+    },
+
+    #' @field instances_ids Instances identifiers
+    instances_ids = function() {
+      if (private$lock_children) {
+        ids <- unlist(purrr::map(self$studies, \(x) x$instances_ids))
+        return(ids)
+      }
+      purrr::map_chr(
+        private$client$get_patients_id_instances(self$identifier),
+        \(x) x$ID
+      )
     },
 
     #' @field instances_tags Instances tags
@@ -461,6 +484,21 @@ parse_dicom_date(      self$get_main_information()[["LastUpdate"]]
         self$identifier,
         params = list(simplify = TRUE)
       )
+    },
+
+    #' @field num_studies Number of studies
+    num_studies = function() {
+      length(self$studies_ids)
+    },
+
+    #' @field num_series Number of series
+    num_series = function() {
+      length(self$series_ids)
+    },
+
+    #' @field num_instances Number of instances
+    num_instances = function() {
+      length(self$instances_ids)
     },
 
     #' @field shared_tags Shared tags
@@ -472,8 +510,5 @@ parse_dicom_date(      self$get_main_information()[["LastUpdate"]]
     statistics = function() {
       private$client$get_patients_id_statistics(self$identifier)
     }
-  ),
-  private = list(
-    resource_type = "Patient"
   )
 )

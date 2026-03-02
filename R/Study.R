@@ -9,12 +9,10 @@
 Study <- R6::R6Class(
   classname = "Study",
   inherit = Resource,
-  portable = FALSE,
-  cloneable = FALSE,
   public = list(
     #' @description Get study information.
     get_main_information = function() {
-      private$client$get_studies_id(private$id)
+      private$client$get_studies_id(self$identifier)
     },
 
     #' @description Add label to resource.
@@ -101,7 +99,7 @@ Study <- R6::R6Class(
       }
 
       anon_study <- private$client$post_studies_id_anonymize(
-        private$id,
+        self$identifier,
         data
       )
 
@@ -165,7 +163,7 @@ Study <- R6::R6Class(
       }
 
       anon_study <- private$client$post_studies_id_anonymize(
-        private$id,
+        self$identifier,
         data
       )
 
@@ -224,7 +222,7 @@ Study <- R6::R6Class(
         data["PrivateCreator"] <- private_creator
       }
 
-      mod_study <- private$client$post_studies_id_modify(private$id, data)
+      mod_study <- private$client$post_studies_id_modify(self$identifier, data)
 
       private$.main_dicom_tags <- NULL
 
@@ -283,7 +281,7 @@ Study <- R6::R6Class(
         data["PrivateCreator"] <- private_creator
       }
 
-      mod_study <- private$client$post_studies_id_modify(private$id, data)
+      mod_study <- private$client$post_studies_id_modify(self$identifier, data)
 
       private$.main_dicom_tags <- NULL
 
@@ -305,10 +303,10 @@ Study <- R6::R6Class(
       file <- glue::glue("{path}/{self$uid}.zip")
       if (stream) {
         private$download_file_stream(
-        "GET",
+          "GET",
           glue::glue("/studies/{self$identifier}/archive"),
-        file
-      )
+          file
+        )
       } else {
         private$download_file_whole(self$get_zip_archive_content(), file)
       }
@@ -317,7 +315,7 @@ Study <- R6::R6Class(
     #' @description Retrieve the shared tags of the study.
     get_shared_tags = function() {
       private$client$get_studies_id_shared_tags(
-        private$id,
+        self$identifier,
         params = list(simplify = TRUE)
       )
     },
@@ -345,7 +343,13 @@ Study <- R6::R6Class(
     }
   ),
   private = list(
-    resource_type = "Study"
+    resource_type = "Study",
+    populate_child_resources = function() {
+      series_ids = self$get_main_information()[["Series"]]
+      private$child_resources = purrr::map(series_ids, \(id) {
+        Series$new(id, private$client, private$lock_children)
+      })
+    }
   ),
   active = list(
     #' @field patient_identifier Parent patient identifier
@@ -388,30 +392,11 @@ Study <- R6::R6Class(
       self$get_main_information()[["PatientMainDicomTags"]]
     },
 
-    #' @field series_ids Series identifiers
-    series_ids = function() {
-      purrr::map_chr(
-        private$client$get_studies_id_series(self$identifier),
-        \(x) x$ID
-      )
-    },
-
-    #' @field instances_ids Instances identifiers
-    instances_ids = function() {
-      purrr::map_chr(
-        private$client$get_studies_id_instances(self$identifier),
-        \(x) x$ID
-      )
-    },
-
     #' @field series Series
     series = function() {
       if (private$lock_children) {
         if (rlang::is_null(private$child_resources)) {
-          series_ids = self$get_main_information()[["Series"]]
-          private$child_resources = purrr::map(series_ids, \(id) {
-            Series$new(id, private$client, private$lock_children)
-          })
+          private$populate_child_resources()
         }
         return(private$child_resources)
       }
@@ -420,11 +405,45 @@ Study <- R6::R6Class(
       purrr::map(series_ids, \(id) Series$new(id, private$client))
     },
 
+    #' @field series_ids Series identifiers
+    series_ids = function() {
+      if (private$lock_children) {
+        ids <- unlist(purrr::map(self$series, \(x) x$identifier))
+        return(ids)
+      }
+      purrr::map_chr(
+        private$client$get_studies_id_series(self$identifier),
+        \(x) x$ID
+      )
+    },
+
     #' @field instances Instances
     instances = function() {
       purrr::map(self$instances_ids, \(i) {
         Instance$new(i, private$client, private$lock_children)
       })
+    },
+
+    #' @field instances_ids Instances identifiers
+    instances_ids = function() {
+      if (private$lock_children) {
+        ids <- unlist(purrr::map(self$series, \(x) x$instances_ids))
+        return(ids)
+      }
+      purrr::map_chr(
+        private$client$get_studies_id_instances(self$identifier),
+        \(x) x$ID
+      )
+    },
+
+    #' @field num_series Number of series
+    num_series = function() {
+      length(self$series_ids)
+    },
+
+    #' @field num_instances Number of instances
+    num_instances = function() {
+      length(self$instances_ids)
     },
 
     #' @field instances_tags Instances tags

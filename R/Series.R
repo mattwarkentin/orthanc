@@ -11,12 +11,10 @@
 Series <- R6::R6Class(
   classname = "Series",
   inherit = Resource,
-  portable = FALSE,
-  cloneable = FALSE,
   public = list(
     #' @description Get series information.
     get_main_information = function() {
-      private$client$get_series_id(private$id)
+      private$client$get_series_id(self$identifier)
     },
 
     #' @description Add label to resource.
@@ -102,7 +100,10 @@ Series <- R6::R6Class(
         data["DicomVersion"] <- dicom_version
       }
 
-      anon_series <- private$client$post_series_id_anonymize(private$id, data)
+      anon_series <- private$client$post_series_id_anonymize(
+        self$identifier,
+        data
+      )
 
       Series$new(anon_series[["ID"]], private$client)
     },
@@ -163,7 +164,10 @@ Series <- R6::R6Class(
         data["DicomVersion"] <- dicom_version
       }
 
-      anon_series <- private$client$post_series_id_anonymize(private$id, data)
+      anon_series <- private$client$post_series_id_anonymize(
+        self$identifier,
+        data
+      )
 
       Job$new(anon_series[["ID"]], private$client)
     },
@@ -220,7 +224,7 @@ Series <- R6::R6Class(
         data["PrivateCreator"] <- private_creator
       }
 
-      mod_series <- private$client$post_series_id_modify(private$id, data)
+      mod_series <- private$client$post_series_id_modify(self$identifier, data)
 
       private$.main_dicom_tags <- NULL
 
@@ -279,7 +283,7 @@ Series <- R6::R6Class(
         data["PrivateCreator"] <- private_creator
       }
 
-      mod_series <- private$client$post_series_id_modify(private$id, data)
+      mod_series <- private$client$post_series_id_modify(self$identifier, data)
 
       private$.main_dicom_tags <- NULL
 
@@ -301,10 +305,10 @@ Series <- R6::R6Class(
       file <- glue::glue("{path}/{self$uid}.zip")
       if (stream) {
         private$download_file_stream(
-        "GET",
+          "GET",
           glue::glue("/series/{self$identifier}/archive"),
-        file
-      )
+          file
+        )
       } else {
         private$download_file_whole(self$get_zip_archive_content(), file)
       }
@@ -378,8 +382,8 @@ Series <- R6::R6Class(
           method = "GET",
           route = route,
           file = file,
-        params = params
-      )
+          params = params
+        )
       } else {
         private$download_file_whole(self$get_nifti_file_content(), file)
       }
@@ -400,10 +404,7 @@ Series <- R6::R6Class(
     instances = function() {
       if (private$lock_children) {
         if (rlang::is_null(private$child_resources)) {
-          instances_ids <- self$get_main_information()[["Instances"]]
-          private$child_resources = purrr::map(instances_ids, \(id) {
-            Instance$new(id, private$client, private$lock_children)
-          })
+          private$populate_child_resources()
         }
         return(private$child_resources)
       }
@@ -414,10 +415,19 @@ Series <- R6::R6Class(
 
     #' @field instances_ids Instances identifiers
     instances_ids = function() {
+      if (private$lock_children) {
+        ids <- purrr::map_chr(self$instances, \(x) x$identifier)
+        return(ids)
+      }
       purrr::map_chr(
         private$client$get_series_id_instances(self$identifier),
         \(x) x$ID
       )
+    },
+
+    #' @field num_instances Number of instances
+    num_instances = function() {
+      length(self$instances_ids)
     },
 
     #' @field instances_tags Instances tags

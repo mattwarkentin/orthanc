@@ -19,6 +19,8 @@ An abstract class for a DICOM Series resource.
 
 \item{\code{instances_ids}}{Instances identifiers}
 
+\item{\code{num_instances}}{Number of instances}
+
 \item{\code{instances_tags}}{Instances tags}
 
 \item{\code{uid}}{SeriesInstanceUID}
@@ -69,7 +71,7 @@ Processing Description}
 
 \item{\code{last_update}}{Last Update}
 
-\item{\code{labels}}{Labels}
+\item{\code{labels}}{Get or add labels}
 
 \item{\code{study_identifier}}{Parent study identifier}
 
@@ -88,16 +90,19 @@ Processing Description}
 \itemize{
 \item \href{#method-Series-get_main_information}{\code{Series$get_main_information()}}
 \item \href{#method-Series-add_label}{\code{Series$add_label()}}
+\item \href{#method-Series-has_label}{\code{Series$has_label()}}
 \item \href{#method-Series-remove_label}{\code{Series$remove_label()}}
 \item \href{#method-Series-anonymize}{\code{Series$anonymize()}}
 \item \href{#method-Series-anonymize_as_job}{\code{Series$anonymize_as_job()}}
 \item \href{#method-Series-modify}{\code{Series$modify()}}
 \item \href{#method-Series-modify_as_job}{\code{Series$modify_as_job()}}
-\item \href{#method-Series-get_zip}{\code{Series$get_zip()}}
-\item \href{#method-Series-download}{\code{Series$download()}}
+\item \href{#method-Series-get_zip_archive_content}{\code{Series$get_zip_archive_content()}}
+\item \href{#method-Series-download_archive}{\code{Series$download_archive()}}
 \item \href{#method-Series-get_shared_tags}{\code{Series$get_shared_tags()}}
 \item \href{#method-Series-remove_empty_instances}{\code{Series$remove_empty_instances()}}
+\item \href{#method-Series-get_nifti_file_content}{\code{Series$get_nifti_file_content()}}
 \item \href{#method-Series-download_nifti}{\code{Series$download_nifti()}}
+\item \href{#method-Series-clone}{\code{Series$clone()}}
 }
 }
 \if{html}{\out{
@@ -126,6 +131,23 @@ Get series information.
 Add label to resource.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Series$add_label(label)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{label}}{Label.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Series-has_label"></a>}}
+\if{latex}{\out{\hypertarget{method-Series-has_label}{}}}
+\subsection{Method \code{has_label()}}{
+Test if resource has label.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Series$has_label(label)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -338,28 +360,32 @@ replace.}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Series-get_zip"></a>}}
-\if{latex}{\out{\hypertarget{method-Series-get_zip}{}}}
-\subsection{Method \code{get_zip()}}{
-Get the bytes of the zip file.
+\if{html}{\out{<a id="method-Series-get_zip_archive_content"></a>}}
+\if{latex}{\out{\hypertarget{method-Series-get_zip_archive_content}{}}}
+\subsection{Method \code{get_zip_archive_content()}}{
+Get bytes of the zip archive.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$get_zip()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Series$get_zip_archive_content()}\if{html}{\out{</div>}}
 }
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Series-download"></a>}}
-\if{latex}{\out{\hypertarget{method-Series-download}{}}}
-\subsection{Method \code{download()}}{
-Download the zip file to a path.
+\if{html}{\out{<a id="method-Series-download_archive"></a>}}
+\if{latex}{\out{\hypertarget{method-Series-download_archive}{}}}
+\subsection{Method \code{download_archive()}}{
+Download zip archive to \code{path}.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$download(file)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Series$download_archive(path, stream = FALSE)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{file}}{File path on disk.}
+\item{\code{path}}{Path on disk.}
+
+\item{\code{stream}}{Should the resource be streamed and written to disk in
+chunks? Default is \code{FALSE}, which means the resource file contents are
+retrieved in their entirety and written to disk all at once.}
 }
 \if{html}{\out{</div>}}
 }
@@ -385,12 +411,29 @@ Remove empty instances from series.
 
 }
 \if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Series-get_nifti_file_content"></a>}}
+\if{latex}{\out{\hypertarget{method-Series-get_nifti_file_content}{}}}
+\subsection{Method \code{get_nifti_file_content()}}{
+Get bytes of NIfTI file content.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Series$get_nifti_file_content(compress = TRUE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{compress}}{Compress to gzip (nii.gz) Default is \code{TRUE}.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Series-download_nifti"></a>}}
 \if{latex}{\out{\hypertarget{method-Series-download_nifti}{}}}
 \subsection{Method \code{download_nifti()}}{
 Download series as NIfTI.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$download_nifti(path, compress = FALSE)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Series$download_nifti(path, compress = TRUE, stream = FALSE)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -398,7 +441,28 @@ Download series as NIfTI.
 \describe{
 \item{\code{path}}{Path on disk.}
 
-\item{\code{compress}}{Compress to gzip.}
+\item{\code{compress}}{Compress to gzip (\code{nii.gz}) Default is \code{TRUE}.}
+
+\item{\code{stream}}{Should the resource be streamed and written to disk in
+chunks? Default is \code{FALSE}, which means the resource contents are
+retrieved in their entirety and written to disk all at once.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Series-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Series-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Series$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
 }
 \if{html}{\out{</div>}}
 }

@@ -31,13 +31,17 @@ An abstract class for a DICOM Study resource.
 
 \item{\code{patient_information}}{Patient Main DICOM Tags}
 
+\item{\code{series}}{Series}
+
 \item{\code{series_ids}}{Series identifiers}
+
+\item{\code{instances}}{Instances}
 
 \item{\code{instances_ids}}{Instances identifiers}
 
-\item{\code{series}}{Series}
+\item{\code{num_series}}{Number of series}
 
-\item{\code{instances}}{Instances}
+\item{\code{num_instances}}{Number of instances}
 
 \item{\code{instances_tags}}{Instances tags}
 
@@ -54,7 +58,7 @@ Description.}
 
 \item{\code{last_update}}{Last Update}
 
-\item{\code{labels}}{Labels}
+\item{\code{labels}}{Get or add labels}
 
 \item{\code{shared_tags}}{Shared Tags}
 
@@ -67,15 +71,17 @@ Description.}
 \itemize{
 \item \href{#method-Study-get_main_information}{\code{Study$get_main_information()}}
 \item \href{#method-Study-add_label}{\code{Study$add_label()}}
+\item \href{#method-Study-has_label}{\code{Study$has_label()}}
 \item \href{#method-Study-remove_label}{\code{Study$remove_label()}}
 \item \href{#method-Study-anonymize}{\code{Study$anonymize()}}
 \item \href{#method-Study-anonymize_as_job}{\code{Study$anonymize_as_job()}}
 \item \href{#method-Study-modify}{\code{Study$modify()}}
 \item \href{#method-Study-modify_as_job}{\code{Study$modify_as_job()}}
-\item \href{#method-Study-get_zip}{\code{Study$get_zip()}}
-\item \href{#method-Study-download}{\code{Study$download()}}
+\item \href{#method-Study-get_zip_archive_content}{\code{Study$get_zip_archive_content()}}
+\item \href{#method-Study-download_archive}{\code{Study$download_archive()}}
 \item \href{#method-Study-get_shared_tags}{\code{Study$get_shared_tags()}}
 \item \href{#method-Study-remove_empty_series}{\code{Study$remove_empty_series()}}
+\item \href{#method-Study-clone}{\code{Study$clone()}}
 }
 }
 \if{html}{\out{
@@ -104,6 +110,23 @@ Get study information.
 Add label to resource.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Study$add_label(label)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{label}}{Label.}
+}
+\if{html}{\out{</div>}}
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Study-has_label"></a>}}
+\if{latex}{\out{\hypertarget{method-Study-has_label}{}}}
+\subsection{Method \code{has_label()}}{
+Test if resource has label.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Study$has_label(label)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -316,28 +339,32 @@ replace.}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Study-get_zip"></a>}}
-\if{latex}{\out{\hypertarget{method-Study-get_zip}{}}}
-\subsection{Method \code{get_zip()}}{
-Get the bytes of the zip file.
+\if{html}{\out{<a id="method-Study-get_zip_archive_content"></a>}}
+\if{latex}{\out{\hypertarget{method-Study-get_zip_archive_content}{}}}
+\subsection{Method \code{get_zip_archive_content()}}{
+Get bytes of the zip archive.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Study$get_zip()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Study$get_zip_archive_content()}\if{html}{\out{</div>}}
 }
 
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Study-download"></a>}}
-\if{latex}{\out{\hypertarget{method-Study-download}{}}}
-\subsection{Method \code{download()}}{
-Download the zip file to a path.
+\if{html}{\out{<a id="method-Study-download_archive"></a>}}
+\if{latex}{\out{\hypertarget{method-Study-download_archive}{}}}
+\subsection{Method \code{download_archive()}}{
+Download zip archive to \code{path}.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Study$download(file)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Study$download_archive(path, stream = FALSE)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{file}}{File path on disk.}
+\item{\code{path}}{Path on disk.}
+
+\item{\code{stream}}{Should the resource be streamed and written to disk in
+chunks? Default is \code{FALSE}, which means the resource file contents are
+retrieved in their entirety and written to disk all at once.}
 }
 \if{html}{\out{</div>}}
 }
@@ -361,5 +388,22 @@ Remove empty series from study.
 \if{html}{\out{<div class="r">}}\preformatted{Study$remove_empty_series()}\if{html}{\out{</div>}}
 }
 
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Study-clone"></a>}}
+\if{latex}{\out{\hypertarget{method-Study-clone}{}}}
+\subsection{Method \code{clone()}}{
+The objects of this class are cloneable with this method.
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Study$clone(deep = FALSE)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{deep}}{Whether to make a deep clone.}
+}
+\if{html}{\out{</div>}}
+}
 }
 }
