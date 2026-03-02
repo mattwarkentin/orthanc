@@ -22,7 +22,7 @@ reference:
   - Modality
   - RemoteModality
 
-- title: Utilities
+- title: Query and Filter Resources
   contents:
   - find_patients
   - find_studies
@@ -30,4 +30,10 @@ reference:
   - find_instances
   - query_orthanc
   - find_and_filter_patients
+
+- title: Download Resources
+  contents:
   - retrieve_and_write_patients
+  - retrieve_and_write_nifti
+  - retrieve_and_write_archives
+  - retrieve_and_write_images
