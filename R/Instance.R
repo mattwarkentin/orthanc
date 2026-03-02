@@ -201,7 +201,10 @@ Instance <- R6::R6Class(
 
     #' @field file_size File size
     file_size = function() {
-      self$get_main_information()[["FileSize"]]
+      prettyunits::pretty_bytes(
+        bytes = self$get_main_information()[["FileSize"]],
+        style = "nopad"
+      )
     },
 
     #' @field creation_date Creation Date
