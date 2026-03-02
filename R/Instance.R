@@ -11,8 +11,6 @@
 Instance <- R6::R6Class(
   classname = "Instance",
   inherit = Resource,
-  portable = FALSE,
-  cloneable = FALSE,
   public = list(
     #' @description Retrieves bytes of DICOM file content
     #'
@@ -43,13 +41,13 @@ Instance <- R6::R6Class(
         private$download_file_whole(
           content = self$get_dicom_file_content(),
           file = path
-      )
+        )
       }
     },
 
     #' @description Get instance information.
     get_main_information = function() {
-      private$client$get_instances_id(private$id)
+      private$client$get_instances_id(self$identifier)
     },
 
     #' @description Add label to resource.
@@ -136,7 +134,7 @@ Instance <- R6::R6Class(
         data["DicomVersion"] <- dicom_version
       }
 
-      private$client$post_instances_id_anonymize(private$id, data)
+      private$client$post_instances_id_anonymize(self$identifier, data)
     },
 
     #' @description Modify an Instance
@@ -241,9 +239,9 @@ Instance <- R6::R6Class(
           method = "GET",
           route = route,
           file = file,
-        params = params
-      )
-} else {
+          params = params
+        )
+      } else {
         private$download_file_whole(
           self$get_nifti_file_content(compress),
           file
@@ -396,11 +394,6 @@ Instance <- R6::R6Class(
       private$get_main_dicom_tag_value("InstanceNumber")
     },
 
-    #' @field number_of_frames Number of Frames
-    number_of_frames = function() {
-      private$get_main_dicom_tag_value("NumberOfFrames")
-    },
-
     #' @field temporal_position_identifier Temporal Position Identifier
     temporal_position_identifier = function() {
       private$get_main_dicom_tag_value("TemporalPositionIdentifier")
@@ -408,13 +401,13 @@ Instance <- R6::R6Class(
 
     #' @field tags Tags
     tags = function() {
-      private$client$get_instances_id_tags(private$id)
+      private$client$get_instances_id_tags(self$identifier)
     },
 
     #' @field simplified_tags Simplified Tags
     simplified_tags = function() {
       private$client$get_instances_id_tags(
-        private$id,
+        self$identifier,
         params = list(simplify = TRUE)
       )
     },
@@ -430,6 +423,50 @@ Instance <- R6::R6Class(
     #' @field statistics Statistics
     statistics = function() {
       private$client$get_instances_id_statistics(self$identifier)
+    },
+
+    #' @field list_frames List frames (zero-based indexing)
+    list_frames = function() {
+      unlist(private$client$get_instances_id_frames(self$identifier))
+    },
+
+    #' @field frames Number of frames
+    frames = function() {
+      length(self$list_frames)
+    },
+
+    #' @field rows Number of rows
+    rows = function() {
+      as.integer(self$simplified_tags$Rows)
+    },
+
+    #' @field columns Number of columns
+    columns = function() {
+      as.integer(self$simplified_tags$Columns)
+    },
+
+    #' @field shape Shape (rows x columns x frames (if multi-frame))
+    shape = function() {
+      if (self$frames == 1L) {
+        c(self$rows, self$columns)
+      } else {
+        c(self$rows, self$columns, self$frames)
+      }
+    },
+
+    #' @field dim Number of dimensions
+    dim = function() {
+      length(self$shape)
+    },
+
+    #' @field slice_thickness Slice thickness
+    slice_thickness = function() {
+      as.numeric(self$simplified_tags$SliceThickness)
+    },
+
+    #' @field pixel_spacing Pixel spacing
+    pixel_spacing = function() {
+      parse_dicom_numeric_vecs(self$simplified_tags$PixelSpacing)
     }
   )
 )
