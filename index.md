@@ -28,6 +28,12 @@ preserving the structure and semantics of DICOM resources.
 
 ## Installation
 
+You can install the CRAN version of `orthanc` with:
+
+``` r
+install.packages("orthanc")
+```
+
 You can install the development version of `orthanc` from
 [GitHub](https://github.com/mattwarkentin/orthanc) with:
 
