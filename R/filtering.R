@@ -15,6 +15,11 @@
 #' @param progress Whether to show progress bars. By default, progress bars are
 #'   enabled in interactive sessions (i.e., if `rlang::is_interactive()`
 #'   returns `TRUE`).
+#' @param ... Named-arguments to declare in the environment of the predicate
+#'   functions, if performing filtering in parallel with `mirai`. If your
+#'   predicate functions require access to objects in the global environment, ]
+#'   you must pass them to `...` so they are available on each background worker
+#'   when running in parallel (i.e., when [mirai::daemons()] has been set).
 #'
 #' @details
 #' This function builds a series of tree structures. Each tree corresponds to a
@@ -41,10 +46,12 @@ find_and_filter_patients <- function(
   study_filter = NULL,
   series_filter = NULL,
   instance_filter = NULL,
-  progress = rlang::is_interactive()
+  progress = rlang::is_interactive(),
+  ...
 ) {
   check_orthanc_client(client)
   check_scalar_logical(progress)
+  rlang::check_dots_used()
 
   patients <- purrr::map(
     client$get_patients(),
@@ -60,7 +67,8 @@ find_and_filter_patients <- function(
       .x = patients,
       .f = purrr::in_parallel(
         .f = \(patient) patient_filter(patient),
-        patient_filter = patient_filter
+        patient_filter = patient_filter,
+        ...
       ),
       .progress = ifelse(progress, "Filtering Patients", FALSE)
     )
@@ -110,7 +118,8 @@ find_and_filter_patients <- function(
       study_filter = study_filter,
       series_filter = series_filter,
       instance_filter = instance_filter,
-      check_function = check_function
+      check_function = check_function,
+      ...
     ),
     .progress = ifelse(progress, "Filtering Resources", FALSE)
   )

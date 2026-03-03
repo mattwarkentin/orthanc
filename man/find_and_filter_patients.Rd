@@ -10,7 +10,8 @@ find_and_filter_patients(
   study_filter = NULL,
   series_filter = NULL,
   instance_filter = NULL,
-  progress = rlang::is_interactive()
+  progress = rlang::is_interactive(),
+  ...
 )
 }
 \arguments{
@@ -27,6 +28,12 @@ find_and_filter_patients(
 \item{progress}{Whether to show progress bars. By default, progress bars are
 enabled in interactive sessions (i.e., if \code{rlang::is_interactive()}
 returns \code{TRUE}).}
+
+\item{...}{Named-arguments to declare in the environment of the predicate
+functions, if performing filtering in parallel with \code{mirai}. If your
+predicate functions require access to objects in the global environment, ]
+you must pass them to \code{...} so they are available on each background worker
+when running in parallel (i.e., when \code{\link[mirai:daemons]{mirai::daemons()}} has been set).}
 }
 \value{
 A \code{list} of filtered \link{Patient}s.
