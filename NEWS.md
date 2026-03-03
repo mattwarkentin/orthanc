@@ -2,8 +2,8 @@
 
 ## New features
 
-- orthanc has gained support for exporting of NIfTI files for Instances and Series (`retrieve_and_write_nifti()`), if the Orthanc Neuroimaging plugin is available, and ZIP Archives for Series, Studies, and Patients.
-  - `retrieve_and_write_nifti()` and `retrieve_and_write_archives()` have support for progress bars and parallel exporting using `mirai`, similar to `retrieve_and_write_patients()`.
+- orthanc has gained support for batch exporting image files (PNG or JPEG) for Instances (`retrieve_and_write_images()`), NIfTI files for Instances and Series (`retrieve_and_write_nifti()`), if the Orthanc Neuroimaging plugin is available, and ZIP Archives for Series, Studies, and Patients (`retrieve_and_write_archives()`).
+  - `retrieve_and_write_images()`, `retrieve_and_write_nifti()`, and `retrieve_and_write_archives()` have support for progress bars and parallel exporting using `mirai`, similar to `retrieve_and_write_patients()`.
 
 - Major refactor of resource download methods so that output formats aren't ambiguous across the various resource types:
   - Instances now have `$download_dicom()` (formerly `$download()`), `$download_nifti()` (only works if Orthanc Neuroimaging plugin is avialable), and `$download_image()` (if R packages `png` or `jpeg` are installed).
@@ -51,7 +51,7 @@
 
 - Improved support for progress bars and parallelization for `find_and_filter()`.
 
-- `Instance$download_nifti()` and `Series$download_nifti()` now use gzip compression by default.
+- `Instance$download_nifti()` and `Series$download_nifti()` now use gzip (nii.gz) compression by default.
 
 - `$image_orientation_patient()` and `$image_position_patient()` now return parsed numeric vectors instead of character vectors.
 
