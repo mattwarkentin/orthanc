@@ -16,6 +16,10 @@ An R6 instance of class `"Resource"`.
 
   Main DICOM tags for the resource.
 
+- `is_locked`:
+
+  Get or set whether resource is locked.
+
 ## Methods
 
 ### Public methods
@@ -27,6 +31,8 @@ An R6 instance of class `"Resource"`.
 - [`Resource$print()`](#method-Resource-print)
 
 - [`Resource$set_child_resources()`](#method-Resource-set_child_resources)
+
+- [`Resource$clone()`](#method-Resource-clone)
 
 ------------------------------------------------------------------------
 
@@ -96,3 +102,19 @@ Set child resources.
 - `resources`:
 
   List of resources.
+
+------------------------------------------------------------------------
+
+### Method `clone()`
+
+The objects of this class are cloneable with this method.
+
+#### Usage
+
+    Resource$clone(deep = FALSE)
+
+#### Arguments
+
+- `deep`:
+
+  Whether to make a deep clone.

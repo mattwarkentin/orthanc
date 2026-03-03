@@ -21,6 +21,10 @@ An R6 instance of class `"Series"`.
 
   Instances identifiers
 
+- `num_instances`:
+
+  Number of instances
+
 - `instances_tags`:
 
   Instances tags
@@ -119,7 +123,7 @@ An R6 instance of class `"Series"`.
 
 - `labels`:
 
-  Labels
+  Get or add labels
 
 - `study_identifier`:
 
@@ -149,6 +153,8 @@ An R6 instance of class `"Series"`.
 
 - [`Series$add_label()`](#method-Series-add_label)
 
+- [`Series$has_label()`](#method-Series-has_label)
+
 - [`Series$remove_label()`](#method-Series-remove_label)
 
 - [`Series$anonymize()`](#method-Series-anonymize)
@@ -159,15 +165,19 @@ An R6 instance of class `"Series"`.
 
 - [`Series$modify_as_job()`](#method-Series-modify_as_job)
 
-- [`Series$get_zip()`](#method-Series-get_zip)
+- [`Series$get_zip_archive_content()`](#method-Series-get_zip_archive_content)
 
-- [`Series$download()`](#method-Series-download)
+- [`Series$download_archive()`](#method-Series-download_archive)
 
 - [`Series$get_shared_tags()`](#method-Series-get_shared_tags)
 
 - [`Series$remove_empty_instances()`](#method-Series-remove_empty_instances)
 
+- [`Series$get_nifti_file_content()`](#method-Series-get_nifti_file_content)
+
 - [`Series$download_nifti()`](#method-Series-download_nifti)
+
+- [`Series$clone()`](#method-Series-clone)
 
 Inherited methods
 
@@ -194,6 +204,22 @@ Add label to resource.
 #### Usage
 
     Series$add_label(label)
+
+#### Arguments
+
+- `label`:
+
+  Label.
+
+------------------------------------------------------------------------
+
+### Method `has_label()`
+
+Test if resource has label.
+
+#### Usage
+
+    Series$has_label(label)
 
 #### Arguments
 
@@ -461,29 +487,35 @@ Modify Series
 
 ------------------------------------------------------------------------
 
-### Method `get_zip()`
+### Method `get_zip_archive_content()`
 
-Get the bytes of the zip file.
+Get bytes of the zip archive.
 
 #### Usage
 
-    Series$get_zip()
+    Series$get_zip_archive_content()
 
 ------------------------------------------------------------------------
 
-### Method `download()`
+### Method `download_archive()`
 
-Download the zip file to a path.
+Download zip archive to `path`.
 
 #### Usage
 
-    Series$download(file)
+    Series$download_archive(path, stream = FALSE)
 
 #### Arguments
 
-- `file`:
+- `path`:
 
-  File path on disk.
+  Path on disk.
+
+- `stream`:
+
+  Should the resource be streamed and written to disk in chunks? Default
+  is `FALSE`, which means the resource file contents are retrieved in
+  their entirety and written to disk all at once.
 
 ------------------------------------------------------------------------
 
@@ -507,13 +539,29 @@ Remove empty instances from series.
 
 ------------------------------------------------------------------------
 
+### Method `get_nifti_file_content()`
+
+Get bytes of NIfTI file content.
+
+#### Usage
+
+    Series$get_nifti_file_content(compress = TRUE)
+
+#### Arguments
+
+- `compress`:
+
+  Compress to gzip (nii.gz) Default is `TRUE`.
+
+------------------------------------------------------------------------
+
 ### Method `download_nifti()`
 
 Download series as NIfTI.
 
 #### Usage
 
-    Series$download_nifti(path, compress = FALSE)
+    Series$download_nifti(path, compress = TRUE, stream = FALSE)
 
 #### Arguments
 
@@ -523,4 +571,26 @@ Download series as NIfTI.
 
 - `compress`:
 
-  Compress to gzip.
+  Compress to gzip (`nii.gz`) Default is `TRUE`.
+
+- `stream`:
+
+  Should the resource be streamed and written to disk in chunks? Default
+  is `FALSE`, which means the resource contents are retrieved in their
+  entirety and written to disk all at once.
+
+------------------------------------------------------------------------
+
+### Method `clone()`
+
+The objects of this class are cloneable with this method.
+
+#### Usage
+
+    Series$clone(deep = FALSE)
+
+#### Arguments
+
+- `deep`:
+
+  Whether to make a deep clone.

@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">orthanc</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,7 +28,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Job Class</h1>
-      <small class="dont-index">Source: <a href="https://github.com/mattwarkentin/orthanc/blob/v0.1.0/R/Job.R" class="external-link"><code>R/Job.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/mattwarkentin/orthanc/blob/main/R/Job.R" class="external-link"><code>R/Job.R</code></a></small>
       <div class="d-none name"><code>Job.Rd</code></div>
     </div>
 
@@ -98,6 +98,7 @@
 <ul><li><p><a href="#method-Job-new"><code>Job$new()</code></a></p></li>
 <li><p><a href="#method-Job-wait_until_completion"><code>Job$wait_until_completion()</code></a></p></li>
 <li><p><a href="#method-Job-get_information"><code>Job$get_information()</code></a></p></li>
+<li><p><a href="#method-Job-clone"><code>Job$clone()</code></a></p></li>
 </ul></div><p></p><hr><a id="method-Job-new"></a><div class="section">
 <h3 id="method-new-">Method <code>new()</code><a class="anchor" aria-label="anchor" href="#method-new-"></a></h3>
 <p>Create a new Job instance.</p><div class="section">
@@ -141,6 +142,22 @@
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Job</span><span class="op">$</span><span class="fu">get_information</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
+
+</div><p></p><hr><a id="method-Job-clone"></a><div class="section">
+<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
+<p>The objects of this class are cloneable with this method.</p><div class="section">
+<h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Job</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
+</div>
+
+<div class="section">
+<h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
+<p></p><div class="arguments"><dl><dt><code>deep</code></dt>
+<dd><p>Whether to make a deep clone.</p></dd>
+
+
+</dl><p></p></div>
+</div>
 
 </div>
 
