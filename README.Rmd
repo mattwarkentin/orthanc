@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 # orthanc <img src="man/figures/logo.png" align="right" height="120" alt="" />
 
 <!-- badges: start -->
-[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![CRAN status](https://www.r-pkg.org/badges/version/orthanc)](https://CRAN.R-project.org/package=orthanc)
 [![R-CMD-check](https://github.com/mattwarkentin/orthanc/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mattwarkentin/orthanc/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
@@ -33,6 +33,12 @@ The package provides comprehensive and user-friendly access to the Orthanc REST 
 + High-level utility functions for performing common DICOM operations including querying, filtering, managing, modifying, and exporting DICOM data
 
 ## Installation
+
+You can install the CRAN version of `orthanc` with:
+
+``` r
+install.packages("orthanc")
+```
 
 You can install the development version of `orthanc` from [GitHub](https://github.com/mattwarkentin/orthanc) with:
 

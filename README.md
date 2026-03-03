@@ -3,8 +3,8 @@
 
 <!-- badges: start -->
 
-[![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/orthanc)](https://CRAN.R-project.org/package=orthanc)
 [![R-CMD-check](https://github.com/mattwarkentin/orthanc/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mattwarkentin/orthanc/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
@@ -35,6 +35,12 @@ preserving the structure and semantics of DICOM resources.
   DICOM data
 
 ## Installation
+
+You can install the CRAN version of `orthanc` with:
+
+``` r
+install.packages("orthanc")
+```
 
 You can install the development version of `orthanc` from
 [GitHub](https://github.com/mattwarkentin/orthanc) with:
