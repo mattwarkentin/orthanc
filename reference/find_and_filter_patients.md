@@ -18,7 +18,8 @@ find_and_filter_patients(
   study_filter = NULL,
   series_filter = NULL,
   instance_filter = NULL,
-  progress = rlang::is_interactive()
+  progress = rlang::is_interactive(),
+  ...
 )
 ```
 
@@ -55,6 +56,16 @@ find_and_filter_patients(
   [`rlang::is_interactive()`](https://rlang.r-lib.org/reference/is_interactive.html)
   returns `TRUE`).
 
+- ...:
+
+  Named-arguments to declare in the environment of the predicate
+  functions, if performing filtering in parallel with `mirai`. If your
+  predicate functions require access to objects in the global
+  environment, \] you must pass them to `...` so they are available on
+  each background worker when running in parallel (i.e., when
+  [`mirai::daemons()`](https://mirai.r-lib.org/reference/daemons.html)
+  has been set).
+
 ## Value
 
 A `list` of filtered
@@ -76,8 +87,20 @@ find_and_filter_patients(
   client = client,
   patient_filter = \(pt) pt$is_stable
 )
-#> Error in httr2::req_perform(req): Failed to perform HTTP request.
-#> Caused by error in `curl::curl_fetch_memory()`:
-#> ! Timeout was reached [orthanc.uclouvain.be]:
-#> Failed to connect to orthanc.uclouvain.be port 443 after 10002 ms: Timeout was reached
+#> [[1]]
+#> <Patient: 0946fcb6-cf12ab43-bad958c1-bf057ad5-0fc6f54c [locked]>
+#> [[2]]
+#> <Patient: 16738bc3-e47ed42a-43ce044c-a3414a45-cb069bd0 [locked]>
+#> [[3]]
+#> <Patient: 2f74083e-9b042648-10edac14-b26950f8-f82ec3a0 [locked]>
+#> [[4]]
+#> <Patient: 46e6332c-677825b6-202fcf7c-f787bc5f-7b07c382 [locked]>
+#> [[5]]
+#> <Patient: 65ce8003-696b2eb6-03adeee7-6561ce8e-3e03f13a [locked]>
+#> [[6]]
+#> <Patient: 6816cb19-844d5aee-85245eba-28e841e6-2414fae2 [locked]>
+#> [[7]]
+#> <Patient: a8d72883-45661eab-168bafbf-d799b4dc-4fc83a26 [locked]>
+#> [[8]]
+#> <Patient: da39a3ee-5e6b4b0d-3255bfef-95601890-afd80709 [locked]>
 ```

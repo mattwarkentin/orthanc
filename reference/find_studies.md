@@ -47,8 +47,6 @@ objects.
 ``` r
 client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 find_studies(client, query = list(StudyDescription = "RT^HEAD_NECK (Adult)"))
-#> Error in httr2::req_perform(req): Failed to perform HTTP request.
-#> Caused by error in `curl::curl_fetch_memory()`:
-#> ! Timeout was reached [orthanc.uclouvain.be]:
-#> Failed to connect to orthanc.uclouvain.be port 443 after 10001 ms: Timeout was reached
+#> [[1]]
+#> <Study: 1c379a23-9fd28bba-02b60e5b-850ff34e-4349f09b>
 ```

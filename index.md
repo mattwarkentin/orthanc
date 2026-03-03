@@ -16,10 +16,11 @@ preserving the structure and semantics of DICOM resources.
 - Comprehensive wrapping of the Orthanc REST API endpoints using
   [`httr2`](https://httr2.r-lib.org)
 
-- Asynchronous client support using [`mirai`](https://mirai.r-lib.org)
+- Asynchronous client support and parallelization using
+  [`mirai`](https://mirai.r-lib.org)
 
-- Object-oriented representations of hierarchical DICOM resources using
-  [`R6`](https://r6.r-lib.org)
+- Encapsulated object-oriented representations of hierarchical DICOM
+  resources using [`R6`](https://r6.r-lib.org)
 
 - High-level utility functions for performing common DICOM operations
   including querying, filtering, managing, modifying, and exporting
