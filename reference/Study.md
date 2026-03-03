@@ -45,29 +45,21 @@ An R6 instance of class `"Study"`.
 
   Patient Main DICOM Tags
 
-- `series`:
-
-  Series
-
 - `series_ids`:
 
   Series identifiers
-
-- `instances`:
-
-  Instances
 
 - `instances_ids`:
 
   Instances identifiers
 
-- `num_series`:
+- `series`:
 
-  Number of series
+  Series
 
-- `num_instances`:
+- `instances`:
 
-  Number of instances
+  Instances
 
 - `instances_tags`:
 
@@ -99,7 +91,7 @@ An R6 instance of class `"Study"`.
 
 - `labels`:
 
-  Get or add labels
+  Labels
 
 - `shared_tags`:
 
@@ -117,8 +109,6 @@ An R6 instance of class `"Study"`.
 
 - [`Study$add_label()`](#method-Study-add_label)
 
-- [`Study$has_label()`](#method-Study-has_label)
-
 - [`Study$remove_label()`](#method-Study-remove_label)
 
 - [`Study$anonymize()`](#method-Study-anonymize)
@@ -129,15 +119,13 @@ An R6 instance of class `"Study"`.
 
 - [`Study$modify_as_job()`](#method-Study-modify_as_job)
 
-- [`Study$get_zip_archive_content()`](#method-Study-get_zip_archive_content)
+- [`Study$get_zip()`](#method-Study-get_zip)
 
-- [`Study$download_archive()`](#method-Study-download_archive)
+- [`Study$download()`](#method-Study-download)
 
 - [`Study$get_shared_tags()`](#method-Study-get_shared_tags)
 
 - [`Study$remove_empty_series()`](#method-Study-remove_empty_series)
-
-- [`Study$clone()`](#method-Study-clone)
 
 Inherited methods
 
@@ -164,22 +152,6 @@ Add label to resource.
 #### Usage
 
     Study$add_label(label)
-
-#### Arguments
-
-- `label`:
-
-  Label.
-
-------------------------------------------------------------------------
-
-### Method `has_label()`
-
-Test if resource has label.
-
-#### Usage
-
-    Study$has_label(label)
 
 #### Arguments
 
@@ -447,35 +419,29 @@ Modify Study as Job
 
 ------------------------------------------------------------------------
 
-### Method `get_zip_archive_content()`
+### Method `get_zip()`
 
-Get bytes of the zip archive.
+Get the bytes of the zip file.
 
 #### Usage
 
-    Study$get_zip_archive_content()
+    Study$get_zip()
 
 ------------------------------------------------------------------------
 
-### Method `download_archive()`
+### Method `download()`
 
-Download zip archive to `path`.
+Download the zip file to a path.
 
 #### Usage
 
-    Study$download_archive(path, stream = FALSE)
+    Study$download(file)
 
 #### Arguments
 
-- `path`:
+- `file`:
 
-  Path on disk.
-
-- `stream`:
-
-  Should the resource be streamed and written to disk in chunks? Default
-  is `FALSE`, which means the resource file contents are retrieved in
-  their entirety and written to disk all at once.
+  File path on disk.
 
 ------------------------------------------------------------------------
 
@@ -496,19 +462,3 @@ Remove empty series from study.
 #### Usage
 
     Study$remove_empty_series()
-
-------------------------------------------------------------------------
-
-### Method `clone()`
-
-The objects of this class are cloneable with this method.
-
-#### Usage
-
-    Study$clone(deep = FALSE)
-
-#### Arguments
-
-- `deep`:
-
-  Whether to make a deep clone.

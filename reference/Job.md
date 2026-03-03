@@ -62,8 +62,6 @@ An instance of `Job`.
 
 - [`Job$get_information()`](#method-Job-get_information)
 
-- [`Job$clone()`](#method-Job-clone)
-
 ------------------------------------------------------------------------
 
 ### Method `new()`
@@ -109,19 +107,3 @@ Get job information.
 #### Usage
 
     Job$get_information()
-
-------------------------------------------------------------------------
-
-### Method `clone()`
-
-The objects of this class are cloneable with this method.
-
-#### Usage
-
-    Job$clone(deep = FALSE)
-
-#### Arguments
-
-- `deep`:
-
-  Whether to make a deep clone.

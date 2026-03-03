@@ -30,8 +30,6 @@ An instance of `Modality`.
 
 - [`Modality$get_query_answers()`](#method-Modality-get_query_answers)
 
-- [`Modality$clone()`](#method-Modality-clone)
-
 ------------------------------------------------------------------------
 
 ### Method `initalize()`
@@ -151,19 +149,3 @@ Get query answers.
 - `query_id`:
 
   Query identifier.
-
-------------------------------------------------------------------------
-
-### Method `clone()`
-
-The objects of this class are cloneable with this method.
-
-#### Usage
-
-    Modality$clone(deep = FALSE)
-
-#### Arguments
-
-- `deep`:
-
-  Whether to make a deep clone.

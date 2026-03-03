@@ -20,7 +20,7 @@ An `Orthanc` instance.
 
 - `api_version`:
 
-  Orthanc REST API version.
+  Orthanc API version.
 
 ## Active bindings
 

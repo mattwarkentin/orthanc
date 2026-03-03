@@ -65,6 +65,10 @@ An R6 instance of class `"Instance"`.
 
   Instance Number
 
+- `number_of_frames`:
+
+  Number of Frames
+
 - `temporal_position_identifier`:
 
   Temporal Position Identifier
@@ -79,43 +83,11 @@ An R6 instance of class `"Instance"`.
 
 - `labels`:
 
-  Get or add labels
+  Labels
 
 - `statistics`:
 
   Statistics
-
-- `list_frames`:
-
-  List frames (zero-based indexing)
-
-- `frames`:
-
-  Number of frames
-
-- `rows`:
-
-  Number of rows
-
-- `columns`:
-
-  Number of columns
-
-- `shape`:
-
-  Shape (rows x columns x frames (if multi-frame))
-
-- `dim`:
-
-  Number of dimensions
-
-- `slice_thickness`:
-
-  Slice thickness
-
-- `pixel_spacing`:
-
-  Pixel spacing
 
 ## Methods
 
@@ -123,29 +95,21 @@ An R6 instance of class `"Instance"`.
 
 - [`Instance$get_dicom_file_content()`](#method-Instance-get_dicom_file_content)
 
-- [`Instance$download_dicom()`](#method-Instance-download_dicom)
+- [`Instance$download()`](#method-Instance-download)
 
 - [`Instance$get_main_information()`](#method-Instance-get_main_information)
 
 - [`Instance$add_label()`](#method-Instance-add_label)
 
-- [`Instance$has_label()`](#method-Instance-has_label)
-
 - [`Instance$remove_label()`](#method-Instance-remove_label)
 
-- [`Instance$get_raw_content_by_tag()`](#method-Instance-get_raw_content_by_tag)
+- [`Instance$get_content_by_tag()`](#method-Instance-get_content_by_tag)
 
 - [`Instance$anonymize()`](#method-Instance-anonymize)
 
 - [`Instance$modify()`](#method-Instance-modify)
 
-- [`Instance$get_nifti_file_content()`](#method-Instance-get_nifti_file_content)
-
 - [`Instance$download_nifti()`](#method-Instance-download_nifti)
-
-- [`Instance$download_image()`](#method-Instance-download_image)
-
-- [`Instance$clone()`](#method-Instance-clone)
 
 Inherited methods
 
@@ -157,9 +121,9 @@ Inherited methods
 
 ### Method `get_dicom_file_content()`
 
-Retrieves bytes of DICOM file content
+Retrieves DICOM file
 
-This method retrieves bytes corresponding to the DICOM file.
+This method retrieves bytes corresponding to DICOM file.
 
 #### Usage
 
@@ -167,25 +131,19 @@ This method retrieves bytes corresponding to the DICOM file.
 
 ------------------------------------------------------------------------
 
-### Method `download_dicom()`
+### Method `download()`
 
 Download DICOM file to a path.
 
 #### Usage
 
-    Instance$download_dicom(path, stream = FALSE)
+    Instance$download(file)
 
 #### Arguments
 
-- `path`:
+- `file`:
 
-  Path on disk.
-
-- `stream`:
-
-  Should the resource be streamed and written to disk in chunks? Default
-  is `FALSE`, which means the resource file contents are retrieved in
-  their entirety and written to disk all at once.
+  File path on disk.
 
 ------------------------------------------------------------------------
 
@@ -215,22 +173,6 @@ Add label to resource.
 
 ------------------------------------------------------------------------
 
-### Method `has_label()`
-
-Test if resource has label.
-
-#### Usage
-
-    Instance$has_label(label)
-
-#### Arguments
-
-- `label`:
-
-  Label.
-
-------------------------------------------------------------------------
-
 ### Method `remove_label()`
 
 Delete label from resource.
@@ -247,13 +189,13 @@ Delete label from resource.
 
 ------------------------------------------------------------------------
 
-### Method `get_raw_content_by_tag()`
+### Method `get_content_by_tag()`
 
-Get raw content of one DICOM tag.
+Get content by tag.
 
 #### Usage
 
-    Instance$get_raw_content_by_tag(tag)
+    Instance$get_content_by_tag(tag)
 
 #### Arguments
 
@@ -364,29 +306,13 @@ Modify an Instance
 
 ------------------------------------------------------------------------
 
-### Method `get_nifti_file_content()`
-
-Get bytes of NIfTI file content.
-
-#### Usage
-
-    Instance$get_nifti_file_content(compress = TRUE)
-
-#### Arguments
-
-- `compress`:
-
-  Compress to gzip (nii.gz) Default is `TRUE`.
-
-------------------------------------------------------------------------
-
 ### Method `download_nifti()`
 
 Download instance as NIfTI.
 
 #### Usage
 
-    Instance$download_nifti(path, compress = TRUE, stream = FALSE)
+    Instance$download_nifti(path, compress = FALSE)
 
 #### Arguments
 
@@ -396,73 +322,4 @@ Download instance as NIfTI.
 
 - `compress`:
 
-  Compress to gzip (nii.gz) Default is `TRUE`.
-
-- `stream`:
-
-  Should the resource be streamed and written to disk in chunks? Default
-  is `FALSE`, which means the resource file contents are retrieved in
-  their entirety and written to disk all at once.
-
-------------------------------------------------------------------------
-
-### Method `download_image()`
-
-Download instance as an image.
-
-#### Usage
-
-    Instance$download_image(
-      path,
-      frame = 0L,
-      format = c("png", "jpeg"),
-      render = TRUE,
-      params = NULL,
-      ...
-    )
-
-#### Arguments
-
-- `path`:
-
-  Path on disk.
-
-- `frame`:
-
-  Index of the frame (starts at `0L`). Default is `0L`.
-
-- `format`:
-
-  One of `"png"` or `"jpeg"`. Default is `"png"`.
-
-- `render`:
-
-  Should the image be scaled (with `RescaleSlope` and
-  `RescaleIntercept`) and windowed (with `WindowCenter` and
-  `WindowWidth`, if available). Default is `TRUE`.
-
-- `params`:
-
-  Optional named-list of query parameters.
-
-- `...`:
-
-  Optional arguments passed on to
-  [`png::writePNG()`](https://rdrr.io/pkg/png/man/writePNG.html) or
-  [`jpeg::writeJPEG()`](https://rdrr.io/pkg/jpeg/man/writeJPEG.html).
-
-------------------------------------------------------------------------
-
-### Method `clone()`
-
-The objects of this class are cloneable with this method.
-
-#### Usage
-
-    Instance$clone(deep = FALSE)
-
-#### Arguments
-
-- `deep`:
-
-  Whether to make a deep clone.
+  Compress to gzip.

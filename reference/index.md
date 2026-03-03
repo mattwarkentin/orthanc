@@ -29,7 +29,7 @@
 - [`RemoteModality`](https://mattwarkentin.github.io/orthanc/reference/RemoteModality.md)
   : Remote Modality Class
 
-## Query and Filter Resources
+## Utilities
 
 - [`find_patients()`](https://mattwarkentin.github.io/orthanc/reference/find_patients.md)
   : Finds patients in Orthanc according to queries and labels
@@ -43,12 +43,5 @@
   : Query data in the Orthanc server
 - [`find_and_filter_patients()`](https://mattwarkentin.github.io/orthanc/reference/find_and_filter_patients.md)
   : Find and filter patients using predicate functions
-
-## Download Resources
-
 - [`retrieve_and_write_patients()`](https://mattwarkentin.github.io/orthanc/reference/retrieve_and_write_patients.md)
   : Retrieve and write patients to a path
-- [`retrieve_and_write_nifti()`](https://mattwarkentin.github.io/orthanc/reference/retrieve_and_write_nifti.md)
-  [`retrieve_and_write_archives()`](https://mattwarkentin.github.io/orthanc/reference/retrieve_and_write_nifti.md)
-  [`retrieve_and_write_images()`](https://mattwarkentin.github.io/orthanc/reference/retrieve_and_write_nifti.md)
-  : Retrieve and write resources to a path

@@ -43,51 +43,39 @@ An R6 instance of class `"Patient"`.
 
 - `labels`:
 
-  Get or add labels
+  Labels
 
 - `protected`:
 
   Get or set if patient is protected against recycling
 
-- `studies`:
-
-  Studies
-
 - `studies_ids`:
 
   Studies identifiers
-
-- `series`:
-
-  Series
 
 - `series_ids`:
 
   Series identifiers
 
-- `instances`:
-
-  Instances
-
 - `instances_ids`:
 
   Instances identifiers
 
+- `studies`:
+
+  Studies
+
+- `series`:
+
+  Series
+
+- `instances`:
+
+  Instances
+
 - `instances_tags`:
 
   Instances tags
-
-- `num_studies`:
-
-  Number of studies
-
-- `num_series`:
-
-  Number of series
-
-- `num_instances`:
-
-  Number of instances
 
 - `shared_tags`:
 
@@ -105,13 +93,11 @@ An R6 instance of class `"Patient"`.
 
 - [`Patient$add_label()`](#method-Patient-add_label)
 
-- [`Patient$has_label()`](#method-Patient-has_label)
-
 - [`Patient$remove_label()`](#method-Patient-remove_label)
 
-- [`Patient$get_zip_archive_content()`](#method-Patient-get_zip_archive_content)
+- [`Patient$get_zip()`](#method-Patient-get_zip)
 
-- [`Patient$download_archive()`](#method-Patient-download_archive)
+- [`Patient$download()`](#method-Patient-download)
 
 - [`Patient$get_patient_module()`](#method-Patient-get_patient_module)
 
@@ -126,8 +112,6 @@ An R6 instance of class `"Patient"`.
 - [`Patient$get_shared_tags()`](#method-Patient-get_shared_tags)
 
 - [`Patient$remove_empty_studies()`](#method-Patient-remove_empty_studies)
-
-- [`Patient$clone()`](#method-Patient-clone)
 
 Inherited methods
 
@@ -163,22 +147,6 @@ Add label to resource.
 
 ------------------------------------------------------------------------
 
-### Method `has_label()`
-
-Test if resource has label.
-
-#### Usage
-
-    Patient$has_label(label)
-
-#### Arguments
-
-- `label`:
-
-  Label.
-
-------------------------------------------------------------------------
-
 ### Method `remove_label()`
 
 Delete label from resource.
@@ -195,35 +163,29 @@ Delete label from resource.
 
 ------------------------------------------------------------------------
 
-### Method `get_zip_archive_content()`
+### Method `get_zip()`
 
-Get bytes of the zip archive.
+Get the bytes of the zip file.
 
 #### Usage
 
-    Patient$get_zip_archive_content()
+    Patient$get_zip()
 
 ------------------------------------------------------------------------
 
-### Method `download_archive()`
+### Method `download()`
 
-Download zip archive to `path`.
+Download the zip file to a path.
 
 #### Usage
 
-    Patient$download_archive(path, stream = FALSE)
+    Patient$download(file)
 
 #### Arguments
 
-- `path`:
+- `file`:
 
-  Path on disk.
-
-- `stream`:
-
-  Should the resource be streamed and written to disk in chunks? Default
-  is `FALSE`, which means the resource file contents are retrieved in
-  their entirety and written to disk all at once.
+  File path on disk.
 
 ------------------------------------------------------------------------
 
@@ -496,19 +458,3 @@ Remove empty studies from patient.
 #### Usage
 
     Patient$remove_empty_studies()
-
-------------------------------------------------------------------------
-
-### Method `clone()`
-
-The objects of this class are cloneable with this method.
-
-#### Usage
-
-    Patient$clone(deep = FALSE)
-
-#### Arguments
-
-- `deep`:
-
-  Whether to make a deep clone.
