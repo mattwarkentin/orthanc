@@ -366,11 +366,13 @@ Series <- R6::R6Class(
 
       check_path_exists(path)
       check_scalar_logical(compress)
+      check_scalar_logical(stream)
 
       params <- NULL
 
       if (compress) {
         file <- glue::glue("{path}/{self$uid}.nii.gz")
+        params <- list(compress = "")
       } else {
         file <- glue::glue("{path}/{self$uid}.nii")
       }
@@ -385,7 +387,7 @@ Series <- R6::R6Class(
           params = params
         )
       } else {
-        private$download_file_whole(self$get_nifti_file_content(), file)
+        private$download_file_whole(self$get_nifti_file_content(compress), file)
       }
     }
   ),
