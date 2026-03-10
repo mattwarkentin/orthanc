@@ -337,7 +337,7 @@ See \link{Orthanc} for more information.
 \if{html}{\out{<a id="method-OrthancAsync-print"></a>}}
 \if{latex}{\out{\hypertarget{method-OrthancAsync-print}{}}}
 \subsection{Method \code{print()}}{
-Print method for \code{Orthanc}.
+Print method for \code{OrthancAsync}.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{OrthancAsync$print(x, ...)}\if{html}{\out{</div>}}
 }

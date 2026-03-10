@@ -22,7 +22,7 @@ OrthancAsync <-
     classname = 'OrthancAsync',
     inherit = Orthanc,
     public = list(
-      #' @description Print method for `Orthanc`.
+      #' @description Print method for `OrthancAsync`.
       #' @param x Object to print.
       #' @param ... Further arguments passed to or from other methods.
       print = function(x, ...) {
@@ -31,14 +31,19 @@ OrthancAsync <-
     ),
     private = list(
       request_perform = function(req) {
+        username <- private$username
+        password <- private$password
         response_process <- private$response_process
         mirai::mirai(
           {
+            req <- httr2::req_auth_basic(req, username, password)
             resp <- httr2::req_perform(req)
             response_process(req, resp)
           },
           req = req,
-          response_process = response_process
+          response_process = response_process,
+          username = username,
+          password = password
         )
       }
     )
