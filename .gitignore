@@ -5,3 +5,5 @@ README_files/
 .Renviron
 interactive_testing.R
 docs
+inst/paper/*pdf
+inst/paper/arxiv/
