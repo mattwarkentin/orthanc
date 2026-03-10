@@ -4,6 +4,11 @@
 
 ### New features
 
+- Fixed an issue with `OrthancAsync` where requests would fail when
+  requiring basic authentication. The private method
+  `$request_perform()` now adds the basic authentication (Authorization)
+  header on the `mirai` worker instead of the main process.
+
 - orthanc has gained support for batch exporting image files (PNG or
   JPEG) for Instances
   ([`retrieve_and_write_images()`](https://mattwarkentin.github.io/orthanc/reference/retrieve_and_write_nifti.md)),
@@ -12,6 +17,7 @@
   if the Orthanc Neuroimaging plugin is available, and ZIP Archives for
   Series, Studies, and Patients
   ([`retrieve_and_write_archives()`](https://mattwarkentin.github.io/orthanc/reference/retrieve_and_write_nifti.md)).
+
   - [`retrieve_and_write_images()`](https://mattwarkentin.github.io/orthanc/reference/retrieve_and_write_nifti.md),
     [`retrieve_and_write_nifti()`](https://mattwarkentin.github.io/orthanc/reference/retrieve_and_write_nifti.md),
     and
@@ -19,8 +25,10 @@
     have support for progress bars and parallel exporting using `mirai`,
     similar to
     [`retrieve_and_write_patients()`](https://mattwarkentin.github.io/orthanc/reference/retrieve_and_write_patients.md).
+
 - Major refactor of resource download methods so that output formats
   aren’t ambiguous across the various resource types:
+
   - Instances now have `$download_dicom()` (formerly `$download()`),
     `$download_nifti()` (only works if Orthanc Neuroimaging plugin is
     avialable), and `$download_image()` (if R packages `png` or `jpeg`
@@ -30,7 +38,9 @@
     avialable).
   - Studies now have `download_archive()` (formerly `download()`)
   - Patients now have `download_archive()` (formerly `download()`)
+
 - New methods and fields have been added to resources:
+
   - Instances now have:
     - `download_dicom()`: Download DICOM file to a path
     - `download_image()`: Download instance as an image
@@ -63,6 +73,7 @@
     - `num_studies`: Number of studies
     - `num_series`: Number of series
     - `num_instances`: Number of instances
+
 - `$labels` active binding for resources can now be used to add new
   labels to a resource by assigning into the field (e.g.,
   `Resource$labels <- "label"`).

@@ -35,17 +35,21 @@
 <h2 class="pkg-version" data-toc-text="development version" id="orthanc-development-version">orthanc (development version)<a class="anchor" aria-label="anchor" href="#orthanc-development-version"></a></h2>
 <div class="section level3">
 <h3 id="new-features-development-version">New features<a class="anchor" aria-label="anchor" href="#new-features-development-version"></a></h3>
-<ul><li>orthanc has gained support for batch exporting image files (PNG or JPEG) for Instances (<code><a href="../reference/retrieve_and_write_nifti.html">retrieve_and_write_images()</a></code>), NIfTI files for Instances and Series (<code><a href="../reference/retrieve_and_write_nifti.html">retrieve_and_write_nifti()</a></code>), if the Orthanc Neuroimaging plugin is available, and ZIP Archives for Series, Studies, and Patients (<code><a href="../reference/retrieve_and_write_nifti.html">retrieve_and_write_archives()</a></code>).
+<ul><li><p>Fixed an issue with <code>OrthancAsync</code> where requests would fail when requiring basic authentication. The private method <code>$request_perform()</code> now adds the basic authentication (Authorization) header on the <code>mirai</code> worker instead of the main process.</p></li>
+<li>
+<p>orthanc has gained support for batch exporting image files (PNG or JPEG) for Instances (<code><a href="../reference/retrieve_and_write_nifti.html">retrieve_and_write_images()</a></code>), NIfTI files for Instances and Series (<code><a href="../reference/retrieve_and_write_nifti.html">retrieve_and_write_nifti()</a></code>), if the Orthanc Neuroimaging plugin is available, and ZIP Archives for Series, Studies, and Patients (<code><a href="../reference/retrieve_and_write_nifti.html">retrieve_and_write_archives()</a></code>).</p>
 <ul><li>
 <code><a href="../reference/retrieve_and_write_nifti.html">retrieve_and_write_images()</a></code>, <code><a href="../reference/retrieve_and_write_nifti.html">retrieve_and_write_nifti()</a></code>, and <code><a href="../reference/retrieve_and_write_nifti.html">retrieve_and_write_archives()</a></code> have support for progress bars and parallel exporting using <code>mirai</code>, similar to <code><a href="../reference/retrieve_and_write_patients.html">retrieve_and_write_patients()</a></code>.</li>
 </ul></li>
-<li>Major refactor of resource download methods so that output formats aren’t ambiguous across the various resource types:
+<li>
+<p>Major refactor of resource download methods so that output formats aren’t ambiguous across the various resource types:</p>
 <ul><li>Instances now have <code>$download_dicom()</code> (formerly <code>$download()</code>), <code>$download_nifti()</code> (only works if Orthanc Neuroimaging plugin is avialable), and <code>$download_image()</code> (if R packages <code>png</code> or <code>jpeg</code> are installed).</li>
 <li>Series now have <code>download_archive()</code> (formerly <code>download()</code>) and <code>download_nifti()</code> (only works if Orthanc Neuroimaging plugin is avialable).</li>
 <li>Studies now have <code>download_archive()</code> (formerly <code>download()</code>)</li>
 <li>Patients now have <code>download_archive()</code> (formerly <code>download()</code>)</li>
 </ul></li>
-<li>New methods and fields have been added to resources:
+<li>
+<p>New methods and fields have been added to resources:</p>
 <ul><li>Instances now have:
 <ul><li>
 <code>download_dicom()</code>: Download DICOM file to a path</li>
@@ -111,8 +115,7 @@
 <code>num_instances</code>: Number of instances</li>
 </ul></li>
 </ul></li>
-<li>
-<code>$labels</code> active binding for resources can now be used to add new labels to a resource by assigning into the field (e.g., <code>Resource$labels &lt;- "label"</code>).</li>
+<li><p><code>$labels</code> active binding for resources can now be used to add new labels to a resource by assigning into the field (e.g., <code>Resource$labels &lt;- "label"</code>).</p></li>
 </ul></div>
 <div class="section level3">
 <h3 id="minor-improvements-and-bug-fixes-development-version">Minor improvements and bug fixes<a class="anchor" aria-label="anchor" href="#minor-improvements-and-bug-fixes-development-version"></a></h3>

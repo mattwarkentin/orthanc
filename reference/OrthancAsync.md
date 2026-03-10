@@ -337,7 +337,7 @@ Inherited methods
 
 ### Method [`print()`](https://rdrr.io/r/base/print.html)
 
-Print method for `Orthanc`.
+Print method for `OrthancAsync`.
 
 #### Usage
 
