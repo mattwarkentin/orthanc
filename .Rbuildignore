@@ -13,3 +13,8 @@
 ^CODE_OF_CONDUCT\.md$
 ^cran-comments\.md$
 ^CRAN-SUBMISSION$
+^inst/Orthanc/get_Orthanc_endpoints\.R$
+^inst/Orthanc/orthanc-openapi\.json$
+^inst/Orthanc/Orthanc_endpoints_1_12_10\.csv$
+^inst/Orthanc/Orthanc_roxygen_1_12_10\.csv$
+^inst/Orthanc/prepare_roxygen\.R\.csv$
