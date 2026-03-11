@@ -2,7 +2,7 @@
 
 ## New features
 
-- Fixed an issue with `OrthancAsync` where requests would fail when requiring basic authentication. The private method `$request_perform()` now adds the basic authentication (Authorization) header on the `mirai` worker instead of the main process.
+- Fixed an issue with `OrthancAsync` where requests would fail when requiring basic authentication. This was due to credentials getting removed during the serialization of a `httr2_request` before sending it to the daemon `mirai` process. The private method `$request_perform()` now adds the basic authentication (Authorization) header on the `mirai` worker instead of the main process.
 
 - orthanc has gained support for batch exporting image files (PNG or JPEG) for Instances (`retrieve_and_write_images()`), NIfTI files for Instances and Series (`retrieve_and_write_nifti()`), if the Orthanc Neuroimaging plugin is available, and ZIP Archives for Series, Studies, and Patients (`retrieve_and_write_archives()`).
   - `retrieve_and_write_images()`, `retrieve_and_write_nifti()`, and `retrieve_and_write_archives()` have support for progress bars and parallel exporting using `mirai`, similar to `retrieve_and_write_patients()`.
