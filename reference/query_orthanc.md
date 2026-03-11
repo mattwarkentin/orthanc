@@ -70,6 +70,8 @@ A `list` of resources.
 ``` r
 client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 query_orthanc(client, "Patient", list(PatientName = "HN_P001"))
-#> [[1]]
-#> <Patient: 65ce8003-696b2eb6-03adeee7-6561ce8e-3e03f13a>
+#> Error in httr2::req_perform(req): Failed to perform HTTP request.
+#> Caused by error in `curl::curl_fetch_memory()`:
+#> ! Timeout was reached [orthanc.uclouvain.be]:
+#> Failed to connect to orthanc.uclouvain.be port 443 after 10001 ms: Timeout was reached
 ```
