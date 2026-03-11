@@ -5,7 +5,9 @@
 ### New features
 
 - Fixed an issue with `OrthancAsync` where requests would fail when
-  requiring basic authentication. The private method
+  requiring basic authentication. This was due to credentials getting
+  removed during the serialization of a `httr2_request` before sending
+  it to the daemon `mirai` process. The private method
   `$request_perform()` now adds the basic authentication (Authorization)
   header on the `mirai` worker instead of the main process.
 

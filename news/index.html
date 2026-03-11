@@ -35,7 +35,7 @@
 <h2 class="pkg-version" data-toc-text="development version" id="orthanc-development-version">orthanc (development version)<a class="anchor" aria-label="anchor" href="#orthanc-development-version"></a></h2>
 <div class="section level3">
 <h3 id="new-features-development-version">New features<a class="anchor" aria-label="anchor" href="#new-features-development-version"></a></h3>
-<ul><li><p>Fixed an issue with <code>OrthancAsync</code> where requests would fail when requiring basic authentication. The private method <code>$request_perform()</code> now adds the basic authentication (Authorization) header on the <code>mirai</code> worker instead of the main process.</p></li>
+<ul><li><p>Fixed an issue with <code>OrthancAsync</code> where requests would fail when requiring basic authentication. This was due to credentials getting removed during the serialization of a <code>httr2_request</code> before sending it to the daemon <code>mirai</code> process. The private method <code>$request_perform()</code> now adds the basic authentication (Authorization) header on the <code>mirai</code> worker instead of the main process.</p></li>
 <li>
 <p>orthanc has gained support for batch exporting image files (PNG or JPEG) for Instances (<code><a href="../reference/retrieve_and_write_nifti.html">retrieve_and_write_images()</a></code>), NIfTI files for Instances and Series (<code><a href="../reference/retrieve_and_write_nifti.html">retrieve_and_write_nifti()</a></code>), if the Orthanc Neuroimaging plugin is available, and ZIP Archives for Series, Studies, and Patients (<code><a href="../reference/retrieve_and_write_nifti.html">retrieve_and_write_archives()</a></code>).</p>
 <ul><li>
