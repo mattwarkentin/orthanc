@@ -399,7 +399,18 @@ found here: <a href="https://orthanc.uclouvain.be/book/users/rest.html" class="e
 <h3 id="method-new-">Method <code>new()</code><a class="anchor" aria-label="anchor" href="#method-new-"></a></h3>
 <p>Initialize a new Orthanc API Client</p><div class="section">
 <h4 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a></h4>
-<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va"><a href="../reference/Orthanc.html">Orthanc</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="va">url</span>, username <span class="op">=</span> <span class="cn">NULL</span>, password <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span></span></code></pre></div><p></p></div>
+<p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va"><a href="../reference/Orthanc.html">Orthanc</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span></span>
+<span>  <span class="va">url</span>,</span>
+<span>  username <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  password <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  params <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  headers <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  cookies <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  timeout <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  rate_limit <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  verify <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
 <div class="section">
@@ -414,6 +425,38 @@ found here: <a href="https://orthanc.uclouvain.be/book/users/rest.html" class="e
 
 <dt><code>password</code></dt>
 <dd><p>Optional password for Basic HTTP authentication.</p></dd>
+
+
+<dt><code>params</code></dt>
+<dd><p>Named-list of query parameters to include in every
+request.</p></dd>
+
+
+<dt><code>headers</code></dt>
+<dd><p>Named-list of headers to include in every request.</p></dd>
+
+
+<dt><code>cookies</code></dt>
+<dd><p>Named-list of cookies to set in every request.</p></dd>
+
+
+<dt><code>timeout</code></dt>
+<dd><p>Maximum number of seconds to wait for a request to
+complete.</p></dd>
+
+
+<dt><code>rate_limit</code></dt>
+<dd><p>Named-list with values <code>"capacity"</code> and <code>"fill_time"</code>.
+<code>"capacity"</code> is the maximum number of requests that can happen during
+the <code>"fill_time"</code> (in seconds). See <code><a href="https://httr2.r-lib.org/reference/req_throttle.html" class="external-link">httr2::req_throttle()</a></code>.</p></dd>
+
+
+<dt><code>verify</code></dt>
+<dd><p>Whether to verify the SSL/TLS certificate when
+making HTTP requests via <code>httr2</code>. Set to <code>FALSE</code> to disable
+certificate verification (e.g., when connecting to servers with
+self-signed certificates). Disabling verification reduces connection
+security and should only be used in trusted environments.</p></dd>
 
 
 <dt><code>...</code></dt>

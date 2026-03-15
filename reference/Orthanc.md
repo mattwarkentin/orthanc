@@ -654,7 +654,18 @@ Initialize a new Orthanc API Client
 
 #### Usage
 
-    Orthanc$new(url, username = NULL, password = NULL, ...)
+    Orthanc$new(
+      url,
+      username = NULL,
+      password = NULL,
+      params = NULL,
+      headers = NULL,
+      cookies = NULL,
+      timeout = NULL,
+      rate_limit = NULL,
+      verify = NULL,
+      ...
+    )
 
 #### Arguments
 
@@ -669,6 +680,37 @@ Initialize a new Orthanc API Client
 - `password`:
 
   Optional password for Basic HTTP authentication.
+
+- `params`:
+
+  Named-list of query parameters to include in every request.
+
+- `headers`:
+
+  Named-list of headers to include in every request.
+
+- `cookies`:
+
+  Named-list of cookies to set in every request.
+
+- `timeout`:
+
+  Maximum number of seconds to wait for a request to complete.
+
+- `rate_limit`:
+
+  Named-list with values `"capacity"` and `"fill_time"`. `"capacity"` is
+  the maximum number of requests that can happen during the
+  `"fill_time"` (in seconds). See
+  [`httr2::req_throttle()`](https://httr2.r-lib.org/reference/req_throttle.html).
+
+- `verify`:
+
+  Whether to verify the SSL/TLS certificate when making HTTP requests
+  via `httr2`. Set to `FALSE` to disable certificate verification (e.g.,
+  when connecting to servers with self-signed certificates). Disabling
+  verification reduces connection security and should only be used in
+  trusted environments.
 
 - `...`:
 
