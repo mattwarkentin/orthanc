@@ -37,15 +37,42 @@ Orthanc <-
       #' @param url URL for Orthanc REST API.
       #' @param username Optional username for Basic HTTP authentication.
       #' @param password Optional password for Basic HTTP authentication.
+      #' @param params Named-list of query parameters to include in every
+      #'   request.
+      #' @param headers Named-list of headers to include in every request.
+      #' @param cookies Named-list of cookies to set in every request.
+      #' @param timeout Maximum number of seconds to wait for a request to
+      #'   complete.
+      #' @param rate_limit Named-list with values `"capacity"` and `"fill_time"`.
+      #'   `"capacity"` is the maximum number of requests that can happen during
+      #'   the `"fill_time"` (in seconds). See [httr2::req_throttle()].
+      #' @param verify Whether to verify the SSL/TLS certificate when
+      #'   making HTTP requests via `httr2`. Set to `FALSE` to disable
+      #'   certificate verification (e.g., when connecting to servers with
+      #'   self-signed certificates). Disabling verification reduces connection
+      #'   security and should only be used in trusted environments.
       #' @param ... Not currently used.
-      initialize = function(url, username = NULL, password = NULL, ...) {
+      initialize = function(
+        url,
+        username = NULL,
+        password = NULL,
+        params = NULL,
+        headers = NULL,
+        cookies = NULL,
+        timeout = NULL,
+        rate_limit = NULL,
+        verify = NULL,
+        ...
+      ) {
         rlang::check_dots_empty()
-        if (rlang::is_missing(url)) {
-          self$url <- default_api_url()
-        } else {
-          self$url <- url
-        }
+        private$setup_url(url)
         private$setup_credentials(username, password)
+        private$setup_params(params)
+        private$setup_headers(headers)
+        private$setup_cookies(cookies)
+        private$setup_timeout(timeout)
+        private$setup_rate_limit(rate_limit)
+        private$setup_verify(verify)
       },
 
       #' @description GET request with specified route
@@ -8480,21 +8507,93 @@ Orthanc <-
       need_auth = FALSE,
       username = NULL,
       password = NULL,
+      params = NULL,
+      headers = NULL,
+      cookies = NULL,
+      verify = NULL,
+      timeout = NULL,
+      rate_limit = NULL,
+      setup_url = function(url) {
+        if (rlang::is_missing(url)) {
+          self$url <- default_api_url()
+        } else {
+          check_scalar_character(url)
+          self$url <- url
+        }
+      },
       setup_credentials = function(username, password) {
         if (rlang::is_null(username) & rlang::is_null(password)) {
           return(invisible())
         }
 
         if (!rlang::is_null(username) & nchar(username) > 0) {
+          check_scalar_character(username)
           private$username <- orthanc_credential(username)
           private$need_auth <- TRUE
         }
 
         if (!rlang::is_null(password) & nchar(password) > 0) {
+          check_scalar_character(password)
           private$password <- orthanc_credential(password)
         }
 
         invisible()
+      },
+      setup_params = function(params) {
+        if (rlang::is_null(params)) {
+          return(invisible())
+        }
+        check_named_list(params)
+        private$params <- params
+      },
+      setup_headers = function(headers) {
+        if (rlang::is_null(headers)) {
+          return(invisible())
+        }
+        check_named_list(headers)
+        private$headers <- headers
+      },
+      setup_cookies = function(cookies) {
+        if (rlang::is_null(cookies)) {
+          return(invisible())
+        }
+        check_named_list(cookies)
+        private$cookies <- cookies
+      },
+      setup_verify = function(verify) {
+        if (rlang::is_null(verify)) {
+          return(invisible())
+        }
+        check_scalar_logical(verify)
+        private$verify <- verify
+      },
+      setup_timeout = function(timeout) {
+        if (rlang::is_null(timeout)) {
+          return(invisible())
+        }
+        check_scalar_numeric(timeout)
+        private$timeout <- timeout
+      },
+      setup_rate_limit = function(rate_limit) {
+        if (rlang::is_null(rate_limit)) {
+          return(invisible())
+        }
+
+        check_named_list(rate_limit)
+
+        if (all(c("capacity", "fill_time") %in% names(rate_limit))) {
+          check_scalar_integer(rate_limit$capacity)
+          check_scalar_numeric(rate_limit$fill_time)
+          private$rate_limit <- rate_limit
+          return(invisible())
+        }
+
+        rlang::abort(
+          message = glue::glue(
+            "`rate_limit` must be a named-list containing `capacity` and `fill_time`"
+          ),
+          call = rlang::caller_env()
+        )
       },
       auth_basic = function(req) {
         if (!private$need_auth) {
@@ -8507,16 +8606,39 @@ Orthanc <-
           )
       },
       request_build = function(route, params, headers, cookies, method) {
-        httr2::request(self$url) |>
+        req <-
+          httr2::request(self$url) |>
           httr2::req_url_path_append(route) |>
-          httr2::req_url_query(!!!params) |>
-          httr2::req_headers(!!!headers) |>
-          httr2::req_cookies_set(!!!cookies) |>
+          httr2::req_url_query(!!!params, !!!private$params) |>
+          httr2::req_headers(!!!headers, !!!private$headers) |>
+          httr2::req_cookies_set(!!!cookies, !!!private$cookies) |>
           private$auth_basic() |>
           httr2::req_method(method) |>
           httr2::req_user_agent(
             "orthanc (https://github.com/mattwarkentin/orthanc)"
           )
+
+        if (!rlang::is_null(private$timeout)) {
+          req <- httr2::req_timeout(req, private$timeout)
+        }
+
+        if (!rlang::is_null(private$rate_limit)) {
+          req <- httr2::req_throttle(
+            req,
+            capacity = private$rate_limit$capacity,
+            fill_time_s = private$rate_limit$fill_time
+          )
+        }
+
+        if (rlang::is_false(private$verify)) {
+          req <- httr2::req_options(
+            req,
+            ssl_verifyhost = 0L,
+            ssl_verifypeer = 0L
+          )
+        }
+
+        req
       },
       include_content = function(req, file, json, data) {
         if (!rlang::is_null(file)) {

@@ -359,7 +359,18 @@ The full documentation of the Orthanc API can be found here:
 \subsection{Method \code{new()}}{
 Initialize a new Orthanc API Client
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$new(url, username = NULL, password = NULL, ...)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Orthanc$new(
+  url,
+  username = NULL,
+  password = NULL,
+  params = NULL,
+  headers = NULL,
+  cookies = NULL,
+  timeout = NULL,
+  rate_limit = NULL,
+  verify = NULL,
+  ...
+)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
@@ -370,6 +381,26 @@ Initialize a new Orthanc API Client
 \item{\code{username}}{Optional username for Basic HTTP authentication.}
 
 \item{\code{password}}{Optional password for Basic HTTP authentication.}
+
+\item{\code{params}}{Named-list of query parameters to include in every
+request.}
+
+\item{\code{headers}}{Named-list of headers to include in every request.}
+
+\item{\code{cookies}}{Named-list of cookies to set in every request.}
+
+\item{\code{timeout}}{Maximum number of seconds to wait for a request to
+complete.}
+
+\item{\code{rate_limit}}{Named-list with values \code{"capacity"} and \code{"fill_time"}.
+\code{"capacity"} is the maximum number of requests that can happen during
+the \code{"fill_time"} (in seconds). See \code{\link[httr2:req_throttle]{httr2::req_throttle()}}.}
+
+\item{\code{verify}}{Whether to verify the SSL/TLS certificate when
+making HTTP requests via \code{httr2}. Set to \code{FALSE} to disable
+certificate verification (e.g., when connecting to servers with
+self-signed certificates). Disabling verification reduces connection
+security and should only be used in trusted environments.}
 
 \item{\code{...}}{Not currently used.}
 }

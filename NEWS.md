@@ -1,5 +1,15 @@
 # orthanc (development version)
 
+## New features
+
+- `Orthanc` and `OrthancAsync` initialization methods (i.e., `Orthanc$new()` and `OrthancAsync$new()`) have gained several new arguments to provide users more control over how HTTP requests are performed.
+  - `params`, `headers`, and `cookies` set query parameters, headers, and cookies to include in every request.
+  - `timeout` sets the maximum number of seconds to wait for the request to complete.
+  - `rate_limit` can be used to throttle requests so that no more than the maximum capacity of requests are performed during the fill time. 
+  - `verify` controls whether to verify the SSL/TLS certificate when making requests.
+
+## Minor improvements and bug fixes
+
 # orthanc 0.2.0
 
 ## New features
