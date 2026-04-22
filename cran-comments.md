@@ -2,7 +2,7 @@
 
 0 errors | 0 warnings | 0 notes
 
-* This is a minor version release following from the recent initial release. This release adds a considerable number of new features and fixes some major bugs found in the initial release. I expect the release cadence to slow down considerably after this update.
+* This is a minor version release. This release adds functionality for including global query parameters, headers, or cookies or setting timeouts or rate limits when performing requests. Also adds the ability to disable SSL/TLS verification in trusted environments where SSL/TLS certficiates may be self-signed.
 
 ## Reverse dependencies
 
