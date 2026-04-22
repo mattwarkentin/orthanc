@@ -1,4 +1,4 @@
-# orthanc (development version)
+# orthanc 0.3.0
 
 ## New features
 
@@ -9,6 +9,8 @@
   - `verify` controls whether to verify the SSL/TLS certificate when making requests.
 
 ## Minor improvements and bug fixes
+
+- Improved checking of argument types when passed to the initialization methods of `Orthanc` and `OrthancAsync` objects.
 
 # orthanc 0.2.0
 
