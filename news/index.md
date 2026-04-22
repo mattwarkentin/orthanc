@@ -1,6 +1,6 @@
 # Changelog
 
-## orthanc (development version)
+## orthanc 0.3.0
 
 ### New features
 
@@ -18,6 +18,9 @@
     making requests.
 
 ### Minor improvements and bug fixes
+
+- Improved checking of argument types when passed to the initialization
+  methods of `Orthanc` and `OrthancAsync` objects.
 
 ## orthanc 0.2.0
 
