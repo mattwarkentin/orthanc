@@ -53,10 +53,12 @@ patient. The layers in the tree correspond to:
 \code{Patient -> Studies -> Series -> Instances}
 }
 \examples{
+\donttest{
 client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 
 find_and_filter_patients(
   client = client,
   patient_filter = \(pt) pt$is_stable
 )
+}
 }
