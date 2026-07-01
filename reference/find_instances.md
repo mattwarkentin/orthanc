@@ -50,6 +50,8 @@ find_instances(
   client = client,
   query = list(SOPInstanceUID = "1.3.6.1.4.1.14519.5.2.1.2193.7172.260209224923274040650639981398")
 )
-#> [[1]]
-#> <Instance: 1ef6aa01-aea6d37e-6f834d3f-85b8db92-495f34ac>
+#> Error in httr2::req_perform(req): Failed to perform HTTP request.
+#> Caused by error in `curl::curl_fetch_memory()`:
+#> ! Timeout was reached [orthanc.uclouvain.be]:
+#> Failed to connect to orthanc.uclouvain.be port 443 after 10002 ms: Timeout was reached
 ```

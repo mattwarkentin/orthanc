@@ -31,6 +31,7 @@ preserving the structure and semantics of DICOM resources.
 You can install the CRAN version of `orthanc` with:
 
 ``` r
+
 install.packages("orthanc")
 ```
 
@@ -38,6 +39,7 @@ You can install the development version of `orthanc` from
 [GitHub](https://github.com/mattwarkentin/orthanc) with:
 
 ``` r
+
 # install.packages("pak")
 pak::pak("mattwarkentin/orthanc")
 ```
@@ -45,6 +47,7 @@ pak::pak("mattwarkentin/orthanc")
 ## Basic Usage
 
 ``` r
+
 library(orthanc)
 
 client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
@@ -73,6 +76,7 @@ instances
 ```
 
 ``` r
+
 instance <- Instance$new(instances[[1]], client)
 instance
 #> <Instance: 001a7d82-54008387-7b23ad57-8fb6202a-6d3b305b>
