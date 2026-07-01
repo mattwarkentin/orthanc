@@ -31,6 +31,8 @@ A \code{list} of \link{Patient} objects.
 Finds patients in Orthanc according to queries and labels
 }
 \examples{
+\dontrun{
 client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 find_patients(client, query = list(PatientName = "HN_P001"))
+}
 }

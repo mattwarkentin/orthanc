@@ -31,9 +31,11 @@ A \code{list} of \link{Instance} objects.
 Finds instances in Orthanc according to queries and labels
 }
 \examples{
+\dontrun{
 client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 find_instances(
   client = client,
   query = list(SOPInstanceUID = "1.3.6.1.4.1.14519.5.2.1.2193.7172.260209224923274040650639981398")
 )
+}
 }

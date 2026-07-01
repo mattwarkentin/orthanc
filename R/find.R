@@ -12,8 +12,10 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 #' find_patients(client, query = list(PatientName = "HN_P001"))
+#' }
 find_patients <- function(
   client,
   query = list(),
@@ -72,8 +74,10 @@ find_studies <- function(
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 #' find_series(client, query = list(SeriesDescription = "HEAD/NECK  2.0  B30s"))
+#' }
 find_series <- function(
   client,
   query = list(),
@@ -101,11 +105,13 @@ find_series <- function(
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 #' find_instances(
 #'   client = client,
 #'   query = list(SOPInstanceUID = "1.3.6.1.4.1.14519.5.2.1.2193.7172.260209224923274040650639981398")
 #' )
+#' }
 find_instances <- function(
   client,
   query = list(),
@@ -148,8 +154,10 @@ find_instances <- function(
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 #' query_orthanc(client, "Patient", list(PatientName = "HN_P001"))
+#' }
 query_orthanc <- function(
   client,
   level,
