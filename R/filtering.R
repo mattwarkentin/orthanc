@@ -34,7 +34,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 #'
 #' find_and_filter_patients(

@@ -41,8 +41,10 @@ find_patients <- function(
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 #' find_studies(client, query = list(StudyDescription = "RT^HEAD_NECK (Adult)"))
+#' }
 find_studies <- function(
   client,
   query = list(),
@@ -148,7 +150,7 @@ find_instances <- function(
 #' @examples
 #' client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 #' query_orthanc(client, "Patient", list(PatientName = "HN_P001"))
-query_orthanc = function(
+query_orthanc <- function(
   client,
   level,
   query = list(),
@@ -227,7 +229,7 @@ query_orthanc = function(
   resources
 }
 
-validate_level = function(level) {
+validate_level <- function(level) {
   if (!level %in% c("Patient", "Study", "Series", "Instance")) {
     rlang::abort(
       '`level` should be one of "Patient", "Study", "Series", or "Instance".'
@@ -235,7 +237,7 @@ validate_level = function(level) {
   }
 }
 
-validate_labels_constraint = function(constraint) {
+validate_labels_constraint <- function(constraint) {
   if (!constraint %in% c("All", "Any", "None")) {
     rlang::abort(
       '`labels_constraint` should be one of "All", "Any", or "None".'
