@@ -45,8 +45,8 @@ objects.
 ## Examples
 
 ``` r
+if (FALSE) { # \dontrun{
 client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 find_series(client, query = list(SeriesDescription = "HEAD/NECK  2.0  B30s"))
-#> [[1]]
-#> <Series: 52f4cb90-29d1d1a2-2ca34edd-4b8851fc-8cb269f2>
+} # }
 ```
