@@ -8,7 +8,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/mattwarkentin/orthanc/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/mattwarkentin/orthanc/blob/v0.3.0/DESCRIPTION)
 
 Warkentin M (2026). *orthanc: Programmatic Interface to 'Orthanc' DICOM
 Servers*. R package version 0.3.0,

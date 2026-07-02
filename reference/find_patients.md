@@ -45,8 +45,10 @@ objects.
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
 client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 find_patients(client, query = list(PatientName = "HN_P001"))
-} # }
+#> Error in httr2::req_perform(req): Failed to perform HTTP request.
+#> Caused by error in `curl::curl_fetch_memory()`:
+#> ! Timeout was reached [orthanc.uclouvain.be]:
+#> Failed to connect to orthanc.uclouvain.be port 443 after 10002 ms: Timeout was reached
 ```

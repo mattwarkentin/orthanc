@@ -81,12 +81,16 @@ to a patient. The layers in the tree correspond to:
 ## Examples
 
 ``` r
-if (FALSE) { # \dontrun{
+# \donttest{
 client <- Orthanc$new("https://orthanc.uclouvain.be/demo")
 
 find_and_filter_patients(
   client = client,
   patient_filter = \(pt) pt$is_stable
 )
-} # }
+#> Error in httr2::req_perform(req): Failed to perform HTTP request.
+#> Caused by error in `curl::curl_fetch_memory()`:
+#> ! Timeout was reached [orthanc.uclouvain.be]:
+#> Failed to connect to orthanc.uclouvain.be port 443 after 10001 ms: Timeout was reached
+# }
 ```

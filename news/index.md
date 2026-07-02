@@ -2,6 +2,8 @@
 
 ## orthanc 0.3.0
 
+CRAN release: 2026-07-01
+
 ### New features
 
 - `Orthanc` and `OrthancAsync` initialization methods (i.e.,
