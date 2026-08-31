@@ -10,110 +10,118 @@ An R6 instance of class \code{"Resource"}.
 An abstract class for a DICOM Resource
 }
 \section{Active bindings}{
-\if{html}{\out{<div class="r6-active-bindings">}}
-\describe{
-\item{\code{identifier}}{Orthanc identifier of the resource.}
+  \if{html}{\out{<div class="r6-active-bindings">}}
+  \describe{
+    \item{\code{identifier}}{Orthanc identifier of the resource.}
 
-\item{\code{main_dicom_tags}}{Main DICOM tags for the resource.}
+    \item{\code{main_dicom_tags}}{Main DICOM tags for the resource.}
 
-\item{\code{is_locked}}{Get or set whether resource is locked.}
-}
-\if{html}{\out{</div>}}
+    \item{\code{is_locked}}{Get or set whether resource is locked.}
+  }
+  \if{html}{\out{</div>}}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-Resource-new}{\code{Resource$new()}}
-\item \href{#method-Resource-get_main_information}{\code{Resource$get_main_information()}}
-\item \href{#method-Resource-print}{\code{Resource$print()}}
-\item \href{#method-Resource-set_child_resources}{\code{Resource$set_child_resources()}}
-\item \href{#method-Resource-clone}{\code{Resource$clone()}}
-}
+  \itemize{
+    \item \href{#method-Resource-initialize}{\code{Resource$new()}}
+    \item \href{#method-Resource-get_main_information}{\code{Resource$get_main_information()}}
+    \item \href{#method-Resource-print}{\code{Resource$print()}}
+    \item \href{#method-Resource-set_child_resources}{\code{Resource$set_child_resources()}}
+    \item \href{#method-Resource-clone}{\code{Resource$clone()}}
+  }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Resource-new"></a>}}
-\if{latex}{\out{\hypertarget{method-Resource-new}{}}}
-\subsection{Method \code{new()}}{
-Create a new Resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Resource$new(id, client, lock_children = FALSE)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{Orthanc identifier of the resource.}
-
-\item{\code{client}}{\code{Orthanc} client.}
-
-\item{\code{lock_children}}{If \code{lock_children} is \code{TRUE}, the resource children
+\if{html}{\out{<a id="method-Resource-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-Resource-initialize}{}}}
+\subsection{\code{Resource$new()}}{
+  Create a new Resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Resource$new(id, client, lock_children = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{Orthanc identifier of the resource.}
+      \item{\code{client}}{\code{Orthanc} client.}
+      \item{\code{lock_children}}{If \code{lock_children} is \code{TRUE}, the resource children
 (e.g., instances of a series via \code{Series$instances}) will be cached at
 the first query rather than queried every time. This is useful when you
 want to filter the children of a resource and want to maintain the
 filter result.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
-\if{html}{\out{</div>}}
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Resource-get_main_information"></a>}}
 \if{latex}{\out{\hypertarget{method-Resource-get_main_information}{}}}
-\subsection{Method \code{get_main_information()}}{
-Get main information for the resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Resource$get_main_information()}\if{html}{\out{</div>}}
+\subsection{\code{Resource$get_main_information()}}{
+  Get main information for the resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Resource$get_main_information()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Resource-print"></a>}}
 \if{latex}{\out{\hypertarget{method-Resource-print}{}}}
-\subsection{Method \code{print()}}{
-Print a \code{Resource} object.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Resource$print(...)}\if{html}{\out{</div>}}
+\subsection{\code{Resource$print()}}{
+  Print a \code{Resource} object.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Resource$print(...)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{...}}{Not currently used.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{...}}{Not currently used.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Resource-set_child_resources"></a>}}
 \if{latex}{\out{\hypertarget{method-Resource-set_child_resources}{}}}
-\subsection{Method \code{set_child_resources()}}{
-Set child resources.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Resource$set_child_resources(resources)}\if{html}{\out{</div>}}
+\subsection{\code{Resource$set_child_resources()}}{
+  Set child resources.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Resource$set_child_resources(resources)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resources}}{List of resources.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resources}}{List of resources.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Resource-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-Resource-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Resource$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{Resource$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Resource$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

@@ -13,8 +13,6 @@ Description: An R Interface to 'Orthanc' DICOM servers for medical imaging workf
     of DICOM resources.
 License: MIT + file LICENSE
 Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3.9000
 Depends:
     R (>= 4.1.0)
 Imports: 
@@ -35,3 +33,5 @@ Suggests:
     jpeg
 URL: https://github.com/mattwarkentin/orthanc, https://mattwarkentin.github.io/orthanc/
 BugReports: https://github.com/mattwarkentin/orthanc/issues
+Config/roxygen2/markdown: TRUE
+Config/roxygen2/version: 8.1.0

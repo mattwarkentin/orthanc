@@ -10,7 +10,7 @@
 #' @param client Orthanc client.
 #' @param patient_filter Predicate function to filter [Patient]s.
 #' @param study_filter Predicate function to filter [Study]s.
-#' @param series_filter Predicate function to filer [Series].
+#' @param series_filter Predicate function to filter [Series].
 #' @param instance_filter Predicate function to filter [Instance]s.
 #' @param progress Whether to show progress bars. By default, progress bars are
 #'   enabled in interactive sessions (i.e., if `rlang::is_interactive()`

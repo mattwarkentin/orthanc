@@ -10,157 +10,164 @@ An R6 instance of class \code{"Study"}.
 An abstract class for a DICOM Study resource.
 }
 \section{Super class}{
-\code{\link[orthanc:Resource]{orthanc::Resource}} -> \code{Study}
+\code{\link[orthanc:Resource]{Resource}} -> \code{Study}
 }
 \section{Active bindings}{
-\if{html}{\out{<div class="r6-active-bindings">}}
-\describe{
-\item{\code{patient_identifier}}{Parent patient identifier}
+  \if{html}{\out{<div class="r6-active-bindings">}}
+  \describe{
+    \item{\code{patient_identifier}}{Parent patient identifier}
 
-\item{\code{parent_patient}}{Parent patient}
+    \item{\code{parent_patient}}{Parent patient}
 
-\item{\code{referring_physician_name}}{Referring Physician Name}
+    \item{\code{referring_physician_name}}{Referring Physician Name}
 
-\item{\code{requesting_physician}}{Requesting Physician}
+    \item{\code{requesting_physician}}{Requesting Physician}
 
-\item{\code{date}}{Study Date}
+    \item{\code{date}}{Study Date}
 
-\item{\code{study_id}}{Study ID}
+    \item{\code{study_id}}{Study ID}
 
-\item{\code{uid}}{StudyInstanceUID}
+    \item{\code{uid}}{StudyInstanceUID}
 
-\item{\code{patient_information}}{Patient Main DICOM Tags}
+    \item{\code{patient_information}}{Patient Main DICOM Tags}
 
-\item{\code{series}}{Series}
+    \item{\code{series}}{Series}
 
-\item{\code{series_ids}}{Series identifiers}
+    \item{\code{series_ids}}{Series identifiers}
 
-\item{\code{instances}}{Instances}
+    \item{\code{instances}}{Instances}
 
-\item{\code{instances_ids}}{Instances identifiers}
+    \item{\code{instances_ids}}{Instances identifiers}
 
-\item{\code{num_series}}{Number of series}
+    \item{\code{num_series}}{Number of series}
 
-\item{\code{num_instances}}{Number of instances}
+    \item{\code{num_instances}}{Number of instances}
 
-\item{\code{instances_tags}}{Instances tags}
+    \item{\code{instances_tags}}{Instances tags}
 
-\item{\code{accession_number}}{Accession Number}
+    \item{\code{accession_number}}{Accession Number}
 
-\item{\code{description}}{Description}
+    \item{\code{description}}{Description}
 
-\item{\code{institution_name}}{Institution Name}
+    \item{\code{institution_name}}{Institution Name}
 
-\item{\code{requested_procedure_description}}{Requested Procedure
+    \item{\code{requested_procedure_description}}{Requested Procedure
 Description.}
 
-\item{\code{is_stable}}{Is stable?}
+    \item{\code{is_stable}}{Is stable?}
 
-\item{\code{last_update}}{Last Update}
+    \item{\code{last_update}}{Last Update}
 
-\item{\code{labels}}{Get or add labels}
+    \item{\code{labels}}{Get or add labels}
 
-\item{\code{shared_tags}}{Shared Tags}
+    \item{\code{shared_tags}}{Shared Tags}
 
-\item{\code{statistics}}{Statistics}
-}
-\if{html}{\out{</div>}}
+    \item{\code{statistics}}{Statistics}
+  }
+  \if{html}{\out{</div>}}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-Study-get_main_information}{\code{Study$get_main_information()}}
-\item \href{#method-Study-add_label}{\code{Study$add_label()}}
-\item \href{#method-Study-has_label}{\code{Study$has_label()}}
-\item \href{#method-Study-remove_label}{\code{Study$remove_label()}}
-\item \href{#method-Study-anonymize}{\code{Study$anonymize()}}
-\item \href{#method-Study-anonymize_as_job}{\code{Study$anonymize_as_job()}}
-\item \href{#method-Study-modify}{\code{Study$modify()}}
-\item \href{#method-Study-modify_as_job}{\code{Study$modify_as_job()}}
-\item \href{#method-Study-get_zip_archive_content}{\code{Study$get_zip_archive_content()}}
-\item \href{#method-Study-download_archive}{\code{Study$download_archive()}}
-\item \href{#method-Study-get_shared_tags}{\code{Study$get_shared_tags()}}
-\item \href{#method-Study-remove_empty_series}{\code{Study$remove_empty_series()}}
-\item \href{#method-Study-clone}{\code{Study$clone()}}
+  \itemize{
+    \item \href{#method-Study-get_main_information}{\code{Study$get_main_information()}}
+    \item \href{#method-Study-add_label}{\code{Study$add_label()}}
+    \item \href{#method-Study-has_label}{\code{Study$has_label()}}
+    \item \href{#method-Study-remove_label}{\code{Study$remove_label()}}
+    \item \href{#method-Study-anonymize}{\code{Study$anonymize()}}
+    \item \href{#method-Study-anonymize_as_job}{\code{Study$anonymize_as_job()}}
+    \item \href{#method-Study-modify}{\code{Study$modify()}}
+    \item \href{#method-Study-modify_as_job}{\code{Study$modify_as_job()}}
+    \item \href{#method-Study-get_zip_archive_content}{\code{Study$get_zip_archive_content()}}
+    \item \href{#method-Study-download_archive}{\code{Study$download_archive()}}
+    \item \href{#method-Study-get_shared_tags}{\code{Study$get_shared_tags()}}
+    \item \href{#method-Study-remove_empty_series}{\code{Study$remove_empty_series()}}
+    \item \href{#method-Study-clone}{\code{Study$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="initialize"><a href='../../orthanc/html/Resource.html#method-Resource-initialize'><code>orthanc::Resource$initialize()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="print"><a href='../../orthanc/html/Resource.html#method-Resource-print'><code>orthanc::Resource$print()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="set_child_resources"><a href='../../orthanc/html/Resource.html#method-Resource-set_child_resources'><code>orthanc::Resource$set_child_resources()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="initialize"><a href='../../orthanc/html/Resource.html#method-Resource-initialize'><code>Resource$initialize()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="print"><a href='../../orthanc/html/Resource.html#method-Resource-print'><code>Resource$print()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="set_child_resources"><a href='../../orthanc/html/Resource.html#method-Resource-set_child_resources'><code>Resource$set_child_resources()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Study-get_main_information"></a>}}
 \if{latex}{\out{\hypertarget{method-Study-get_main_information}{}}}
-\subsection{Method \code{get_main_information()}}{
-Get study information.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Study$get_main_information()}\if{html}{\out{</div>}}
+\subsection{\code{Study$get_main_information()}}{
+  Get study information.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Study$get_main_information()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Study-add_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Study-add_label}{}}}
-\subsection{Method \code{add_label()}}{
-Add label to resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Study$add_label(label)}\if{html}{\out{</div>}}
+\subsection{\code{Study$add_label()}}{
+  Add label to resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Study$add_label(label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{label}}{Label.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{label}}{Label.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Study-has_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Study-has_label}{}}}
-\subsection{Method \code{has_label()}}{
-Test if resource has label.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Study$has_label(label)}\if{html}{\out{</div>}}
+\subsection{\code{Study$has_label()}}{
+  Test if resource has label.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Study$has_label(label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{label}}{Label.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{label}}{Label.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Study-remove_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Study-remove_label}{}}}
-\subsection{Method \code{remove_label()}}{
-Delete label from resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Study$remove_label(label)}\if{html}{\out{</div>}}
+\subsection{\code{Study$remove_label()}}{
+  Delete label from resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Study$remove_label(label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{label}}{Label.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{label}}{Label.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Study-anonymize"></a>}}
 \if{latex}{\out{\hypertarget{method-Study-anonymize}{}}}
-\subsection{Method \code{anonymize()}}{
-Anonymize Study
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Study$anonymize(
+\subsection{\code{Study$anonymize()}}{
+  Anonymize Study
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Study$anonymize(
   remove = list(),
   replace = list(),
   keep = list(),
@@ -171,44 +178,37 @@ Anonymize Study
   private_creator = NULL,
   force = FALSE,
   dicom_version = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{remove}}{List of tags to remove.}
-
-\item{\code{replace}}{Named-list of tags to replce.}
-
-\item{\code{keep}}{List of tags to keep unchanged.}
-
-\item{\code{keep_private_tags}}{Keep private tags from DICOM instance.}
-
-\item{\code{keep_source}}{Keep original resource.}
-
-\item{\code{priority}}{Priority of the job.}
-
-\item{\code{permissive}}{Ignore errors during individual steps of the job?}
-
-\item{\code{private_creator}}{Private creator to be used for private tags in
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{remove}}{List of tags to remove.}
+      \item{\code{replace}}{Named-list of tags to replce.}
+      \item{\code{keep}}{List of tags to keep unchanged.}
+      \item{\code{keep_private_tags}}{Keep private tags from DICOM instance.}
+      \item{\code{keep_source}}{Keep original resource.}
+      \item{\code{priority}}{Priority of the job.}
+      \item{\code{permissive}}{Ignore errors during individual steps of the job?}
+      \item{\code{private_creator}}{Private creator to be used for private tags in
 replace.}
-
-\item{\code{force}}{Force tags to be changed.}
-
-\item{\code{dicom_version}}{Version of the DICOM standard to use for
+      \item{\code{force}}{Force tags to be changed.}
+      \item{\code{dicom_version}}{Version of the DICOM standard to use for
 anonymization.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
-\if{html}{\out{</div>}}
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Study-anonymize_as_job"></a>}}
 \if{latex}{\out{\hypertarget{method-Study-anonymize_as_job}{}}}
-\subsection{Method \code{anonymize_as_job()}}{
-Anonymize Study
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Study$anonymize_as_job(
+\subsection{\code{Study$anonymize_as_job()}}{
+  Anonymize Study
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Study$anonymize_as_job(
   remove = list(),
   replace = list(),
   keep = list(),
@@ -219,44 +219,37 @@ Anonymize Study
   private_creator = NULL,
   force = FALSE,
   dicom_version = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{remove}}{List of tags to remove.}
-
-\item{\code{replace}}{Named-list of tags to replce.}
-
-\item{\code{keep}}{List of tags to keep unchanged.}
-
-\item{\code{keep_private_tags}}{Keep private tags from DICOM instance.}
-
-\item{\code{keep_source}}{Keep original resource.}
-
-\item{\code{priority}}{Priority of the job.}
-
-\item{\code{permissive}}{Ignore errors during individual steps of the job?}
-
-\item{\code{private_creator}}{Private creator to be used for private tags in
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{remove}}{List of tags to remove.}
+      \item{\code{replace}}{Named-list of tags to replce.}
+      \item{\code{keep}}{List of tags to keep unchanged.}
+      \item{\code{keep_private_tags}}{Keep private tags from DICOM instance.}
+      \item{\code{keep_source}}{Keep original resource.}
+      \item{\code{priority}}{Priority of the job.}
+      \item{\code{permissive}}{Ignore errors during individual steps of the job?}
+      \item{\code{private_creator}}{Private creator to be used for private tags in
 replace.}
-
-\item{\code{force}}{Force tags to be changed.}
-
-\item{\code{dicom_version}}{Version of the DICOM standard to use for
+      \item{\code{force}}{Force tags to be changed.}
+      \item{\code{dicom_version}}{Version of the DICOM standard to use for
 anonymization.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
-\if{html}{\out{</div>}}
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Study-modify"></a>}}
 \if{latex}{\out{\hypertarget{method-Study-modify}{}}}
-\subsection{Method \code{modify()}}{
-Modify Study
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Study$modify(
+\subsection{\code{Study$modify()}}{
+  Modify Study
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Study$modify(
   remove = list(),
   replace = list(),
   keep = list(),
@@ -266,41 +259,35 @@ Modify Study
   permissive = FALSE,
   private_creator = NULL,
   force = FALSE
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{remove}}{List of tags to remove.}
-
-\item{\code{replace}}{Named-list of tags to replce.}
-
-\item{\code{keep}}{List of tags to keep unchanged.}
-
-\item{\code{remove_private_tags}}{Remove private tags from DICOM instance.}
-
-\item{\code{keep_source}}{Keep original resource.}
-
-\item{\code{priority}}{Priority of the job.}
-
-\item{\code{permissive}}{Ignore errors during individual steps of the job?}
-
-\item{\code{private_creator}}{Private creator to be used for private tags in
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{remove}}{List of tags to remove.}
+      \item{\code{replace}}{Named-list of tags to replce.}
+      \item{\code{keep}}{List of tags to keep unchanged.}
+      \item{\code{remove_private_tags}}{Remove private tags from DICOM instance.}
+      \item{\code{keep_source}}{Keep original resource.}
+      \item{\code{priority}}{Priority of the job.}
+      \item{\code{permissive}}{Ignore errors during individual steps of the job?}
+      \item{\code{private_creator}}{Private creator to be used for private tags in
 replace.}
+      \item{\code{force}}{Force tags to be changed.}
+    }
+    \if{html}{\out{</div>}}
+  }
+}
 
-\item{\code{force}}{Force tags to be changed.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Study-modify_as_job"></a>}}
 \if{latex}{\out{\hypertarget{method-Study-modify_as_job}{}}}
-\subsection{Method \code{modify_as_job()}}{
-Modify Study as Job
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Study$modify_as_job(
+\subsection{\code{Study$modify_as_job()}}{
+  Modify Study as Job
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Study$modify_as_job(
   remove = list(),
   replace = list(),
   keep = list(),
@@ -310,100 +297,102 @@ Modify Study as Job
   permissive = FALSE,
   private_creator = NULL,
   force = FALSE
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{remove}}{List of tags to remove.}
-
-\item{\code{replace}}{Named-list of tags to replce.}
-
-\item{\code{keep}}{List of tags to keep unchanged.}
-
-\item{\code{remove_private_tags}}{Remove private tags from DICOM instance.}
-
-\item{\code{keep_source}}{Keep original resource.}
-
-\item{\code{priority}}{Priority of the job.}
-
-\item{\code{permissive}}{Ignore errors during individual steps of the job?}
-
-\item{\code{private_creator}}{Private creator to be used for private tags in
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{remove}}{List of tags to remove.}
+      \item{\code{replace}}{Named-list of tags to replce.}
+      \item{\code{keep}}{List of tags to keep unchanged.}
+      \item{\code{remove_private_tags}}{Remove private tags from DICOM instance.}
+      \item{\code{keep_source}}{Keep original resource.}
+      \item{\code{priority}}{Priority of the job.}
+      \item{\code{permissive}}{Ignore errors during individual steps of the job?}
+      \item{\code{private_creator}}{Private creator to be used for private tags in
 replace.}
+      \item{\code{force}}{Force tags to be changed.}
+    }
+    \if{html}{\out{</div>}}
+  }
+}
 
-\item{\code{force}}{Force tags to be changed.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Study-get_zip_archive_content"></a>}}
 \if{latex}{\out{\hypertarget{method-Study-get_zip_archive_content}{}}}
-\subsection{Method \code{get_zip_archive_content()}}{
-Get bytes of the zip archive.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Study$get_zip_archive_content()}\if{html}{\out{</div>}}
+\subsection{\code{Study$get_zip_archive_content()}}{
+  Get bytes of the zip archive.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Study$get_zip_archive_content()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Study-download_archive"></a>}}
 \if{latex}{\out{\hypertarget{method-Study-download_archive}{}}}
-\subsection{Method \code{download_archive()}}{
-Download zip archive to \code{path}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Study$download_archive(path, stream = FALSE)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{path}}{Path on disk.}
-
-\item{\code{stream}}{Should the resource be streamed and written to disk in
+\subsection{\code{Study$download_archive()}}{
+  Download zip archive to \code{path}.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Study$download_archive(path, stream = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{path}}{Path on disk.}
+      \item{\code{stream}}{Should the resource be streamed and written to disk in
 chunks? Default is \code{FALSE}, which means the resource file contents are
 retrieved in their entirety and written to disk all at once.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
-\if{html}{\out{</div>}}
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Study-get_shared_tags"></a>}}
 \if{latex}{\out{\hypertarget{method-Study-get_shared_tags}{}}}
-\subsection{Method \code{get_shared_tags()}}{
-Retrieve the shared tags of the study.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Study$get_shared_tags()}\if{html}{\out{</div>}}
+\subsection{\code{Study$get_shared_tags()}}{
+  Retrieve the shared tags of the study.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Study$get_shared_tags()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Study-remove_empty_series"></a>}}
 \if{latex}{\out{\hypertarget{method-Study-remove_empty_series}{}}}
-\subsection{Method \code{remove_empty_series()}}{
-Remove empty series from study.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Study$remove_empty_series()}\if{html}{\out{</div>}}
+\subsection{\code{Study$remove_empty_series()}}{
+  Remove empty series from study.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Study$remove_empty_series()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Study-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-Study-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Study$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{Study$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Study$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

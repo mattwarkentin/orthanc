@@ -10,161 +10,174 @@ An instance of \code{Modality}.
 Wrapper around Orthanc API when dealing with a modality
 }
 \section{Public fields}{
-\if{html}{\out{<div class="r6-fields">}}
-\describe{
-\item{\code{modality}}{Modality.}
-}
-\if{html}{\out{</div>}}
+  \if{html}{\out{<div class="r6-fields">}}
+  \describe{
+    \item{\code{modality}}{Modality.}
+  }
+  \if{html}{\out{</div>}}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-Modality-initalize}{\code{Modality$initalize()}}
-\item \href{#method-Modality-echo}{\code{Modality$echo()}}
-\item \href{#method-Modality-get}{\code{Modality$get()}}
-\item \href{#method-Modality-find}{\code{Modality$find()}}
-\item \href{#method-Modality-move}{\code{Modality$move()}}
-\item \href{#method-Modality-store}{\code{Modality$store()}}
-\item \href{#method-Modality-get_query_answers}{\code{Modality$get_query_answers()}}
-\item \href{#method-Modality-clone}{\code{Modality$clone()}}
-}
+  \itemize{
+    \item \href{#method-Modality-initalize}{\code{Modality$initalize()}}
+    \item \href{#method-Modality-echo}{\code{Modality$echo()}}
+    \item \href{#method-Modality-get}{\code{Modality$get()}}
+    \item \href{#method-Modality-find}{\code{Modality$find()}}
+    \item \href{#method-Modality-move}{\code{Modality$move()}}
+    \item \href{#method-Modality-store}{\code{Modality$store()}}
+    \item \href{#method-Modality-get_query_answers}{\code{Modality$get_query_answers()}}
+    \item \href{#method-Modality-clone}{\code{Modality$clone()}}
+  }
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Modality-initalize"></a>}}
 \if{latex}{\out{\hypertarget{method-Modality-initalize}{}}}
-\subsection{Method \code{initalize()}}{
-Create a new Modality instance.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Modality$initalize(client, modality)}\if{html}{\out{</div>}}
+\subsection{\code{Modality$initalize()}}{
+  Create a new Modality instance.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Modality$initalize(client, modality)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{client}}{Orthanc API client.}
+      \item{\code{modality}}{Remote modality.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{client}}{Orthanc API client.}
-
-\item{\code{modality}}{Remote modality.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Modality-echo"></a>}}
 \if{latex}{\out{\hypertarget{method-Modality-echo}{}}}
-\subsection{Method \code{echo()}}{
-C-Echo to modality
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Modality$echo()}\if{html}{\out{</div>}}
+\subsection{\code{Modality$echo()}}{
+  C-Echo to modality
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Modality$echo()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Modality-get"></a>}}
 \if{latex}{\out{\hypertarget{method-Modality-get}{}}}
-\subsection{Method \code{get()}}{
-C-Move SCU: Send all the results to another modality whose
+\subsection{\code{Modality$get()}}{
+  C-Move SCU: Send all the results to another modality whose
 AET is in the body.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Modality$get(level, resources)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{level}}{Level of the query ("Patient", "Study", "Series",
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Modality$get(level, resources)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{level}}{Level of the query ("Patient", "Study", "Series",
 "Instance").}
-
-\item{\code{resources}}{List or named-list of DICOM tags that identify data to
+      \item{\code{resources}}{List or named-list of DICOM tags that identify data to
 retrieve (e.g., list(StudyInstanceUID = "1.3.6.1.4.1.22213.2.6291.2.1")).}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
-\if{html}{\out{</div>}}
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Modality-find"></a>}}
 \if{latex}{\out{\hypertarget{method-Modality-find}{}}}
-\subsection{Method \code{find()}}{
-C-Find (Querying with data)
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Modality$find(data)}\if{html}{\out{</div>}}
+\subsection{\code{Modality$find()}}{
+  C-Find (Querying with data)
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Modality$find(data)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{data}}{Named-list to send in the body of request.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{data}}{Named-list to send in the body of request.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Modality-move"></a>}}
 \if{latex}{\out{\hypertarget{method-Modality-move}{}}}
-\subsection{Method \code{move()}}{
-C-Find (Querying with data)
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Modality$move(query_id, cmove_data)}\if{html}{\out{</div>}}
+\subsection{\code{Modality$move()}}{
+  C-Find (Querying with data)
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Modality$move(query_id, cmove_data)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{query_id}}{Query identifier.}
+      \item{\code{cmove_data}}{Ex. list(TargetAet = 'target_modality_name', Synchronous = FALSE)}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{query_id}}{Query identifier.}
-
-\item{\code{cmove_data}}{Ex. list(TargetAet = 'target_modality_name', Synchronous = FALSE)}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Modality-store"></a>}}
 \if{latex}{\out{\hypertarget{method-Modality-store}{}}}
-\subsection{Method \code{store()}}{
-Store series or instance to modality.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Modality$store(instance_or_series_id)}\if{html}{\out{</div>}}
+\subsection{\code{Modality$store()}}{
+  Store series or instance to modality.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Modality$store(instance_or_series_id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{instance_or_series_id}}{Instance or Series Orthanc identifier.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{instance_or_series_id}}{Instance or Series Orthanc identifier.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Modality-get_query_answers"></a>}}
 \if{latex}{\out{\hypertarget{method-Modality-get_query_answers}{}}}
-\subsection{Method \code{get_query_answers()}}{
-Get query answers.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Modality$get_query_answers(query_id)}\if{html}{\out{</div>}}
+\subsection{\code{Modality$get_query_answers()}}{
+  Get query answers.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Modality$get_query_answers(query_id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{query_id}}{Query identifier.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{query_id}}{Query identifier.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Modality-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-Modality-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Modality$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{Modality$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Modality$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

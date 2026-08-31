@@ -10,178 +10,185 @@ An R6 instance of class \code{"Series"}.
 An abstract class for a DICOM Series resource.
 }
 \section{Super class}{
-\code{\link[orthanc:Resource]{orthanc::Resource}} -> \code{Series}
+\code{\link[orthanc:Resource]{Resource}} -> \code{Series}
 }
 \section{Active bindings}{
-\if{html}{\out{<div class="r6-active-bindings">}}
-\describe{
-\item{\code{instances}}{Instances}
+  \if{html}{\out{<div class="r6-active-bindings">}}
+  \describe{
+    \item{\code{instances}}{Instances}
 
-\item{\code{instances_ids}}{Instances identifiers}
+    \item{\code{instances_ids}}{Instances identifiers}
 
-\item{\code{num_instances}}{Number of instances}
+    \item{\code{num_instances}}{Number of instances}
 
-\item{\code{instances_tags}}{Instances tags}
+    \item{\code{instances_tags}}{Instances tags}
 
-\item{\code{uid}}{SeriesInstanceUID}
+    \item{\code{uid}}{SeriesInstanceUID}
 
-\item{\code{manufacturer}}{Manufacturer}
+    \item{\code{manufacturer}}{Manufacturer}
 
-\item{\code{date}}{Series Date}
+    \item{\code{date}}{Series Date}
 
-\item{\code{modality}}{Modality}
+    \item{\code{modality}}{Modality}
 
-\item{\code{series_number}}{Series Number}
+    \item{\code{series_number}}{Series Number}
 
-\item{\code{performed_procedure_step_description}}{Performed Procedure Step
+    \item{\code{performed_procedure_step_description}}{Performed Procedure Step
 Description}
 
-\item{\code{protocol_name}}{Protocol Name}
+    \item{\code{protocol_name}}{Protocol Name}
 
-\item{\code{station_name}}{Station Name}
+    \item{\code{station_name}}{Station Name}
 
-\item{\code{description}}{Series Description}
+    \item{\code{description}}{Series Description}
 
-\item{\code{body_part_examined}}{Body Part Examined}
+    \item{\code{body_part_examined}}{Body Part Examined}
 
-\item{\code{sequence_name}}{Sequence Name}
+    \item{\code{sequence_name}}{Sequence Name}
 
-\item{\code{cardiac_number_of_images}}{Cardiac Number of Images}
+    \item{\code{cardiac_number_of_images}}{Cardiac Number of Images}
 
-\item{\code{image_in_acquisition}}{Images in Acquisition}
+    \item{\code{image_in_acquisition}}{Images in Acquisition}
 
-\item{\code{number_of_temporal_positions}}{Number of Temporal Positions}
+    \item{\code{number_of_temporal_positions}}{Number of Temporal Positions}
 
-\item{\code{number_of_slices}}{Number of Slices}
+    \item{\code{number_of_slices}}{Number of Slices}
 
-\item{\code{number_of_time_slices}}{Number of Time Slices}
+    \item{\code{number_of_time_slices}}{Number of Time Slices}
 
-\item{\code{image_orientation_patient}}{Image Orientation Patient}
+    \item{\code{image_orientation_patient}}{Image Orientation Patient}
 
-\item{\code{series_type}}{Series Type}
+    \item{\code{series_type}}{Series Type}
 
-\item{\code{operators_name}}{Operators Name}
+    \item{\code{operators_name}}{Operators Name}
 
-\item{\code{acquisition_device_processing_description}}{Acquisition Device
+    \item{\code{acquisition_device_processing_description}}{Acquisition Device
 Processing Description}
 
-\item{\code{contrast_bolus_agent}}{Contrast Bolus Agent}
+    \item{\code{contrast_bolus_agent}}{Contrast Bolus Agent}
 
-\item{\code{is_stable}}{Is stable?}
+    \item{\code{is_stable}}{Is stable?}
 
-\item{\code{last_update}}{Last Update}
+    \item{\code{last_update}}{Last Update}
 
-\item{\code{labels}}{Get or add labels}
+    \item{\code{labels}}{Get or add labels}
 
-\item{\code{study_identifier}}{Parent study identifier}
+    \item{\code{study_identifier}}{Parent study identifier}
 
-\item{\code{parent_study}}{Parent study}
+    \item{\code{parent_study}}{Parent study}
 
-\item{\code{parent_patient}}{Parent patient}
+    \item{\code{parent_patient}}{Parent patient}
 
-\item{\code{shared_tags}}{Shared tags}
+    \item{\code{shared_tags}}{Shared tags}
 
-\item{\code{statistics}}{Statistics}
-}
-\if{html}{\out{</div>}}
+    \item{\code{statistics}}{Statistics}
+  }
+  \if{html}{\out{</div>}}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-Series-get_main_information}{\code{Series$get_main_information()}}
-\item \href{#method-Series-add_label}{\code{Series$add_label()}}
-\item \href{#method-Series-has_label}{\code{Series$has_label()}}
-\item \href{#method-Series-remove_label}{\code{Series$remove_label()}}
-\item \href{#method-Series-anonymize}{\code{Series$anonymize()}}
-\item \href{#method-Series-anonymize_as_job}{\code{Series$anonymize_as_job()}}
-\item \href{#method-Series-modify}{\code{Series$modify()}}
-\item \href{#method-Series-modify_as_job}{\code{Series$modify_as_job()}}
-\item \href{#method-Series-get_zip_archive_content}{\code{Series$get_zip_archive_content()}}
-\item \href{#method-Series-download_archive}{\code{Series$download_archive()}}
-\item \href{#method-Series-get_shared_tags}{\code{Series$get_shared_tags()}}
-\item \href{#method-Series-remove_empty_instances}{\code{Series$remove_empty_instances()}}
-\item \href{#method-Series-get_nifti_file_content}{\code{Series$get_nifti_file_content()}}
-\item \href{#method-Series-download_nifti}{\code{Series$download_nifti()}}
-\item \href{#method-Series-clone}{\code{Series$clone()}}
+  \itemize{
+    \item \href{#method-Series-get_main_information}{\code{Series$get_main_information()}}
+    \item \href{#method-Series-add_label}{\code{Series$add_label()}}
+    \item \href{#method-Series-has_label}{\code{Series$has_label()}}
+    \item \href{#method-Series-remove_label}{\code{Series$remove_label()}}
+    \item \href{#method-Series-anonymize}{\code{Series$anonymize()}}
+    \item \href{#method-Series-anonymize_as_job}{\code{Series$anonymize_as_job()}}
+    \item \href{#method-Series-modify}{\code{Series$modify()}}
+    \item \href{#method-Series-modify_as_job}{\code{Series$modify_as_job()}}
+    \item \href{#method-Series-get_zip_archive_content}{\code{Series$get_zip_archive_content()}}
+    \item \href{#method-Series-download_archive}{\code{Series$download_archive()}}
+    \item \href{#method-Series-get_shared_tags}{\code{Series$get_shared_tags()}}
+    \item \href{#method-Series-remove_empty_instances}{\code{Series$remove_empty_instances()}}
+    \item \href{#method-Series-get_nifti_file_content}{\code{Series$get_nifti_file_content()}}
+    \item \href{#method-Series-download_nifti}{\code{Series$download_nifti()}}
+    \item \href{#method-Series-clone}{\code{Series$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="initialize"><a href='../../orthanc/html/Resource.html#method-Resource-initialize'><code>orthanc::Resource$initialize()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="print"><a href='../../orthanc/html/Resource.html#method-Resource-print'><code>orthanc::Resource$print()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="set_child_resources"><a href='../../orthanc/html/Resource.html#method-Resource-set_child_resources'><code>orthanc::Resource$set_child_resources()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="initialize"><a href='../../orthanc/html/Resource.html#method-Resource-initialize'><code>Resource$initialize()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="print"><a href='../../orthanc/html/Resource.html#method-Resource-print'><code>Resource$print()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="set_child_resources"><a href='../../orthanc/html/Resource.html#method-Resource-set_child_resources'><code>Resource$set_child_resources()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Series-get_main_information"></a>}}
 \if{latex}{\out{\hypertarget{method-Series-get_main_information}{}}}
-\subsection{Method \code{get_main_information()}}{
-Get series information.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$get_main_information()}\if{html}{\out{</div>}}
+\subsection{\code{Series$get_main_information()}}{
+  Get series information.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Series$get_main_information()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Series-add_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Series-add_label}{}}}
-\subsection{Method \code{add_label()}}{
-Add label to resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$add_label(label)}\if{html}{\out{</div>}}
+\subsection{\code{Series$add_label()}}{
+  Add label to resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Series$add_label(label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{label}}{Label.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{label}}{Label.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Series-has_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Series-has_label}{}}}
-\subsection{Method \code{has_label()}}{
-Test if resource has label.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$has_label(label)}\if{html}{\out{</div>}}
+\subsection{\code{Series$has_label()}}{
+  Test if resource has label.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Series$has_label(label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{label}}{Label.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{label}}{Label.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Series-remove_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Series-remove_label}{}}}
-\subsection{Method \code{remove_label()}}{
-Delete label from resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$remove_label(label)}\if{html}{\out{</div>}}
+\subsection{\code{Series$remove_label()}}{
+  Delete label from resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Series$remove_label(label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{label}}{Label.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{label}}{Label.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Series-anonymize"></a>}}
 \if{latex}{\out{\hypertarget{method-Series-anonymize}{}}}
-\subsection{Method \code{anonymize()}}{
-Anonymize Series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$anonymize(
+\subsection{\code{Series$anonymize()}}{
+  Anonymize Series
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Series$anonymize(
   remove = list(),
   replace = list(),
   keep = list(),
@@ -192,44 +199,37 @@ Anonymize Series
   private_creator = NULL,
   force = FALSE,
   dicom_version = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{remove}}{List of tags to remove.}
-
-\item{\code{replace}}{Named-list of tags to replce.}
-
-\item{\code{keep}}{List of tags to keep unchanged.}
-
-\item{\code{keep_private_tags}}{Keep private tags from DICOM instance.}
-
-\item{\code{keep_source}}{Keep original resource.}
-
-\item{\code{priority}}{Priority of the job.}
-
-\item{\code{permissive}}{Ignore errors during individual steps of the job?}
-
-\item{\code{private_creator}}{Private creator to be used for private tags in
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{remove}}{List of tags to remove.}
+      \item{\code{replace}}{Named-list of tags to replce.}
+      \item{\code{keep}}{List of tags to keep unchanged.}
+      \item{\code{keep_private_tags}}{Keep private tags from DICOM instance.}
+      \item{\code{keep_source}}{Keep original resource.}
+      \item{\code{priority}}{Priority of the job.}
+      \item{\code{permissive}}{Ignore errors during individual steps of the job?}
+      \item{\code{private_creator}}{Private creator to be used for private tags in
 replace.}
-
-\item{\code{force}}{Force tags to be changed.}
-
-\item{\code{dicom_version}}{Version of the DICOM standard to use for
+      \item{\code{force}}{Force tags to be changed.}
+      \item{\code{dicom_version}}{Version of the DICOM standard to use for
 anonymization.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
-\if{html}{\out{</div>}}
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Series-anonymize_as_job"></a>}}
 \if{latex}{\out{\hypertarget{method-Series-anonymize_as_job}{}}}
-\subsection{Method \code{anonymize_as_job()}}{
-Anonymize Series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$anonymize_as_job(
+\subsection{\code{Series$anonymize_as_job()}}{
+  Anonymize Series
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Series$anonymize_as_job(
   remove = list(),
   replace = list(),
   keep = list(),
@@ -240,44 +240,37 @@ Anonymize Series
   private_creator = NULL,
   force = FALSE,
   dicom_version = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{remove}}{List of tags to remove.}
-
-\item{\code{replace}}{Named-list of tags to replce.}
-
-\item{\code{keep}}{List of tags to keep unchanged.}
-
-\item{\code{keep_private_tags}}{Keep private tags from DICOM instance.}
-
-\item{\code{keep_source}}{Keep original resource.}
-
-\item{\code{priority}}{Priority of the job.}
-
-\item{\code{permissive}}{Ignore errors during individual steps of the job?}
-
-\item{\code{private_creator}}{Private creator to be used for private tags in
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{remove}}{List of tags to remove.}
+      \item{\code{replace}}{Named-list of tags to replce.}
+      \item{\code{keep}}{List of tags to keep unchanged.}
+      \item{\code{keep_private_tags}}{Keep private tags from DICOM instance.}
+      \item{\code{keep_source}}{Keep original resource.}
+      \item{\code{priority}}{Priority of the job.}
+      \item{\code{permissive}}{Ignore errors during individual steps of the job?}
+      \item{\code{private_creator}}{Private creator to be used for private tags in
 replace.}
-
-\item{\code{force}}{Force tags to be changed.}
-
-\item{\code{dicom_version}}{Version of the DICOM standard to use for
+      \item{\code{force}}{Force tags to be changed.}
+      \item{\code{dicom_version}}{Version of the DICOM standard to use for
 anonymization.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
-\if{html}{\out{</div>}}
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Series-modify"></a>}}
 \if{latex}{\out{\hypertarget{method-Series-modify}{}}}
-\subsection{Method \code{modify()}}{
-Modify Series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$modify(
+\subsection{\code{Series$modify()}}{
+  Modify Series
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Series$modify(
   remove = list(),
   replace = list(),
   keep = list(),
@@ -287,41 +280,35 @@ Modify Series
   permissive = FALSE,
   private_creator = NULL,
   force = FALSE
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{remove}}{List of tags to remove.}
-
-\item{\code{replace}}{Named-list of tags to replce.}
-
-\item{\code{keep}}{List of tags to keep unchanged.}
-
-\item{\code{remove_private_tags}}{Remove private tags from DICOM instance.}
-
-\item{\code{keep_source}}{Keep original resource.}
-
-\item{\code{priority}}{Priority of the job.}
-
-\item{\code{permissive}}{Ignore errors during individual steps of the job?}
-
-\item{\code{private_creator}}{Private creator to be used for private tags in
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{remove}}{List of tags to remove.}
+      \item{\code{replace}}{Named-list of tags to replce.}
+      \item{\code{keep}}{List of tags to keep unchanged.}
+      \item{\code{remove_private_tags}}{Remove private tags from DICOM instance.}
+      \item{\code{keep_source}}{Keep original resource.}
+      \item{\code{priority}}{Priority of the job.}
+      \item{\code{permissive}}{Ignore errors during individual steps of the job?}
+      \item{\code{private_creator}}{Private creator to be used for private tags in
 replace.}
+      \item{\code{force}}{Force tags to be changed.}
+    }
+    \if{html}{\out{</div>}}
+  }
+}
 
-\item{\code{force}}{Force tags to be changed.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Series-modify_as_job"></a>}}
 \if{latex}{\out{\hypertarget{method-Series-modify_as_job}{}}}
-\subsection{Method \code{modify_as_job()}}{
-Modify Series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$modify_as_job(
+\subsection{\code{Series$modify_as_job()}}{
+  Modify Series
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Series$modify_as_job(
   remove = list(),
   replace = list(),
   keep = list(),
@@ -331,140 +318,144 @@ Modify Series
   permissive = FALSE,
   private_creator = NULL,
   force = FALSE
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{remove}}{List of tags to remove.}
-
-\item{\code{replace}}{Named-list of tags to replce.}
-
-\item{\code{keep}}{List of tags to keep unchanged.}
-
-\item{\code{remove_private_tags}}{Remove private tags from DICOM instance.}
-
-\item{\code{keep_source}}{Keep original resource.}
-
-\item{\code{priority}}{Priority of the job.}
-
-\item{\code{permissive}}{Ignore errors during individual steps of the job?}
-
-\item{\code{private_creator}}{Private creator to be used for private tags in
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{remove}}{List of tags to remove.}
+      \item{\code{replace}}{Named-list of tags to replce.}
+      \item{\code{keep}}{List of tags to keep unchanged.}
+      \item{\code{remove_private_tags}}{Remove private tags from DICOM instance.}
+      \item{\code{keep_source}}{Keep original resource.}
+      \item{\code{priority}}{Priority of the job.}
+      \item{\code{permissive}}{Ignore errors during individual steps of the job?}
+      \item{\code{private_creator}}{Private creator to be used for private tags in
 replace.}
+      \item{\code{force}}{Force tags to be changed.}
+    }
+    \if{html}{\out{</div>}}
+  }
+}
 
-\item{\code{force}}{Force tags to be changed.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Series-get_zip_archive_content"></a>}}
 \if{latex}{\out{\hypertarget{method-Series-get_zip_archive_content}{}}}
-\subsection{Method \code{get_zip_archive_content()}}{
-Get bytes of the zip archive.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$get_zip_archive_content()}\if{html}{\out{</div>}}
+\subsection{\code{Series$get_zip_archive_content()}}{
+  Get bytes of the zip archive.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Series$get_zip_archive_content()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Series-download_archive"></a>}}
 \if{latex}{\out{\hypertarget{method-Series-download_archive}{}}}
-\subsection{Method \code{download_archive()}}{
-Download zip archive to \code{path}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$download_archive(path, stream = FALSE)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{path}}{Path on disk.}
-
-\item{\code{stream}}{Should the resource be streamed and written to disk in
+\subsection{\code{Series$download_archive()}}{
+  Download zip archive to \code{path}.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Series$download_archive(path, stream = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{path}}{Path on disk.}
+      \item{\code{stream}}{Should the resource be streamed and written to disk in
 chunks? Default is \code{FALSE}, which means the resource file contents are
 retrieved in their entirety and written to disk all at once.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
-\if{html}{\out{</div>}}
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Series-get_shared_tags"></a>}}
 \if{latex}{\out{\hypertarget{method-Series-get_shared_tags}{}}}
-\subsection{Method \code{get_shared_tags()}}{
-Retrieve the shared tags of the series.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$get_shared_tags()}\if{html}{\out{</div>}}
+\subsection{\code{Series$get_shared_tags()}}{
+  Retrieve the shared tags of the series.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Series$get_shared_tags()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Series-remove_empty_instances"></a>}}
 \if{latex}{\out{\hypertarget{method-Series-remove_empty_instances}{}}}
-\subsection{Method \code{remove_empty_instances()}}{
-Remove empty instances from series.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$remove_empty_instances()}\if{html}{\out{</div>}}
+\subsection{\code{Series$remove_empty_instances()}}{
+  Remove empty instances from series.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Series$remove_empty_instances()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Series-get_nifti_file_content"></a>}}
 \if{latex}{\out{\hypertarget{method-Series-get_nifti_file_content}{}}}
-\subsection{Method \code{get_nifti_file_content()}}{
-Get bytes of NIfTI file content.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$get_nifti_file_content(compress = TRUE)}\if{html}{\out{</div>}}
+\subsection{\code{Series$get_nifti_file_content()}}{
+  Get bytes of NIfTI file content.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Series$get_nifti_file_content(compress = TRUE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{compress}}{Compress to gzip (nii.gz) Default is \code{TRUE}.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{compress}}{Compress to gzip (nii.gz) Default is \code{TRUE}.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Series-download_nifti"></a>}}
 \if{latex}{\out{\hypertarget{method-Series-download_nifti}{}}}
-\subsection{Method \code{download_nifti()}}{
-Download series as NIfTI.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$download_nifti(path, compress = TRUE, stream = FALSE)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{path}}{Path on disk.}
-
-\item{\code{compress}}{Compress to gzip (\code{nii.gz}) Default is \code{TRUE}.}
-
-\item{\code{stream}}{Should the resource be streamed and written to disk in
+\subsection{\code{Series$download_nifti()}}{
+  Download series as NIfTI.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Series$download_nifti(path, compress = TRUE, stream = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{path}}{Path on disk.}
+      \item{\code{compress}}{Compress to gzip (\code{nii.gz}) Default is \code{TRUE}.}
+      \item{\code{stream}}{Should the resource be streamed and written to disk in
 chunks? Default is \code{FALSE}, which means the resource contents are
 retrieved in their entirety and written to disk all at once.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
-\if{html}{\out{</div>}}
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Series-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-Series-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Series$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{Series$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Series$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

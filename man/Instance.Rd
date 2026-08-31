@@ -10,210 +10,222 @@ An R6 instance of class \code{"Instance"}.
 An abstract class for a DICOM Instance resource.
 }
 \section{Super class}{
-\code{\link[orthanc:Resource]{orthanc::Resource}} -> \code{Instance}
+\code{\link[orthanc:Resource]{Resource}} -> \code{Instance}
 }
 \section{Active bindings}{
-\if{html}{\out{<div class="r6-active-bindings">}}
-\describe{
-\item{\code{uid}}{SOPInstanceUID}
+  \if{html}{\out{<div class="r6-active-bindings">}}
+  \describe{
+    \item{\code{uid}}{SOPInstanceUID}
 
-\item{\code{file_size}}{File size}
+    \item{\code{file_size}}{File size}
 
-\item{\code{creation_date}}{Creation Date}
+    \item{\code{creation_date}}{Creation Date}
 
-\item{\code{series_identifier}}{Parent series identifier}
+    \item{\code{series_identifier}}{Parent series identifier}
 
-\item{\code{parent_series}}{Parent series}
+    \item{\code{parent_series}}{Parent series}
 
-\item{\code{parent_study}}{Parent study}
+    \item{\code{parent_study}}{Parent study}
 
-\item{\code{parent_patient}}{Parent patient}
+    \item{\code{parent_patient}}{Parent patient}
 
-\item{\code{acquisition_number}}{Acquisition Number}
+    \item{\code{acquisition_number}}{Acquisition Number}
 
-\item{\code{image_index}}{Image Index}
+    \item{\code{image_index}}{Image Index}
 
-\item{\code{image_orientation_patient}}{Image Orientation Patient}
+    \item{\code{image_orientation_patient}}{Image Orientation Patient}
 
-\item{\code{image_position_patient}}{Image Position Patient}
+    \item{\code{image_position_patient}}{Image Position Patient}
 
-\item{\code{image_comments}}{Image Comments}
+    \item{\code{image_comments}}{Image Comments}
 
-\item{\code{instance_number}}{Instance Number}
+    \item{\code{instance_number}}{Instance Number}
 
-\item{\code{temporal_position_identifier}}{Temporal Position Identifier}
+    \item{\code{temporal_position_identifier}}{Temporal Position Identifier}
 
-\item{\code{tags}}{Tags}
+    \item{\code{tags}}{Tags}
 
-\item{\code{simplified_tags}}{Simplified Tags}
+    \item{\code{simplified_tags}}{Simplified Tags}
 
-\item{\code{labels}}{Get or add labels}
+    \item{\code{labels}}{Get or add labels}
 
-\item{\code{statistics}}{Statistics}
+    \item{\code{statistics}}{Statistics}
 
-\item{\code{list_frames}}{List frames (zero-based indexing)}
+    \item{\code{list_frames}}{List frames (zero-based indexing)}
 
-\item{\code{frames}}{Number of frames}
+    \item{\code{frames}}{Number of frames}
 
-\item{\code{rows}}{Number of rows}
+    \item{\code{rows}}{Number of rows}
 
-\item{\code{columns}}{Number of columns}
+    \item{\code{columns}}{Number of columns}
 
-\item{\code{shape}}{Shape (rows x columns x frames (if multi-frame))}
+    \item{\code{shape}}{Shape (rows x columns x frames (if multi-frame))}
 
-\item{\code{dim}}{Number of dimensions}
+    \item{\code{dim}}{Number of dimensions}
 
-\item{\code{slice_thickness}}{Slice thickness}
+    \item{\code{slice_thickness}}{Slice thickness}
 
-\item{\code{pixel_spacing}}{Pixel spacing}
-}
-\if{html}{\out{</div>}}
+    \item{\code{pixel_spacing}}{Pixel spacing}
+  }
+  \if{html}{\out{</div>}}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-Instance-get_dicom_file_content}{\code{Instance$get_dicom_file_content()}}
-\item \href{#method-Instance-download_dicom}{\code{Instance$download_dicom()}}
-\item \href{#method-Instance-get_main_information}{\code{Instance$get_main_information()}}
-\item \href{#method-Instance-add_label}{\code{Instance$add_label()}}
-\item \href{#method-Instance-has_label}{\code{Instance$has_label()}}
-\item \href{#method-Instance-remove_label}{\code{Instance$remove_label()}}
-\item \href{#method-Instance-get_raw_content_by_tag}{\code{Instance$get_raw_content_by_tag()}}
-\item \href{#method-Instance-anonymize}{\code{Instance$anonymize()}}
-\item \href{#method-Instance-modify}{\code{Instance$modify()}}
-\item \href{#method-Instance-get_nifti_file_content}{\code{Instance$get_nifti_file_content()}}
-\item \href{#method-Instance-download_nifti}{\code{Instance$download_nifti()}}
-\item \href{#method-Instance-download_image}{\code{Instance$download_image()}}
-\item \href{#method-Instance-clone}{\code{Instance$clone()}}
+  \itemize{
+    \item \href{#method-Instance-get_dicom_file_content}{\code{Instance$get_dicom_file_content()}}
+    \item \href{#method-Instance-download_dicom}{\code{Instance$download_dicom()}}
+    \item \href{#method-Instance-get_main_information}{\code{Instance$get_main_information()}}
+    \item \href{#method-Instance-add_label}{\code{Instance$add_label()}}
+    \item \href{#method-Instance-has_label}{\code{Instance$has_label()}}
+    \item \href{#method-Instance-remove_label}{\code{Instance$remove_label()}}
+    \item \href{#method-Instance-get_raw_content_by_tag}{\code{Instance$get_raw_content_by_tag()}}
+    \item \href{#method-Instance-anonymize}{\code{Instance$anonymize()}}
+    \item \href{#method-Instance-modify}{\code{Instance$modify()}}
+    \item \href{#method-Instance-get_nifti_file_content}{\code{Instance$get_nifti_file_content()}}
+    \item \href{#method-Instance-download_nifti}{\code{Instance$download_nifti()}}
+    \item \href{#method-Instance-download_image}{\code{Instance$download_image()}}
+    \item \href{#method-Instance-clone}{\code{Instance$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="initialize"><a href='../../orthanc/html/Resource.html#method-Resource-initialize'><code>orthanc::Resource$initialize()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="print"><a href='../../orthanc/html/Resource.html#method-Resource-print'><code>orthanc::Resource$print()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="set_child_resources"><a href='../../orthanc/html/Resource.html#method-Resource-set_child_resources'><code>orthanc::Resource$set_child_resources()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="initialize"><a href='../../orthanc/html/Resource.html#method-Resource-initialize'><code>Resource$initialize()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="print"><a href='../../orthanc/html/Resource.html#method-Resource-print'><code>Resource$print()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="set_child_resources"><a href='../../orthanc/html/Resource.html#method-Resource-set_child_resources'><code>Resource$set_child_resources()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Instance-get_dicom_file_content"></a>}}
 \if{latex}{\out{\hypertarget{method-Instance-get_dicom_file_content}{}}}
-\subsection{Method \code{get_dicom_file_content()}}{
-Retrieves bytes of DICOM file content
+\subsection{\code{Instance$get_dicom_file_content()}}{
+  Retrieves bytes of DICOM file content
 
 This method retrieves bytes corresponding to the DICOM file.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Instance$get_dicom_file_content()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Instance$get_dicom_file_content()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Instance-download_dicom"></a>}}
 \if{latex}{\out{\hypertarget{method-Instance-download_dicom}{}}}
-\subsection{Method \code{download_dicom()}}{
-Download DICOM file to a path.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Instance$download_dicom(path, stream = FALSE)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{path}}{Path on disk.}
-
-\item{\code{stream}}{Should the resource be streamed and written to disk in
+\subsection{\code{Instance$download_dicom()}}{
+  Download DICOM file to a path.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Instance$download_dicom(path, stream = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{path}}{Path on disk.}
+      \item{\code{stream}}{Should the resource be streamed and written to disk in
 chunks? Default is \code{FALSE}, which means the resource file contents are
 retrieved in their entirety and written to disk all at once.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
-\if{html}{\out{</div>}}
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Instance-get_main_information"></a>}}
 \if{latex}{\out{\hypertarget{method-Instance-get_main_information}{}}}
-\subsection{Method \code{get_main_information()}}{
-Get instance information.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Instance$get_main_information()}\if{html}{\out{</div>}}
+\subsection{\code{Instance$get_main_information()}}{
+  Get instance information.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Instance$get_main_information()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Instance-add_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Instance-add_label}{}}}
-\subsection{Method \code{add_label()}}{
-Add label to resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Instance$add_label(label)}\if{html}{\out{</div>}}
+\subsection{\code{Instance$add_label()}}{
+  Add label to resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Instance$add_label(label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{label}}{Label.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{label}}{Label.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Instance-has_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Instance-has_label}{}}}
-\subsection{Method \code{has_label()}}{
-Test if resource has label.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Instance$has_label(label)}\if{html}{\out{</div>}}
+\subsection{\code{Instance$has_label()}}{
+  Test if resource has label.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Instance$has_label(label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{label}}{Label.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{label}}{Label.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Instance-remove_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Instance-remove_label}{}}}
-\subsection{Method \code{remove_label()}}{
-Delete label from resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Instance$remove_label(label)}\if{html}{\out{</div>}}
+\subsection{\code{Instance$remove_label()}}{
+  Delete label from resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Instance$remove_label(label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{label}}{Label.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{label}}{Label.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Instance-get_raw_content_by_tag"></a>}}
 \if{latex}{\out{\hypertarget{method-Instance-get_raw_content_by_tag}{}}}
-\subsection{Method \code{get_raw_content_by_tag()}}{
-Get raw content of one DICOM tag.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Instance$get_raw_content_by_tag(tag)}\if{html}{\out{</div>}}
+\subsection{\code{Instance$get_raw_content_by_tag()}}{
+  Get raw content of one DICOM tag.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Instance$get_raw_content_by_tag(tag)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{tag}}{tag.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{tag}}{tag.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Instance-anonymize"></a>}}
 \if{latex}{\out{\hypertarget{method-Instance-anonymize}{}}}
-\subsection{Method \code{anonymize()}}{
-Anonymize Instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Instance$anonymize(
+\subsection{\code{Instance$anonymize()}}{
+  Anonymize Instance
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Instance$anonymize(
   remove = list(),
   replace = list(),
   keep = list(),
@@ -222,40 +234,35 @@ Anonymize Instance
   private_creator = NULL,
   force = FALSE,
   dicom_version = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{remove}}{List of tags to remove.}
-
-\item{\code{replace}}{Named-list of tags to replce.}
-
-\item{\code{keep}}{List of tags to keep unchanged.}
-
-\item{\code{keep_private_tags}}{Keep private tags from DICOM instance.}
-
-\item{\code{keep_source}}{Keep original resource.}
-
-\item{\code{private_creator}}{Private creator to be used for private tags in
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{remove}}{List of tags to remove.}
+      \item{\code{replace}}{Named-list of tags to replce.}
+      \item{\code{keep}}{List of tags to keep unchanged.}
+      \item{\code{keep_private_tags}}{Keep private tags from DICOM instance.}
+      \item{\code{keep_source}}{Keep original resource.}
+      \item{\code{private_creator}}{Private creator to be used for private tags in
 replace.}
-
-\item{\code{force}}{Force tags to be changed.}
-
-\item{\code{dicom_version}}{Version of the DICOM standard to use for
+      \item{\code{force}}{Force tags to be changed.}
+      \item{\code{dicom_version}}{Version of the DICOM standard to use for
 anonymization.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
-\if{html}{\out{</div>}}
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Instance-modify"></a>}}
 \if{latex}{\out{\hypertarget{method-Instance-modify}{}}}
-\subsection{Method \code{modify()}}{
-Modify an Instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Instance$modify(
+\subsection{\code{Instance$modify()}}{
+  Modify an Instance
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Instance$modify(
   remove = list(),
   replace = list(),
   keep = list(),
@@ -263,122 +270,118 @@ Modify an Instance
   keep_source = TRUE,
   private_creator = NULL,
   force = FALSE
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{remove}}{List of tags to remove.}
-
-\item{\code{replace}}{Named-list of tags to replce.}
-
-\item{\code{keep}}{List of tags to keep unchanged.}
-
-\item{\code{remove_private_tags}}{Remove private tags from DICOM instance.}
-
-\item{\code{keep_source}}{Keep original resource.}
-
-\item{\code{private_creator}}{Private creator to be used for private tags in
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{remove}}{List of tags to remove.}
+      \item{\code{replace}}{Named-list of tags to replce.}
+      \item{\code{keep}}{List of tags to keep unchanged.}
+      \item{\code{remove_private_tags}}{Remove private tags from DICOM instance.}
+      \item{\code{keep_source}}{Keep original resource.}
+      \item{\code{private_creator}}{Private creator to be used for private tags in
 replace.}
+      \item{\code{force}}{Force tags to be changed.}
+    }
+    \if{html}{\out{</div>}}
+  }
+}
 
-\item{\code{force}}{Force tags to be changed.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Instance-get_nifti_file_content"></a>}}
 \if{latex}{\out{\hypertarget{method-Instance-get_nifti_file_content}{}}}
-\subsection{Method \code{get_nifti_file_content()}}{
-Get bytes of NIfTI file content.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Instance$get_nifti_file_content(compress = TRUE)}\if{html}{\out{</div>}}
+\subsection{\code{Instance$get_nifti_file_content()}}{
+  Get bytes of NIfTI file content.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Instance$get_nifti_file_content(compress = TRUE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{compress}}{Compress to gzip (nii.gz) Default is \code{TRUE}.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{compress}}{Compress to gzip (nii.gz) Default is \code{TRUE}.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Instance-download_nifti"></a>}}
 \if{latex}{\out{\hypertarget{method-Instance-download_nifti}{}}}
-\subsection{Method \code{download_nifti()}}{
-Download instance as NIfTI.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Instance$download_nifti(path, compress = TRUE, stream = FALSE)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{path}}{Path on disk.}
-
-\item{\code{compress}}{Compress to gzip (nii.gz) Default is \code{TRUE}.}
-
-\item{\code{stream}}{Should the resource be streamed and written to disk in
+\subsection{\code{Instance$download_nifti()}}{
+  Download instance as NIfTI.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Instance$download_nifti(path, compress = TRUE, stream = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{path}}{Path on disk.}
+      \item{\code{compress}}{Compress to gzip (nii.gz) Default is \code{TRUE}.}
+      \item{\code{stream}}{Should the resource be streamed and written to disk in
 chunks? Default is \code{FALSE}, which means the resource file contents are
 retrieved in their entirety and written to disk all at once.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
-\if{html}{\out{</div>}}
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Instance-download_image"></a>}}
 \if{latex}{\out{\hypertarget{method-Instance-download_image}{}}}
-\subsection{Method \code{download_image()}}{
-Download instance as an image.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Instance$download_image(
+\subsection{\code{Instance$download_image()}}{
+  Download instance as an image.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Instance$download_image(
   path,
   frame = 0L,
   format = c("png", "jpeg"),
   render = TRUE,
   params = NULL,
   ...
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{path}}{Path on disk.}
-
-\item{\code{frame}}{Index of the frame (starts at \code{0L}). Default is \code{0L}.}
-
-\item{\code{format}}{One of \code{"png"} or \code{"jpeg"}. Default is \code{"png"}.}
-
-\item{\code{render}}{Should the image be scaled (with \code{RescaleSlope} and
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{path}}{Path on disk.}
+      \item{\code{frame}}{Index of the frame (starts at \code{0L}). Default is \code{0L}.}
+      \item{\code{format}}{One of \code{"png"} or \code{"jpeg"}. Default is \code{"png"}.}
+      \item{\code{render}}{Should the image be scaled (with \code{RescaleSlope} and
 \code{RescaleIntercept}) and windowed (with \code{WindowCenter}
 and \code{WindowWidth}, if available). Default is \code{TRUE}.}
-
-\item{\code{params}}{Optional named-list of query parameters.}
-
-\item{\code{...}}{Optional arguments passed on to \code{png::writePNG()} or
+      \item{\code{params}}{Optional named-list of query parameters.}
+      \item{\code{...}}{Optional arguments passed on to \code{png::writePNG()} or
 \code{jpeg::writeJPEG()}.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
-\if{html}{\out{</div>}}
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Instance-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-Instance-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Instance$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{Instance$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Instance$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

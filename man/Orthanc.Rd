@@ -26,340 +26,341 @@ The full documentation of the Orthanc API can be found here:
 \concept{System}
 \concept{Tracking changes}
 \section{Public fields}{
-\if{html}{\out{<div class="r6-fields">}}
-\describe{
-\item{\code{url}}{URL for Orthanc REST API.}
+  \if{html}{\out{<div class="r6-fields">}}
+  \describe{
+    \item{\code{url}}{URL for Orthanc REST API.}
 
-\item{\code{api_version}}{Orthanc REST API version.}
-}
-\if{html}{\out{</div>}}
+    \item{\code{api_version}}{Orthanc REST API version.}
+  }
+  \if{html}{\out{</div>}}
 }
 \section{Active bindings}{
-\if{html}{\out{<div class="r6-active-bindings">}}
-\describe{
-\item{\code{num_instances}}{Number of instances.}
+  \if{html}{\out{<div class="r6-active-bindings">}}
+  \describe{
+    \item{\code{num_instances}}{Number of instances.}
 
-\item{\code{num_series}}{Number of series.}
+    \item{\code{num_series}}{Number of series.}
 
-\item{\code{num_studies}}{Number of studies.}
+    \item{\code{num_studies}}{Number of studies.}
 
-\item{\code{num_patients}}{Number of patients.}
-}
-\if{html}{\out{</div>}}
+    \item{\code{num_patients}}{Number of patients.}
+  }
+  \if{html}{\out{</div>}}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-Orthanc-new}{\code{Orthanc$new()}}
-\item \href{#method-Orthanc-GET}{\code{Orthanc$GET()}}
-\item \href{#method-Orthanc-DELETE}{\code{Orthanc$DELETE()}}
-\item \href{#method-Orthanc-POST}{\code{Orthanc$POST()}}
-\item \href{#method-Orthanc-PUT}{\code{Orthanc$PUT()}}
-\item \href{#method-Orthanc-stream}{\code{Orthanc$stream()}}
-\item \href{#method-Orthanc-print}{\code{Orthanc$print()}}
-\item \href{#method-Orthanc-delete_changes}{\code{Orthanc$delete_changes()}}
-\item \href{#method-Orthanc-get_changes}{\code{Orthanc$get_changes()}}
-\item \href{#method-Orthanc-delete_exports}{\code{Orthanc$delete_exports()}}
-\item \href{#method-Orthanc-get_exports}{\code{Orthanc$get_exports()}}
-\item \href{#method-Orthanc-get_instances}{\code{Orthanc$get_instances()}}
-\item \href{#method-Orthanc-post_instances}{\code{Orthanc$post_instances()}}
-\item \href{#method-Orthanc-delete_instances_id}{\code{Orthanc$delete_instances_id()}}
-\item \href{#method-Orthanc-get_instances_id}{\code{Orthanc$get_instances_id()}}
-\item \href{#method-Orthanc-post_instances_id_anonymize}{\code{Orthanc$post_instances_id_anonymize()}}
-\item \href{#method-Orthanc-get_instances_id_attachments}{\code{Orthanc$get_instances_id_attachments()}}
-\item \href{#method-Orthanc-delete_instances_id_attachments_name}{\code{Orthanc$delete_instances_id_attachments_name()}}
-\item \href{#method-Orthanc-get_instances_id_attachments_name}{\code{Orthanc$get_instances_id_attachments_name()}}
-\item \href{#method-Orthanc-put_instances_id_attachments_name}{\code{Orthanc$put_instances_id_attachments_name()}}
-\item \href{#method-Orthanc-post_instances_id_attachments_name_compress}{\code{Orthanc$post_instances_id_attachments_name_compress()}}
-\item \href{#method-Orthanc-get_instances_id_attachments_name_compressed_data}{\code{Orthanc$get_instances_id_attachments_name_compressed_data()}}
-\item \href{#method-Orthanc-get_instances_id_attachments_name_compressed_md5}{\code{Orthanc$get_instances_id_attachments_name_compressed_md5()}}
-\item \href{#method-Orthanc-get_instances_id_attachments_name_compressed_size}{\code{Orthanc$get_instances_id_attachments_name_compressed_size()}}
-\item \href{#method-Orthanc-get_instances_id_attachments_name_data}{\code{Orthanc$get_instances_id_attachments_name_data()}}
-\item \href{#method-Orthanc-get_instances_id_attachments_name_info}{\code{Orthanc$get_instances_id_attachments_name_info()}}
-\item \href{#method-Orthanc-get_instances_id_attachments_name_is_compressed}{\code{Orthanc$get_instances_id_attachments_name_is_compressed()}}
-\item \href{#method-Orthanc-get_instances_id_attachments_name_md5}{\code{Orthanc$get_instances_id_attachments_name_md5()}}
-\item \href{#method-Orthanc-get_instances_id_attachments_name_size}{\code{Orthanc$get_instances_id_attachments_name_size()}}
-\item \href{#method-Orthanc-post_instances_id_attachments_name_uncompress}{\code{Orthanc$post_instances_id_attachments_name_uncompress()}}
-\item \href{#method-Orthanc-post_instances_id_attachments_name_verify_md5}{\code{Orthanc$post_instances_id_attachments_name_verify_md5()}}
-\item \href{#method-Orthanc-get_instances_id_content_path}{\code{Orthanc$get_instances_id_content_path()}}
-\item \href{#method-Orthanc-post_instances_id_export}{\code{Orthanc$post_instances_id_export()}}
-\item \href{#method-Orthanc-get_instances_id_file}{\code{Orthanc$get_instances_id_file()}}
-\item \href{#method-Orthanc-get_instances_id_frames}{\code{Orthanc$get_instances_id_frames()}}
-\item \href{#method-Orthanc-get_instances_id_frames_frame}{\code{Orthanc$get_instances_id_frames_frame()}}
-\item \href{#method-Orthanc-get_instances_id_frames_frame_image_int16}{\code{Orthanc$get_instances_id_frames_frame_image_int16()}}
-\item \href{#method-Orthanc-get_instances_id_frames_frame_image_uint16}{\code{Orthanc$get_instances_id_frames_frame_image_uint16()}}
-\item \href{#method-Orthanc-get_instances_id_frames_frame_image_uint8}{\code{Orthanc$get_instances_id_frames_frame_image_uint8()}}
-\item \href{#method-Orthanc-get_instances_id_frames_frame_matlab}{\code{Orthanc$get_instances_id_frames_frame_matlab()}}
-\item \href{#method-Orthanc-get_instances_id_frames_frame_numpy}{\code{Orthanc$get_instances_id_frames_frame_numpy()}}
-\item \href{#method-Orthanc-get_instances_id_frames_frame_preview}{\code{Orthanc$get_instances_id_frames_frame_preview()}}
-\item \href{#method-Orthanc-get_instances_id_frames_frame_raw}{\code{Orthanc$get_instances_id_frames_frame_raw()}}
-\item \href{#method-Orthanc-get_instances_id_frames_frame_raw.gz}{\code{Orthanc$get_instances_id_frames_frame_raw.gz()}}
-\item \href{#method-Orthanc-get_instances_id_frames_frame_rendered}{\code{Orthanc$get_instances_id_frames_frame_rendered()}}
-\item \href{#method-Orthanc-get_instances_id_header}{\code{Orthanc$get_instances_id_header()}}
-\item \href{#method-Orthanc-get_instances_id_image_int16}{\code{Orthanc$get_instances_id_image_int16()}}
-\item \href{#method-Orthanc-get_instances_id_image_uint16}{\code{Orthanc$get_instances_id_image_uint16()}}
-\item \href{#method-Orthanc-get_instances_id_image_uint8}{\code{Orthanc$get_instances_id_image_uint8()}}
-\item \href{#method-Orthanc-get_instances_id_labels}{\code{Orthanc$get_instances_id_labels()}}
-\item \href{#method-Orthanc-delete_instances_id_labels_label}{\code{Orthanc$delete_instances_id_labels_label()}}
-\item \href{#method-Orthanc-get_instances_id_labels_label}{\code{Orthanc$get_instances_id_labels_label()}}
-\item \href{#method-Orthanc-put_instances_id_labels_label}{\code{Orthanc$put_instances_id_labels_label()}}
-\item \href{#method-Orthanc-get_instances_id_matlab}{\code{Orthanc$get_instances_id_matlab()}}
-\item \href{#method-Orthanc-get_instances_id_metadata}{\code{Orthanc$get_instances_id_metadata()}}
-\item \href{#method-Orthanc-delete_instances_id_metadata_name}{\code{Orthanc$delete_instances_id_metadata_name()}}
-\item \href{#method-Orthanc-get_instances_id_metadata_name}{\code{Orthanc$get_instances_id_metadata_name()}}
-\item \href{#method-Orthanc-put_instances_id_metadata_name}{\code{Orthanc$put_instances_id_metadata_name()}}
-\item \href{#method-Orthanc-post_instances_id_modify}{\code{Orthanc$post_instances_id_modify()}}
-\item \href{#method-Orthanc-get_instances_id_module}{\code{Orthanc$get_instances_id_module()}}
-\item \href{#method-Orthanc-get_instances_id_numpy}{\code{Orthanc$get_instances_id_numpy()}}
-\item \href{#method-Orthanc-get_instances_id_patient}{\code{Orthanc$get_instances_id_patient()}}
-\item \href{#method-Orthanc-get_instances_id_pdf}{\code{Orthanc$get_instances_id_pdf()}}
-\item \href{#method-Orthanc-get_instances_id_preview}{\code{Orthanc$get_instances_id_preview()}}
-\item \href{#method-Orthanc-post_instances_id_reconstruct}{\code{Orthanc$post_instances_id_reconstruct()}}
-\item \href{#method-Orthanc-get_instances_id_rendered}{\code{Orthanc$get_instances_id_rendered()}}
-\item \href{#method-Orthanc-get_instances_id_series}{\code{Orthanc$get_instances_id_series()}}
-\item \href{#method-Orthanc-get_instances_id_simplified_tags}{\code{Orthanc$get_instances_id_simplified_tags()}}
-\item \href{#method-Orthanc-get_instances_id_statistics}{\code{Orthanc$get_instances_id_statistics()}}
-\item \href{#method-Orthanc-get_instances_id_study}{\code{Orthanc$get_instances_id_study()}}
-\item \href{#method-Orthanc-get_instances_id_tags}{\code{Orthanc$get_instances_id_tags()}}
-\item \href{#method-Orthanc-get_jobs}{\code{Orthanc$get_jobs()}}
-\item \href{#method-Orthanc-delete_jobs_id}{\code{Orthanc$delete_jobs_id()}}
-\item \href{#method-Orthanc-get_jobs_id}{\code{Orthanc$get_jobs_id()}}
-\item \href{#method-Orthanc-post_jobs_id_cancel}{\code{Orthanc$post_jobs_id_cancel()}}
-\item \href{#method-Orthanc-post_jobs_id_pause}{\code{Orthanc$post_jobs_id_pause()}}
-\item \href{#method-Orthanc-post_jobs_id_resubmit}{\code{Orthanc$post_jobs_id_resubmit()}}
-\item \href{#method-Orthanc-post_jobs_id_resume}{\code{Orthanc$post_jobs_id_resume()}}
-\item \href{#method-Orthanc-delete_jobs_id_key}{\code{Orthanc$delete_jobs_id_key()}}
-\item \href{#method-Orthanc-get_jobs_id_key}{\code{Orthanc$get_jobs_id_key()}}
-\item \href{#method-Orthanc-get_modalities}{\code{Orthanc$get_modalities()}}
-\item \href{#method-Orthanc-delete_modalities_id}{\code{Orthanc$delete_modalities_id()}}
-\item \href{#method-Orthanc-get_modalities_id}{\code{Orthanc$get_modalities_id()}}
-\item \href{#method-Orthanc-put_modalities_id}{\code{Orthanc$put_modalities_id()}}
-\item \href{#method-Orthanc-get_modalities_id_configuration}{\code{Orthanc$get_modalities_id_configuration()}}
-\item \href{#method-Orthanc-post_modalities_id_echo}{\code{Orthanc$post_modalities_id_echo()}}
-\item \href{#method-Orthanc-post_modalities_id_find_worklist}{\code{Orthanc$post_modalities_id_find_worklist()}}
-\item \href{#method-Orthanc-post_modalities_id_get}{\code{Orthanc$post_modalities_id_get()}}
-\item \href{#method-Orthanc-post_modalities_id_move}{\code{Orthanc$post_modalities_id_move()}}
-\item \href{#method-Orthanc-post_modalities_id_query}{\code{Orthanc$post_modalities_id_query()}}
-\item \href{#method-Orthanc-post_modalities_id_storage_commitment}{\code{Orthanc$post_modalities_id_storage_commitment()}}
-\item \href{#method-Orthanc-post_modalities_id_store}{\code{Orthanc$post_modalities_id_store()}}
-\item \href{#method-Orthanc-post_modalities_id_store_straight}{\code{Orthanc$post_modalities_id_store_straight()}}
-\item \href{#method-Orthanc-get_patients}{\code{Orthanc$get_patients()}}
-\item \href{#method-Orthanc-delete_patients_id}{\code{Orthanc$delete_patients_id()}}
-\item \href{#method-Orthanc-get_patients_id}{\code{Orthanc$get_patients_id()}}
-\item \href{#method-Orthanc-post_patients_id_anonymize}{\code{Orthanc$post_patients_id_anonymize()}}
-\item \href{#method-Orthanc-get_patients_id_archive}{\code{Orthanc$get_patients_id_archive()}}
-\item \href{#method-Orthanc-post_patients_id_archive}{\code{Orthanc$post_patients_id_archive()}}
-\item \href{#method-Orthanc-get_patients_id_attachments}{\code{Orthanc$get_patients_id_attachments()}}
-\item \href{#method-Orthanc-delete_patients_id_attachments_name}{\code{Orthanc$delete_patients_id_attachments_name()}}
-\item \href{#method-Orthanc-get_patients_id_attachments_name}{\code{Orthanc$get_patients_id_attachments_name()}}
-\item \href{#method-Orthanc-put_patients_id_attachments_name}{\code{Orthanc$put_patients_id_attachments_name()}}
-\item \href{#method-Orthanc-post_patients_id_attachments_name_compress}{\code{Orthanc$post_patients_id_attachments_name_compress()}}
-\item \href{#method-Orthanc-get_patients_id_attachments_name_compressed_data}{\code{Orthanc$get_patients_id_attachments_name_compressed_data()}}
-\item \href{#method-Orthanc-get_patients_id_attachments_name_compressed_md5}{\code{Orthanc$get_patients_id_attachments_name_compressed_md5()}}
-\item \href{#method-Orthanc-get_patients_id_attachments_name_compressed_size}{\code{Orthanc$get_patients_id_attachments_name_compressed_size()}}
-\item \href{#method-Orthanc-get_patients_id_attachments_name_data}{\code{Orthanc$get_patients_id_attachments_name_data()}}
-\item \href{#method-Orthanc-get_patients_id_attachments_name_info}{\code{Orthanc$get_patients_id_attachments_name_info()}}
-\item \href{#method-Orthanc-get_patients_id_attachments_name_is_compressed}{\code{Orthanc$get_patients_id_attachments_name_is_compressed()}}
-\item \href{#method-Orthanc-get_patients_id_attachments_name_md5}{\code{Orthanc$get_patients_id_attachments_name_md5()}}
-\item \href{#method-Orthanc-get_patients_id_attachments_name_size}{\code{Orthanc$get_patients_id_attachments_name_size()}}
-\item \href{#method-Orthanc-post_patients_id_attachments_name_uncompress}{\code{Orthanc$post_patients_id_attachments_name_uncompress()}}
-\item \href{#method-Orthanc-post_patients_id_attachments_name_verify_md5}{\code{Orthanc$post_patients_id_attachments_name_verify_md5()}}
-\item \href{#method-Orthanc-get_patients_id_instances}{\code{Orthanc$get_patients_id_instances()}}
-\item \href{#method-Orthanc-get_patients_id_instances_tags}{\code{Orthanc$get_patients_id_instances_tags()}}
-\item \href{#method-Orthanc-get_patients_id_labels}{\code{Orthanc$get_patients_id_labels()}}
-\item \href{#method-Orthanc-delete_patients_id_labels_label}{\code{Orthanc$delete_patients_id_labels_label()}}
-\item \href{#method-Orthanc-get_patients_id_labels_label}{\code{Orthanc$get_patients_id_labels_label()}}
-\item \href{#method-Orthanc-put_patients_id_labels_label}{\code{Orthanc$put_patients_id_labels_label()}}
-\item \href{#method-Orthanc-get_patients_id_media}{\code{Orthanc$get_patients_id_media()}}
-\item \href{#method-Orthanc-post_patients_id_media}{\code{Orthanc$post_patients_id_media()}}
-\item \href{#method-Orthanc-get_patients_id_metadata}{\code{Orthanc$get_patients_id_metadata()}}
-\item \href{#method-Orthanc-delete_patients_id_metadata_name}{\code{Orthanc$delete_patients_id_metadata_name()}}
-\item \href{#method-Orthanc-get_patients_id_metadata_name}{\code{Orthanc$get_patients_id_metadata_name()}}
-\item \href{#method-Orthanc-put_patients_id_metadata_name}{\code{Orthanc$put_patients_id_metadata_name()}}
-\item \href{#method-Orthanc-post_patients_id_modify}{\code{Orthanc$post_patients_id_modify()}}
-\item \href{#method-Orthanc-get_patients_id_module}{\code{Orthanc$get_patients_id_module()}}
-\item \href{#method-Orthanc-get_patients_id_protected}{\code{Orthanc$get_patients_id_protected()}}
-\item \href{#method-Orthanc-put_patients_id_protected}{\code{Orthanc$put_patients_id_protected()}}
-\item \href{#method-Orthanc-post_patients_id_reconstruct}{\code{Orthanc$post_patients_id_reconstruct()}}
-\item \href{#method-Orthanc-get_patients_id_series}{\code{Orthanc$get_patients_id_series()}}
-\item \href{#method-Orthanc-get_patients_id_shared_tags}{\code{Orthanc$get_patients_id_shared_tags()}}
-\item \href{#method-Orthanc-get_patients_id_statistics}{\code{Orthanc$get_patients_id_statistics()}}
-\item \href{#method-Orthanc-get_patients_id_studies}{\code{Orthanc$get_patients_id_studies()}}
-\item \href{#method-Orthanc-get_peers}{\code{Orthanc$get_peers()}}
-\item \href{#method-Orthanc-delete_peers_id}{\code{Orthanc$delete_peers_id()}}
-\item \href{#method-Orthanc-get_peers_id}{\code{Orthanc$get_peers_id()}}
-\item \href{#method-Orthanc-put_peers_id}{\code{Orthanc$put_peers_id()}}
-\item \href{#method-Orthanc-get_peers_id_configuration}{\code{Orthanc$get_peers_id_configuration()}}
-\item \href{#method-Orthanc-post_peers_id_store}{\code{Orthanc$post_peers_id_store()}}
-\item \href{#method-Orthanc-post_peers_id_store_straight}{\code{Orthanc$post_peers_id_store_straight()}}
-\item \href{#method-Orthanc-get_peers_id_system}{\code{Orthanc$get_peers_id_system()}}
-\item \href{#method-Orthanc-get_plugins}{\code{Orthanc$get_plugins()}}
-\item \href{#method-Orthanc-get_plugins_explorer.js}{\code{Orthanc$get_plugins_explorer.js()}}
-\item \href{#method-Orthanc-get_plugins_id}{\code{Orthanc$get_plugins_id()}}
-\item \href{#method-Orthanc-get_queries}{\code{Orthanc$get_queries()}}
-\item \href{#method-Orthanc-delete_queries_id}{\code{Orthanc$delete_queries_id()}}
-\item \href{#method-Orthanc-get_queries_id}{\code{Orthanc$get_queries_id()}}
-\item \href{#method-Orthanc-get_queries_id_answers}{\code{Orthanc$get_queries_id_answers()}}
-\item \href{#method-Orthanc-get_queries_id_answers_index}{\code{Orthanc$get_queries_id_answers_index()}}
-\item \href{#method-Orthanc-get_queries_id_answers_index_content}{\code{Orthanc$get_queries_id_answers_index_content()}}
-\item \href{#method-Orthanc-post_queries_id_answers_index_query_instances}{\code{Orthanc$post_queries_id_answers_index_query_instances()}}
-\item \href{#method-Orthanc-post_queries_id_answers_index_query_series}{\code{Orthanc$post_queries_id_answers_index_query_series()}}
-\item \href{#method-Orthanc-post_queries_id_answers_index_query_studies}{\code{Orthanc$post_queries_id_answers_index_query_studies()}}
-\item \href{#method-Orthanc-post_queries_id_answers_index_retrieve}{\code{Orthanc$post_queries_id_answers_index_retrieve()}}
-\item \href{#method-Orthanc-get_queries_id_level}{\code{Orthanc$get_queries_id_level()}}
-\item \href{#method-Orthanc-get_queries_id_modality}{\code{Orthanc$get_queries_id_modality()}}
-\item \href{#method-Orthanc-get_queries_id_query}{\code{Orthanc$get_queries_id_query()}}
-\item \href{#method-Orthanc-post_queries_id_retrieve}{\code{Orthanc$post_queries_id_retrieve()}}
-\item \href{#method-Orthanc-get_series}{\code{Orthanc$get_series()}}
-\item \href{#method-Orthanc-delete_series_id}{\code{Orthanc$delete_series_id()}}
-\item \href{#method-Orthanc-get_series_id}{\code{Orthanc$get_series_id()}}
-\item \href{#method-Orthanc-post_series_id_anonymize}{\code{Orthanc$post_series_id_anonymize()}}
-\item \href{#method-Orthanc-get_series_id_archive}{\code{Orthanc$get_series_id_archive()}}
-\item \href{#method-Orthanc-post_series_id_archive}{\code{Orthanc$post_series_id_archive()}}
-\item \href{#method-Orthanc-get_series_id_attachments}{\code{Orthanc$get_series_id_attachments()}}
-\item \href{#method-Orthanc-delete_series_id_attachments_name}{\code{Orthanc$delete_series_id_attachments_name()}}
-\item \href{#method-Orthanc-get_series_id_attachments_name}{\code{Orthanc$get_series_id_attachments_name()}}
-\item \href{#method-Orthanc-put_series_id_attachments_name}{\code{Orthanc$put_series_id_attachments_name()}}
-\item \href{#method-Orthanc-post_series_id_attachments_name_compress}{\code{Orthanc$post_series_id_attachments_name_compress()}}
-\item \href{#method-Orthanc-get_series_id_attachments_name_compressed_data}{\code{Orthanc$get_series_id_attachments_name_compressed_data()}}
-\item \href{#method-Orthanc-get_series_id_attachments_name_compressed_md5}{\code{Orthanc$get_series_id_attachments_name_compressed_md5()}}
-\item \href{#method-Orthanc-get_series_id_attachments_name_compressed_size}{\code{Orthanc$get_series_id_attachments_name_compressed_size()}}
-\item \href{#method-Orthanc-get_series_id_attachments_name_data}{\code{Orthanc$get_series_id_attachments_name_data()}}
-\item \href{#method-Orthanc-get_series_id_attachments_name_info}{\code{Orthanc$get_series_id_attachments_name_info()}}
-\item \href{#method-Orthanc-get_series_id_attachments_name_is_compressed}{\code{Orthanc$get_series_id_attachments_name_is_compressed()}}
-\item \href{#method-Orthanc-get_series_id_attachments_name_md5}{\code{Orthanc$get_series_id_attachments_name_md5()}}
-\item \href{#method-Orthanc-get_series_id_attachments_name_size}{\code{Orthanc$get_series_id_attachments_name_size()}}
-\item \href{#method-Orthanc-post_series_id_attachments_name_uncompress}{\code{Orthanc$post_series_id_attachments_name_uncompress()}}
-\item \href{#method-Orthanc-post_series_id_attachments_name_verify_md5}{\code{Orthanc$post_series_id_attachments_name_verify_md5()}}
-\item \href{#method-Orthanc-get_series_id_instances}{\code{Orthanc$get_series_id_instances()}}
-\item \href{#method-Orthanc-get_series_id_instances_tags}{\code{Orthanc$get_series_id_instances_tags()}}
-\item \href{#method-Orthanc-get_series_id_labels}{\code{Orthanc$get_series_id_labels()}}
-\item \href{#method-Orthanc-delete_series_id_labels_label}{\code{Orthanc$delete_series_id_labels_label()}}
-\item \href{#method-Orthanc-get_series_id_labels_label}{\code{Orthanc$get_series_id_labels_label()}}
-\item \href{#method-Orthanc-put_series_id_labels_label}{\code{Orthanc$put_series_id_labels_label()}}
-\item \href{#method-Orthanc-get_series_id_media}{\code{Orthanc$get_series_id_media()}}
-\item \href{#method-Orthanc-post_series_id_media}{\code{Orthanc$post_series_id_media()}}
-\item \href{#method-Orthanc-get_series_id_metadata}{\code{Orthanc$get_series_id_metadata()}}
-\item \href{#method-Orthanc-delete_series_id_metadata_name}{\code{Orthanc$delete_series_id_metadata_name()}}
-\item \href{#method-Orthanc-get_series_id_metadata_name}{\code{Orthanc$get_series_id_metadata_name()}}
-\item \href{#method-Orthanc-put_series_id_metadata_name}{\code{Orthanc$put_series_id_metadata_name()}}
-\item \href{#method-Orthanc-post_series_id_modify}{\code{Orthanc$post_series_id_modify()}}
-\item \href{#method-Orthanc-get_series_id_module}{\code{Orthanc$get_series_id_module()}}
-\item \href{#method-Orthanc-get_series_id_numpy}{\code{Orthanc$get_series_id_numpy()}}
-\item \href{#method-Orthanc-get_series_id_patient}{\code{Orthanc$get_series_id_patient()}}
-\item \href{#method-Orthanc-post_series_id_reconstruct}{\code{Orthanc$post_series_id_reconstruct()}}
-\item \href{#method-Orthanc-get_series_id_shared_tags}{\code{Orthanc$get_series_id_shared_tags()}}
-\item \href{#method-Orthanc-get_series_id_statistics}{\code{Orthanc$get_series_id_statistics()}}
-\item \href{#method-Orthanc-get_series_id_study}{\code{Orthanc$get_series_id_study()}}
-\item \href{#method-Orthanc-get_statistics}{\code{Orthanc$get_statistics()}}
-\item \href{#method-Orthanc-get_storage_commitment_id}{\code{Orthanc$get_storage_commitment_id()}}
-\item \href{#method-Orthanc-post_storage_commitment_id_remove}{\code{Orthanc$post_storage_commitment_id_remove()}}
-\item \href{#method-Orthanc-get_studies}{\code{Orthanc$get_studies()}}
-\item \href{#method-Orthanc-delete_studies_id}{\code{Orthanc$delete_studies_id()}}
-\item \href{#method-Orthanc-get_studies_id}{\code{Orthanc$get_studies_id()}}
-\item \href{#method-Orthanc-post_studies_id_anonymize}{\code{Orthanc$post_studies_id_anonymize()}}
-\item \href{#method-Orthanc-get_studies_id_archive}{\code{Orthanc$get_studies_id_archive()}}
-\item \href{#method-Orthanc-post_studies_id_archive}{\code{Orthanc$post_studies_id_archive()}}
-\item \href{#method-Orthanc-get_studies_id_attachments}{\code{Orthanc$get_studies_id_attachments()}}
-\item \href{#method-Orthanc-delete_studies_id_attachments_name}{\code{Orthanc$delete_studies_id_attachments_name()}}
-\item \href{#method-Orthanc-get_studies_id_attachments_name}{\code{Orthanc$get_studies_id_attachments_name()}}
-\item \href{#method-Orthanc-put_studies_id_attachments_name}{\code{Orthanc$put_studies_id_attachments_name()}}
-\item \href{#method-Orthanc-post_studies_id_attachments_name_compress}{\code{Orthanc$post_studies_id_attachments_name_compress()}}
-\item \href{#method-Orthanc-get_studies_id_attachments_name_compressed_data}{\code{Orthanc$get_studies_id_attachments_name_compressed_data()}}
-\item \href{#method-Orthanc-get_studies_id_attachments_name_compressed_md5}{\code{Orthanc$get_studies_id_attachments_name_compressed_md5()}}
-\item \href{#method-Orthanc-get_studies_id_attachments_name_compressed_size}{\code{Orthanc$get_studies_id_attachments_name_compressed_size()}}
-\item \href{#method-Orthanc-get_studies_id_attachments_name_data}{\code{Orthanc$get_studies_id_attachments_name_data()}}
-\item \href{#method-Orthanc-get_studies_id_attachments_name_info}{\code{Orthanc$get_studies_id_attachments_name_info()}}
-\item \href{#method-Orthanc-get_studies_id_attachments_name_is_compressed}{\code{Orthanc$get_studies_id_attachments_name_is_compressed()}}
-\item \href{#method-Orthanc-get_studies_id_attachments_name_md5}{\code{Orthanc$get_studies_id_attachments_name_md5()}}
-\item \href{#method-Orthanc-get_studies_id_attachments_name_size}{\code{Orthanc$get_studies_id_attachments_name_size()}}
-\item \href{#method-Orthanc-post_studies_id_attachments_name_uncompress}{\code{Orthanc$post_studies_id_attachments_name_uncompress()}}
-\item \href{#method-Orthanc-post_studies_id_attachments_name_verify_md5}{\code{Orthanc$post_studies_id_attachments_name_verify_md5()}}
-\item \href{#method-Orthanc-get_studies_id_instances}{\code{Orthanc$get_studies_id_instances()}}
-\item \href{#method-Orthanc-get_studies_id_instances_tags}{\code{Orthanc$get_studies_id_instances_tags()}}
-\item \href{#method-Orthanc-get_studies_id_labels}{\code{Orthanc$get_studies_id_labels()}}
-\item \href{#method-Orthanc-delete_studies_id_labels_label}{\code{Orthanc$delete_studies_id_labels_label()}}
-\item \href{#method-Orthanc-get_studies_id_labels_label}{\code{Orthanc$get_studies_id_labels_label()}}
-\item \href{#method-Orthanc-put_studies_id_labels_label}{\code{Orthanc$put_studies_id_labels_label()}}
-\item \href{#method-Orthanc-get_studies_id_media}{\code{Orthanc$get_studies_id_media()}}
-\item \href{#method-Orthanc-post_studies_id_media}{\code{Orthanc$post_studies_id_media()}}
-\item \href{#method-Orthanc-post_studies_id_merge}{\code{Orthanc$post_studies_id_merge()}}
-\item \href{#method-Orthanc-get_studies_id_metadata}{\code{Orthanc$get_studies_id_metadata()}}
-\item \href{#method-Orthanc-delete_studies_id_metadata_name}{\code{Orthanc$delete_studies_id_metadata_name()}}
-\item \href{#method-Orthanc-get_studies_id_metadata_name}{\code{Orthanc$get_studies_id_metadata_name()}}
-\item \href{#method-Orthanc-put_studies_id_metadata_name}{\code{Orthanc$put_studies_id_metadata_name()}}
-\item \href{#method-Orthanc-post_studies_id_modify}{\code{Orthanc$post_studies_id_modify()}}
-\item \href{#method-Orthanc-get_studies_id_module}{\code{Orthanc$get_studies_id_module()}}
-\item \href{#method-Orthanc-get_studies_id_module_patient}{\code{Orthanc$get_studies_id_module_patient()}}
-\item \href{#method-Orthanc-get_studies_id_patient}{\code{Orthanc$get_studies_id_patient()}}
-\item \href{#method-Orthanc-post_studies_id_reconstruct}{\code{Orthanc$post_studies_id_reconstruct()}}
-\item \href{#method-Orthanc-get_studies_id_series}{\code{Orthanc$get_studies_id_series()}}
-\item \href{#method-Orthanc-get_studies_id_shared_tags}{\code{Orthanc$get_studies_id_shared_tags()}}
-\item \href{#method-Orthanc-post_studies_id_split}{\code{Orthanc$post_studies_id_split()}}
-\item \href{#method-Orthanc-get_studies_id_statistics}{\code{Orthanc$get_studies_id_statistics()}}
-\item \href{#method-Orthanc-get_system}{\code{Orthanc$get_system()}}
-\item \href{#method-Orthanc-get_tools}{\code{Orthanc$get_tools()}}
-\item \href{#method-Orthanc-get_tools_accepted_sop_classes}{\code{Orthanc$get_tools_accepted_sop_classes()}}
-\item \href{#method-Orthanc-get_tools_accepted_transfer_syntaxes}{\code{Orthanc$get_tools_accepted_transfer_syntaxes()}}
-\item \href{#method-Orthanc-put_tools_accepted_transfer_syntaxes}{\code{Orthanc$put_tools_accepted_transfer_syntaxes()}}
-\item \href{#method-Orthanc-post_tools_bulk_anonymize}{\code{Orthanc$post_tools_bulk_anonymize()}}
-\item \href{#method-Orthanc-post_tools_bulk_content}{\code{Orthanc$post_tools_bulk_content()}}
-\item \href{#method-Orthanc-post_tools_bulk_delete}{\code{Orthanc$post_tools_bulk_delete()}}
-\item \href{#method-Orthanc-post_tools_bulk_modify}{\code{Orthanc$post_tools_bulk_modify()}}
-\item \href{#method-Orthanc-post_tools_count_resources}{\code{Orthanc$post_tools_count_resources()}}
-\item \href{#method-Orthanc-get_tools_create_archive}{\code{Orthanc$get_tools_create_archive()}}
-\item \href{#method-Orthanc-post_tools_create_archive}{\code{Orthanc$post_tools_create_archive()}}
-\item \href{#method-Orthanc-post_tools_create_dicom}{\code{Orthanc$post_tools_create_dicom()}}
-\item \href{#method-Orthanc-get_tools_create_media}{\code{Orthanc$get_tools_create_media()}}
-\item \href{#method-Orthanc-post_tools_create_media}{\code{Orthanc$post_tools_create_media()}}
-\item \href{#method-Orthanc-get_tools_create_media_extended}{\code{Orthanc$get_tools_create_media_extended()}}
-\item \href{#method-Orthanc-post_tools_create_media_extended}{\code{Orthanc$post_tools_create_media_extended()}}
-\item \href{#method-Orthanc-get_tools_default_encoding}{\code{Orthanc$get_tools_default_encoding()}}
-\item \href{#method-Orthanc-put_tools_default_encoding}{\code{Orthanc$put_tools_default_encoding()}}
-\item \href{#method-Orthanc-get_tools_dicom_conformance}{\code{Orthanc$get_tools_dicom_conformance()}}
-\item \href{#method-Orthanc-post_tools_dicom_echo}{\code{Orthanc$post_tools_dicom_echo()}}
-\item \href{#method-Orthanc-post_tools_execute_script}{\code{Orthanc$post_tools_execute_script()}}
-\item \href{#method-Orthanc-post_tools_find}{\code{Orthanc$post_tools_find()}}
-\item \href{#method-Orthanc-get_tools_generate_uid}{\code{Orthanc$get_tools_generate_uid()}}
-\item \href{#method-Orthanc-post_tools_invalidate_tags}{\code{Orthanc$post_tools_invalidate_tags()}}
-\item \href{#method-Orthanc-get_tools_labels}{\code{Orthanc$get_tools_labels()}}
-\item \href{#method-Orthanc-get_tools_log_level}{\code{Orthanc$get_tools_log_level()}}
-\item \href{#method-Orthanc-put_tools_log_level}{\code{Orthanc$put_tools_log_level()}}
-\item \href{#method-Orthanc-get_tools_log_level_dicom}{\code{Orthanc$get_tools_log_level_dicom()}}
-\item \href{#method-Orthanc-put_tools_log_level_dicom}{\code{Orthanc$put_tools_log_level_dicom()}}
-\item \href{#method-Orthanc-get_tools_log_level_generic}{\code{Orthanc$get_tools_log_level_generic()}}
-\item \href{#method-Orthanc-put_tools_log_level_generic}{\code{Orthanc$put_tools_log_level_generic()}}
-\item \href{#method-Orthanc-get_tools_log_level_http}{\code{Orthanc$get_tools_log_level_http()}}
-\item \href{#method-Orthanc-put_tools_log_level_http}{\code{Orthanc$put_tools_log_level_http()}}
-\item \href{#method-Orthanc-get_tools_log_level_jobs}{\code{Orthanc$get_tools_log_level_jobs()}}
-\item \href{#method-Orthanc-put_tools_log_level_jobs}{\code{Orthanc$put_tools_log_level_jobs()}}
-\item \href{#method-Orthanc-get_tools_log_level_lua}{\code{Orthanc$get_tools_log_level_lua()}}
-\item \href{#method-Orthanc-put_tools_log_level_lua}{\code{Orthanc$put_tools_log_level_lua()}}
-\item \href{#method-Orthanc-get_tools_log_level_plugins}{\code{Orthanc$get_tools_log_level_plugins()}}
-\item \href{#method-Orthanc-put_tools_log_level_plugins}{\code{Orthanc$put_tools_log_level_plugins()}}
-\item \href{#method-Orthanc-get_tools_log_level_sqlite}{\code{Orthanc$get_tools_log_level_sqlite()}}
-\item \href{#method-Orthanc-put_tools_log_level_sqlite}{\code{Orthanc$put_tools_log_level_sqlite()}}
-\item \href{#method-Orthanc-post_tools_lookup}{\code{Orthanc$post_tools_lookup()}}
-\item \href{#method-Orthanc-get_tools_metrics}{\code{Orthanc$get_tools_metrics()}}
-\item \href{#method-Orthanc-put_tools_metrics}{\code{Orthanc$put_tools_metrics()}}
-\item \href{#method-Orthanc-get_tools_metrics_prometheus}{\code{Orthanc$get_tools_metrics_prometheus()}}
-\item \href{#method-Orthanc-get_tools_now}{\code{Orthanc$get_tools_now()}}
-\item \href{#method-Orthanc-get_tools_now_local}{\code{Orthanc$get_tools_now_local()}}
-\item \href{#method-Orthanc-post_tools_reconstruct}{\code{Orthanc$post_tools_reconstruct()}}
-\item \href{#method-Orthanc-post_tools_reset}{\code{Orthanc$post_tools_reset()}}
-\item \href{#method-Orthanc-post_tools_shutdown}{\code{Orthanc$post_tools_shutdown()}}
-\item \href{#method-Orthanc-get_tools_unknown_sop_class_accepted}{\code{Orthanc$get_tools_unknown_sop_class_accepted()}}
-\item \href{#method-Orthanc-put_tools_unknown_sop_class_accepted}{\code{Orthanc$put_tools_unknown_sop_class_accepted()}}
-\item \href{#method-Orthanc-clone}{\code{Orthanc$clone()}}
-}
+  \itemize{
+    \item \href{#method-Orthanc-initialize}{\code{Orthanc$new()}}
+    \item \href{#method-Orthanc-GET}{\code{Orthanc$GET()}}
+    \item \href{#method-Orthanc-DELETE}{\code{Orthanc$DELETE()}}
+    \item \href{#method-Orthanc-POST}{\code{Orthanc$POST()}}
+    \item \href{#method-Orthanc-PUT}{\code{Orthanc$PUT()}}
+    \item \href{#method-Orthanc-stream}{\code{Orthanc$stream()}}
+    \item \href{#method-Orthanc-print}{\code{Orthanc$print()}}
+    \item \href{#method-Orthanc-delete_changes}{\code{Orthanc$delete_changes()}}
+    \item \href{#method-Orthanc-get_changes}{\code{Orthanc$get_changes()}}
+    \item \href{#method-Orthanc-delete_exports}{\code{Orthanc$delete_exports()}}
+    \item \href{#method-Orthanc-get_exports}{\code{Orthanc$get_exports()}}
+    \item \href{#method-Orthanc-get_instances}{\code{Orthanc$get_instances()}}
+    \item \href{#method-Orthanc-post_instances}{\code{Orthanc$post_instances()}}
+    \item \href{#method-Orthanc-delete_instances_id}{\code{Orthanc$delete_instances_id()}}
+    \item \href{#method-Orthanc-get_instances_id}{\code{Orthanc$get_instances_id()}}
+    \item \href{#method-Orthanc-post_instances_id_anonymize}{\code{Orthanc$post_instances_id_anonymize()}}
+    \item \href{#method-Orthanc-get_instances_id_attachments}{\code{Orthanc$get_instances_id_attachments()}}
+    \item \href{#method-Orthanc-delete_instances_id_attachments_name}{\code{Orthanc$delete_instances_id_attachments_name()}}
+    \item \href{#method-Orthanc-get_instances_id_attachments_name}{\code{Orthanc$get_instances_id_attachments_name()}}
+    \item \href{#method-Orthanc-put_instances_id_attachments_name}{\code{Orthanc$put_instances_id_attachments_name()}}
+    \item \href{#method-Orthanc-post_instances_id_attachments_name_compress}{\code{Orthanc$post_instances_id_attachments_name_compress()}}
+    \item \href{#method-Orthanc-get_instances_id_attachments_name_compressed_data}{\code{Orthanc$get_instances_id_attachments_name_compressed_data()}}
+    \item \href{#method-Orthanc-get_instances_id_attachments_name_compressed_md5}{\code{Orthanc$get_instances_id_attachments_name_compressed_md5()}}
+    \item \href{#method-Orthanc-get_instances_id_attachments_name_compressed_size}{\code{Orthanc$get_instances_id_attachments_name_compressed_size()}}
+    \item \href{#method-Orthanc-get_instances_id_attachments_name_data}{\code{Orthanc$get_instances_id_attachments_name_data()}}
+    \item \href{#method-Orthanc-get_instances_id_attachments_name_info}{\code{Orthanc$get_instances_id_attachments_name_info()}}
+    \item \href{#method-Orthanc-get_instances_id_attachments_name_is_compressed}{\code{Orthanc$get_instances_id_attachments_name_is_compressed()}}
+    \item \href{#method-Orthanc-get_instances_id_attachments_name_md5}{\code{Orthanc$get_instances_id_attachments_name_md5()}}
+    \item \href{#method-Orthanc-get_instances_id_attachments_name_size}{\code{Orthanc$get_instances_id_attachments_name_size()}}
+    \item \href{#method-Orthanc-post_instances_id_attachments_name_uncompress}{\code{Orthanc$post_instances_id_attachments_name_uncompress()}}
+    \item \href{#method-Orthanc-post_instances_id_attachments_name_verify_md5}{\code{Orthanc$post_instances_id_attachments_name_verify_md5()}}
+    \item \href{#method-Orthanc-get_instances_id_content_path}{\code{Orthanc$get_instances_id_content_path()}}
+    \item \href{#method-Orthanc-post_instances_id_export}{\code{Orthanc$post_instances_id_export()}}
+    \item \href{#method-Orthanc-get_instances_id_file}{\code{Orthanc$get_instances_id_file()}}
+    \item \href{#method-Orthanc-get_instances_id_frames}{\code{Orthanc$get_instances_id_frames()}}
+    \item \href{#method-Orthanc-get_instances_id_frames_frame}{\code{Orthanc$get_instances_id_frames_frame()}}
+    \item \href{#method-Orthanc-get_instances_id_frames_frame_image_int16}{\code{Orthanc$get_instances_id_frames_frame_image_int16()}}
+    \item \href{#method-Orthanc-get_instances_id_frames_frame_image_uint16}{\code{Orthanc$get_instances_id_frames_frame_image_uint16()}}
+    \item \href{#method-Orthanc-get_instances_id_frames_frame_image_uint8}{\code{Orthanc$get_instances_id_frames_frame_image_uint8()}}
+    \item \href{#method-Orthanc-get_instances_id_frames_frame_matlab}{\code{Orthanc$get_instances_id_frames_frame_matlab()}}
+    \item \href{#method-Orthanc-get_instances_id_frames_frame_numpy}{\code{Orthanc$get_instances_id_frames_frame_numpy()}}
+    \item \href{#method-Orthanc-get_instances_id_frames_frame_preview}{\code{Orthanc$get_instances_id_frames_frame_preview()}}
+    \item \href{#method-Orthanc-get_instances_id_frames_frame_raw}{\code{Orthanc$get_instances_id_frames_frame_raw()}}
+    \item \href{#method-Orthanc-get_instances_id_frames_frame_raw.gz}{\code{Orthanc$get_instances_id_frames_frame_raw.gz()}}
+    \item \href{#method-Orthanc-get_instances_id_frames_frame_rendered}{\code{Orthanc$get_instances_id_frames_frame_rendered()}}
+    \item \href{#method-Orthanc-get_instances_id_header}{\code{Orthanc$get_instances_id_header()}}
+    \item \href{#method-Orthanc-get_instances_id_image_int16}{\code{Orthanc$get_instances_id_image_int16()}}
+    \item \href{#method-Orthanc-get_instances_id_image_uint16}{\code{Orthanc$get_instances_id_image_uint16()}}
+    \item \href{#method-Orthanc-get_instances_id_image_uint8}{\code{Orthanc$get_instances_id_image_uint8()}}
+    \item \href{#method-Orthanc-get_instances_id_labels}{\code{Orthanc$get_instances_id_labels()}}
+    \item \href{#method-Orthanc-delete_instances_id_labels_label}{\code{Orthanc$delete_instances_id_labels_label()}}
+    \item \href{#method-Orthanc-get_instances_id_labels_label}{\code{Orthanc$get_instances_id_labels_label()}}
+    \item \href{#method-Orthanc-put_instances_id_labels_label}{\code{Orthanc$put_instances_id_labels_label()}}
+    \item \href{#method-Orthanc-get_instances_id_matlab}{\code{Orthanc$get_instances_id_matlab()}}
+    \item \href{#method-Orthanc-get_instances_id_metadata}{\code{Orthanc$get_instances_id_metadata()}}
+    \item \href{#method-Orthanc-delete_instances_id_metadata_name}{\code{Orthanc$delete_instances_id_metadata_name()}}
+    \item \href{#method-Orthanc-get_instances_id_metadata_name}{\code{Orthanc$get_instances_id_metadata_name()}}
+    \item \href{#method-Orthanc-put_instances_id_metadata_name}{\code{Orthanc$put_instances_id_metadata_name()}}
+    \item \href{#method-Orthanc-post_instances_id_modify}{\code{Orthanc$post_instances_id_modify()}}
+    \item \href{#method-Orthanc-get_instances_id_module}{\code{Orthanc$get_instances_id_module()}}
+    \item \href{#method-Orthanc-get_instances_id_numpy}{\code{Orthanc$get_instances_id_numpy()}}
+    \item \href{#method-Orthanc-get_instances_id_patient}{\code{Orthanc$get_instances_id_patient()}}
+    \item \href{#method-Orthanc-get_instances_id_pdf}{\code{Orthanc$get_instances_id_pdf()}}
+    \item \href{#method-Orthanc-get_instances_id_preview}{\code{Orthanc$get_instances_id_preview()}}
+    \item \href{#method-Orthanc-post_instances_id_reconstruct}{\code{Orthanc$post_instances_id_reconstruct()}}
+    \item \href{#method-Orthanc-get_instances_id_rendered}{\code{Orthanc$get_instances_id_rendered()}}
+    \item \href{#method-Orthanc-get_instances_id_series}{\code{Orthanc$get_instances_id_series()}}
+    \item \href{#method-Orthanc-get_instances_id_simplified_tags}{\code{Orthanc$get_instances_id_simplified_tags()}}
+    \item \href{#method-Orthanc-get_instances_id_statistics}{\code{Orthanc$get_instances_id_statistics()}}
+    \item \href{#method-Orthanc-get_instances_id_study}{\code{Orthanc$get_instances_id_study()}}
+    \item \href{#method-Orthanc-get_instances_id_tags}{\code{Orthanc$get_instances_id_tags()}}
+    \item \href{#method-Orthanc-get_jobs}{\code{Orthanc$get_jobs()}}
+    \item \href{#method-Orthanc-delete_jobs_id}{\code{Orthanc$delete_jobs_id()}}
+    \item \href{#method-Orthanc-get_jobs_id}{\code{Orthanc$get_jobs_id()}}
+    \item \href{#method-Orthanc-post_jobs_id_cancel}{\code{Orthanc$post_jobs_id_cancel()}}
+    \item \href{#method-Orthanc-post_jobs_id_pause}{\code{Orthanc$post_jobs_id_pause()}}
+    \item \href{#method-Orthanc-post_jobs_id_resubmit}{\code{Orthanc$post_jobs_id_resubmit()}}
+    \item \href{#method-Orthanc-post_jobs_id_resume}{\code{Orthanc$post_jobs_id_resume()}}
+    \item \href{#method-Orthanc-delete_jobs_id_key}{\code{Orthanc$delete_jobs_id_key()}}
+    \item \href{#method-Orthanc-get_jobs_id_key}{\code{Orthanc$get_jobs_id_key()}}
+    \item \href{#method-Orthanc-get_modalities}{\code{Orthanc$get_modalities()}}
+    \item \href{#method-Orthanc-delete_modalities_id}{\code{Orthanc$delete_modalities_id()}}
+    \item \href{#method-Orthanc-get_modalities_id}{\code{Orthanc$get_modalities_id()}}
+    \item \href{#method-Orthanc-put_modalities_id}{\code{Orthanc$put_modalities_id()}}
+    \item \href{#method-Orthanc-get_modalities_id_configuration}{\code{Orthanc$get_modalities_id_configuration()}}
+    \item \href{#method-Orthanc-post_modalities_id_echo}{\code{Orthanc$post_modalities_id_echo()}}
+    \item \href{#method-Orthanc-post_modalities_id_find_worklist}{\code{Orthanc$post_modalities_id_find_worklist()}}
+    \item \href{#method-Orthanc-post_modalities_id_get}{\code{Orthanc$post_modalities_id_get()}}
+    \item \href{#method-Orthanc-post_modalities_id_move}{\code{Orthanc$post_modalities_id_move()}}
+    \item \href{#method-Orthanc-post_modalities_id_query}{\code{Orthanc$post_modalities_id_query()}}
+    \item \href{#method-Orthanc-post_modalities_id_storage_commitment}{\code{Orthanc$post_modalities_id_storage_commitment()}}
+    \item \href{#method-Orthanc-post_modalities_id_store}{\code{Orthanc$post_modalities_id_store()}}
+    \item \href{#method-Orthanc-post_modalities_id_store_straight}{\code{Orthanc$post_modalities_id_store_straight()}}
+    \item \href{#method-Orthanc-get_patients}{\code{Orthanc$get_patients()}}
+    \item \href{#method-Orthanc-delete_patients_id}{\code{Orthanc$delete_patients_id()}}
+    \item \href{#method-Orthanc-get_patients_id}{\code{Orthanc$get_patients_id()}}
+    \item \href{#method-Orthanc-post_patients_id_anonymize}{\code{Orthanc$post_patients_id_anonymize()}}
+    \item \href{#method-Orthanc-get_patients_id_archive}{\code{Orthanc$get_patients_id_archive()}}
+    \item \href{#method-Orthanc-post_patients_id_archive}{\code{Orthanc$post_patients_id_archive()}}
+    \item \href{#method-Orthanc-get_patients_id_attachments}{\code{Orthanc$get_patients_id_attachments()}}
+    \item \href{#method-Orthanc-delete_patients_id_attachments_name}{\code{Orthanc$delete_patients_id_attachments_name()}}
+    \item \href{#method-Orthanc-get_patients_id_attachments_name}{\code{Orthanc$get_patients_id_attachments_name()}}
+    \item \href{#method-Orthanc-put_patients_id_attachments_name}{\code{Orthanc$put_patients_id_attachments_name()}}
+    \item \href{#method-Orthanc-post_patients_id_attachments_name_compress}{\code{Orthanc$post_patients_id_attachments_name_compress()}}
+    \item \href{#method-Orthanc-get_patients_id_attachments_name_compressed_data}{\code{Orthanc$get_patients_id_attachments_name_compressed_data()}}
+    \item \href{#method-Orthanc-get_patients_id_attachments_name_compressed_md5}{\code{Orthanc$get_patients_id_attachments_name_compressed_md5()}}
+    \item \href{#method-Orthanc-get_patients_id_attachments_name_compressed_size}{\code{Orthanc$get_patients_id_attachments_name_compressed_size()}}
+    \item \href{#method-Orthanc-get_patients_id_attachments_name_data}{\code{Orthanc$get_patients_id_attachments_name_data()}}
+    \item \href{#method-Orthanc-get_patients_id_attachments_name_info}{\code{Orthanc$get_patients_id_attachments_name_info()}}
+    \item \href{#method-Orthanc-get_patients_id_attachments_name_is_compressed}{\code{Orthanc$get_patients_id_attachments_name_is_compressed()}}
+    \item \href{#method-Orthanc-get_patients_id_attachments_name_md5}{\code{Orthanc$get_patients_id_attachments_name_md5()}}
+    \item \href{#method-Orthanc-get_patients_id_attachments_name_size}{\code{Orthanc$get_patients_id_attachments_name_size()}}
+    \item \href{#method-Orthanc-post_patients_id_attachments_name_uncompress}{\code{Orthanc$post_patients_id_attachments_name_uncompress()}}
+    \item \href{#method-Orthanc-post_patients_id_attachments_name_verify_md5}{\code{Orthanc$post_patients_id_attachments_name_verify_md5()}}
+    \item \href{#method-Orthanc-get_patients_id_instances}{\code{Orthanc$get_patients_id_instances()}}
+    \item \href{#method-Orthanc-get_patients_id_instances_tags}{\code{Orthanc$get_patients_id_instances_tags()}}
+    \item \href{#method-Orthanc-get_patients_id_labels}{\code{Orthanc$get_patients_id_labels()}}
+    \item \href{#method-Orthanc-delete_patients_id_labels_label}{\code{Orthanc$delete_patients_id_labels_label()}}
+    \item \href{#method-Orthanc-get_patients_id_labels_label}{\code{Orthanc$get_patients_id_labels_label()}}
+    \item \href{#method-Orthanc-put_patients_id_labels_label}{\code{Orthanc$put_patients_id_labels_label()}}
+    \item \href{#method-Orthanc-get_patients_id_media}{\code{Orthanc$get_patients_id_media()}}
+    \item \href{#method-Orthanc-post_patients_id_media}{\code{Orthanc$post_patients_id_media()}}
+    \item \href{#method-Orthanc-get_patients_id_metadata}{\code{Orthanc$get_patients_id_metadata()}}
+    \item \href{#method-Orthanc-delete_patients_id_metadata_name}{\code{Orthanc$delete_patients_id_metadata_name()}}
+    \item \href{#method-Orthanc-get_patients_id_metadata_name}{\code{Orthanc$get_patients_id_metadata_name()}}
+    \item \href{#method-Orthanc-put_patients_id_metadata_name}{\code{Orthanc$put_patients_id_metadata_name()}}
+    \item \href{#method-Orthanc-post_patients_id_modify}{\code{Orthanc$post_patients_id_modify()}}
+    \item \href{#method-Orthanc-get_patients_id_module}{\code{Orthanc$get_patients_id_module()}}
+    \item \href{#method-Orthanc-get_patients_id_protected}{\code{Orthanc$get_patients_id_protected()}}
+    \item \href{#method-Orthanc-put_patients_id_protected}{\code{Orthanc$put_patients_id_protected()}}
+    \item \href{#method-Orthanc-post_patients_id_reconstruct}{\code{Orthanc$post_patients_id_reconstruct()}}
+    \item \href{#method-Orthanc-get_patients_id_series}{\code{Orthanc$get_patients_id_series()}}
+    \item \href{#method-Orthanc-get_patients_id_shared_tags}{\code{Orthanc$get_patients_id_shared_tags()}}
+    \item \href{#method-Orthanc-get_patients_id_statistics}{\code{Orthanc$get_patients_id_statistics()}}
+    \item \href{#method-Orthanc-get_patients_id_studies}{\code{Orthanc$get_patients_id_studies()}}
+    \item \href{#method-Orthanc-get_peers}{\code{Orthanc$get_peers()}}
+    \item \href{#method-Orthanc-delete_peers_id}{\code{Orthanc$delete_peers_id()}}
+    \item \href{#method-Orthanc-get_peers_id}{\code{Orthanc$get_peers_id()}}
+    \item \href{#method-Orthanc-put_peers_id}{\code{Orthanc$put_peers_id()}}
+    \item \href{#method-Orthanc-get_peers_id_configuration}{\code{Orthanc$get_peers_id_configuration()}}
+    \item \href{#method-Orthanc-post_peers_id_store}{\code{Orthanc$post_peers_id_store()}}
+    \item \href{#method-Orthanc-post_peers_id_store_straight}{\code{Orthanc$post_peers_id_store_straight()}}
+    \item \href{#method-Orthanc-get_peers_id_system}{\code{Orthanc$get_peers_id_system()}}
+    \item \href{#method-Orthanc-get_plugins}{\code{Orthanc$get_plugins()}}
+    \item \href{#method-Orthanc-get_plugins_explorer.js}{\code{Orthanc$get_plugins_explorer.js()}}
+    \item \href{#method-Orthanc-get_plugins_id}{\code{Orthanc$get_plugins_id()}}
+    \item \href{#method-Orthanc-get_queries}{\code{Orthanc$get_queries()}}
+    \item \href{#method-Orthanc-delete_queries_id}{\code{Orthanc$delete_queries_id()}}
+    \item \href{#method-Orthanc-get_queries_id}{\code{Orthanc$get_queries_id()}}
+    \item \href{#method-Orthanc-get_queries_id_answers}{\code{Orthanc$get_queries_id_answers()}}
+    \item \href{#method-Orthanc-get_queries_id_answers_index}{\code{Orthanc$get_queries_id_answers_index()}}
+    \item \href{#method-Orthanc-get_queries_id_answers_index_content}{\code{Orthanc$get_queries_id_answers_index_content()}}
+    \item \href{#method-Orthanc-post_queries_id_answers_index_query_instances}{\code{Orthanc$post_queries_id_answers_index_query_instances()}}
+    \item \href{#method-Orthanc-post_queries_id_answers_index_query_series}{\code{Orthanc$post_queries_id_answers_index_query_series()}}
+    \item \href{#method-Orthanc-post_queries_id_answers_index_query_studies}{\code{Orthanc$post_queries_id_answers_index_query_studies()}}
+    \item \href{#method-Orthanc-post_queries_id_answers_index_retrieve}{\code{Orthanc$post_queries_id_answers_index_retrieve()}}
+    \item \href{#method-Orthanc-get_queries_id_level}{\code{Orthanc$get_queries_id_level()}}
+    \item \href{#method-Orthanc-get_queries_id_modality}{\code{Orthanc$get_queries_id_modality()}}
+    \item \href{#method-Orthanc-get_queries_id_query}{\code{Orthanc$get_queries_id_query()}}
+    \item \href{#method-Orthanc-post_queries_id_retrieve}{\code{Orthanc$post_queries_id_retrieve()}}
+    \item \href{#method-Orthanc-get_series}{\code{Orthanc$get_series()}}
+    \item \href{#method-Orthanc-delete_series_id}{\code{Orthanc$delete_series_id()}}
+    \item \href{#method-Orthanc-get_series_id}{\code{Orthanc$get_series_id()}}
+    \item \href{#method-Orthanc-post_series_id_anonymize}{\code{Orthanc$post_series_id_anonymize()}}
+    \item \href{#method-Orthanc-get_series_id_archive}{\code{Orthanc$get_series_id_archive()}}
+    \item \href{#method-Orthanc-post_series_id_archive}{\code{Orthanc$post_series_id_archive()}}
+    \item \href{#method-Orthanc-get_series_id_attachments}{\code{Orthanc$get_series_id_attachments()}}
+    \item \href{#method-Orthanc-delete_series_id_attachments_name}{\code{Orthanc$delete_series_id_attachments_name()}}
+    \item \href{#method-Orthanc-get_series_id_attachments_name}{\code{Orthanc$get_series_id_attachments_name()}}
+    \item \href{#method-Orthanc-put_series_id_attachments_name}{\code{Orthanc$put_series_id_attachments_name()}}
+    \item \href{#method-Orthanc-post_series_id_attachments_name_compress}{\code{Orthanc$post_series_id_attachments_name_compress()}}
+    \item \href{#method-Orthanc-get_series_id_attachments_name_compressed_data}{\code{Orthanc$get_series_id_attachments_name_compressed_data()}}
+    \item \href{#method-Orthanc-get_series_id_attachments_name_compressed_md5}{\code{Orthanc$get_series_id_attachments_name_compressed_md5()}}
+    \item \href{#method-Orthanc-get_series_id_attachments_name_compressed_size}{\code{Orthanc$get_series_id_attachments_name_compressed_size()}}
+    \item \href{#method-Orthanc-get_series_id_attachments_name_data}{\code{Orthanc$get_series_id_attachments_name_data()}}
+    \item \href{#method-Orthanc-get_series_id_attachments_name_info}{\code{Orthanc$get_series_id_attachments_name_info()}}
+    \item \href{#method-Orthanc-get_series_id_attachments_name_is_compressed}{\code{Orthanc$get_series_id_attachments_name_is_compressed()}}
+    \item \href{#method-Orthanc-get_series_id_attachments_name_md5}{\code{Orthanc$get_series_id_attachments_name_md5()}}
+    \item \href{#method-Orthanc-get_series_id_attachments_name_size}{\code{Orthanc$get_series_id_attachments_name_size()}}
+    \item \href{#method-Orthanc-post_series_id_attachments_name_uncompress}{\code{Orthanc$post_series_id_attachments_name_uncompress()}}
+    \item \href{#method-Orthanc-post_series_id_attachments_name_verify_md5}{\code{Orthanc$post_series_id_attachments_name_verify_md5()}}
+    \item \href{#method-Orthanc-get_series_id_instances}{\code{Orthanc$get_series_id_instances()}}
+    \item \href{#method-Orthanc-get_series_id_instances_tags}{\code{Orthanc$get_series_id_instances_tags()}}
+    \item \href{#method-Orthanc-get_series_id_labels}{\code{Orthanc$get_series_id_labels()}}
+    \item \href{#method-Orthanc-delete_series_id_labels_label}{\code{Orthanc$delete_series_id_labels_label()}}
+    \item \href{#method-Orthanc-get_series_id_labels_label}{\code{Orthanc$get_series_id_labels_label()}}
+    \item \href{#method-Orthanc-put_series_id_labels_label}{\code{Orthanc$put_series_id_labels_label()}}
+    \item \href{#method-Orthanc-get_series_id_media}{\code{Orthanc$get_series_id_media()}}
+    \item \href{#method-Orthanc-post_series_id_media}{\code{Orthanc$post_series_id_media()}}
+    \item \href{#method-Orthanc-get_series_id_metadata}{\code{Orthanc$get_series_id_metadata()}}
+    \item \href{#method-Orthanc-delete_series_id_metadata_name}{\code{Orthanc$delete_series_id_metadata_name()}}
+    \item \href{#method-Orthanc-get_series_id_metadata_name}{\code{Orthanc$get_series_id_metadata_name()}}
+    \item \href{#method-Orthanc-put_series_id_metadata_name}{\code{Orthanc$put_series_id_metadata_name()}}
+    \item \href{#method-Orthanc-post_series_id_modify}{\code{Orthanc$post_series_id_modify()}}
+    \item \href{#method-Orthanc-get_series_id_module}{\code{Orthanc$get_series_id_module()}}
+    \item \href{#method-Orthanc-get_series_id_numpy}{\code{Orthanc$get_series_id_numpy()}}
+    \item \href{#method-Orthanc-get_series_id_patient}{\code{Orthanc$get_series_id_patient()}}
+    \item \href{#method-Orthanc-post_series_id_reconstruct}{\code{Orthanc$post_series_id_reconstruct()}}
+    \item \href{#method-Orthanc-get_series_id_shared_tags}{\code{Orthanc$get_series_id_shared_tags()}}
+    \item \href{#method-Orthanc-get_series_id_statistics}{\code{Orthanc$get_series_id_statistics()}}
+    \item \href{#method-Orthanc-get_series_id_study}{\code{Orthanc$get_series_id_study()}}
+    \item \href{#method-Orthanc-get_statistics}{\code{Orthanc$get_statistics()}}
+    \item \href{#method-Orthanc-get_storage_commitment_id}{\code{Orthanc$get_storage_commitment_id()}}
+    \item \href{#method-Orthanc-post_storage_commitment_id_remove}{\code{Orthanc$post_storage_commitment_id_remove()}}
+    \item \href{#method-Orthanc-get_studies}{\code{Orthanc$get_studies()}}
+    \item \href{#method-Orthanc-delete_studies_id}{\code{Orthanc$delete_studies_id()}}
+    \item \href{#method-Orthanc-get_studies_id}{\code{Orthanc$get_studies_id()}}
+    \item \href{#method-Orthanc-post_studies_id_anonymize}{\code{Orthanc$post_studies_id_anonymize()}}
+    \item \href{#method-Orthanc-get_studies_id_archive}{\code{Orthanc$get_studies_id_archive()}}
+    \item \href{#method-Orthanc-post_studies_id_archive}{\code{Orthanc$post_studies_id_archive()}}
+    \item \href{#method-Orthanc-get_studies_id_attachments}{\code{Orthanc$get_studies_id_attachments()}}
+    \item \href{#method-Orthanc-delete_studies_id_attachments_name}{\code{Orthanc$delete_studies_id_attachments_name()}}
+    \item \href{#method-Orthanc-get_studies_id_attachments_name}{\code{Orthanc$get_studies_id_attachments_name()}}
+    \item \href{#method-Orthanc-put_studies_id_attachments_name}{\code{Orthanc$put_studies_id_attachments_name()}}
+    \item \href{#method-Orthanc-post_studies_id_attachments_name_compress}{\code{Orthanc$post_studies_id_attachments_name_compress()}}
+    \item \href{#method-Orthanc-get_studies_id_attachments_name_compressed_data}{\code{Orthanc$get_studies_id_attachments_name_compressed_data()}}
+    \item \href{#method-Orthanc-get_studies_id_attachments_name_compressed_md5}{\code{Orthanc$get_studies_id_attachments_name_compressed_md5()}}
+    \item \href{#method-Orthanc-get_studies_id_attachments_name_compressed_size}{\code{Orthanc$get_studies_id_attachments_name_compressed_size()}}
+    \item \href{#method-Orthanc-get_studies_id_attachments_name_data}{\code{Orthanc$get_studies_id_attachments_name_data()}}
+    \item \href{#method-Orthanc-get_studies_id_attachments_name_info}{\code{Orthanc$get_studies_id_attachments_name_info()}}
+    \item \href{#method-Orthanc-get_studies_id_attachments_name_is_compressed}{\code{Orthanc$get_studies_id_attachments_name_is_compressed()}}
+    \item \href{#method-Orthanc-get_studies_id_attachments_name_md5}{\code{Orthanc$get_studies_id_attachments_name_md5()}}
+    \item \href{#method-Orthanc-get_studies_id_attachments_name_size}{\code{Orthanc$get_studies_id_attachments_name_size()}}
+    \item \href{#method-Orthanc-post_studies_id_attachments_name_uncompress}{\code{Orthanc$post_studies_id_attachments_name_uncompress()}}
+    \item \href{#method-Orthanc-post_studies_id_attachments_name_verify_md5}{\code{Orthanc$post_studies_id_attachments_name_verify_md5()}}
+    \item \href{#method-Orthanc-get_studies_id_instances}{\code{Orthanc$get_studies_id_instances()}}
+    \item \href{#method-Orthanc-get_studies_id_instances_tags}{\code{Orthanc$get_studies_id_instances_tags()}}
+    \item \href{#method-Orthanc-get_studies_id_labels}{\code{Orthanc$get_studies_id_labels()}}
+    \item \href{#method-Orthanc-delete_studies_id_labels_label}{\code{Orthanc$delete_studies_id_labels_label()}}
+    \item \href{#method-Orthanc-get_studies_id_labels_label}{\code{Orthanc$get_studies_id_labels_label()}}
+    \item \href{#method-Orthanc-put_studies_id_labels_label}{\code{Orthanc$put_studies_id_labels_label()}}
+    \item \href{#method-Orthanc-get_studies_id_media}{\code{Orthanc$get_studies_id_media()}}
+    \item \href{#method-Orthanc-post_studies_id_media}{\code{Orthanc$post_studies_id_media()}}
+    \item \href{#method-Orthanc-post_studies_id_merge}{\code{Orthanc$post_studies_id_merge()}}
+    \item \href{#method-Orthanc-get_studies_id_metadata}{\code{Orthanc$get_studies_id_metadata()}}
+    \item \href{#method-Orthanc-delete_studies_id_metadata_name}{\code{Orthanc$delete_studies_id_metadata_name()}}
+    \item \href{#method-Orthanc-get_studies_id_metadata_name}{\code{Orthanc$get_studies_id_metadata_name()}}
+    \item \href{#method-Orthanc-put_studies_id_metadata_name}{\code{Orthanc$put_studies_id_metadata_name()}}
+    \item \href{#method-Orthanc-post_studies_id_modify}{\code{Orthanc$post_studies_id_modify()}}
+    \item \href{#method-Orthanc-get_studies_id_module}{\code{Orthanc$get_studies_id_module()}}
+    \item \href{#method-Orthanc-get_studies_id_module_patient}{\code{Orthanc$get_studies_id_module_patient()}}
+    \item \href{#method-Orthanc-get_studies_id_patient}{\code{Orthanc$get_studies_id_patient()}}
+    \item \href{#method-Orthanc-post_studies_id_reconstruct}{\code{Orthanc$post_studies_id_reconstruct()}}
+    \item \href{#method-Orthanc-get_studies_id_series}{\code{Orthanc$get_studies_id_series()}}
+    \item \href{#method-Orthanc-get_studies_id_shared_tags}{\code{Orthanc$get_studies_id_shared_tags()}}
+    \item \href{#method-Orthanc-post_studies_id_split}{\code{Orthanc$post_studies_id_split()}}
+    \item \href{#method-Orthanc-get_studies_id_statistics}{\code{Orthanc$get_studies_id_statistics()}}
+    \item \href{#method-Orthanc-get_system}{\code{Orthanc$get_system()}}
+    \item \href{#method-Orthanc-get_tools}{\code{Orthanc$get_tools()}}
+    \item \href{#method-Orthanc-get_tools_accepted_sop_classes}{\code{Orthanc$get_tools_accepted_sop_classes()}}
+    \item \href{#method-Orthanc-get_tools_accepted_transfer_syntaxes}{\code{Orthanc$get_tools_accepted_transfer_syntaxes()}}
+    \item \href{#method-Orthanc-put_tools_accepted_transfer_syntaxes}{\code{Orthanc$put_tools_accepted_transfer_syntaxes()}}
+    \item \href{#method-Orthanc-post_tools_bulk_anonymize}{\code{Orthanc$post_tools_bulk_anonymize()}}
+    \item \href{#method-Orthanc-post_tools_bulk_content}{\code{Orthanc$post_tools_bulk_content()}}
+    \item \href{#method-Orthanc-post_tools_bulk_delete}{\code{Orthanc$post_tools_bulk_delete()}}
+    \item \href{#method-Orthanc-post_tools_bulk_modify}{\code{Orthanc$post_tools_bulk_modify()}}
+    \item \href{#method-Orthanc-post_tools_count_resources}{\code{Orthanc$post_tools_count_resources()}}
+    \item \href{#method-Orthanc-get_tools_create_archive}{\code{Orthanc$get_tools_create_archive()}}
+    \item \href{#method-Orthanc-post_tools_create_archive}{\code{Orthanc$post_tools_create_archive()}}
+    \item \href{#method-Orthanc-post_tools_create_dicom}{\code{Orthanc$post_tools_create_dicom()}}
+    \item \href{#method-Orthanc-get_tools_create_media}{\code{Orthanc$get_tools_create_media()}}
+    \item \href{#method-Orthanc-post_tools_create_media}{\code{Orthanc$post_tools_create_media()}}
+    \item \href{#method-Orthanc-get_tools_create_media_extended}{\code{Orthanc$get_tools_create_media_extended()}}
+    \item \href{#method-Orthanc-post_tools_create_media_extended}{\code{Orthanc$post_tools_create_media_extended()}}
+    \item \href{#method-Orthanc-get_tools_default_encoding}{\code{Orthanc$get_tools_default_encoding()}}
+    \item \href{#method-Orthanc-put_tools_default_encoding}{\code{Orthanc$put_tools_default_encoding()}}
+    \item \href{#method-Orthanc-get_tools_dicom_conformance}{\code{Orthanc$get_tools_dicom_conformance()}}
+    \item \href{#method-Orthanc-post_tools_dicom_echo}{\code{Orthanc$post_tools_dicom_echo()}}
+    \item \href{#method-Orthanc-post_tools_execute_script}{\code{Orthanc$post_tools_execute_script()}}
+    \item \href{#method-Orthanc-post_tools_find}{\code{Orthanc$post_tools_find()}}
+    \item \href{#method-Orthanc-get_tools_generate_uid}{\code{Orthanc$get_tools_generate_uid()}}
+    \item \href{#method-Orthanc-post_tools_invalidate_tags}{\code{Orthanc$post_tools_invalidate_tags()}}
+    \item \href{#method-Orthanc-get_tools_labels}{\code{Orthanc$get_tools_labels()}}
+    \item \href{#method-Orthanc-get_tools_log_level}{\code{Orthanc$get_tools_log_level()}}
+    \item \href{#method-Orthanc-put_tools_log_level}{\code{Orthanc$put_tools_log_level()}}
+    \item \href{#method-Orthanc-get_tools_log_level_dicom}{\code{Orthanc$get_tools_log_level_dicom()}}
+    \item \href{#method-Orthanc-put_tools_log_level_dicom}{\code{Orthanc$put_tools_log_level_dicom()}}
+    \item \href{#method-Orthanc-get_tools_log_level_generic}{\code{Orthanc$get_tools_log_level_generic()}}
+    \item \href{#method-Orthanc-put_tools_log_level_generic}{\code{Orthanc$put_tools_log_level_generic()}}
+    \item \href{#method-Orthanc-get_tools_log_level_http}{\code{Orthanc$get_tools_log_level_http()}}
+    \item \href{#method-Orthanc-put_tools_log_level_http}{\code{Orthanc$put_tools_log_level_http()}}
+    \item \href{#method-Orthanc-get_tools_log_level_jobs}{\code{Orthanc$get_tools_log_level_jobs()}}
+    \item \href{#method-Orthanc-put_tools_log_level_jobs}{\code{Orthanc$put_tools_log_level_jobs()}}
+    \item \href{#method-Orthanc-get_tools_log_level_lua}{\code{Orthanc$get_tools_log_level_lua()}}
+    \item \href{#method-Orthanc-put_tools_log_level_lua}{\code{Orthanc$put_tools_log_level_lua()}}
+    \item \href{#method-Orthanc-get_tools_log_level_plugins}{\code{Orthanc$get_tools_log_level_plugins()}}
+    \item \href{#method-Orthanc-put_tools_log_level_plugins}{\code{Orthanc$put_tools_log_level_plugins()}}
+    \item \href{#method-Orthanc-get_tools_log_level_sqlite}{\code{Orthanc$get_tools_log_level_sqlite()}}
+    \item \href{#method-Orthanc-put_tools_log_level_sqlite}{\code{Orthanc$put_tools_log_level_sqlite()}}
+    \item \href{#method-Orthanc-post_tools_lookup}{\code{Orthanc$post_tools_lookup()}}
+    \item \href{#method-Orthanc-get_tools_metrics}{\code{Orthanc$get_tools_metrics()}}
+    \item \href{#method-Orthanc-put_tools_metrics}{\code{Orthanc$put_tools_metrics()}}
+    \item \href{#method-Orthanc-get_tools_metrics_prometheus}{\code{Orthanc$get_tools_metrics_prometheus()}}
+    \item \href{#method-Orthanc-get_tools_now}{\code{Orthanc$get_tools_now()}}
+    \item \href{#method-Orthanc-get_tools_now_local}{\code{Orthanc$get_tools_now_local()}}
+    \item \href{#method-Orthanc-post_tools_reconstruct}{\code{Orthanc$post_tools_reconstruct()}}
+    \item \href{#method-Orthanc-post_tools_reset}{\code{Orthanc$post_tools_reset()}}
+    \item \href{#method-Orthanc-post_tools_shutdown}{\code{Orthanc$post_tools_shutdown()}}
+    \item \href{#method-Orthanc-get_tools_unknown_sop_class_accepted}{\code{Orthanc$get_tools_unknown_sop_class_accepted()}}
+    \item \href{#method-Orthanc-put_tools_unknown_sop_class_accepted}{\code{Orthanc$put_tools_unknown_sop_class_accepted()}}
+    \item \href{#method-Orthanc-clone}{\code{Orthanc$clone()}}
+  }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Orthanc-new"></a>}}
-\if{latex}{\out{\hypertarget{method-Orthanc-new}{}}}
-\subsection{Method \code{new()}}{
-Initialize a new Orthanc API Client
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$new(
+\if{html}{\out{<a id="method-Orthanc-initialize"></a>}}
+\if{latex}{\out{\hypertarget{method-Orthanc-initialize}{}}}
+\subsection{\code{Orthanc$new()}}{
+  Initialize a new Orthanc API Client
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$new(
   url,
   username = NULL,
   password = NULL,
@@ -370,102 +371,93 @@ Initialize a new Orthanc API Client
   rate_limit = NULL,
   verify = NULL,
   ...
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{url}}{URL for Orthanc REST API.}
-
-\item{\code{username}}{Optional username for Basic HTTP authentication.}
-
-\item{\code{password}}{Optional password for Basic HTTP authentication.}
-
-\item{\code{params}}{Named-list of query parameters to include in every
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{url}}{URL for Orthanc REST API.}
+      \item{\code{username}}{Optional username for Basic HTTP authentication.}
+      \item{\code{password}}{Optional password for Basic HTTP authentication.}
+      \item{\code{params}}{Named-list of query parameters to include in every
 request.}
-
-\item{\code{headers}}{Named-list of headers to include in every request.}
-
-\item{\code{cookies}}{Named-list of cookies to set in every request.}
-
-\item{\code{timeout}}{Maximum number of seconds to wait for a request to
+      \item{\code{headers}}{Named-list of headers to include in every request.}
+      \item{\code{cookies}}{Named-list of cookies to set in every request.}
+      \item{\code{timeout}}{Maximum number of seconds to wait for a request to
 complete.}
-
-\item{\code{rate_limit}}{Named-list with values \code{"capacity"} and \code{"fill_time"}.
+      \item{\code{rate_limit}}{Named-list with values \code{"capacity"} and \code{"fill_time"}.
 \code{"capacity"} is the maximum number of requests that can happen during
 the \code{"fill_time"} (in seconds). See \code{\link[httr2:req_throttle]{httr2::req_throttle()}}.}
-
-\item{\code{verify}}{Whether to verify the SSL/TLS certificate when
+      \item{\code{verify}}{Whether to verify the SSL/TLS certificate when
 making HTTP requests via \code{httr2}. Set to \code{FALSE} to disable
 certificate verification (e.g., when connecting to servers with
 self-signed certificates). Disabling verification reduces connection
 security and should only be used in trusted environments.}
+      \item{\code{...}}{Not currently used.}
+    }
+    \if{html}{\out{</div>}}
+  }
+}
 
-\item{\code{...}}{Not currently used.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-GET"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-GET}{}}}
-\subsection{Method \code{GET()}}{
-GET request with specified route
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$GET(route, params = NULL, headers = NULL, cookies = NULL)}\if{html}{\out{</div>}}
+\subsection{\code{Orthanc$GET()}}{
+  GET request with specified route
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$GET(route, params = NULL, headers = NULL, cookies = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{route}}{HTTP route.}
+      \item{\code{params}}{Parameters for the HTTP request.}
+      \item{\code{headers}}{Headers for the HTTP request.}
+      \item{\code{cookies}}{Cookies for the HTTP request.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Serialized response of the HTTP GET request.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{route}}{HTTP route.}
-
-\item{\code{params}}{Parameters for the HTTP request.}
-
-\item{\code{headers}}{Headers for the HTTP request.}
-
-\item{\code{cookies}}{Cookies for the HTTP request.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Serialized response of the HTTP GET request.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-DELETE"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-DELETE}{}}}
-\subsection{Method \code{DELETE()}}{
-DELETE to specified route
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$DELETE(route, params = NULL, headers = NULL, cookies = NULL)}\if{html}{\out{</div>}}
+\subsection{\code{Orthanc$DELETE()}}{
+  DELETE to specified route
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$DELETE(route, params = NULL, headers = NULL, cookies = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{route}}{HTTP route.}
+      \item{\code{params}}{Parameters for the HTTP request.}
+      \item{\code{headers}}{Headers for the HTTP request.}
+      \item{\code{cookies}}{Cookies for the HTTP request.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Serialized response of the HTTP DELETE request.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{route}}{HTTP route.}
-
-\item{\code{params}}{Parameters for the HTTP request.}
-
-\item{\code{headers}}{Headers for the HTTP request.}
-
-\item{\code{cookies}}{Cookies for the HTTP request.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Serialized response of the HTTP DELETE request.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-POST"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-POST}{}}}
-\subsection{Method \code{POST()}}{
-POST to specified route
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$POST(
+\subsection{\code{Orthanc$POST()}}{
+  POST to specified route
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$POST(
   route,
   file = NULL,
   json = NULL,
@@ -473,40 +465,36 @@ POST to specified route
   params = NULL,
   headers = NULL,
   cookies = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{route}}{HTTP route.}
-
-\item{\code{file}}{DICOM file to be uploaded or a ZIP archive containing
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{route}}{HTTP route.}
+      \item{\code{file}}{DICOM file to be uploaded or a ZIP archive containing
 DICOM files.}
-
-\item{\code{json}}{List to be converted to JSON for request body.}
-
-\item{\code{data}}{Raw data.}
-
-\item{\code{params}}{Parameters for the HTTP request.}
-
-\item{\code{headers}}{Headers for the HTTP request.}
-
-\item{\code{cookies}}{Cookies for the HTTP request.}
+      \item{\code{json}}{List to be converted to JSON for request body.}
+      \item{\code{data}}{Raw data.}
+      \item{\code{params}}{Parameters for the HTTP request.}
+      \item{\code{headers}}{Headers for the HTTP request.}
+      \item{\code{cookies}}{Cookies for the HTTP request.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Serialized response of the HTTP POST request.
+  }
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Serialized response of the HTTP POST request.
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-PUT"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-PUT}{}}}
-\subsection{Method \code{PUT()}}{
-PUT to specified route
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$PUT(
+\subsection{\code{Orthanc$PUT()}}{
+  PUT to specified route
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$PUT(
   route,
   file = NULL,
   json = NULL,
@@ -514,100 +502,96 @@ PUT to specified route
   params = NULL,
   headers = NULL,
   cookies = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{route}}{HTTP route.}
-
-\item{\code{file}}{DICOM file to be uploaded or a ZIP archive containing
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{route}}{HTTP route.}
+      \item{\code{file}}{DICOM file to be uploaded or a ZIP archive containing
 DICOM files.}
-
-\item{\code{json}}{List to be converted to JSON for request body.}
-
-\item{\code{data}}{Raw data.}
-
-\item{\code{params}}{Parameters for the HTTP request.}
-
-\item{\code{headers}}{Headers for the HTTP request.}
-
-\item{\code{cookies}}{Cookies for the HTTP request.}
+      \item{\code{json}}{List to be converted to JSON for request body.}
+      \item{\code{data}}{Raw data.}
+      \item{\code{params}}{Parameters for the HTTP request.}
+      \item{\code{headers}}{Headers for the HTTP request.}
+      \item{\code{cookies}}{Cookies for the HTTP request.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Serialized response of the HTTP PUT request.
+  }
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Serialized response of the HTTP PUT request.
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-stream"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-stream}{}}}
-\subsection{Method \code{stream()}}{
-Stream an HTTP response body and write to disk.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$stream(method, route, params = NULL, headers = NULL, cookies = NULL)}\if{html}{\out{</div>}}
+\subsection{\code{Orthanc$stream()}}{
+  Stream an HTTP response body and write to disk.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$stream(method, route, params = NULL, headers = NULL, cookies = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{method}}{HTTP method.}
+      \item{\code{route}}{HTTP route.}
+      \item{\code{params}}{Parameters for the HTTP request.}
+      \item{\code{headers}}{Headers for the HTTP request.}
+      \item{\code{cookies}}{Cookies for the HTTP request.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Serialized response of the HTTP GET request.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{method}}{HTTP method.}
-
-\item{\code{route}}{HTTP route.}
-
-\item{\code{params}}{Parameters for the HTTP request.}
-
-\item{\code{headers}}{Headers for the HTTP request.}
-
-\item{\code{cookies}}{Cookies for the HTTP request.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Serialized response of the HTTP GET request.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-print"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-print}{}}}
-\subsection{Method \code{print()}}{
-Print method for \code{Orthanc}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$print(x, ...)}\if{html}{\out{</div>}}
+\subsection{\code{Orthanc$print()}}{
+  Print method for \code{Orthanc}.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$print(x, ...)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{x}}{Object to print.}
+      \item{\code{...}}{Further arguments passed to or from other methods.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{x}}{Object to print.}
-
-\item{\code{...}}{Further arguments passed to or from other methods.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_changes"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_changes}{}}}
-\subsection{Method \code{delete_changes()}}{
-Clear changes
+\subsection{\code{Orthanc$delete_changes()}}{
+  Clear changes
 
 Clear the full history stored in the changes log
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_changes()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_changes()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_changes"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_changes}{}}}
-\subsection{Method \code{get_changes()}}{
-List changes
+\subsection{\code{Orthanc$get_changes()}}{
+  List changes
 
 Whenever Orthanc receives a new DICOM instance, this event is
 recorded in the so-called \emph{Changes Log}. This enables remote
@@ -618,19 +602,20 @@ instance to another modality. Please note that, when resources
 are deleted, their corresponding change entries are also removed
 from the Changes Log, which helps ensuring that this log does not
 grow indefinitely.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_changes(params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_changes(params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item last (number): Request only the last change id (this
 argument must be used alone)
@@ -645,32 +630,34 @@ type (only available if your DB backend supports
 ExtendedChanges). Multiple values can be provided and must
 be separated by a ';'.
 }
+  }
+  \subsection{Returns}{
+    The list of changes.
+  }
 }
 
-\subsection{Returns}{
-The list of changes.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_exports"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_exports}{}}}
-\subsection{Method \code{delete_exports()}}{
-Clear exports
+\subsection{\code{Orthanc$delete_exports()}}{
+  Clear exports
 
 Clear the full history stored in the exports log
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_exports()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_exports()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_exports"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_exports}{}}}
-\subsection{Method \code{get_exports()}}{
-List exports
+\subsection{\code{Orthanc$get_exports()}}{
+  List exports
 
 For medical traceability, Orthanc can be configured to store
 a log of all the resources that have been exported to remote
@@ -680,50 +667,52 @@ routed. You can either disable this logging by setting the option
 \code{LogExportedResources} to \code{FALSE} in the configuration file, or
 periodically clear this log by \code{DELETE}-ing this URI. This route
 might be removed in future versions of Orthanc.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_exports(params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_exports(params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item limit (number): Limit the number of results
 \item since (number): Show only the resources since the provided
 index
 }
+  }
+  \subsection{Returns}{
+    The list of exports.
+  }
 }
 
-\subsection{Returns}{
-The list of exports.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances}{}}}
-\subsection{Method \code{get_instances()}}{
-List the available instances
+\subsection{\code{Orthanc$get_instances()}}{
+  List the available instances
 
 List the Orthanc identifiers of all the available DICOM instances
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances(params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances(params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If present, retrieve detailed information
 about the individual resources, not only their Orthanc
@@ -756,92 +745,95 @@ hexadecimal format
 \item since (number): Show only the resources since the provided
 index
 }
-}
-
-\subsection{Returns}{
-List containing either the Orthanc identifiers, or
+  }
+  \subsection{Returns}{
+    List containing either the Orthanc identifiers, or
 detailed information about the reported instances (if \code{expand}
 argument is provided).
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_instances"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_instances}{}}}
-\subsection{Method \code{post_instances()}}{
-Upload DICOM instances
+\subsection{\code{Orthanc$post_instances()}}{
+  Upload DICOM instances
 
 Upload DICOM instances
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_instances(file = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{file}}{(character) Path to file for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: DICOM file to be uploaded (application/dicom)
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_instances(file = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{file}}{(character) Path to file for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: DICOM file to be uploaded (application/dicom)
 or ZIP archive containing DICOM files (new in Orthanc 1.8.2)
 (application/zip).
-}
-
-\subsection{Returns}{
-Information about the uploaded instance, or list of
+  }
+  \subsection{Returns}{
+    Information about the uploaded instance, or list of
 information for each uploaded instance in the case of ZIP
 archive.
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_instances_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_instances_id}{}}}
-\subsection{Method \code{delete_instances_id()}}{
-Delete some instance
+\subsection{\code{Orthanc$delete_instances_id()}}{
+  Delete some instance
 
 Delete the DICOM instance whose Orthanc identifier is provided in
 the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_instances_id(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_instances_id(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
+interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
-interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id}{}}}
-\subsection{Method \code{get_instances_id()}}{
-Get information about some instance
+\subsection{\code{Orthanc$get_instances_id()}}{
+  Get information about some instance
 
 Get detailed information about the DICOM instance whose Orthanc
 identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item full (boolean): If present, report the DICOM tags in full
 format (tags indexed by their hexadecimal format, associated
@@ -860,37 +852,37 @@ to 1.11.0.
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    Information about the DICOM instance.
+  }
 }
 
-\subsection{Returns}{
-Information about the DICOM instance.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_instances_id_anonymize"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_instances_id_anonymize}{}}}
-\subsection{Method \code{post_instances_id_anonymize()}}{
-Anonymize instance
+\subsection{\code{Orthanc$post_instances_id_anonymize()}}{
+  Anonymize instance
 
 Download an anonymized version of the DICOM instance
 whose Orthanc identifier is provided in the URL:
 https://orthanc.uclouvain.be/book/users/anonymization.html#anonymization-of-a-single-instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_instances_id_anonymize(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_instances_id_anonymize(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item DicomVersion (character): Version of the DICOM standard to
 be used for anonymization. Check out configuration option
@@ -931,157 +923,153 @@ using the same syntax as the \code{dcmodify} command-line tool
 instances to the provided DICOM transfer syntax:
 https://orthanc.uclouvain.be/book/faq/transcoding.html
 }
+  }
+  \subsection{Returns}{
+    The anonymized DICOM instance.
+  }
 }
 
-\subsection{Returns}{
-The anonymized DICOM instance.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_attachments"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_attachments}{}}}
-\subsection{Method \code{get_instances_id_attachments()}}{
-List attachments
+\subsection{\code{Orthanc$get_instances_id_attachments()}}{
+  List attachments
 
 Get the list of attachments that are associated with the given
 instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_attachments(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_attachments(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item full (string): If present, retrieve the attachments list and
 their numerical ids
 }
+  }
+  \subsection{Returns}{
+    List containing the names of the attachments.
+  }
 }
 
-\subsection{Returns}{
-List containing the names of the attachments.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_instances_id_attachments_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_instances_id_attachments_name}{}}}
-\subsection{Method \code{delete_instances_id_attachments_name()}}{
-Delete attachment
+\subsection{\code{Orthanc$delete_instances_id_attachments_name()}}{
+  Delete attachment
 
 Delete an attachment associated with the given DICOM instance.
 This call will fail if trying to delete a system attachment (i.e.
 whose index is < 1024).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_instances_id_attachments_name(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_instances_id_attachments_name(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-Match (string): Revision of the attachment, to check if
 its content has not changed and can be deleted. This header
 is mandatory if \code{CheckRevisions} option is \code{TRUE}.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_attachments_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_attachments_name}{}}}
-\subsection{Method \code{get_instances_id_attachments_name()}}{
-List operations on attachments
+\subsection{\code{Orthanc$get_instances_id_attachments_name()}}{
+  List operations on attachments
 
 Get the list of the operations that are available for attachments
 associated with the given instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_attachments_name(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_attachments_name(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    List of the available operations.
+  }
 }
 
-\subsection{Returns}{
-List of the available operations.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_instances_id_attachments_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_instances_id_attachments_name}{}}}
-\subsection{Method \code{put_instances_id_attachments_name()}}{
-Set attachment
+\subsection{\code{Orthanc$put_instances_id_attachments_name()}}{
+  Set attachment
 
 Attach a file to the given DICOM instance. This call will fail
 if trying to modify a system attachment (i.e. whose index is <
 1024).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_instances_id_attachments_name(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_instances_id_attachments_name(
   id,
   name,
   headers = NULL,
   data = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: Binary data containing the attachment
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: Binary data containing the attachment
 (application/octet-stream).
 
 Optional headers (\code{headers}):
@@ -1089,74 +1077,73 @@ Optional headers (\code{headers}):
 \item If-Match (string): Revision of the attachment, if this is
 not the first time this attachment is set.
 }
+  }
+  \subsection{Returns}{
+    Empty JSON object in the case of a success.
+  }
 }
 
-\subsection{Returns}{
-Empty JSON object in the case of a success.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_instances_id_attachments_name_compress"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_instances_id_attachments_name_compress}{}}}
-\subsection{Method \code{post_instances_id_attachments_name_compress()}}{
-Compress attachment
+\subsection{\code{Orthanc$post_instances_id_attachments_name_compress()}}{
+  Compress attachment
 
 Change the compression scheme that is used to store an
 attachment.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_instances_id_attachments_name_compress(id, name)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_instances_id_attachments_name_compress(id, name)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_attachments_name_compressed_data"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_attachments_name_compressed_data}{}}}
-\subsection{Method \code{get_instances_id_attachments_name_compressed_data()}}{
-Get attachment (no decompression)
+\subsection{\code{Orthanc$get_instances_id_attachments_name_compressed_data()}}{
+  Get attachment (no decompression)
 
 Get the (binary) content of one attachment associated with
 the given instance. The attachment will not be decompressed if
 \code{StorageCompression} is \code{TRUE}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_attachments_name_compressed_data(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_attachments_name_compressed_data(
   id,
   name,
   params = NULL,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Content-Range (string): Optional content range to access
 part of the attachment (new in Orthanc 1.12.5)
@@ -1169,130 +1156,126 @@ Optional query parameters (\code{params}):
 \item filename (string): Filename to set in the
 "Content-Disposition" HTTP header (including file extension)
 }
+  }
+  \subsection{Returns}{
+    The attachment.
+  }
 }
 
-\subsection{Returns}{
-The attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_attachments_name_compressed_md5"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_attachments_name_compressed_md5}{}}}
-\subsection{Method \code{get_instances_id_attachments_name_compressed_md5()}}{
-Get MD5 of attachment on disk
+\subsection{\code{Orthanc$get_instances_id_attachments_name_compressed_md5()}}{
+  Get MD5 of attachment on disk
 
 Get the MD5 hash of one attachment associated with the given
 instance, as stored on the disk. This is different from \code{.../md5}
 iff \code{EnableStorage} is \code{TRUE}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_attachments_name_compressed_md5(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_attachments_name_compressed_md5(
   id,
   name,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    The MD5 of the attachment, as stored on the disk.
+  }
 }
 
-\subsection{Returns}{
-The MD5 of the attachment, as stored on the disk.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_attachments_name_compressed_size"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_attachments_name_compressed_size}{}}}
-\subsection{Method \code{get_instances_id_attachments_name_compressed_size()}}{
-Get size of attachment on disk
+\subsection{\code{Orthanc$get_instances_id_attachments_name_compressed_size()}}{
+  Get size of attachment on disk
 
 Get the size of one attachment associated with the given
 instance, as stored on the disk. This is different from
 \code{.../size} iff \code{EnableStorage} is \code{TRUE}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_attachments_name_compressed_size(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_attachments_name_compressed_size(
   id,
   name,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    The size of the attachment, as stored on the disk.
+  }
 }
 
-\subsection{Returns}{
-The size of the attachment, as stored on the disk.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_attachments_name_data"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_attachments_name_data}{}}}
-\subsection{Method \code{get_instances_id_attachments_name_data()}}{
-Get attachment
+\subsection{\code{Orthanc$get_instances_id_attachments_name_data()}}{
+  Get attachment
 
 Get the (binary) content of one attachment associated with the
 given instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_attachments_name_data(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_attachments_name_data(
   id,
   name,
   params = NULL,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Content-Range (string): Optional content range to access
 part of the attachment (new in Orthanc 1.12.5)
@@ -1305,256 +1288,255 @@ Optional query parameters (\code{params}):
 \item filename (string): Filename to set in the
 "Content-Disposition" HTTP header (including file extension)
 }
+  }
+  \subsection{Returns}{
+    The attachment.
+  }
 }
 
-\subsection{Returns}{
-The attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_attachments_name_info"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_attachments_name_info}{}}}
-\subsection{Method \code{get_instances_id_attachments_name_info()}}{
-Get info about the attachment
+\subsection{\code{Orthanc$get_instances_id_attachments_name_info()}}{
+  Get info about the attachment
 
 Get all the information about the attachment associated with the
 given instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_attachments_name_info(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_attachments_name_info(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    JSON object containing the information about the
+attachment.
+  }
 }
 
-\subsection{Returns}{
-JSON object containing the information about the
-attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_attachments_name_is_compressed"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_attachments_name_is_compressed}{}}}
-\subsection{Method \code{get_instances_id_attachments_name_is_compressed()}}{
-Is attachment compressed?
+\subsection{\code{Orthanc$get_instances_id_attachments_name_is_compressed()}}{
+  Is attachment compressed?
 
 Test whether the attachment has been stored as a compressed file
 on the disk.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_attachments_name_is_compressed(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_attachments_name_is_compressed(
   id,
   name,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    \code{0} if the attachment was stored uncompressed, \code{1} if it
+was compressed.
+  }
 }
 
-\subsection{Returns}{
-\code{0} if the attachment was stored uncompressed, \code{1} if it
-was compressed.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_attachments_name_md5"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_attachments_name_md5}{}}}
-\subsection{Method \code{get_instances_id_attachments_name_md5()}}{
-Get MD5 of attachment
+\subsection{\code{Orthanc$get_instances_id_attachments_name_md5()}}{
+  Get MD5 of attachment
 
 Get the MD5 hash of one attachment associated with the given
 instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_attachments_name_md5(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_attachments_name_md5(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    The MD5 of the attachment.
+  }
 }
 
-\subsection{Returns}{
-The MD5 of the attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_attachments_name_size"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_attachments_name_size}{}}}
-\subsection{Method \code{get_instances_id_attachments_name_size()}}{
-Get size of attachment
+\subsection{\code{Orthanc$get_instances_id_attachments_name_size()}}{
+  Get size of attachment
 
 Get the size of one attachment associated with the given instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_attachments_name_size(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_attachments_name_size(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    The size of the attachment.
+  }
 }
 
-\subsection{Returns}{
-The size of the attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_instances_id_attachments_name_uncompress"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_instances_id_attachments_name_uncompress}{}}}
-\subsection{Method \code{post_instances_id_attachments_name_uncompress()}}{
-Uncompress attachment
+\subsection{\code{Orthanc$post_instances_id_attachments_name_uncompress()}}{
+  Uncompress attachment
 
 Change the compression scheme that is used to store an
 attachment.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_instances_id_attachments_name_uncompress(id, name)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_instances_id_attachments_name_uncompress(id, name)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_instances_id_attachments_name_verify_md5"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_instances_id_attachments_name_verify_md5}{}}}
-\subsection{Method \code{post_instances_id_attachments_name_verify_md5()}}{
-Verify attachment
+\subsection{\code{Orthanc$post_instances_id_attachments_name_verify_md5()}}{
+  Verify attachment
 
 Verify that the attachment is not corrupted, by validating its
 MD5 hash
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_instances_id_attachments_name_verify_md5(id, name)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_instances_id_attachments_name_verify_md5(id, name)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    On success, a valid JSON object is returned.
+  }
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-On success, a valid JSON object is returned.
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_content_path"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_content_path}{}}}
-\subsection{Method \code{get_instances_id_content_path()}}{
-Get raw tag
+\subsection{\code{Orthanc$get_instances_id_content_path()}}{
+  Get raw tag
 
 Get the raw content of one DICOM tag in the hierarchy of DICOM
 dataset
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_content_path(id, path)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_content_path(id, path)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
 interest.}
-
-\item{\code{path}}{(character) Path to the DICOM tag. This is the
+      \item{\code{path}}{(character) Path to the DICOM tag. This is the
 interleaving of one DICOM tag, possibly followed by an index
 for sequences. Sequences are accessible as, for instance,
 \verb{/0008-1140/1/0008-1150}.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The raw value of the tag of intereset (binary data, whose
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The raw value of the tag of intereset (binary data, whose
 memory layout depends on the underlying transfer syntax), or
 List containing the list of available tags if accessing a
 dataset.
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_instances_id_export"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_instances_id_export}{}}}
-\subsection{Method \code{post_instances_id_export()}}{
-Write DICOM onto filesystem
+\subsection{\code{Orthanc$post_instances_id_export()}}{
+  Write DICOM onto filesystem
 
 Write the DICOM file onto the filesystem where Orthanc is
 running. This is insecure for Orthanc servers that are remotely
@@ -1562,53 +1544,52 @@ accessible since one could overwrite any system file. Since
 Orthanc 1.12.0, this route is disabled by default, but can be
 enabled using the \code{RestApiWriteToFileSystemEnabled} configuration
 option.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_instances_id_export(id, data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_instances_id_export(id, data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
 interest.}
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: Target path on the filesystem (text/plain).
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
+}
 
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: Target path on the filesystem (text/plain).
-}
-
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_file"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_file}{}}}
-\subsection{Method \code{get_instances_id_file()}}{
-Download DICOM
+\subsection{\code{Orthanc$get_instances_id_file()}}{
+  Download DICOM
 
 Download one DICOM instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_file(id, params = NULL, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_file(id, params = NULL, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Accept (string): This HTTP header can be set to retrieve the
 DICOM instance in DICOMweb format
@@ -1627,96 +1608,97 @@ v1.12.7)
 will be transcoded to the provided transfer syntax:
 https://orthanc.uclouvain.be/book/faq/transcoding.html
 }
+  }
+  \subsection{Returns}{
+    The DICOM instance.
+  }
 }
 
-\subsection{Returns}{
-The DICOM instance.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_frames"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_frames}{}}}
-\subsection{Method \code{get_instances_id_frames()}}{
-List available frames
+\subsection{\code{Orthanc$get_instances_id_frames()}}{
+  List available frames
 
 List the frames that are available in the DICOM instance of
 interest
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_frames(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_frames(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The list of the indices of the available frames.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
-interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The list of the indices of the available frames.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_frames_frame"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_frames_frame}{}}}
-\subsection{Method \code{get_instances_id_frames_frame()}}{
-List operations
+\subsection{\code{Orthanc$get_instances_id_frames_frame()}}{
+  List operations
 
 List the available operations under URI
 \verb{/instances/\{id\}/frames/\{frame\}/}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_frames_frame(id, frame)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_frames_frame(id, frame)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) .}
+      \item{\code{frame}}{(character) .}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    List of the available operations.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) .}
-
-\item{\code{frame}}{(character) .}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-List of the available operations.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_frames_frame_image_int16"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_frames_frame_image_int16}{}}}
-\subsection{Method \code{get_instances_id_frames_frame_image_int16()}}{
-Decode a frame (int16)
+\subsection{\code{Orthanc$get_instances_id_frames_frame_image_int16()}}{
+  Decode a frame (int16)
 
 Decode one frame of interest from the given DICOM instance.
 Pixels of grayscale images are truncated to the [-32768,32767]
 range. Negative values must be interpreted according to two's
 complement.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_frames_frame_image_int16(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_frames_frame_image_int16(
   id,
   frame,
   params = NULL,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
 interest.}
-
-\item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Accept (string): Format of the resulting image.
 Can be \code{image/png} (default), \code{image/jpeg} or
@@ -1732,45 +1714,43 @@ placeholder image if unable to provide the image instead
 of returning a 415 HTTP error (value is true if option is
 present)
 }
+  }
+  \subsection{Returns}{
+    JPEG image.
+  }
 }
 
-\subsection{Returns}{
-JPEG image.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_frames_frame_image_uint16"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_frames_frame_image_uint16}{}}}
-\subsection{Method \code{get_instances_id_frames_frame_image_uint16()}}{
-Decode a frame (uint16)
+\subsection{\code{Orthanc$get_instances_id_frames_frame_image_uint16()}}{
+  Decode a frame (uint16)
 
 Decode one frame of interest from the given DICOM instance.
 Pixels of grayscale images are truncated to the [0,65535] range.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_frames_frame_image_uint16(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_frames_frame_image_uint16(
   id,
   frame,
   params = NULL,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
 interest.}
-
-\item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Accept (string): Format of the resulting image.
 Can be \code{image/png} (default), \code{image/jpeg} or
@@ -1786,45 +1766,43 @@ placeholder image if unable to provide the image instead
 of returning a 415 HTTP error (value is true if option is
 present)
 }
+  }
+  \subsection{Returns}{
+    JPEG image.
+  }
 }
 
-\subsection{Returns}{
-JPEG image.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_frames_frame_image_uint8"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_frames_frame_image_uint8}{}}}
-\subsection{Method \code{get_instances_id_frames_frame_image_uint8()}}{
-Decode a frame (uint8)
+\subsection{\code{Orthanc$get_instances_id_frames_frame_image_uint8()}}{
+  Decode a frame (uint8)
 
 Decode one frame of interest from the given DICOM instance.
 Pixels of grayscale images are truncated to the [0,255] range.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_frames_frame_image_uint8(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_frames_frame_image_uint8(
   id,
   frame,
   params = NULL,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
 interest.}
-
-\item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Accept (string): Format of the resulting image.
 Can be \code{image/png} (default), \code{image/jpeg} or
@@ -1840,112 +1818,110 @@ placeholder image if unable to provide the image instead
 of returning a 415 HTTP error (value is true if option is
 present)
 }
+  }
+  \subsection{Returns}{
+    JPEG image.
+  }
 }
 
-\subsection{Returns}{
-JPEG image.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_frames_frame_matlab"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_frames_frame_matlab}{}}}
-\subsection{Method \code{get_instances_id_frames_frame_matlab()}}{
-Decode frame for Matlab
+\subsection{\code{Orthanc$get_instances_id_frames_frame_matlab()}}{
+  Decode frame for Matlab
 
 Decode one frame of interest from the given DICOM instance, and
 export this frame as a Octave/Matlab matrix to be imported with
 \code{eval()}: https://orthanc.uclouvain.be/book/faq/matlab.html
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_frames_frame_matlab(id, frame)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_frames_frame_matlab(id, frame)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
 interest.}
+      \item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Octave/Matlab matrix.
+  }
+}
 
-\item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Octave/Matlab matrix.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_frames_frame_numpy"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_frames_frame_numpy}{}}}
-\subsection{Method \code{get_instances_id_frames_frame_numpy()}}{
-Decode frame for numpy
+\subsection{\code{Orthanc$get_instances_id_frames_frame_numpy()}}{
+  Decode frame for numpy
 
 Decode one frame of interest from the given DICOM instance,
 for use with numpy in Python. The numpy array has 3 dimensions:
 (height, width, color channel).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_frames_frame_numpy(id, frame, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM resource of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_frames_frame_numpy(id, frame, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM resource of
 interest.}
-
-\item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item compress (boolean): Compress the file as \code{.npz}
 \item rescale (boolean): On grayscale images, apply the rescaling
 and return floating-point values
 }
+  }
+  \subsection{Returns}{
+    Numpy file:
+https://numpy.org/devdocs/reference/generated/numpy.lib.format.html.
+  }
 }
 
-\subsection{Returns}{
-Numpy file:
-https://numpy.org/devdocs/reference/generated/numpy.lib.format.html.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_frames_frame_preview"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_frames_frame_preview}{}}}
-\subsection{Method \code{get_instances_id_frames_frame_preview()}}{
-Decode a frame (preview)
+\subsection{\code{Orthanc$get_instances_id_frames_frame_preview()}}{
+  Decode a frame (preview)
 
 Decode one frame of interest from the given DICOM instance. The
 full dynamic range of grayscale images is rescaled to the [0,255]
 range.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_frames_frame_preview(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_frames_frame_preview(
   id,
   frame,
   params = NULL,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
 interest.}
-
-\item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Accept (string): Format of the resulting image.
 Can be \code{image/png} (default), \code{image/jpeg} or
@@ -1961,73 +1937,75 @@ placeholder image if unable to provide the image instead
 of returning a 415 HTTP error (value is true if option is
 present)
 }
+  }
+  \subsection{Returns}{
+    JPEG image.
+  }
 }
 
-\subsection{Returns}{
-JPEG image.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_frames_frame_raw"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_frames_frame_raw}{}}}
-\subsection{Method \code{get_instances_id_frames_frame_raw()}}{
-Access raw frame
+\subsection{\code{Orthanc$get_instances_id_frames_frame_raw()}}{
+  Access raw frame
 
 Access the raw content of one individual frame of the DICOM
 instance of interest, bypassing image decoding. This is notably
 useful to access the source files in compressed transfer
 syntaxes.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_frames_frame_raw(id, frame)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_frames_frame_raw(id, frame)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
+      \item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The raw frame.
+  }
+}
 
-\item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The raw frame.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_frames_frame_raw.gz"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_frames_frame_raw.gz}{}}}
-\subsection{Method \code{get_instances_id_frames_frame_raw.gz()}}{
-Access raw frame (compressed)
+\subsection{\code{Orthanc$get_instances_id_frames_frame_raw.gz()}}{
+  Access raw frame (compressed)
 
 Access the raw content of one individual frame of the DICOM
 instance of interest, bypassing image decoding. This is notably
 useful to access the source files in compressed transfer
 syntaxes. The image is compressed using gzip
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_frames_frame_raw.gz(id, frame)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_frames_frame_raw.gz(id, frame)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
+      \item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The raw frame, compressed using gzip.
+  }
+}
 
-\item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The raw frame, compressed using gzip.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_frames_frame_rendered"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_frames_frame_rendered}{}}}
-\subsection{Method \code{get_instances_id_frames_frame_rendered()}}{
-Render a frame
+\subsection{\code{Orthanc$get_instances_id_frames_frame_rendered()}}{
+  Render a frame
 
 Render one frame of interest from the given DICOM instance.
 This function takes scaling into account (\code{RescaleSlope} and
@@ -2035,31 +2013,29 @@ This function takes scaling into account (\code{RescaleSlope} and
 in the DICOM file (\code{WindowCenter} and \code{WindowWidth}tags), and
 can be used to resize the resulting image. Color images are not
 affected by windowing.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_frames_frame_rendered(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_frames_frame_rendered(
   id,
   frame,
   params = NULL,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
 interest.}
-
-\item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{frame}}{(numeric) Index of the frame (starts at \code{0}).}
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Accept (string): Format of the resulting image.
 Can be \code{image/png} (default), \code{image/jpeg} or
@@ -2080,78 +2056,77 @@ present)
 \item window-center (number): Windowing center
 \item window-width (number): Windowing width
 }
+  }
+  \subsection{Returns}{
+    JPEG image.
+  }
 }
 
-\subsection{Returns}{
-JPEG image.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_header"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_header}{}}}
-\subsection{Method \code{get_instances_id_header()}}{
-Get DICOM meta-header
+\subsection{\code{Orthanc$get_instances_id_header()}}{
+  Get DICOM meta-header
 
 Get the DICOM tags in the meta-header of the DICOM instance. By
 default, the \code{full} format is used, which combines hexadecimal
 tags with human-readable description.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_header(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_header(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 \item simplify (boolean): If present, report the DICOM tags in
 human-readable format (using the symbolic name of the tags)
 }
+  }
+  \subsection{Returns}{
+    JSON object containing the DICOM tags and their
+associated value.
+  }
 }
 
-\subsection{Returns}{
-JSON object containing the DICOM tags and their
-associated value.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_image_int16"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_image_int16}{}}}
-\subsection{Method \code{get_instances_id_image_int16()}}{
-Decode an image (int16)
+\subsection{\code{Orthanc$get_instances_id_image_int16()}}{
+  Decode an image (int16)
 
 Decode the first frame of the given DICOM instance. Pixels
 of grayscale images are truncated to the [-32768,32767]
 range. Negative values must be interpreted according to two's
 complement.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_image_int16(id, params = NULL, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_image_int16(id, params = NULL, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Accept (string): Format of the resulting image.
 Can be \code{image/png} (default), \code{image/jpeg} or
@@ -2167,38 +2142,37 @@ placeholder image if unable to provide the image instead
 of returning a 415 HTTP error (value is true if option is
 present)
 }
+  }
+  \subsection{Returns}{
+    JPEG image.
+  }
 }
 
-\subsection{Returns}{
-JPEG image.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_image_uint16"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_image_uint16}{}}}
-\subsection{Method \code{get_instances_id_image_uint16()}}{
-Decode an image (uint16)
+\subsection{\code{Orthanc$get_instances_id_image_uint16()}}{
+  Decode an image (uint16)
 
 Decode the first frame of the given DICOM instance. Pixels of
 grayscale images are truncated to the [0,65535] range.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_image_uint16(id, params = NULL, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_image_uint16(id, params = NULL, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Accept (string): Format of the resulting image.
 Can be \code{image/png} (default), \code{image/jpeg} or
@@ -2214,38 +2188,37 @@ placeholder image if unable to provide the image instead
 of returning a 415 HTTP error (value is true if option is
 present)
 }
+  }
+  \subsection{Returns}{
+    JPEG image.
+  }
 }
 
-\subsection{Returns}{
-JPEG image.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_image_uint8"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_image_uint8}{}}}
-\subsection{Method \code{get_instances_id_image_uint8()}}{
-Decode an image (uint8)
+\subsection{\code{Orthanc$get_instances_id_image_uint8()}}{
+  Decode an image (uint8)
 
 Decode the first frame of the given DICOM instance. Pixels of
 grayscale images are truncated to the [0,255] range.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_image_uint8(id, params = NULL, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_image_uint8(id, params = NULL, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Accept (string): Format of the resulting image.
 Can be \code{image/png} (default), \code{image/jpeg} or
@@ -2261,318 +2234,321 @@ placeholder image if unable to provide the image instead
 of returning a 415 HTTP error (value is true if option is
 present)
 }
+  }
+  \subsection{Returns}{
+    JPEG image.
+  }
 }
 
-\subsection{Returns}{
-JPEG image.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_labels"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_labels}{}}}
-\subsection{Method \code{get_instances_id_labels()}}{
-List labels
+\subsection{\code{Orthanc$get_instances_id_labels()}}{
+  List labels
 
 Get the labels that are associated with the given instance (new
 in Orthanc 1.12.0)
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_labels(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_labels(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
+interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    List containing the names of the labels.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
-interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-List containing the names of the labels.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_instances_id_labels_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_instances_id_labels_label}{}}}
-\subsection{Method \code{delete_instances_id_labels_label()}}{
-Remove label
+\subsection{\code{Orthanc$delete_instances_id_labels_label()}}{
+  Remove label
 
 Remove a label associated with a instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_instances_id_labels_label(id, label)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_instances_id_labels_label(id, label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
+      \item{\code{label}}{(character) The label to be removed.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
+}
 
-\item{\code{label}}{(character) The label to be removed.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_labels_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_labels_label}{}}}
-\subsection{Method \code{get_instances_id_labels_label()}}{
-Test label
+\subsection{\code{Orthanc$get_instances_id_labels_label()}}{
+  Test label
 
 Test whether the instance is associated with the given label
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_labels_label(id, label)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_labels_label(id, label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{label}}{(character) The label of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Empty string is returned in the case of presence, error
+      \item{\code{label}}{(character) The label of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Empty string is returned in the case of presence, error
 404 in the case of absence.
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_instances_id_labels_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_instances_id_labels_label}{}}}
-\subsection{Method \code{put_instances_id_labels_label()}}{
-Add label
+\subsection{\code{Orthanc$put_instances_id_labels_label()}}{
+  Add label
 
 Associate a label with a instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_instances_id_labels_label(id, label)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_instances_id_labels_label(id, label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
+      \item{\code{label}}{(character) The label to be added.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
+}
 
-\item{\code{label}}{(character) The label to be added.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_matlab"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_matlab}{}}}
-\subsection{Method \code{get_instances_id_matlab()}}{
-Decode frame for Matlab
+\subsection{\code{Orthanc$get_instances_id_matlab()}}{
+  Decode frame for Matlab
 
 Decode the first frame of the given DICOM instance., and
 export this frame as a Octave/Matlab matrix to be imported with
 \code{eval()}: https://orthanc.uclouvain.be/book/faq/matlab.html
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_matlab(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_matlab(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Octave/Matlab matrix.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
-interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Octave/Matlab matrix.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_metadata"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_metadata}{}}}
-\subsection{Method \code{get_instances_id_metadata()}}{
-List metadata
+\subsection{\code{Orthanc$get_instances_id_metadata()}}{
+  List metadata
 
 Get the list of metadata that are associated with the given
 instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_metadata(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_metadata(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If present, also retrieve the value of the
 individual metadata
 \item numeric (string): If present, use the numeric identifier of
 the metadata instead of its symbolic name
 }
-}
-
-\subsection{Returns}{
-List containing the names of the available
+  }
+  \subsection{Returns}{
+    List containing the names of the available
 metadata, or List mapping metadata to their
 values (if \code{expand} argument is provided).
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_instances_id_metadata_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_instances_id_metadata_name}{}}}
-\subsection{Method \code{delete_instances_id_metadata_name()}}{
-Delete metadata
+\subsection{\code{Orthanc$delete_instances_id_metadata_name()}}{
+  Delete metadata
 
 Delete some metadata associated with the given DICOM instance.
 This call will fail if trying to delete a system metadata (i.e.
 whose index is < 1024).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_instances_id_metadata_name(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_instances_id_metadata_name(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{name}}{(character) The name of the metadata, or its index
+      \item{\code{name}}{(character) The name of the metadata, or its index
 (cf. \code{UserMetadata} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-Match (string): Revision of the metadata, to check if its
 content has not changed and can be deleted. This header is
 mandatory if \code{CheckRevisions} option is \code{TRUE}.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_metadata_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_metadata_name}{}}}
-\subsection{Method \code{get_instances_id_metadata_name()}}{
-Get metadata
+\subsection{\code{Orthanc$get_instances_id_metadata_name()}}{
+  Get metadata
 
 Get the value of a metadata that is associated with the given
 instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_metadata_name(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_metadata_name(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{name}}{(character) The name of the metadata, or its index
+      \item{\code{name}}{(character) The name of the metadata, or its index
 (cf. \code{UserMetadata} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the metadata,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    Value of the metadata.
+  }
 }
 
-\subsection{Returns}{
-Value of the metadata.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_instances_id_metadata_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_instances_id_metadata_name}{}}}
-\subsection{Method \code{put_instances_id_metadata_name()}}{
-Set metadata
+\subsection{\code{Orthanc$put_instances_id_metadata_name()}}{
+  Set metadata
 
 Set the value of some metadata in the given DICOM instance. This
 call will fail if trying to modify a system metadata (i.e. whose
 index is < 1024).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_instances_id_metadata_name(id, name, headers = NULL, data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_instances_id_metadata_name(id, name, headers = NULL, data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{name}}{(character) The name of the metadata, or its index
+      \item{\code{name}}{(character) The name of the metadata, or its index
 (cf. \code{UserMetadata} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: String value of the metadata (text/plain).
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: String value of the metadata (text/plain).
 
 Optional headers (\code{headers}):
 \itemize{
 \item If-Match (string): Revision of the metadata, if this is not
 the first time this metadata is set.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_instances_id_modify"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_instances_id_modify}{}}}
-\subsection{Method \code{post_instances_id_modify()}}{
-Modify instance
+\subsection{\code{Orthanc$post_instances_id_modify()}}{
+  Modify instance
 
 Download a modified version of the DICOM instance
 whose Orthanc identifier is provided in the URL:
 https://orthanc.uclouvain.be/book/users/anonymization.html#modification-of-a-single-instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_instances_id_modify(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_instances_id_modify(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Force (logical): Allow the modification of tags related to
 DICOM identifiers, at the risk of breaking the DICOM model
@@ -2608,36 +2584,36 @@ using the same syntax as the \code{dcmodify} command-line tool
 instances to the provided DICOM transfer syntax:
 https://orthanc.uclouvain.be/book/faq/transcoding.html
 }
+  }
+  \subsection{Returns}{
+    The modified DICOM instance.
+  }
 }
 
-\subsection{Returns}{
-The modified DICOM instance.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_module"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_module}{}}}
-\subsection{Method \code{get_instances_id_module()}}{
-Get instance module
+\subsection{\code{Orthanc$get_instances_id_module()}}{
+  Get instance module
 
 Get the instance module of the DICOM instance whose Orthanc
 identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_module(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_module(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item ignore-length (array): Also include the DICOM tags that are
 provided in this list, even if their associated value is
@@ -2647,73 +2623,73 @@ hexadecimal format
 \item simplify (boolean): If present, report the DICOM tags in
 human-readable format (using the symbolic name of the tags)
 }
+  }
+  \subsection{Returns}{
+    Information about the DICOM instance.
+  }
 }
 
-\subsection{Returns}{
-Information about the DICOM instance.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_numpy"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_numpy}{}}}
-\subsection{Method \code{get_instances_id_numpy()}}{
-Decode instance for numpy
+\subsection{\code{Orthanc$get_instances_id_numpy()}}{
+  Decode instance for numpy
 
 Decode the given DICOM instance, for use with numpy in Python.
 The numpy array has 4 dimensions: (frame, height, width, color
 channel).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_numpy(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM resource of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_numpy(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM resource of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item compress (boolean): Compress the file as \code{.npz}
 \item rescale (boolean): On grayscale images, apply the rescaling
 and return floating-point values
 }
+  }
+  \subsection{Returns}{
+    Numpy file:
+https://numpy.org/devdocs/reference/generated/numpy.lib.format.html.
+  }
 }
 
-\subsection{Returns}{
-Numpy file:
-https://numpy.org/devdocs/reference/generated/numpy.lib.format.html.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_patient"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_patient}{}}}
-\subsection{Method \code{get_instances_id_patient()}}{
-Get parent patient
+\subsection{\code{Orthanc$get_instances_id_patient()}}{
+  Get parent patient
 
 Get detailed information about the parent patient of the DICOM
 instance whose Orthanc identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_patient(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_patient(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item full (boolean): If present, report the DICOM tags in full
 format (tags indexed by their hexadecimal format, associated
@@ -2732,65 +2708,66 @@ to 1.11.0.
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    Information about the parent DICOM patient.
+  }
 }
 
-\subsection{Returns}{
-Information about the parent DICOM patient.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_pdf"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_pdf}{}}}
-\subsection{Method \code{get_instances_id_pdf()}}{
-Get embedded PDF
+\subsection{\code{Orthanc$get_instances_id_pdf()}}{
+  Get embedded PDF
 
 Get the PDF file that is embedded in one DICOM instance. If the
 DICOM instance doesn't contain the \code{EncapsulatedDocument} tag or
 if the \code{MIMETypeOfEncapsulatedDocument} tag doesn't correspond to
 the PDF type, a \code{404} HTTP error is raised.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_pdf(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_pdf(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance
+interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    PDF file.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance
-interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-PDF file.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_preview"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_preview}{}}}
-\subsection{Method \code{get_instances_id_preview()}}{
-Decode an image (preview)
+\subsection{\code{Orthanc$get_instances_id_preview()}}{
+  Decode an image (preview)
 
 Decode the first frame of the given DICOM instance. The full
 dynamic range of grayscale images is rescaled to the [0,255]
 range.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_preview(id, params = NULL, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_preview(id, params = NULL, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Accept (string): Format of the resulting image.
 Can be \code{image/png} (default), \code{image/jpeg} or
@@ -2806,17 +2783,17 @@ placeholder image if unable to provide the image instead
 of returning a 415 HTTP error (value is true if option is
 present)
 }
+  }
+  \subsection{Returns}{
+    JPEG image.
+  }
 }
 
-\subsection{Returns}{
-JPEG image.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_instances_id_reconstruct"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_instances_id_reconstruct}{}}}
-\subsection{Method \code{post_instances_id_reconstruct()}}{
-Reconstruct tags & optionally files of instance
+\subsection{\code{Orthanc$post_instances_id_reconstruct()}}{
+  Reconstruct tags & optionally files of instance
 
 Reconstruct the main DICOM tags in DB of the instance whose
 Orthanc identifier is provided in the URL. This is useful
@@ -2826,22 +2803,22 @@ value from the resource of interest. Beware that this is a
 time-consuming operation, as all the children DICOM instances
 will be parsed again, and the Orthanc index will be updated
 accordingly.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_instances_id_reconstruct(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_instances_id_reconstruct(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item LimitToThisLevelMainDicomTags (logical): Only reconstruct
 this level MainDicomTags by re-reading them from a random
@@ -2855,41 +2832,40 @@ files of the resources (e.g: apply IngestTranscoding,
 StorageCompression). 'false' by default. (New in Orthanc
 1.11.0)
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_rendered"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_rendered}{}}}
-\subsection{Method \code{get_instances_id_rendered()}}{
-Render an image
+\subsection{\code{Orthanc$get_instances_id_rendered()}}{
+  Render an image
 
 Render the first frame of the given DICOM instance. This function
 takes scaling into account (\code{RescaleSlope} and \code{RescaleIntercept}
 tags), as well as the default windowing stored in the DICOM file
 (\code{WindowCenter} and \code{WindowWidth}tags), and can be used to resize
 the resulting image. Color images are not affected by windowing.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_rendered(id, params = NULL, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_rendered(id, params = NULL, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Accept (string): Format of the resulting image.
 Can be \code{image/png} (default), \code{image/jpeg} or
@@ -2910,36 +2886,36 @@ present)
 \item window-center (number): Windowing center
 \item window-width (number): Windowing width
 }
+  }
+  \subsection{Returns}{
+    JPEG image.
+  }
 }
 
-\subsection{Returns}{
-JPEG image.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_series"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_series}{}}}
-\subsection{Method \code{get_instances_id_series()}}{
-Get parent series
+\subsection{\code{Orthanc$get_instances_id_series()}}{
+  Get parent series
 
 Get detailed information about the parent series of the DICOM
 instance whose Orthanc identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_series(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_series(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item full (boolean): If present, report the DICOM tags in full
 format (tags indexed by their hexadecimal format, associated
@@ -2958,36 +2934,36 @@ to 1.11.0.
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    Information about the parent DICOM series.
+  }
 }
 
-\subsection{Returns}{
-Information about the parent DICOM series.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_simplified_tags"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_simplified_tags}{}}}
-\subsection{Method \code{get_instances_id_simplified_tags()}}{
-Get human-readable tags
+\subsection{\code{Orthanc$get_instances_id_simplified_tags()}}{
+  Get human-readable tags
 
 Get the DICOM tags in human-readable format (same as the
 \verb{/instances/\{id\}/tags?simplify} route)
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_simplified_tags(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_simplified_tags(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item ignore-length (array): Also include the DICOM tags that are
 provided in this list, even if their associated value is
@@ -2999,60 +2975,62 @@ pixel data tag (7fe0,0010) to optimize access to storage.
 Setting the option to "true" provides access to the DICOM
 tags stored after the pixel data tag.
 }
+  }
+  \subsection{Returns}{
+    JSON object containing the DICOM tags and their
+associated value.
+  }
 }
 
-\subsection{Returns}{
-JSON object containing the DICOM tags and their
-associated value.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_statistics"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_statistics}{}}}
-\subsection{Method \code{get_instances_id_statistics()}}{
-Get instance statistics
+\subsection{\code{Orthanc$get_instances_id_statistics()}}{
+  Get instance statistics
 
 Get statistics about the given instance
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_statistics(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_statistics(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
+interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
-interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_study"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_study}{}}}
-\subsection{Method \code{get_instances_id_study()}}{
-Get parent study
+\subsection{\code{Orthanc$get_instances_id_study()}}{
+  Get parent study
 
 Get detailed information about the parent study of the DICOM
 instance whose Orthanc identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_study(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_study(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the instance of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item full (boolean): If present, report the DICOM tags in full
 format (tags indexed by their hexadecimal format, associated
@@ -3071,37 +3049,37 @@ to 1.11.0.
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    Information about the parent DICOM study.
+  }
 }
 
-\subsection{Returns}{
-Information about the parent DICOM study.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_instances_id_tags"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_instances_id_tags}{}}}
-\subsection{Method \code{get_instances_id_tags()}}{
-Get DICOM tags
+\subsection{\code{Orthanc$get_instances_id_tags()}}{
+  Get DICOM tags
 
 Get the DICOM tags in the specified format. By default, the
 \code{full} format is used, which combines hexadecimal tags with
 human-readable description.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_instances_id_tags(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_instances_id_tags(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM instance of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item ignore-length (array): Also include the DICOM tags that are
 provided in this list, even if their associated value is
@@ -3117,354 +3095,374 @@ pixel data tag (7fe0,0010) to optimize access to storage.
 Setting the option to "true" provides access to the DICOM
 tags stored after the pixel data tag.
 }
+  }
+  \subsection{Returns}{
+    JSON object containing the DICOM tags and their
+associated value.
+  }
 }
 
-\subsection{Returns}{
-JSON object containing the DICOM tags and their
-associated value.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_jobs"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_jobs}{}}}
-\subsection{Method \code{get_jobs()}}{
-List jobs
+\subsection{\code{Orthanc$get_jobs()}}{
+  List jobs
 
 List all the available jobs
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_jobs(params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_jobs(params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If present, retrieve detailed information
 about the individual jobs
 }
-}
-
-\subsection{Returns}{
-List containing either the jobs identifiers, or
+  }
+  \subsection{Returns}{
+    List containing either the jobs identifiers, or
 detailed information about the reported jobs (if \code{expand}
 argument is provided).
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_jobs_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_jobs_id}{}}}
-\subsection{Method \code{delete_jobs_id()}}{
-Delete a job from history
+\subsection{\code{Orthanc$delete_jobs_id()}}{
+  Delete a job from history
 
 Delete the job from the jobs history. Only a completed job can
 be deleted. If the job has not run or not completed yet, you
 must cancel it first. If the job has outputs, all outputs will be
 deleted as well.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_jobs_id(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_jobs_id(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the job of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the job of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_jobs_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_jobs_id}{}}}
-\subsection{Method \code{get_jobs_id()}}{
-Get job
+\subsection{\code{Orthanc$get_jobs_id()}}{
+  Get job
 
 Retrieve detailed information about the job
 whose identifier is provided in the URL:
 https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_jobs_id(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_jobs_id(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the job of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    JSON object detailing the job.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the job of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-JSON object detailing the job.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_jobs_id_cancel"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_jobs_id_cancel}{}}}
-\subsection{Method \code{post_jobs_id_cancel()}}{
-Cancel job
+\subsection{\code{Orthanc$post_jobs_id_cancel()}}{
+  Cancel job
 
 Cancel the job whose identifier is provided in the
 URL. Check out the Orthanc Book for more information
 about the state machine applicable to jobs:
 https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_jobs_id_cancel(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_jobs_id_cancel(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the job of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Empty JSON object in the case of a success.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the job of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Empty JSON object in the case of a success.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_jobs_id_pause"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_jobs_id_pause}{}}}
-\subsection{Method \code{post_jobs_id_pause()}}{
-Pause job
+\subsection{\code{Orthanc$post_jobs_id_pause()}}{
+  Pause job
 
 Pause the job whose identifier is provided in the
 URL. Check out the Orthanc Book for more information
 about the state machine applicable to jobs:
 https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_jobs_id_pause(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_jobs_id_pause(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the job of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Empty JSON object in the case of a success.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the job of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Empty JSON object in the case of a success.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_jobs_id_resubmit"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_jobs_id_resubmit}{}}}
-\subsection{Method \code{post_jobs_id_resubmit()}}{
-Resubmit job
+\subsection{\code{Orthanc$post_jobs_id_resubmit()}}{
+  Resubmit job
 
 Resubmit the job whose identifier is provided in the
 URL. Check out the Orthanc Book for more information
 about the state machine applicable to jobs:
 https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_jobs_id_resubmit(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_jobs_id_resubmit(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the job of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Empty JSON object in the case of a success.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the job of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Empty JSON object in the case of a success.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_jobs_id_resume"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_jobs_id_resume}{}}}
-\subsection{Method \code{post_jobs_id_resume()}}{
-Resume job
+\subsection{\code{Orthanc$post_jobs_id_resume()}}{
+  Resume job
 
 Resume the job whose identifier is provided in the
 URL. Check out the Orthanc Book for more information
 about the state machine applicable to jobs:
 https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_jobs_id_resume(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_jobs_id_resume(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the job of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Empty JSON object in the case of a success.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the job of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Empty JSON object in the case of a success.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_jobs_id_key"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_jobs_id_key}{}}}
-\subsection{Method \code{delete_jobs_id_key()}}{
-Delete a job output
+\subsection{\code{Orthanc$delete_jobs_id_key()}}{
+  Delete a job output
 
 Delete the output produced by a job. As of Orthanc 1.12.1, only
 the jobs that generate a DICOMDIR media or a ZIP archive provide
 such an output (with \code{key} equals to \code{archive}).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_jobs_id_key(id, key)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_jobs_id_key(id, key)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the job of interest.}
+      \item{\code{key}}{(character) Name of the output of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the job of interest.}
-
-\item{\code{key}}{(character) Name of the output of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_jobs_id_key"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_jobs_id_key}{}}}
-\subsection{Method \code{get_jobs_id_key()}}{
-Get job output
+\subsection{\code{Orthanc$get_jobs_id_key()}}{
+  Get job output
 
 Retrieve some output produced by a job. As of Orthanc 1.8.2, only
 the jobs that generate a DICOMDIR media or a ZIP archive provide
 such an output (with \code{key} equals to \code{archive}).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_jobs_id_key(id, key)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_jobs_id_key(id, key)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the job of interest.}
+      \item{\code{key}}{(character) Name of the output of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Content of the output of the job.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the job of interest.}
-
-\item{\code{key}}{(character) Name of the output of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Content of the output of the job.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_modalities"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_modalities}{}}}
-\subsection{Method \code{get_modalities()}}{
-List DICOM modalities
+\subsection{\code{Orthanc$get_modalities()}}{
+  List DICOM modalities
 
 List all the DICOM modalities that are known to Orthanc. This
 corresponds either to the content of the \code{DicomModalities}
 configuration option, or to the information stored in the
 database if \code{DicomModalitiesInDatabase} is \code{TRUE}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_modalities(params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_modalities(params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If present, retrieve detailed information
 about the individual DICOM modalities
 }
-}
-
-\subsection{Returns}{
-List containing either the identifiers of the
+  }
+  \subsection{Returns}{
+    List containing either the identifiers of the
 modalities, or detailed information about the modalities (if
 \code{expand} argument is provided).
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_modalities_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_modalities_id}{}}}
-\subsection{Method \code{delete_modalities_id()}}{
-Delete DICOM modality
+\subsection{\code{Orthanc$delete_modalities_id()}}{
+  Delete DICOM modality
 
 Delete one DICOM modality. This change is permanent iff.
 \code{DicomModalitiesInDatabase} is \code{TRUE}, otherwise it is lost at
 the next restart of Orthanc.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_modalities_id(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_modalities_id(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the DICOM modality of
+interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the DICOM modality of
-interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_modalities_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_modalities_id}{}}}
-\subsection{Method \code{get_modalities_id()}}{
-List operations on modality
+\subsection{\code{Orthanc$get_modalities_id()}}{
+  List operations on modality
 
 List the operations that are available for a DICOM modality.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_modalities_id(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_modalities_id(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the DICOM modality of
+interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    List of the available operations.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the DICOM modality of
-interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-List of the available operations.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_modalities_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_modalities_id}{}}}
-\subsection{Method \code{put_modalities_id()}}{
-Update DICOM modality
+\subsection{\code{Orthanc$put_modalities_id()}}{
+  Update DICOM modality
 
 Define a new DICOM modality, or update an existing one. This
 change is permanent iff. \code{DicomModalitiesInDatabase} is \code{TRUE},
 otherwise it is lost at the next restart of Orthanc.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_modalities_id(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the new/updated DICOM
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_modalities_id(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the new/updated DICOM
 modality.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item AET (character): AET of the remote DICOM modality
 \item AllowEcho (logical): Whether to accept C-ECHO SCU commands
@@ -3501,59 +3499,61 @@ to this modality
 \item UseDicomTls (logical): Whether to use DICOM TLS in the SCU
 connection initiated by Orthanc (new in Orthanc 1.9.0)
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_modalities_id_configuration"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_modalities_id_configuration}{}}}
-\subsection{Method \code{get_modalities_id_configuration()}}{
-Get modality configuration
+\subsection{\code{Orthanc$get_modalities_id_configuration()}}{
+  Get modality configuration
 
 Get detailed information about the configuration of some DICOM
 modality
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_modalities_id_configuration(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_modalities_id_configuration(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the modality of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Configuration of the modality.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the modality of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Configuration of the modality.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_modalities_id_echo"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_modalities_id_echo}{}}}
-\subsection{Method \code{post_modalities_id_echo()}}{
-Trigger C-ECHO SCU
+\subsection{\code{Orthanc$post_modalities_id_echo()}}{
+  Trigger C-ECHO SCU
 
 Trigger C-ECHO SCU command against the DICOM
 modality whose identifier is provided in URL:
 https://orthanc.uclouvain.be/book/users/rest.html#performing-c-echo
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_modalities_id_echo(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the modality of interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_modalities_id_echo(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the modality of interest.}
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item CheckFind (logical): Issue a dummy C-FIND command after the
 C-GET SCU, in order to check whether the remote modality
@@ -3563,35 +3563,35 @@ knows about Orthanc. This field defaults to the value of the
 \item Timeout (numeric): Timeout for the C-ECHO command, in
 seconds
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_modalities_id_find_worklist"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_modalities_id_find_worklist}{}}}
-\subsection{Method \code{post_modalities_id_find_worklist()}}{
-C-FIND SCU for worklist
+\subsection{\code{Orthanc$post_modalities_id_find_worklist()}}{
+  C-FIND SCU for worklist
 
 Trigger C-FIND SCU command against the remote worklists of the
 DICOM modality whose identifier is provided in URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_modalities_id_find_worklist(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the modality of interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_modalities_id_find_worklist(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the modality of interest.}
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Full (logical): If set to \code{TRUE}, report the DICOM tags
 in full format (tags indexed by their hexadecimal format,
@@ -3601,37 +3601,37 @@ values of the DICOM tags
 \item Short (logical): If set to \code{TRUE}, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    List describing the DICOM tags of the matching
+worklists.
+  }
 }
 
-\subsection{Returns}{
-List describing the DICOM tags of the matching
-worklists.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_modalities_id_get"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_modalities_id_get}{}}}
-\subsection{Method \code{post_modalities_id_get()}}{
-Trigger C-GET SCU
+\subsection{\code{Orthanc$post_modalities_id_get()}}{
+  Trigger C-GET SCU
 
 Start a C-GET SCU command as a job, in order to retrieve DICOM
 resources from a remote DICOM modality whose identifier is
 provided in the URL:
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_modalities_id_get(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the modality of interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_modalities_id_get(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the modality of interest.}
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, run the job in
 asynchronous mode, which means that the REST API call will
@@ -3665,37 +3665,37 @@ network timeouts.
 \item UserData (list): User data that will travel along with the
 job.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_modalities_id_move"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_modalities_id_move}{}}}
-\subsection{Method \code{post_modalities_id_move()}}{
-Trigger C-MOVE SCU
+\subsection{\code{Orthanc$post_modalities_id_move()}}{
+  Trigger C-MOVE SCU
 
 Start a C-MOVE SCU command as a job, in order to drive the
 execution of a sequence of C-STORE commands by some remote
 DICOM modality whose identifier is provided in the URL:
 https://orthanc.uclouvain.be/book/users/rest.html#performing-c-move
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_modalities_id_move(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the modality of interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_modalities_id_move(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the modality of interest.}
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, run the job in
 asynchronous mode, which means that the REST API call will
@@ -3728,36 +3728,36 @@ seconds
 \item UserData (list): User data that will travel along with the
 job.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_modalities_id_query"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_modalities_id_query}{}}}
-\subsection{Method \code{post_modalities_id_query()}}{
-Trigger C-FIND SCU
+\subsection{\code{Orthanc$post_modalities_id_query()}}{
+  Trigger C-FIND SCU
 
 Trigger C-FIND SCU command against the DICOM
 modality whose identifier is provided in URL:
 https://orthanc.uclouvain.be/book/users/rest.html#performing-query-retrieve-c-find-and-find-with-rest
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_modalities_id_query(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the modality of interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_modalities_id_query(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the modality of interest.}
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Level (character): Level of the query (\code{Patient}, \code{Study},
 \code{Series} or \code{Instance})
@@ -3774,36 +3774,36 @@ values of the DICOM tags
 subsequent C-MOVE retrievals, in seconds (new in Orthanc
 1.9.1)
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_modalities_id_storage_commitment"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_modalities_id_storage_commitment}{}}}
-\subsection{Method \code{post_modalities_id_storage_commitment()}}{
-Trigger storage commitment request
+\subsection{\code{Orthanc$post_modalities_id_storage_commitment()}}{
+  Trigger storage commitment request
 
 Trigger a storage commitment request to some remote
 DICOM modality whose identifier is provided in the URL:
 https://orthanc.uclouvain.be/book/users/storage-commitment.html#storage-commitment-scu
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_modalities_id_storage_commitment(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the modality of interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_modalities_id_storage_commitment(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the modality of interest.}
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item DicomInstances (list): List of DICOM resources that are not
 necessarily stored within Orthanc, but that must be checked
@@ -3814,39 +3814,38 @@ DICOM resources to be checked by storage commitment
 \item Timeout (numeric): Timeout for the storage commitment
 command (new in Orthanc 1.9.1)
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_modalities_id_store"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_modalities_id_store}{}}}
-\subsection{Method \code{post_modalities_id_store()}}{
-Trigger C-STORE SCU
+\subsection{\code{Orthanc$post_modalities_id_store()}}{
+  Trigger C-STORE SCU
 
 Start a C-STORE SCU command as a job, in order to send
 DICOM resources stored locally to some remote DICOM
 modality whose identifier is provided in the URL:
 https://orthanc.uclouvain.be/book/users/rest.html#rest-store-scu
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_modalities_id_store(id, json = NULL, data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the modality of interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_modalities_id_store(id, json = NULL, data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the modality of interest.}
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, run the job in
 asynchronous mode, which means that the REST API call will
@@ -3892,64 +3891,65 @@ job.
 Request body: The Orthanc identifier of one resource to be
 sent (text/plain).
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_modalities_id_store_straight"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_modalities_id_store_straight}{}}}
-\subsection{Method \code{post_modalities_id_store_straight()}}{
-Straight C-STORE SCU
+\subsection{\code{Orthanc$post_modalities_id_store_straight()}}{
+  Straight C-STORE SCU
 
 Synchronously send the DICOM instance in the POST body to the
 remote DICOM modality whose identifier is provided in URL,
 without having to first store it locally within Orthanc. This
 is an alternative to command-line tools such as \code{storescu} from
 DCMTK or dcm4che.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_modalities_id_store_straight(id, file = NULL)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_modalities_id_store_straight(id, file = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the modality of interest.}
+      \item{\code{file}}{(character) Path to file for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: DICOM instance to be sent (application/dicom).
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the modality of interest.}
-
-\item{\code{file}}{(character) Path to file for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: DICOM instance to be sent (application/dicom).
-}
-
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients}{}}}
-\subsection{Method \code{get_patients()}}{
-List the available patients
+\subsection{\code{Orthanc$get_patients()}}{
+  List the available patients
 
 List the Orthanc identifiers of all the available DICOM patients
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients(params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients(params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If present, retrieve detailed information
 about the individual resources, not only their Orthanc
@@ -3982,62 +3982,64 @@ hexadecimal format
 \item since (number): Show only the resources since the provided
 index
 }
-}
-
-\subsection{Returns}{
-List containing either the Orthanc identifiers, or
+  }
+  \subsection{Returns}{
+    List containing either the Orthanc identifiers, or
 detailed information about the reported patients (if \code{expand}
 argument is provided).
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_patients_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_patients_id}{}}}
-\subsection{Method \code{delete_patients_id()}}{
-Delete some patient
+\subsection{\code{Orthanc$delete_patients_id()}}{
+  Delete some patient
 
 Delete the DICOM patient whose Orthanc identifier is provided in
 the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_patients_id(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_patients_id(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
+interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
-interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id}{}}}
-\subsection{Method \code{get_patients_id()}}{
-Get information about some patient
+\subsection{\code{Orthanc$get_patients_id()}}{
+  Get information about some patient
 
 Get detailed information about the DICOM patient whose Orthanc
 identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item full (boolean): If present, report the DICOM tags in full
 format (tags indexed by their hexadecimal format, associated
@@ -4056,39 +4058,39 @@ to 1.11.0.
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    Information about the DICOM patient.
+  }
 }
 
-\subsection{Returns}{
-Information about the DICOM patient.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_patients_id_anonymize"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_patients_id_anonymize}{}}}
-\subsection{Method \code{post_patients_id_anonymize()}}{
-Anonymize patient
+\subsection{\code{Orthanc$post_patients_id_anonymize()}}{
+  Anonymize patient
 
 Start a job that will anonymize all the DICOM instances
 within the patient whose identifier is provided in the URL.
 The modified DICOM instances will be stored into a brand new
 patient, whose Orthanc identifiers will be returned by the job.
 https://orthanc.uclouvain.be/book/users/anonymization.html#anonymization-of-patients-studies-or-series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_patients_id_anonymize(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_patients_id_anonymize(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, run the job in
 asynchronous mode, which means that the REST API call will
@@ -4145,39 +4147,39 @@ https://orthanc.uclouvain.be/book/faq/transcoding.html
 \item UserData (list): User data that will travel along with the
 job.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_archive"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_archive}{}}}
-\subsection{Method \code{get_patients_id_archive()}}{
-Create ZIP archive
+\subsection{\code{Orthanc$get_patients_id_archive()}}{
+  Create ZIP archive
 
 Synchronously create a ZIP archive containing the DICOM patient
 whose Orthanc identifier is provided in the URL. This flavor
 is synchronous, which might \emph{not} be desirable to archive large
 amount of data, as it might lead to network timeouts. Prefer the
 asynchronous version using \code{POST} method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_archive(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_archive(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item filename (string): Filename to set in the
 "Content-Disposition" HTTP header (including file extension)
@@ -4190,36 +4192,36 @@ v1.12.7)
 archive will be transcoded to the provided transfer syntax:
 https://orthanc.uclouvain.be/book/faq/transcoding.html
 }
+  }
+  \subsection{Returns}{
+    ZIP file containing the archive.
+  }
 }
 
-\subsection{Returns}{
-ZIP file containing the archive.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_patients_id_archive"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_patients_id_archive}{}}}
-\subsection{Method \code{post_patients_id_archive()}}{
-Create ZIP archive
+\subsection{\code{Orthanc$post_patients_id_archive()}}{
+  Create ZIP archive
 
 Create a ZIP archive containing the DICOM patient whose Orthanc
 identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_patients_id_archive(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_patients_id_archive(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, create the archive in
 asynchronous mode, which means that a job is submitted to
@@ -4247,154 +4249,150 @@ https://orthanc.uclouvain.be/book/faq/transcoding.html
 \item UserData (list): In asynchronous mode, user data that will
 be attached to the job.
 }
-}
-
-\subsection{Returns}{
-In asynchronous mode, information about the
+  }
+  \subsection{Returns}{
+    In asynchronous mode, information about the
 job that has been submitted to generate the archive:
 https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_attachments"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_attachments}{}}}
-\subsection{Method \code{get_patients_id_attachments()}}{
-List attachments
+\subsection{\code{Orthanc$get_patients_id_attachments()}}{
+  List attachments
 
 Get the list of attachments that are associated with the given
 patient
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_attachments(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_attachments(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item full (string): If present, retrieve the attachments list and
 their numerical ids
 }
+  }
+  \subsection{Returns}{
+    List containing the names of the attachments.
+  }
 }
 
-\subsection{Returns}{
-List containing the names of the attachments.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_patients_id_attachments_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_patients_id_attachments_name}{}}}
-\subsection{Method \code{delete_patients_id_attachments_name()}}{
-Delete attachment
+\subsection{\code{Orthanc$delete_patients_id_attachments_name()}}{
+  Delete attachment
 
 Delete an attachment associated with the given DICOM patient.
 This call will fail if trying to delete a system attachment (i.e.
 whose index is < 1024).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_patients_id_attachments_name(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_patients_id_attachments_name(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-Match (string): Revision of the attachment, to check if
 its content has not changed and can be deleted. This header
 is mandatory if \code{CheckRevisions} option is \code{TRUE}.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_attachments_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_attachments_name}{}}}
-\subsection{Method \code{get_patients_id_attachments_name()}}{
-List operations on attachments
+\subsection{\code{Orthanc$get_patients_id_attachments_name()}}{
+  List operations on attachments
 
 Get the list of the operations that are available for attachments
 associated with the given patient
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_attachments_name(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_attachments_name(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    List of the available operations.
+  }
 }
 
-\subsection{Returns}{
-List of the available operations.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_patients_id_attachments_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_patients_id_attachments_name}{}}}
-\subsection{Method \code{put_patients_id_attachments_name()}}{
-Set attachment
+\subsection{\code{Orthanc$put_patients_id_attachments_name()}}{
+  Set attachment
 
 Attach a file to the given DICOM patient. This call will fail
 if trying to modify a system attachment (i.e. whose index is <
 1024).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_patients_id_attachments_name(id, name, headers = NULL, data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_patients_id_attachments_name(id, name, headers = NULL, data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: Binary data containing the attachment
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: Binary data containing the attachment
 (application/octet-stream).
 
 Optional headers (\code{headers}):
@@ -4402,74 +4400,73 @@ Optional headers (\code{headers}):
 \item If-Match (string): Revision of the attachment, if this is
 not the first time this attachment is set.
 }
+  }
+  \subsection{Returns}{
+    Empty JSON object in the case of a success.
+  }
 }
 
-\subsection{Returns}{
-Empty JSON object in the case of a success.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_patients_id_attachments_name_compress"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_patients_id_attachments_name_compress}{}}}
-\subsection{Method \code{post_patients_id_attachments_name_compress()}}{
-Compress attachment
+\subsection{\code{Orthanc$post_patients_id_attachments_name_compress()}}{
+  Compress attachment
 
 Change the compression scheme that is used to store an
 attachment.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_patients_id_attachments_name_compress(id, name)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_patients_id_attachments_name_compress(id, name)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_attachments_name_compressed_data"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_attachments_name_compressed_data}{}}}
-\subsection{Method \code{get_patients_id_attachments_name_compressed_data()}}{
-Get attachment (no decompression)
+\subsection{\code{Orthanc$get_patients_id_attachments_name_compressed_data()}}{
+  Get attachment (no decompression)
 
 Get the (binary) content of one attachment associated with
 the given patient. The attachment will not be decompressed if
 \code{StorageCompression} is \code{TRUE}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_attachments_name_compressed_data(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_attachments_name_compressed_data(
   id,
   name,
   params = NULL,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Content-Range (string): Optional content range to access
 part of the attachment (new in Orthanc 1.12.5)
@@ -4482,130 +4479,126 @@ Optional query parameters (\code{params}):
 \item filename (string): Filename to set in the
 "Content-Disposition" HTTP header (including file extension)
 }
+  }
+  \subsection{Returns}{
+    The attachment.
+  }
 }
 
-\subsection{Returns}{
-The attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_attachments_name_compressed_md5"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_attachments_name_compressed_md5}{}}}
-\subsection{Method \code{get_patients_id_attachments_name_compressed_md5()}}{
-Get MD5 of attachment on disk
+\subsection{\code{Orthanc$get_patients_id_attachments_name_compressed_md5()}}{
+  Get MD5 of attachment on disk
 
 Get the MD5 hash of one attachment associated with the given
 patient, as stored on the disk. This is different from \code{.../md5}
 iff \code{EnableStorage} is \code{TRUE}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_attachments_name_compressed_md5(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_attachments_name_compressed_md5(
   id,
   name,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    The MD5 of the attachment, as stored on the disk.
+  }
 }
 
-\subsection{Returns}{
-The MD5 of the attachment, as stored on the disk.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_attachments_name_compressed_size"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_attachments_name_compressed_size}{}}}
-\subsection{Method \code{get_patients_id_attachments_name_compressed_size()}}{
-Get size of attachment on disk
+\subsection{\code{Orthanc$get_patients_id_attachments_name_compressed_size()}}{
+  Get size of attachment on disk
 
 Get the size of one attachment associated with the given patient,
 as stored on the disk. This is different from \code{.../size} iff
 \code{EnableStorage} is \code{TRUE}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_attachments_name_compressed_size(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_attachments_name_compressed_size(
   id,
   name,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    The size of the attachment, as stored on the disk.
+  }
 }
 
-\subsection{Returns}{
-The size of the attachment, as stored on the disk.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_attachments_name_data"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_attachments_name_data}{}}}
-\subsection{Method \code{get_patients_id_attachments_name_data()}}{
-Get attachment
+\subsection{\code{Orthanc$get_patients_id_attachments_name_data()}}{
+  Get attachment
 
 Get the (binary) content of one attachment associated with the
 given patient
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_attachments_name_data(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_attachments_name_data(
   id,
   name,
   params = NULL,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Content-Range (string): Optional content range to access
 part of the attachment (new in Orthanc 1.12.5)
@@ -4618,243 +4611,241 @@ Optional query parameters (\code{params}):
 \item filename (string): Filename to set in the
 "Content-Disposition" HTTP header (including file extension)
 }
+  }
+  \subsection{Returns}{
+    The attachment.
+  }
 }
 
-\subsection{Returns}{
-The attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_attachments_name_info"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_attachments_name_info}{}}}
-\subsection{Method \code{get_patients_id_attachments_name_info()}}{
-Get info about the attachment
+\subsection{\code{Orthanc$get_patients_id_attachments_name_info()}}{
+  Get info about the attachment
 
 Get all the information about the attachment associated with the
 given patient
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_attachments_name_info(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_attachments_name_info(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    JSON object containing the information about the
+attachment.
+  }
 }
 
-\subsection{Returns}{
-JSON object containing the information about the
-attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_attachments_name_is_compressed"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_attachments_name_is_compressed}{}}}
-\subsection{Method \code{get_patients_id_attachments_name_is_compressed()}}{
-Is attachment compressed?
+\subsection{\code{Orthanc$get_patients_id_attachments_name_is_compressed()}}{
+  Is attachment compressed?
 
 Test whether the attachment has been stored as a compressed file
 on the disk.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_attachments_name_is_compressed(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_attachments_name_is_compressed(
   id,
   name,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    \code{0} if the attachment was stored uncompressed, \code{1} if it
+was compressed.
+  }
 }
 
-\subsection{Returns}{
-\code{0} if the attachment was stored uncompressed, \code{1} if it
-was compressed.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_attachments_name_md5"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_attachments_name_md5}{}}}
-\subsection{Method \code{get_patients_id_attachments_name_md5()}}{
-Get MD5 of attachment
+\subsection{\code{Orthanc$get_patients_id_attachments_name_md5()}}{
+  Get MD5 of attachment
 
 Get the MD5 hash of one attachment associated with the given
 patient
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_attachments_name_md5(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_attachments_name_md5(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    The MD5 of the attachment.
+  }
 }
 
-\subsection{Returns}{
-The MD5 of the attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_attachments_name_size"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_attachments_name_size}{}}}
-\subsection{Method \code{get_patients_id_attachments_name_size()}}{
-Get size of attachment
+\subsection{\code{Orthanc$get_patients_id_attachments_name_size()}}{
+  Get size of attachment
 
 Get the size of one attachment associated with the given patient
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_attachments_name_size(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_attachments_name_size(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    The size of the attachment.
+  }
 }
 
-\subsection{Returns}{
-The size of the attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_patients_id_attachments_name_uncompress"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_patients_id_attachments_name_uncompress}{}}}
-\subsection{Method \code{post_patients_id_attachments_name_uncompress()}}{
-Uncompress attachment
+\subsection{\code{Orthanc$post_patients_id_attachments_name_uncompress()}}{
+  Uncompress attachment
 
 Change the compression scheme that is used to store an
 attachment.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_patients_id_attachments_name_uncompress(id, name)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_patients_id_attachments_name_uncompress(id, name)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_patients_id_attachments_name_verify_md5"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_patients_id_attachments_name_verify_md5}{}}}
-\subsection{Method \code{post_patients_id_attachments_name_verify_md5()}}{
-Verify attachment
+\subsection{\code{Orthanc$post_patients_id_attachments_name_verify_md5()}}{
+  Verify attachment
 
 Verify that the attachment is not corrupted, by validating its
 MD5 hash
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_patients_id_attachments_name_verify_md5(id, name)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_patients_id_attachments_name_verify_md5(id, name)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    On success, a valid JSON object is returned.
+  }
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-On success, a valid JSON object is returned.
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_instances"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_instances}{}}}
-\subsection{Method \code{get_patients_id_instances()}}{
-Get child instances
+\subsection{\code{Orthanc$get_patients_id_instances()}}{
+  Get child instances
 
 Get detailed information about the child instances of the DICOM
 patient whose Orthanc identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_instances(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_instances(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If false or missing, only retrieve the list
 of child instances
@@ -4875,37 +4866,37 @@ to 1.11.0.
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    List containing information about the child DICOM
+instances.
+  }
 }
 
-\subsection{Returns}{
-List containing information about the child DICOM
-instances.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_instances_tags"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_instances_tags}{}}}
-\subsection{Method \code{get_patients_id_instances_tags()}}{
-Get tags of instances
+\subsection{\code{Orthanc$get_patients_id_instances_tags()}}{
+  Get tags of instances
 
 Get the tags of all the child instances of the DICOM patient
 whose Orthanc identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_instances_tags(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_instances_tags(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item ignore-length (array): Also include the DICOM tags that are
 provided in this list, even if their associated value is
@@ -4915,140 +4906,145 @@ hexadecimal format
 \item simplify (boolean): If present, report the DICOM tags in
 human-readable format (using the symbolic name of the tags)
 }
+  }
+  \subsection{Returns}{
+    JSON object associating the Orthanc identifiers of the
+instances, with the values of their DICOM tags.
+  }
 }
 
-\subsection{Returns}{
-JSON object associating the Orthanc identifiers of the
-instances, with the values of their DICOM tags.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_labels"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_labels}{}}}
-\subsection{Method \code{get_patients_id_labels()}}{
-List labels
+\subsection{\code{Orthanc$get_patients_id_labels()}}{
+  List labels
 
 Get the labels that are associated with the given patient (new in
 Orthanc 1.12.0)
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_labels(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_labels(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
+interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    List containing the names of the labels.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
-interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-List containing the names of the labels.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_patients_id_labels_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_patients_id_labels_label}{}}}
-\subsection{Method \code{delete_patients_id_labels_label()}}{
-Remove label
+\subsection{\code{Orthanc$delete_patients_id_labels_label()}}{
+  Remove label
 
 Remove a label associated with a patient
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_patients_id_labels_label(id, label)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_patients_id_labels_label(id, label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
+      \item{\code{label}}{(character) The label to be removed.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
+}
 
-\item{\code{label}}{(character) The label to be removed.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_labels_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_labels_label}{}}}
-\subsection{Method \code{get_patients_id_labels_label()}}{
-Test label
+\subsection{\code{Orthanc$get_patients_id_labels_label()}}{
+  Test label
 
 Test whether the patient is associated with the given label
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_labels_label(id, label)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_labels_label(id, label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{label}}{(character) The label of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Empty string is returned in the case of presence, error
+      \item{\code{label}}{(character) The label of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Empty string is returned in the case of presence, error
 404 in the case of absence.
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_patients_id_labels_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_patients_id_labels_label}{}}}
-\subsection{Method \code{put_patients_id_labels_label()}}{
-Add label
+\subsection{\code{Orthanc$put_patients_id_labels_label()}}{
+  Add label
 
 Associate a label with a patient
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_patients_id_labels_label(id, label)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_patients_id_labels_label(id, label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
+      \item{\code{label}}{(character) The label to be added.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
+}
 
-\item{\code{label}}{(character) The label to be added.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_media"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_media}{}}}
-\subsection{Method \code{get_patients_id_media()}}{
-Create DICOMDIR media
+\subsection{\code{Orthanc$get_patients_id_media()}}{
+  Create DICOMDIR media
 
 Synchronously create a DICOMDIR media containing the DICOM
 patient whose Orthanc identifier is provided in the URL. This
 flavor is synchronous, which might \emph{not} be desirable to archive
 large amount of data, as it might lead to network timeouts.
 Prefer the asynchronous version using \code{POST} method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_media(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_media(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item extended (string): If present, will include additional
 tags such as \code{SeriesDescription}, leading to a so-called
@@ -5064,36 +5060,36 @@ v1.12.7)
 archive will be transcoded to the provided transfer syntax:
 https://orthanc.uclouvain.be/book/faq/transcoding.html
 }
+  }
+  \subsection{Returns}{
+    ZIP file containing the archive.
+  }
 }
 
-\subsection{Returns}{
-ZIP file containing the archive.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_patients_id_media"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_patients_id_media}{}}}
-\subsection{Method \code{post_patients_id_media()}}{
-Create DICOMDIR media
+\subsection{\code{Orthanc$post_patients_id_media()}}{
+  Create DICOMDIR media
 
 Create a DICOMDIR media containing the DICOM patient whose
 Orthanc identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_patients_id_media(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_patients_id_media(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, create the archive in
 asynchronous mode, which means that a job is submitted to
@@ -5124,197 +5120,193 @@ https://orthanc.uclouvain.be/book/faq/transcoding.html
 \item UserData (list): In asynchronous mode, user data that will
 be attached to the job.
 }
-}
-
-\subsection{Returns}{
-In asynchronous mode, information about the
+  }
+  \subsection{Returns}{
+    In asynchronous mode, information about the
 job that has been submitted to generate the archive:
 https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_metadata"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_metadata}{}}}
-\subsection{Method \code{get_patients_id_metadata()}}{
-List metadata
+\subsection{\code{Orthanc$get_patients_id_metadata()}}{
+  List metadata
 
 Get the list of metadata that are associated with the given
 patient
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_metadata(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_metadata(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If present, also retrieve the value of the
 individual metadata
 \item numeric (string): If present, use the numeric identifier of
 the metadata instead of its symbolic name
 }
-}
-
-\subsection{Returns}{
-List containing the names of the available
+  }
+  \subsection{Returns}{
+    List containing the names of the available
 metadata, or List mapping metadata to their
 values (if \code{expand} argument is provided).
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_patients_id_metadata_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_patients_id_metadata_name}{}}}
-\subsection{Method \code{delete_patients_id_metadata_name()}}{
-Delete metadata
+\subsection{\code{Orthanc$delete_patients_id_metadata_name()}}{
+  Delete metadata
 
 Delete some metadata associated with the given DICOM patient.
 This call will fail if trying to delete a system metadata (i.e.
 whose index is < 1024).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_patients_id_metadata_name(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_patients_id_metadata_name(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{name}}{(character) The name of the metadata, or its index
+      \item{\code{name}}{(character) The name of the metadata, or its index
 (cf. \code{UserMetadata} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-Match (string): Revision of the metadata, to check if its
 content has not changed and can be deleted. This header is
 mandatory if \code{CheckRevisions} option is \code{TRUE}.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_metadata_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_metadata_name}{}}}
-\subsection{Method \code{get_patients_id_metadata_name()}}{
-Get metadata
+\subsection{\code{Orthanc$get_patients_id_metadata_name()}}{
+  Get metadata
 
 Get the value of a metadata that is associated with the given
 patient
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_metadata_name(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_metadata_name(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{name}}{(character) The name of the metadata, or its index
+      \item{\code{name}}{(character) The name of the metadata, or its index
 (cf. \code{UserMetadata} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the metadata,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    Value of the metadata.
+  }
 }
 
-\subsection{Returns}{
-Value of the metadata.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_patients_id_metadata_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_patients_id_metadata_name}{}}}
-\subsection{Method \code{put_patients_id_metadata_name()}}{
-Set metadata
+\subsection{\code{Orthanc$put_patients_id_metadata_name()}}{
+  Set metadata
 
 Set the value of some metadata in the given DICOM patient. This
 call will fail if trying to modify a system metadata (i.e. whose
 index is < 1024).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_patients_id_metadata_name(id, name, headers = NULL, data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_patients_id_metadata_name(id, name, headers = NULL, data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{name}}{(character) The name of the metadata, or its index
+      \item{\code{name}}{(character) The name of the metadata, or its index
 (cf. \code{UserMetadata} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: String value of the metadata (text/plain).
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: String value of the metadata (text/plain).
 
 Optional headers (\code{headers}):
 \itemize{
 \item If-Match (string): Revision of the metadata, if this is not
 the first time this metadata is set.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_patients_id_modify"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_patients_id_modify}{}}}
-\subsection{Method \code{post_patients_id_modify()}}{
-Modify patient
+\subsection{\code{Orthanc$post_patients_id_modify()}}{
+  Modify patient
 
 Start a job that will modify all the DICOM instances within
 the patient whose identifier is provided in the URL. The
 modified DICOM instances will be stored into a brand new
 patient, whose Orthanc identifiers will be returned by the job.
 https://orthanc.uclouvain.be/book/users/anonymization.html#modification-of-studies-or-series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_patients_id_modify(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_patients_id_modify(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, run the job in
 asynchronous mode, which means that the REST API call will
@@ -5366,36 +5358,36 @@ https://orthanc.uclouvain.be/book/faq/transcoding.html
 \item UserData (list): User data that will travel along with the
 job.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_module"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_module}{}}}
-\subsection{Method \code{get_patients_id_module()}}{
-Get patient module
+\subsection{\code{Orthanc$get_patients_id_module()}}{
+  Get patient module
 
 Get the patient module of the DICOM patient whose Orthanc
 identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_module(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_module(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item ignore-length (array): Also include the DICOM tags that are
 provided in this list, even if their associated value is
@@ -5405,68 +5397,71 @@ hexadecimal format
 \item simplify (boolean): If present, report the DICOM tags in
 human-readable format (using the symbolic name of the tags)
 }
+  }
+  \subsection{Returns}{
+    Information about the DICOM patient.
+  }
 }
 
-\subsection{Returns}{
-Information about the DICOM patient.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_protected"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_protected}{}}}
-\subsection{Method \code{get_patients_id_protected()}}{
-Is the patient protected against recycling?
+\subsection{\code{Orthanc$get_patients_id_protected()}}{
+  Is the patient protected against recycling?
 
 Is the patient protected against recycling?
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_protected(id)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_protected(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    \code{1} if protected, \code{0} if not protected.
+  }
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-\code{1} if protected, \code{0} if not protected.
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_patients_id_protected"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_patients_id_protected}{}}}
-\subsection{Method \code{put_patients_id_protected()}}{
-Protect/Unprotect a patient against recycling
+\subsection{\code{Orthanc$put_patients_id_protected()}}{
+  Protect/Unprotect a patient against recycling
 
 Protects a patient by sending \code{1} or \code{TRUE} in the
 payload request. Unprotects a patient by sending
 \code{0} or \code{FALSE} in the payload requests. More info:
 https://orthanc.uclouvain.be/book/faq/features.html#recycling-protection
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_patients_id_protected(id, json)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_patients_id_protected(id, json)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
+      \item{\code{json}}{(list) List for request body.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
+}
 
-\item{\code{json}}{(list) List for request body.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_patients_id_reconstruct"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_patients_id_reconstruct}{}}}
-\subsection{Method \code{post_patients_id_reconstruct()}}{
-Reconstruct tags & optionally files of patient
+\subsection{\code{Orthanc$post_patients_id_reconstruct()}}{
+  Reconstruct tags & optionally files of patient
 
 Reconstruct the main DICOM tags in DB of the patient whose
 Orthanc identifier is provided in the URL. This is useful
@@ -5476,22 +5471,22 @@ value from the resource of interest. Beware that this is a
 time-consuming operation, as all the children DICOM instances
 will be parsed again, and the Orthanc index will be updated
 accordingly.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_patients_id_reconstruct(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_patients_id_reconstruct(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item LimitToThisLevelMainDicomTags (logical): Only reconstruct
 this level MainDicomTags by re-reading them from a random
@@ -5505,36 +5500,36 @@ files of the resources (e.g: apply IngestTranscoding,
 StorageCompression). 'false' by default. (New in Orthanc
 1.11.0)
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_series"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_series}{}}}
-\subsection{Method \code{get_patients_id_series()}}{
-Get child series
+\subsection{\code{Orthanc$get_patients_id_series()}}{
+  Get child series
 
 Get detailed information about the child series of the DICOM
 patient whose Orthanc identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_series(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_series(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If false or missing, only retrieve the list
 of child series
@@ -5555,97 +5550,99 @@ to 1.11.0.
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    List containing information about the child DICOM
+series.
+  }
 }
 
-\subsection{Returns}{
-List containing information about the child DICOM
-series.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_shared_tags"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_shared_tags}{}}}
-\subsection{Method \code{get_patients_id_shared_tags()}}{
-Get shared tags
+\subsection{\code{Orthanc$get_patients_id_shared_tags()}}{
+  Get shared tags
 
 Extract the DICOM tags whose value is constant across all the
 child instances of the DICOM patient whose Orthanc identifier is
 provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_shared_tags(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_shared_tags(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 \item simplify (boolean): If present, report the DICOM tags in
 human-readable format (using the symbolic name of the tags)
 }
+  }
+  \subsection{Returns}{
+    JSON object containing the values of the DICOM tags.
+  }
 }
 
-\subsection{Returns}{
-JSON object containing the values of the DICOM tags.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_statistics"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_statistics}{}}}
-\subsection{Method \code{get_patients_id_statistics()}}{
-Get patient statistics
+\subsection{\code{Orthanc$get_patients_id_statistics()}}{
+  Get patient statistics
 
 Get statistics about the given patient
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_statistics(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_statistics(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
+interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
-interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_patients_id_studies"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_patients_id_studies}{}}}
-\subsection{Method \code{get_patients_id_studies()}}{
-Get child studies
+\subsection{\code{Orthanc$get_patients_id_studies()}}{
+  Get child studies
 
 Get detailed information about the child studies of the DICOM
 patient whose Orthanc identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_patients_id_studies(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the patient of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_patients_id_studies(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the patient of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If false or missing, only retrieve the list
 of child studies
@@ -5666,118 +5663,123 @@ to 1.11.0.
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    List containing information about the child DICOM
+studies.
+  }
 }
 
-\subsection{Returns}{
-List containing information about the child DICOM
-studies.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_peers"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_peers}{}}}
-\subsection{Method \code{get_peers()}}{
-List Orthanc peers
+\subsection{\code{Orthanc$get_peers()}}{
+  List Orthanc peers
 
 List all the Orthanc peers that are known to Orthanc. This
 corresponds either to the content of the \code{OrthancPeers}
 configuration option, or to the information stored in the
 database if \code{OrthancPeersInDatabase} is \code{TRUE}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_peers(params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_peers(params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If present, retrieve detailed information
 about the individual Orthanc peers
 }
-}
-
-\subsection{Returns}{
-List containing either the identifiers of the
+  }
+  \subsection{Returns}{
+    List containing either the identifiers of the
 peers, or detailed information about the peers (if \code{expand}
 argument is provided).
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_peers_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_peers_id}{}}}
-\subsection{Method \code{delete_peers_id()}}{
-Delete Orthanc peer
+\subsection{\code{Orthanc$delete_peers_id()}}{
+  Delete Orthanc peer
 
 Delete one Orthanc peer. This change is permanent iff.
 \code{OrthancPeersInDatabase} is \code{TRUE}, otherwise it is lost at the
 next restart of Orthanc.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_peers_id(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_peers_id(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the Orthanc peer of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the Orthanc peer of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_peers_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_peers_id}{}}}
-\subsection{Method \code{get_peers_id()}}{
-List operations on peer
+\subsection{\code{Orthanc$get_peers_id()}}{
+  List operations on peer
 
 List the operations that are available for an Orthanc peer.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_peers_id(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_peers_id(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the peer of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    List of the available operations.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the peer of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-List of the available operations.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_peers_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_peers_id}{}}}
-\subsection{Method \code{put_peers_id()}}{
-Update Orthanc peer
+\subsection{\code{Orthanc$put_peers_id()}}{
+  Update Orthanc peer
 
 Define a new Orthanc peer, or update an existing one. This change
 is permanent iff. \code{OrthancPeersInDatabase} is \code{TRUE}, otherwise
 it is lost at the next restart of Orthanc.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_peers_id(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the new/updated Orthanc peer.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_peers_id(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the new/updated Orthanc peer.}
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item CertificateFile (character): SSL certificate for the HTTPS
 connections
@@ -5792,61 +5794,62 @@ connections to the remote peer
 remote Orthanc peer, for instance \verb{http://localhost:8042/}
 \item Username (character): Username for the credentials
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_peers_id_configuration"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_peers_id_configuration}{}}}
-\subsection{Method \code{get_peers_id_configuration()}}{
-Get peer configuration
+\subsection{\code{Orthanc$get_peers_id_configuration()}}{
+  Get peer configuration
 
 Get detailed information about the configuration of some Orthanc
 peer
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_peers_id_configuration(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_peers_id_configuration(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the peer of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Configuration of the peer.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the peer of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Configuration of the peer.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_peers_id_store"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_peers_id_store}{}}}
-\subsection{Method \code{post_peers_id_store()}}{
-Send to Orthanc peer
+\subsection{\code{Orthanc$post_peers_id_store()}}{
+  Send to Orthanc peer
 
 Send DICOM resources stored locally to some remote
 Orthanc peer whose identifier is provided in the URL:
 https://orthanc.uclouvain.be/book/users/rest.html#sending-one-resource
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_peers_id_store(id, json = NULL, data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the modality of interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_peers_id_store(id, json = NULL, data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the modality of interest.}
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, run the job in
 asynchronous mode, which means that the REST API call will
@@ -5873,213 +5876,227 @@ job.
 Request body: The Orthanc identifier of one resource to be
 sent (text/plain).
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_peers_id_store_straight"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_peers_id_store_straight}{}}}
-\subsection{Method \code{post_peers_id_store_straight()}}{
-Straight store to peer
+\subsection{\code{Orthanc$post_peers_id_store_straight()}}{
+  Straight store to peer
 
 Synchronously send the DICOM instance in the POST body to the
 Orthanc peer whose identifier is provided in URL, without having
 to first store it locally within Orthanc. This is an alternative
 to command-line tools such as \code{curl}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_peers_id_store_straight(id, file = NULL)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_peers_id_store_straight(id, file = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the modality of interest.}
+      \item{\code{file}}{(character) Path to file for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: DICOM instance to be sent (application/dicom).
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the modality of interest.}
-
-\item{\code{file}}{(character) Path to file for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: DICOM instance to be sent (application/dicom).
-}
-
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_peers_id_system"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_peers_id_system}{}}}
-\subsection{Method \code{get_peers_id_system()}}{
-Get peer system information
+\subsection{\code{Orthanc$get_peers_id_system()}}{
+  Get peer system information
 
 Get system information about some Orthanc peer. This corresponds
 to doing a \code{GET} request against the \verb{/system} URI of the remote
 peer. This route can be used to test connectivity.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_peers_id_system(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_peers_id_system(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the peer of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    System information about the peer.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the peer of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-System information about the peer.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_plugins"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_plugins}{}}}
-\subsection{Method \code{get_plugins()}}{
-List plugins
+\subsection{\code{Orthanc$get_plugins()}}{
+  List plugins
 
 List all the installed plugins
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_plugins()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_plugins()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    List containing the identifiers of the installed
+plugins.
+  }
 }
 
-\subsection{Returns}{
-List containing the identifiers of the installed
-plugins.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_plugins_explorer.js"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_plugins_explorer.js}{}}}
-\subsection{Method \code{get_plugins_explorer.js()}}{
-JavaScript extensions to Orthanc Explorer
+\subsection{\code{Orthanc$get_plugins_explorer.js()}}{
+  JavaScript extensions to Orthanc Explorer
 
 Get the JavaScript extensions that are installed by all the
 plugins using the \code{OrthancPluginExtendOrthancExplorer()} function
 of the plugin SDK. This route is for internal use of Orthanc
 Explorer.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_plugins_explorer.js()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_plugins_explorer.js()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The JavaScript extensions.
+  }
 }
 
-\subsection{Returns}{
-The JavaScript extensions.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_plugins_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_plugins_id}{}}}
-\subsection{Method \code{get_plugins_id()}}{
-Get plugin
+\subsection{\code{Orthanc$get_plugins_id()}}{
+  Get plugin
 
 Get system information about the plugin whose identifier is
 provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_plugins_id(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_plugins_id(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the job of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    JSON object containing information about the plugin.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the job of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-JSON object containing information about the plugin.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_queries"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_queries}{}}}
-\subsection{Method \code{get_queries()}}{
-List query/retrieve operations
+\subsection{\code{Orthanc$get_queries()}}{
+  List query/retrieve operations
 
 List the identifiers of all the query/retrieve
 operations on DICOM modalities, as initiated by calls to
 \verb{/modalities/\{id\}/query}. The length of this list is bounded
 by the \code{QueryRetrieveSize} configuration option of Orthanc.
 https://orthanc.uclouvain.be/book/users/rest.html#performing-query-retrieve-c-find-and-find-with-rest
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_queries()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_queries()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    List containing the identifiers.
+  }
 }
 
-\subsection{Returns}{
-List containing the identifiers.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_queries_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_queries_id}{}}}
-\subsection{Method \code{delete_queries_id()}}{
-Delete a query
+\subsection{\code{Orthanc$delete_queries_id()}}{
+  Delete a query
 
 Delete the query/retrieve operation whose identifier is provided
 in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_queries_id(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_queries_id(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the query of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the query of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_queries_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_queries_id}{}}}
-\subsection{Method \code{get_queries_id()}}{
-List operations on a query
+\subsection{\code{Orthanc$get_queries_id()}}{
+  List operations on a query
 
 List the available operations for the query/retrieve operation
 whose identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_queries_id(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_queries_id(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the query of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    List containing the list of operations.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the query of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-List containing the list of operations.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_queries_id_answers"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_queries_id_answers}{}}}
-\subsection{Method \code{get_queries_id_answers()}}{
-List answers to a query
+\subsection{\code{Orthanc$get_queries_id_answers()}}{
+  List answers to a query
 
 List the indices of all the available answers resulting from a
 query/retrieve operation on some DICOM modality, whose identifier
 is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_queries_id_answers(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the query of interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_queries_id_answers(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the query of interest.}
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If present, retrieve detailed information
 about the individual answers
@@ -6088,224 +6105,219 @@ hexadecimal format
 \item simplify (boolean): If present, report the DICOM tags in
 human-readable format (using the symbolic name of the tags)
 }
-}
-
-\subsection{Returns}{
-List containing the indices of the answers, or
+  }
+  \subsection{Returns}{
+    List containing the indices of the answers, or
 detailed information about the reported answers (if \code{expand}
 argument is provided).
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_queries_id_answers_index"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_queries_id_answers_index}{}}}
-\subsection{Method \code{get_queries_id_answers_index()}}{
-List operations on an answer
+\subsection{\code{Orthanc$get_queries_id_answers_index()}}{
+  List operations on an answer
 
 List the available operations on an answer associated with the
 query/retrieve operation whose identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_queries_id_answers_index(id, index)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_queries_id_answers_index(id, index)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the query of interest.}
+      \item{\code{index}}{(character) Index of the answer.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    List containing the list of operations.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the query of interest.}
-
-\item{\code{index}}{(character) Index of the answer.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-List containing the list of operations.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_queries_id_answers_index_content"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_queries_id_answers_index_content}{}}}
-\subsection{Method \code{get_queries_id_answers_index_content()}}{
-Get one answer
+\subsection{\code{Orthanc$get_queries_id_answers_index_content()}}{
+  Get one answer
 
 Get the content (DICOM tags) of one answer associated with the
 query/retrieve operation whose identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_queries_id_answers_index_content(id, index, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the query of interest.}
-
-\item{\code{index}}{(character) Index of the answer.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_queries_id_answers_index_content(id, index, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the query of interest.}
+      \item{\code{index}}{(character) Index of the answer.}
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 \item simplify (boolean): If present, report the DICOM tags in
 human-readable format (using the symbolic name of the tags)
 }
+  }
+  \subsection{Returns}{
+    JSON object containing the DICOM tags of the answer.
+  }
 }
 
-\subsection{Returns}{
-JSON object containing the DICOM tags of the answer.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_queries_id_answers_index_query_instances"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_queries_id_answers_index_query_instances}{}}}
-\subsection{Method \code{post_queries_id_answers_index_query_instances()}}{
-Query the child instances of an answer
+\subsection{\code{Orthanc$post_queries_id_answers_index_query_instances()}}{
+  Query the child instances of an answer
 
 Issue a second DICOM C-FIND operation, in order to query the
 child instances associated with one answer to some query/retrieve
 operation whose identifiers are provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_queries_id_answers_index_query_instances(id, index, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the query of interest.}
-
-\item{\code{index}}{(character) Index of the answer.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_queries_id_answers_index_query_instances(id, index, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the query of interest.}
+      \item{\code{index}}{(character) Index of the answer.}
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Query (list): Associative array containing the filter on the
 values of the DICOM tags
 \item Timeout (numeric): Timeout for the C-FIND command, in
 seconds (new in Orthanc 1.9.1)
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_queries_id_answers_index_query_series"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_queries_id_answers_index_query_series}{}}}
-\subsection{Method \code{post_queries_id_answers_index_query_series()}}{
-Query the child series of an answer
+\subsection{\code{Orthanc$post_queries_id_answers_index_query_series()}}{
+  Query the child series of an answer
 
 Issue a second DICOM C-FIND operation, in order to query the
 child series associated with one answer to some query/retrieve
 operation whose identifiers are provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_queries_id_answers_index_query_series(id, index, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the query of interest.}
-
-\item{\code{index}}{(character) Index of the answer.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_queries_id_answers_index_query_series(id, index, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the query of interest.}
+      \item{\code{index}}{(character) Index of the answer.}
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Query (list): Associative array containing the filter on the
 values of the DICOM tags
 \item Timeout (numeric): Timeout for the C-FIND command, in
 seconds (new in Orthanc 1.9.1)
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_queries_id_answers_index_query_studies"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_queries_id_answers_index_query_studies}{}}}
-\subsection{Method \code{post_queries_id_answers_index_query_studies()}}{
-Query the child studies of an answer
+\subsection{\code{Orthanc$post_queries_id_answers_index_query_studies()}}{
+  Query the child studies of an answer
 
 Issue a second DICOM C-FIND operation, in order to query the
 child studies associated with one answer to some query/retrieve
 operation whose identifiers are provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_queries_id_answers_index_query_studies(id, index, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the query of interest.}
-
-\item{\code{index}}{(character) Index of the answer.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_queries_id_answers_index_query_studies(id, index, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the query of interest.}
+      \item{\code{index}}{(character) Index of the answer.}
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Query (list): Associative array containing the filter on the
 values of the DICOM tags
 \item Timeout (numeric): Timeout for the C-FIND command, in
 seconds (new in Orthanc 1.9.1)
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_queries_id_answers_index_retrieve"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_queries_id_answers_index_retrieve}{}}}
-\subsection{Method \code{post_queries_id_answers_index_retrieve()}}{
-Retrieve one answer with a C-MOVE or a C-GET SCU
+\subsection{\code{Orthanc$post_queries_id_answers_index_retrieve()}}{
+  Retrieve one answer with a C-MOVE or a C-GET SCU
 
 Start a C-MOVE or a C-GET SCU command as a job, in order
 to retrieve one answer associated with the query/retrieve
 operation whose identifiers are provided in the URL:
 https://orthanc.uclouvain.be/book/users/rest.html#performing-retrieve-c-move
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_queries_id_answers_index_retrieve(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_queries_id_answers_index_retrieve(
   id,
   index,
   json = NULL,
   data = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the query of interest.}
-
-\item{\code{index}}{(character) Index of the answer.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the query of interest.}
+      \item{\code{index}}{(character) Index of the answer.}
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, run the job in
 asynchronous mode, which means that the REST API call will
@@ -6341,121 +6353,124 @@ seconds
 job.
 Request body: AET of the target modality (text/plain).
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_queries_id_level"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_queries_id_level}{}}}
-\subsection{Method \code{get_queries_id_level()}}{
-Get level of original query
+\subsection{\code{Orthanc$get_queries_id_level()}}{
+  Get level of original query
 
 Get the query level (value of the \code{QueryRetrieveLevel} tag) of
 the query/retrieve operation whose identifier is provided in the
 URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_queries_id_level(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_queries_id_level(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the query of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The level.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the query of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The level.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_queries_id_modality"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_queries_id_modality}{}}}
-\subsection{Method \code{get_queries_id_modality()}}{
-Get modality of original query
+\subsection{\code{Orthanc$get_queries_id_modality()}}{
+  Get modality of original query
 
 Get the identifier of the DICOM modality that was targeted by the
 query/retrieve operation whose identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_queries_id_modality(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_queries_id_modality(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the query of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The identifier of the DICOM modality.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the query of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The identifier of the DICOM modality.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_queries_id_query"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_queries_id_query}{}}}
-\subsection{Method \code{get_queries_id_query()}}{
-Get original query arguments
+\subsection{\code{Orthanc$get_queries_id_query()}}{
+  Get original query arguments
 
 Get the original DICOM filter associated with the query/retrieve
 operation whose identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_queries_id_query(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the query of interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_queries_id_query(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the query of interest.}
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 \item simplify (boolean): If present, report the DICOM tags in
 human-readable format (using the symbolic name of the tags)
 }
+  }
+  \subsection{Returns}{
+    Content of the original query.
+  }
 }
 
-\subsection{Returns}{
-Content of the original query.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_queries_id_retrieve"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_queries_id_retrieve}{}}}
-\subsection{Method \code{post_queries_id_retrieve()}}{
-Retrieve all answers with C-MOVE SCU
+\subsection{\code{Orthanc$post_queries_id_retrieve()}}{
+  Retrieve all answers with C-MOVE SCU
 
 Start a C-MOVE SCU command as a job, in order to retrieve
 all the answers associated with the query/retrieve
 operation whose identifier is provided in the URL:
 https://orthanc.uclouvain.be/book/users/rest.html#performing-retrieve-c-move
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_queries_id_retrieve(id, json = NULL, data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the query of interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_queries_id_retrieve(id, json = NULL, data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the query of interest.}
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, run the job in
 asynchronous mode, which means that the REST API call will
@@ -6491,32 +6506,33 @@ seconds
 job.
 Request body: AET of the target modality (text/plain).
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series}{}}}
-\subsection{Method \code{get_series()}}{
-List the available series
+\subsection{\code{Orthanc$get_series()}}{
+  List the available series
 
 List the Orthanc identifiers of all the available DICOM series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series(params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series(params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If present, retrieve detailed information
 about the individual resources, not only their Orthanc
@@ -6549,62 +6565,64 @@ hexadecimal format
 \item since (number): Show only the resources since the provided
 index
 }
-}
-
-\subsection{Returns}{
-List containing either the Orthanc identifiers,
+  }
+  \subsection{Returns}{
+    List containing either the Orthanc identifiers,
 or detailed information about the reported series (if \code{expand}
 argument is provided).
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_series_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_series_id}{}}}
-\subsection{Method \code{delete_series_id()}}{
-Delete some series
+\subsection{\code{Orthanc$delete_series_id()}}{
+  Delete some series
 
 Delete the DICOM series whose Orthanc identifier is provided in
 the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_series_id(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_series_id(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
+interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
-interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id}{}}}
-\subsection{Method \code{get_series_id()}}{
-Get information about some series
+\subsection{\code{Orthanc$get_series_id()}}{
+  Get information about some series
 
 Get detailed information about the DICOM series whose Orthanc
 identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item full (boolean): If present, report the DICOM tags in full
 format (tags indexed by their hexadecimal format, associated
@@ -6623,39 +6641,39 @@ to 1.11.0.
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    Information about the DICOM series.
+  }
 }
 
-\subsection{Returns}{
-Information about the DICOM series.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_series_id_anonymize"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_series_id_anonymize}{}}}
-\subsection{Method \code{post_series_id_anonymize()}}{
-Anonymize series
+\subsection{\code{Orthanc$post_series_id_anonymize()}}{
+  Anonymize series
 
 Start a job that will anonymize all the DICOM instances
 within the series whose identifier is provided in the URL.
 The modified DICOM instances will be stored into a brand new
 series, whose Orthanc identifiers will be returned by the job.
 https://orthanc.uclouvain.be/book/users/anonymization.html#anonymization-of-patients-studies-or-series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_series_id_anonymize(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_series_id_anonymize(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, run the job in
 asynchronous mode, which means that the REST API call will
@@ -6712,39 +6730,39 @@ https://orthanc.uclouvain.be/book/faq/transcoding.html
 \item UserData (list): User data that will travel along with the
 job.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_archive"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_archive}{}}}
-\subsection{Method \code{get_series_id_archive()}}{
-Create ZIP archive
+\subsection{\code{Orthanc$get_series_id_archive()}}{
+  Create ZIP archive
 
 Synchronously create a ZIP archive containing the DICOM series
 whose Orthanc identifier is provided in the URL. This flavor
 is synchronous, which might \emph{not} be desirable to archive large
 amount of data, as it might lead to network timeouts. Prefer the
 asynchronous version using \code{POST} method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_archive(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_archive(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item filename (string): Filename to set in the
 "Content-Disposition" HTTP header (including file extension)
@@ -6757,36 +6775,36 @@ v1.12.7)
 archive will be transcoded to the provided transfer syntax:
 https://orthanc.uclouvain.be/book/faq/transcoding.html
 }
+  }
+  \subsection{Returns}{
+    ZIP file containing the archive.
+  }
 }
 
-\subsection{Returns}{
-ZIP file containing the archive.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_series_id_archive"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_series_id_archive}{}}}
-\subsection{Method \code{post_series_id_archive()}}{
-Create ZIP archive
+\subsection{\code{Orthanc$post_series_id_archive()}}{
+  Create ZIP archive
 
 Create a ZIP archive containing the DICOM series whose Orthanc
 identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_series_id_archive(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_series_id_archive(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, create the archive in
 asynchronous mode, which means that a job is submitted to
@@ -6814,154 +6832,150 @@ https://orthanc.uclouvain.be/book/faq/transcoding.html
 \item UserData (list): In asynchronous mode, user data that will
 be attached to the job.
 }
-}
-
-\subsection{Returns}{
-In asynchronous mode, information about the
+  }
+  \subsection{Returns}{
+    In asynchronous mode, information about the
 job that has been submitted to generate the archive:
 https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_attachments"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_attachments}{}}}
-\subsection{Method \code{get_series_id_attachments()}}{
-List attachments
+\subsection{\code{Orthanc$get_series_id_attachments()}}{
+  List attachments
 
 Get the list of attachments that are associated with the given
 series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_attachments(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_attachments(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item full (string): If present, retrieve the attachments list and
 their numerical ids
 }
+  }
+  \subsection{Returns}{
+    List containing the names of the attachments.
+  }
 }
 
-\subsection{Returns}{
-List containing the names of the attachments.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_series_id_attachments_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_series_id_attachments_name}{}}}
-\subsection{Method \code{delete_series_id_attachments_name()}}{
-Delete attachment
+\subsection{\code{Orthanc$delete_series_id_attachments_name()}}{
+  Delete attachment
 
 Delete an attachment associated with the given DICOM series.
 This call will fail if trying to delete a system attachment (i.e.
 whose index is < 1024).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_series_id_attachments_name(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_series_id_attachments_name(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-Match (string): Revision of the attachment, to check if
 its content has not changed and can be deleted. This header
 is mandatory if \code{CheckRevisions} option is \code{TRUE}.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_attachments_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_attachments_name}{}}}
-\subsection{Method \code{get_series_id_attachments_name()}}{
-List operations on attachments
+\subsection{\code{Orthanc$get_series_id_attachments_name()}}{
+  List operations on attachments
 
 Get the list of the operations that are available for attachments
 associated with the given series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_attachments_name(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_attachments_name(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    List of the available operations.
+  }
 }
 
-\subsection{Returns}{
-List of the available operations.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_series_id_attachments_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_series_id_attachments_name}{}}}
-\subsection{Method \code{put_series_id_attachments_name()}}{
-Set attachment
+\subsection{\code{Orthanc$put_series_id_attachments_name()}}{
+  Set attachment
 
 Attach a file to the given DICOM series. This call will fail
 if trying to modify a system attachment (i.e. whose index is <
 1024).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_series_id_attachments_name(id, name, headers = NULL, data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_series_id_attachments_name(id, name, headers = NULL, data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: Binary data containing the attachment
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: Binary data containing the attachment
 (application/octet-stream).
 
 Optional headers (\code{headers}):
@@ -6969,74 +6983,73 @@ Optional headers (\code{headers}):
 \item If-Match (string): Revision of the attachment, if this is
 not the first time this attachment is set.
 }
+  }
+  \subsection{Returns}{
+    Empty JSON object in the case of a success.
+  }
 }
 
-\subsection{Returns}{
-Empty JSON object in the case of a success.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_series_id_attachments_name_compress"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_series_id_attachments_name_compress}{}}}
-\subsection{Method \code{post_series_id_attachments_name_compress()}}{
-Compress attachment
+\subsection{\code{Orthanc$post_series_id_attachments_name_compress()}}{
+  Compress attachment
 
 Change the compression scheme that is used to store an
 attachment.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_series_id_attachments_name_compress(id, name)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_series_id_attachments_name_compress(id, name)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_attachments_name_compressed_data"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_attachments_name_compressed_data}{}}}
-\subsection{Method \code{get_series_id_attachments_name_compressed_data()}}{
-Get attachment (no decompression)
+\subsection{\code{Orthanc$get_series_id_attachments_name_compressed_data()}}{
+  Get attachment (no decompression)
 
 Get the (binary) content of one attachment associated with
 the given series. The attachment will not be decompressed if
 \code{StorageCompression} is \code{TRUE}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_attachments_name_compressed_data(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_attachments_name_compressed_data(
   id,
   name,
   params = NULL,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Content-Range (string): Optional content range to access
 part of the attachment (new in Orthanc 1.12.5)
@@ -7049,126 +7062,122 @@ Optional query parameters (\code{params}):
 \item filename (string): Filename to set in the
 "Content-Disposition" HTTP header (including file extension)
 }
+  }
+  \subsection{Returns}{
+    The attachment.
+  }
 }
 
-\subsection{Returns}{
-The attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_attachments_name_compressed_md5"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_attachments_name_compressed_md5}{}}}
-\subsection{Method \code{get_series_id_attachments_name_compressed_md5()}}{
-Get MD5 of attachment on disk
+\subsection{\code{Orthanc$get_series_id_attachments_name_compressed_md5()}}{
+  Get MD5 of attachment on disk
 
 Get the MD5 hash of one attachment associated with the given
 series, as stored on the disk. This is different from \code{.../md5}
 iff \code{EnableStorage} is \code{TRUE}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_attachments_name_compressed_md5(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_attachments_name_compressed_md5(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    The MD5 of the attachment, as stored on the disk.
+  }
 }
 
-\subsection{Returns}{
-The MD5 of the attachment, as stored on the disk.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_attachments_name_compressed_size"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_attachments_name_compressed_size}{}}}
-\subsection{Method \code{get_series_id_attachments_name_compressed_size()}}{
-Get size of attachment on disk
+\subsection{\code{Orthanc$get_series_id_attachments_name_compressed_size()}}{
+  Get size of attachment on disk
 
 Get the size of one attachment associated with the given series,
 as stored on the disk. This is different from \code{.../size} iff
 \code{EnableStorage} is \code{TRUE}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_attachments_name_compressed_size(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_attachments_name_compressed_size(
   id,
   name,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    The size of the attachment, as stored on the disk.
+  }
 }
 
-\subsection{Returns}{
-The size of the attachment, as stored on the disk.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_attachments_name_data"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_attachments_name_data}{}}}
-\subsection{Method \code{get_series_id_attachments_name_data()}}{
-Get attachment
+\subsection{\code{Orthanc$get_series_id_attachments_name_data()}}{
+  Get attachment
 
 Get the (binary) content of one attachment associated with the
 given series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_attachments_name_data(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_attachments_name_data(
   id,
   name,
   params = NULL,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Content-Range (string): Optional content range to access
 part of the attachment (new in Orthanc 1.12.5)
@@ -7181,239 +7190,237 @@ Optional query parameters (\code{params}):
 \item filename (string): Filename to set in the
 "Content-Disposition" HTTP header (including file extension)
 }
+  }
+  \subsection{Returns}{
+    The attachment.
+  }
 }
 
-\subsection{Returns}{
-The attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_attachments_name_info"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_attachments_name_info}{}}}
-\subsection{Method \code{get_series_id_attachments_name_info()}}{
-Get info about the attachment
+\subsection{\code{Orthanc$get_series_id_attachments_name_info()}}{
+  Get info about the attachment
 
 Get all the information about the attachment associated with the
 given series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_attachments_name_info(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_attachments_name_info(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    JSON object containing the information about the
+attachment.
+  }
 }
 
-\subsection{Returns}{
-JSON object containing the information about the
-attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_attachments_name_is_compressed"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_attachments_name_is_compressed}{}}}
-\subsection{Method \code{get_series_id_attachments_name_is_compressed()}}{
-Is attachment compressed?
+\subsection{\code{Orthanc$get_series_id_attachments_name_is_compressed()}}{
+  Is attachment compressed?
 
 Test whether the attachment has been stored as a compressed file
 on the disk.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_attachments_name_is_compressed(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_attachments_name_is_compressed(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    \code{0} if the attachment was stored uncompressed, \code{1} if it
+was compressed.
+  }
 }
 
-\subsection{Returns}{
-\code{0} if the attachment was stored uncompressed, \code{1} if it
-was compressed.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_attachments_name_md5"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_attachments_name_md5}{}}}
-\subsection{Method \code{get_series_id_attachments_name_md5()}}{
-Get MD5 of attachment
+\subsection{\code{Orthanc$get_series_id_attachments_name_md5()}}{
+  Get MD5 of attachment
 
 Get the MD5 hash of one attachment associated with the given
 series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_attachments_name_md5(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_attachments_name_md5(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    The MD5 of the attachment.
+  }
 }
 
-\subsection{Returns}{
-The MD5 of the attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_attachments_name_size"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_attachments_name_size}{}}}
-\subsection{Method \code{get_series_id_attachments_name_size()}}{
-Get size of attachment
+\subsection{\code{Orthanc$get_series_id_attachments_name_size()}}{
+  Get size of attachment
 
 Get the size of one attachment associated with the given series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_attachments_name_size(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_attachments_name_size(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    The size of the attachment.
+  }
 }
 
-\subsection{Returns}{
-The size of the attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_series_id_attachments_name_uncompress"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_series_id_attachments_name_uncompress}{}}}
-\subsection{Method \code{post_series_id_attachments_name_uncompress()}}{
-Uncompress attachment
+\subsection{\code{Orthanc$post_series_id_attachments_name_uncompress()}}{
+  Uncompress attachment
 
 Change the compression scheme that is used to store an
 attachment.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_series_id_attachments_name_uncompress(id, name)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_series_id_attachments_name_uncompress(id, name)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_series_id_attachments_name_verify_md5"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_series_id_attachments_name_verify_md5}{}}}
-\subsection{Method \code{post_series_id_attachments_name_verify_md5()}}{
-Verify attachment
+\subsection{\code{Orthanc$post_series_id_attachments_name_verify_md5()}}{
+  Verify attachment
 
 Verify that the attachment is not corrupted, by validating its
 MD5 hash
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_series_id_attachments_name_verify_md5(id, name)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_series_id_attachments_name_verify_md5(id, name)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    On success, a valid JSON object is returned.
+  }
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-On success, a valid JSON object is returned.
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_instances"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_instances}{}}}
-\subsection{Method \code{get_series_id_instances()}}{
-Get child instances
+\subsection{\code{Orthanc$get_series_id_instances()}}{
+  Get child instances
 
 Get detailed information about the child instances of the DICOM
 series whose Orthanc identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_instances(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_instances(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If false or missing, only retrieve the list
 of child instances
@@ -7434,37 +7441,37 @@ to 1.11.0.
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    List containing information about the child DICOM
+instances.
+  }
 }
 
-\subsection{Returns}{
-List containing information about the child DICOM
-instances.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_instances_tags"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_instances_tags}{}}}
-\subsection{Method \code{get_series_id_instances_tags()}}{
-Get tags of instances
+\subsection{\code{Orthanc$get_series_id_instances_tags()}}{
+  Get tags of instances
 
 Get the tags of all the child instances of the DICOM series whose
 Orthanc identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_instances_tags(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_instances_tags(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item ignore-length (array): Also include the DICOM tags that are
 provided in this list, even if their associated value is
@@ -7474,140 +7481,145 @@ hexadecimal format
 \item simplify (boolean): If present, report the DICOM tags in
 human-readable format (using the symbolic name of the tags)
 }
+  }
+  \subsection{Returns}{
+    JSON object associating the Orthanc identifiers of the
+instances, with the values of their DICOM tags.
+  }
 }
 
-\subsection{Returns}{
-JSON object associating the Orthanc identifiers of the
-instances, with the values of their DICOM tags.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_labels"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_labels}{}}}
-\subsection{Method \code{get_series_id_labels()}}{
-List labels
+\subsection{\code{Orthanc$get_series_id_labels()}}{
+  List labels
 
 Get the labels that are associated with the given series (new in
 Orthanc 1.12.0)
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_labels(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_labels(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
+interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    List containing the names of the labels.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
-interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-List containing the names of the labels.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_series_id_labels_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_series_id_labels_label}{}}}
-\subsection{Method \code{delete_series_id_labels_label()}}{
-Remove label
+\subsection{\code{Orthanc$delete_series_id_labels_label()}}{
+  Remove label
 
 Remove a label associated with a series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_series_id_labels_label(id, label)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_series_id_labels_label(id, label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
+      \item{\code{label}}{(character) The label to be removed.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
+}
 
-\item{\code{label}}{(character) The label to be removed.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_labels_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_labels_label}{}}}
-\subsection{Method \code{get_series_id_labels_label()}}{
-Test label
+\subsection{\code{Orthanc$get_series_id_labels_label()}}{
+  Test label
 
 Test whether the series is associated with the given label
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_labels_label(id, label)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_labels_label(id, label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{label}}{(character) The label of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Empty string is returned in the case of presence, error
+      \item{\code{label}}{(character) The label of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Empty string is returned in the case of presence, error
 404 in the case of absence.
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_series_id_labels_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_series_id_labels_label}{}}}
-\subsection{Method \code{put_series_id_labels_label()}}{
-Add label
+\subsection{\code{Orthanc$put_series_id_labels_label()}}{
+  Add label
 
 Associate a label with a series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_series_id_labels_label(id, label)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_series_id_labels_label(id, label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
+      \item{\code{label}}{(character) The label to be added.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
+}
 
-\item{\code{label}}{(character) The label to be added.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_media"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_media}{}}}
-\subsection{Method \code{get_series_id_media()}}{
-Create DICOMDIR media
+\subsection{\code{Orthanc$get_series_id_media()}}{
+  Create DICOMDIR media
 
 Synchronously create a DICOMDIR media containing the DICOM series
 whose Orthanc identifier is provided in the URL. This flavor
 is synchronous, which might \emph{not} be desirable to archive large
 amount of data, as it might lead to network timeouts. Prefer the
 asynchronous version using \code{POST} method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_media(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_media(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item extended (string): If present, will include additional
 tags such as \code{SeriesDescription}, leading to a so-called
@@ -7623,36 +7635,36 @@ v1.12.7)
 archive will be transcoded to the provided transfer syntax:
 https://orthanc.uclouvain.be/book/faq/transcoding.html
 }
+  }
+  \subsection{Returns}{
+    ZIP file containing the archive.
+  }
 }
 
-\subsection{Returns}{
-ZIP file containing the archive.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_series_id_media"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_series_id_media}{}}}
-\subsection{Method \code{post_series_id_media()}}{
-Create DICOMDIR media
+\subsection{\code{Orthanc$post_series_id_media()}}{
+  Create DICOMDIR media
 
 Create a DICOMDIR media containing the DICOM series whose Orthanc
 identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_series_id_media(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_series_id_media(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, create the archive in
 asynchronous mode, which means that a job is submitted to
@@ -7683,197 +7695,193 @@ https://orthanc.uclouvain.be/book/faq/transcoding.html
 \item UserData (list): In asynchronous mode, user data that will
 be attached to the job.
 }
-}
-
-\subsection{Returns}{
-In asynchronous mode, information about the
+  }
+  \subsection{Returns}{
+    In asynchronous mode, information about the
 job that has been submitted to generate the archive:
 https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_metadata"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_metadata}{}}}
-\subsection{Method \code{get_series_id_metadata()}}{
-List metadata
+\subsection{\code{Orthanc$get_series_id_metadata()}}{
+  List metadata
 
 Get the list of metadata that are associated with the given
 series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_metadata(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_metadata(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If present, also retrieve the value of the
 individual metadata
 \item numeric (string): If present, use the numeric identifier of
 the metadata instead of its symbolic name
 }
-}
-
-\subsection{Returns}{
-List containing the names of the available
+  }
+  \subsection{Returns}{
+    List containing the names of the available
 metadata, or List mapping metadata to their
 values (if \code{expand} argument is provided).
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_series_id_metadata_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_series_id_metadata_name}{}}}
-\subsection{Method \code{delete_series_id_metadata_name()}}{
-Delete metadata
+\subsection{\code{Orthanc$delete_series_id_metadata_name()}}{
+  Delete metadata
 
 Delete some metadata associated with the given DICOM series. This
 call will fail if trying to delete a system metadata (i.e. whose
 index is < 1024).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_series_id_metadata_name(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_series_id_metadata_name(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{name}}{(character) The name of the metadata, or its index
+      \item{\code{name}}{(character) The name of the metadata, or its index
 (cf. \code{UserMetadata} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-Match (string): Revision of the metadata, to check if its
 content has not changed and can be deleted. This header is
 mandatory if \code{CheckRevisions} option is \code{TRUE}.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_metadata_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_metadata_name}{}}}
-\subsection{Method \code{get_series_id_metadata_name()}}{
-Get metadata
+\subsection{\code{Orthanc$get_series_id_metadata_name()}}{
+  Get metadata
 
 Get the value of a metadata that is associated with the given
 series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_metadata_name(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_metadata_name(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{name}}{(character) The name of the metadata, or its index
+      \item{\code{name}}{(character) The name of the metadata, or its index
 (cf. \code{UserMetadata} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the metadata,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    Value of the metadata.
+  }
 }
 
-\subsection{Returns}{
-Value of the metadata.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_series_id_metadata_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_series_id_metadata_name}{}}}
-\subsection{Method \code{put_series_id_metadata_name()}}{
-Set metadata
+\subsection{\code{Orthanc$put_series_id_metadata_name()}}{
+  Set metadata
 
 Set the value of some metadata in the given DICOM series. This
 call will fail if trying to modify a system metadata (i.e. whose
 index is < 1024).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_series_id_metadata_name(id, name, headers = NULL, data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_series_id_metadata_name(id, name, headers = NULL, data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{name}}{(character) The name of the metadata, or its index
+      \item{\code{name}}{(character) The name of the metadata, or its index
 (cf. \code{UserMetadata} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: String value of the metadata (text/plain).
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: String value of the metadata (text/plain).
 
 Optional headers (\code{headers}):
 \itemize{
 \item If-Match (string): Revision of the metadata, if this is not
 the first time this metadata is set.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_series_id_modify"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_series_id_modify}{}}}
-\subsection{Method \code{post_series_id_modify()}}{
-Modify series
+\subsection{\code{Orthanc$post_series_id_modify()}}{
+  Modify series
 
 Start a job that will modify all the DICOM instances within
 the series whose identifier is provided in the URL. The
 modified DICOM instances will be stored into a brand new
 series, whose Orthanc identifiers will be returned by the job.
 https://orthanc.uclouvain.be/book/users/anonymization.html#modification-of-studies-or-series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_series_id_modify(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_series_id_modify(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, run the job in
 asynchronous mode, which means that the REST API call will
@@ -7925,36 +7933,36 @@ https://orthanc.uclouvain.be/book/faq/transcoding.html
 \item UserData (list): User data that will travel along with the
 job.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_module"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_module}{}}}
-\subsection{Method \code{get_series_id_module()}}{
-Get series module
+\subsection{\code{Orthanc$get_series_id_module()}}{
+  Get series module
 
 Get the series module of the DICOM series whose Orthanc
 identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_module(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_module(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item ignore-length (array): Also include the DICOM tags that are
 provided in this list, even if their associated value is
@@ -7964,73 +7972,73 @@ hexadecimal format
 \item simplify (boolean): If present, report the DICOM tags in
 human-readable format (using the symbolic name of the tags)
 }
+  }
+  \subsection{Returns}{
+    Information about the DICOM series.
+  }
 }
 
-\subsection{Returns}{
-Information about the DICOM series.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_numpy"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_numpy}{}}}
-\subsection{Method \code{get_series_id_numpy()}}{
-Decode series for numpy
+\subsection{\code{Orthanc$get_series_id_numpy()}}{
+  Decode series for numpy
 
 Decode the given DICOM series, for use with numpy in Python.
 The numpy array has 4 dimensions: (frame, height, width, color
 channel).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_numpy(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the DICOM resource of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_numpy(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the DICOM resource of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item compress (boolean): Compress the file as \code{.npz}
 \item rescale (boolean): On grayscale images, apply the rescaling
 and return floating-point values
 }
+  }
+  \subsection{Returns}{
+    Numpy file:
+https://numpy.org/devdocs/reference/generated/numpy.lib.format.html.
+  }
 }
 
-\subsection{Returns}{
-Numpy file:
-https://numpy.org/devdocs/reference/generated/numpy.lib.format.html.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_patient"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_patient}{}}}
-\subsection{Method \code{get_series_id_patient()}}{
-Get parent patient
+\subsection{\code{Orthanc$get_series_id_patient()}}{
+  Get parent patient
 
 Get detailed information about the parent patient of the DICOM
 series whose Orthanc identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_patient(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_patient(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item full (boolean): If present, report the DICOM tags in full
 format (tags indexed by their hexadecimal format, associated
@@ -8049,17 +8057,17 @@ to 1.11.0.
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    Information about the parent DICOM patient.
+  }
 }
 
-\subsection{Returns}{
-Information about the parent DICOM patient.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_series_id_reconstruct"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_series_id_reconstruct}{}}}
-\subsection{Method \code{post_series_id_reconstruct()}}{
-Reconstruct tags & optionally files of series
+\subsection{\code{Orthanc$post_series_id_reconstruct()}}{
+  Reconstruct tags & optionally files of series
 
 Reconstruct the main DICOM tags in DB of the series whose
 Orthanc identifier is provided in the URL. This is useful
@@ -8069,22 +8077,22 @@ value from the resource of interest. Beware that this is a
 time-consuming operation, as all the children DICOM instances
 will be parsed again, and the Orthanc index will be updated
 accordingly.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_series_id_reconstruct(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_series_id_reconstruct(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item LimitToThisLevelMainDicomTags (logical): Only reconstruct
 this level MainDicomTags by re-reading them from a random
@@ -8098,96 +8106,98 @@ files of the resources (e.g: apply IngestTranscoding,
 StorageCompression). 'false' by default. (New in Orthanc
 1.11.0)
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_shared_tags"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_shared_tags}{}}}
-\subsection{Method \code{get_series_id_shared_tags()}}{
-Get shared tags
+\subsection{\code{Orthanc$get_series_id_shared_tags()}}{
+  Get shared tags
 
 Extract the DICOM tags whose value is constant across all the
 child instances of the DICOM series whose Orthanc identifier is
 provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_shared_tags(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_shared_tags(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 \item simplify (boolean): If present, report the DICOM tags in
 human-readable format (using the symbolic name of the tags)
 }
+  }
+  \subsection{Returns}{
+    JSON object containing the values of the DICOM tags.
+  }
 }
 
-\subsection{Returns}{
-JSON object containing the values of the DICOM tags.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_statistics"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_statistics}{}}}
-\subsection{Method \code{get_series_id_statistics()}}{
-Get series statistics
+\subsection{\code{Orthanc$get_series_id_statistics()}}{
+  Get series statistics
 
 Get statistics about the given series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_statistics(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_statistics(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
+interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
-interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_series_id_study"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_series_id_study}{}}}
-\subsection{Method \code{get_series_id_study()}}{
-Get parent study
+\subsection{\code{Orthanc$get_series_id_study()}}{
+  Get parent study
 
 Get detailed information about the parent study of the DICOM
 series whose Orthanc identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_series_id_study(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the series of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_series_id_study(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the series of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item full (boolean): If present, report the DICOM tags in full
 format (tags indexed by their hexadecimal format, associated
@@ -8206,57 +8216,61 @@ to 1.11.0.
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    Information about the parent DICOM study.
+  }
 }
 
-\subsection{Returns}{
-Information about the parent DICOM study.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_statistics"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_statistics}{}}}
-\subsection{Method \code{get_statistics()}}{
-Get database statistics
+\subsection{\code{Orthanc$get_statistics()}}{
+  Get database statistics
 
 Get statistics related to the database of Orthanc
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_statistics()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_statistics()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_storage_commitment_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_storage_commitment_id}{}}}
-\subsection{Method \code{get_storage_commitment_id()}}{
-Get storage commitment report
+\subsection{\code{Orthanc$get_storage_commitment_id()}}{
+  Get storage commitment report
 
 Get the storage commitment report whose
 identifier is provided in the URL:
 https://orthanc.uclouvain.be/book/users/storage-commitment.html#storage-commitment-scu
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_storage_commitment_id(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_storage_commitment_id(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the storage commitment
+report.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the storage commitment
-report.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_storage_commitment_id_remove"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_storage_commitment_id_remove}{}}}
-\subsection{Method \code{post_storage_commitment_id_remove()}}{
-Remove after storage commitment
+\subsection{\code{Orthanc$post_storage_commitment_id_remove()}}{
+  Remove after storage commitment
 
 Remove out of Orthanc, the DICOM instances that have
 been reported to have been properly received in the
@@ -8264,42 +8278,45 @@ storage commitment report whose identifier is provided
 in the URL. This is only possible if the \code{Status}
 of the storage commitment report is \code{Success}.
 https://orthanc.uclouvain.be/book/users/storage-commitment.html#removing-the-instances
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_storage_commitment_id_remove(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_storage_commitment_id_remove(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Identifier of the storage commitment
+report.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Identifier of the storage commitment
-report.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies}{}}}
-\subsection{Method \code{get_studies()}}{
-List the available studies
+\subsection{\code{Orthanc$get_studies()}}{
+  List the available studies
 
 List the Orthanc identifiers of all the available DICOM studies
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies(params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies(params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If present, retrieve detailed information
 about the individual resources, not only their Orthanc
@@ -8332,62 +8349,64 @@ hexadecimal format
 \item since (number): Show only the resources since the provided
 index
 }
-}
-
-\subsection{Returns}{
-List containing either the Orthanc identifiers, or
+  }
+  \subsection{Returns}{
+    List containing either the Orthanc identifiers, or
 detailed information about the reported studies (if \code{expand}
 argument is provided).
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_studies_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_studies_id}{}}}
-\subsection{Method \code{delete_studies_id()}}{
-Delete some study
+\subsection{\code{Orthanc$delete_studies_id()}}{
+  Delete some study
 
 Delete the DICOM study whose Orthanc identifier is provided in
 the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_studies_id(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_studies_id(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
+interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
-interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id}{}}}
-\subsection{Method \code{get_studies_id()}}{
-Get information about some study
+\subsection{\code{Orthanc$get_studies_id()}}{
+  Get information about some study
 
 Get detailed information about the DICOM study whose Orthanc
 identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item full (boolean): If present, report the DICOM tags in full
 format (tags indexed by their hexadecimal format, associated
@@ -8406,39 +8425,39 @@ to 1.11.0.
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    Information about the DICOM study.
+  }
 }
 
-\subsection{Returns}{
-Information about the DICOM study.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_studies_id_anonymize"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_studies_id_anonymize}{}}}
-\subsection{Method \code{post_studies_id_anonymize()}}{
-Anonymize study
+\subsection{\code{Orthanc$post_studies_id_anonymize()}}{
+  Anonymize study
 
 Start a job that will anonymize all the DICOM instances
 within the study whose identifier is provided in the URL.
 The modified DICOM instances will be stored into a brand new
 study, whose Orthanc identifiers will be returned by the job.
 https://orthanc.uclouvain.be/book/users/anonymization.html#anonymization-of-patients-studies-or-series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_studies_id_anonymize(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_studies_id_anonymize(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, run the job in
 asynchronous mode, which means that the REST API call will
@@ -8495,39 +8514,39 @@ https://orthanc.uclouvain.be/book/faq/transcoding.html
 \item UserData (list): User data that will travel along with the
 job.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_archive"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_archive}{}}}
-\subsection{Method \code{get_studies_id_archive()}}{
-Create ZIP archive
+\subsection{\code{Orthanc$get_studies_id_archive()}}{
+  Create ZIP archive
 
 Synchronously create a ZIP archive containing the DICOM study
 whose Orthanc identifier is provided in the URL. This flavor
 is synchronous, which might \emph{not} be desirable to archive large
 amount of data, as it might lead to network timeouts. Prefer the
 asynchronous version using \code{POST} method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_archive(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_archive(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item filename (string): Filename to set in the
 "Content-Disposition" HTTP header (including file extension)
@@ -8540,36 +8559,36 @@ v1.12.7)
 archive will be transcoded to the provided transfer syntax:
 https://orthanc.uclouvain.be/book/faq/transcoding.html
 }
+  }
+  \subsection{Returns}{
+    ZIP file containing the archive.
+  }
 }
 
-\subsection{Returns}{
-ZIP file containing the archive.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_studies_id_archive"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_studies_id_archive}{}}}
-\subsection{Method \code{post_studies_id_archive()}}{
-Create ZIP archive
+\subsection{\code{Orthanc$post_studies_id_archive()}}{
+  Create ZIP archive
 
 Create a ZIP archive containing the DICOM study whose Orthanc
 identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_studies_id_archive(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_studies_id_archive(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, create the archive in
 asynchronous mode, which means that a job is submitted to
@@ -8597,154 +8616,150 @@ https://orthanc.uclouvain.be/book/faq/transcoding.html
 \item UserData (list): In asynchronous mode, user data that will
 be attached to the job.
 }
-}
-
-\subsection{Returns}{
-In asynchronous mode, information about the
+  }
+  \subsection{Returns}{
+    In asynchronous mode, information about the
 job that has been submitted to generate the archive:
 https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_attachments"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_attachments}{}}}
-\subsection{Method \code{get_studies_id_attachments()}}{
-List attachments
+\subsection{\code{Orthanc$get_studies_id_attachments()}}{
+  List attachments
 
 Get the list of attachments that are associated with the given
 study
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_attachments(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_attachments(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item full (string): If present, retrieve the attachments list and
 their numerical ids
 }
+  }
+  \subsection{Returns}{
+    List containing the names of the attachments.
+  }
 }
 
-\subsection{Returns}{
-List containing the names of the attachments.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_studies_id_attachments_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_studies_id_attachments_name}{}}}
-\subsection{Method \code{delete_studies_id_attachments_name()}}{
-Delete attachment
+\subsection{\code{Orthanc$delete_studies_id_attachments_name()}}{
+  Delete attachment
 
 Delete an attachment associated with the given DICOM study. This
 call will fail if trying to delete a system attachment (i.e.
 whose index is < 1024).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_studies_id_attachments_name(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_studies_id_attachments_name(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-Match (string): Revision of the attachment, to check if
 its content has not changed and can be deleted. This header
 is mandatory if \code{CheckRevisions} option is \code{TRUE}.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_attachments_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_attachments_name}{}}}
-\subsection{Method \code{get_studies_id_attachments_name()}}{
-List operations on attachments
+\subsection{\code{Orthanc$get_studies_id_attachments_name()}}{
+  List operations on attachments
 
 Get the list of the operations that are available for attachments
 associated with the given study
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_attachments_name(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_attachments_name(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    List of the available operations.
+  }
 }
 
-\subsection{Returns}{
-List of the available operations.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_studies_id_attachments_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_studies_id_attachments_name}{}}}
-\subsection{Method \code{put_studies_id_attachments_name()}}{
-Set attachment
+\subsection{\code{Orthanc$put_studies_id_attachments_name()}}{
+  Set attachment
 
 Attach a file to the given DICOM study. This call will fail
 if trying to modify a system attachment (i.e. whose index is <
 1024).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_studies_id_attachments_name(id, name, headers = NULL, data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_studies_id_attachments_name(id, name, headers = NULL, data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: Binary data containing the attachment
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: Binary data containing the attachment
 (application/octet-stream).
 
 Optional headers (\code{headers}):
@@ -8752,74 +8767,73 @@ Optional headers (\code{headers}):
 \item If-Match (string): Revision of the attachment, if this is
 not the first time this attachment is set.
 }
+  }
+  \subsection{Returns}{
+    Empty JSON object in the case of a success.
+  }
 }
 
-\subsection{Returns}{
-Empty JSON object in the case of a success.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_studies_id_attachments_name_compress"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_studies_id_attachments_name_compress}{}}}
-\subsection{Method \code{post_studies_id_attachments_name_compress()}}{
-Compress attachment
+\subsection{\code{Orthanc$post_studies_id_attachments_name_compress()}}{
+  Compress attachment
 
 Change the compression scheme that is used to store an
 attachment.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_studies_id_attachments_name_compress(id, name)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_studies_id_attachments_name_compress(id, name)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_attachments_name_compressed_data"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_attachments_name_compressed_data}{}}}
-\subsection{Method \code{get_studies_id_attachments_name_compressed_data()}}{
-Get attachment (no decompression)
+\subsection{\code{Orthanc$get_studies_id_attachments_name_compressed_data()}}{
+  Get attachment (no decompression)
 
 Get the (binary) content of one attachment associated with
 the given study. The attachment will not be decompressed if
 \code{StorageCompression} is \code{TRUE}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_attachments_name_compressed_data(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_attachments_name_compressed_data(
   id,
   name,
   params = NULL,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Content-Range (string): Optional content range to access
 part of the attachment (new in Orthanc 1.12.5)
@@ -8832,130 +8846,126 @@ Optional query parameters (\code{params}):
 \item filename (string): Filename to set in the
 "Content-Disposition" HTTP header (including file extension)
 }
+  }
+  \subsection{Returns}{
+    The attachment.
+  }
 }
 
-\subsection{Returns}{
-The attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_attachments_name_compressed_md5"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_attachments_name_compressed_md5}{}}}
-\subsection{Method \code{get_studies_id_attachments_name_compressed_md5()}}{
-Get MD5 of attachment on disk
+\subsection{\code{Orthanc$get_studies_id_attachments_name_compressed_md5()}}{
+  Get MD5 of attachment on disk
 
 Get the MD5 hash of one attachment associated with the given
 study, as stored on the disk. This is different from \code{.../md5}
 iff \code{EnableStorage} is \code{TRUE}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_attachments_name_compressed_md5(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_attachments_name_compressed_md5(
   id,
   name,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    The MD5 of the attachment, as stored on the disk.
+  }
 }
 
-\subsection{Returns}{
-The MD5 of the attachment, as stored on the disk.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_attachments_name_compressed_size"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_attachments_name_compressed_size}{}}}
-\subsection{Method \code{get_studies_id_attachments_name_compressed_size()}}{
-Get size of attachment on disk
+\subsection{\code{Orthanc$get_studies_id_attachments_name_compressed_size()}}{
+  Get size of attachment on disk
 
 Get the size of one attachment associated with the given study,
 as stored on the disk. This is different from \code{.../size} iff
 \code{EnableStorage} is \code{TRUE}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_attachments_name_compressed_size(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_attachments_name_compressed_size(
   id,
   name,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    The size of the attachment, as stored on the disk.
+  }
 }
 
-\subsection{Returns}{
-The size of the attachment, as stored on the disk.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_attachments_name_data"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_attachments_name_data}{}}}
-\subsection{Method \code{get_studies_id_attachments_name_data()}}{
-Get attachment
+\subsection{\code{Orthanc$get_studies_id_attachments_name_data()}}{
+  Get attachment
 
 Get the (binary) content of one attachment associated with the
 given study
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_attachments_name_data(
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_attachments_name_data(
   id,
   name,
   params = NULL,
   headers = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item Content-Range (string): Optional content range to access
 part of the attachment (new in Orthanc 1.12.5)
@@ -8968,239 +8978,237 @@ Optional query parameters (\code{params}):
 \item filename (string): Filename to set in the
 "Content-Disposition" HTTP header (including file extension)
 }
+  }
+  \subsection{Returns}{
+    The attachment.
+  }
 }
 
-\subsection{Returns}{
-The attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_attachments_name_info"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_attachments_name_info}{}}}
-\subsection{Method \code{get_studies_id_attachments_name_info()}}{
-Get info about the attachment
+\subsection{\code{Orthanc$get_studies_id_attachments_name_info()}}{
+  Get info about the attachment
 
 Get all the information about the attachment associated with the
 given study
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_attachments_name_info(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_attachments_name_info(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    JSON object containing the information about the
+attachment.
+  }
 }
 
-\subsection{Returns}{
-JSON object containing the information about the
-attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_attachments_name_is_compressed"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_attachments_name_is_compressed}{}}}
-\subsection{Method \code{get_studies_id_attachments_name_is_compressed()}}{
-Is attachment compressed?
+\subsection{\code{Orthanc$get_studies_id_attachments_name_is_compressed()}}{
+  Is attachment compressed?
 
 Test whether the attachment has been stored as a compressed file
 on the disk.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_attachments_name_is_compressed(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_attachments_name_is_compressed(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    \code{0} if the attachment was stored uncompressed, \code{1} if it
+was compressed.
+  }
 }
 
-\subsection{Returns}{
-\code{0} if the attachment was stored uncompressed, \code{1} if it
-was compressed.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_attachments_name_md5"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_attachments_name_md5}{}}}
-\subsection{Method \code{get_studies_id_attachments_name_md5()}}{
-Get MD5 of attachment
+\subsection{\code{Orthanc$get_studies_id_attachments_name_md5()}}{
+  Get MD5 of attachment
 
 Get the MD5 hash of one attachment associated with the given
 study
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_attachments_name_md5(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_attachments_name_md5(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    The MD5 of the attachment.
+  }
 }
 
-\subsection{Returns}{
-The MD5 of the attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_attachments_name_size"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_attachments_name_size}{}}}
-\subsection{Method \code{get_studies_id_attachments_name_size()}}{
-Get size of attachment
+\subsection{\code{Orthanc$get_studies_id_attachments_name_size()}}{
+  Get size of attachment
 
 Get the size of one attachment associated with the given study
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_attachments_name_size(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_attachments_name_size(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the attachment,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    The size of the attachment.
+  }
 }
 
-\subsection{Returns}{
-The size of the attachment.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_studies_id_attachments_name_uncompress"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_studies_id_attachments_name_uncompress}{}}}
-\subsection{Method \code{post_studies_id_attachments_name_uncompress()}}{
-Uncompress attachment
+\subsection{\code{Orthanc$post_studies_id_attachments_name_uncompress()}}{
+  Uncompress attachment
 
 Change the compression scheme that is used to store an
 attachment.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_studies_id_attachments_name_uncompress(id, name)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_studies_id_attachments_name_uncompress(id, name)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_studies_id_attachments_name_verify_md5"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_studies_id_attachments_name_verify_md5}{}}}
-\subsection{Method \code{post_studies_id_attachments_name_verify_md5()}}{
-Verify attachment
+\subsection{\code{Orthanc$post_studies_id_attachments_name_verify_md5()}}{
+  Verify attachment
 
 Verify that the attachment is not corrupted, by validating its
 MD5 hash
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_studies_id_attachments_name_verify_md5(id, name)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_studies_id_attachments_name_verify_md5(id, name)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{name}}{(character) The name of the attachment, or its index
+      \item{\code{name}}{(character) The name of the attachment, or its index
 (cf. \code{UserContentType} configuration option).}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    On success, a valid JSON object is returned.
+  }
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-On success, a valid JSON object is returned.
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_instances"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_instances}{}}}
-\subsection{Method \code{get_studies_id_instances()}}{
-Get child instances
+\subsection{\code{Orthanc$get_studies_id_instances()}}{
+  Get child instances
 
 Get detailed information about the child instances of the DICOM
 study whose Orthanc identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_instances(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_instances(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If false or missing, only retrieve the list
 of child instances
@@ -9221,37 +9229,37 @@ to 1.11.0.
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    List containing information about the child DICOM
+instances.
+  }
 }
 
-\subsection{Returns}{
-List containing information about the child DICOM
-instances.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_instances_tags"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_instances_tags}{}}}
-\subsection{Method \code{get_studies_id_instances_tags()}}{
-Get tags of instances
+\subsection{\code{Orthanc$get_studies_id_instances_tags()}}{
+  Get tags of instances
 
 Get the tags of all the child instances of the DICOM study whose
 Orthanc identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_instances_tags(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_instances_tags(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item ignore-length (array): Also include the DICOM tags that are
 provided in this list, even if their associated value is
@@ -9261,140 +9269,145 @@ hexadecimal format
 \item simplify (boolean): If present, report the DICOM tags in
 human-readable format (using the symbolic name of the tags)
 }
+  }
+  \subsection{Returns}{
+    JSON object associating the Orthanc identifiers of the
+instances, with the values of their DICOM tags.
+  }
 }
 
-\subsection{Returns}{
-JSON object associating the Orthanc identifiers of the
-instances, with the values of their DICOM tags.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_labels"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_labels}{}}}
-\subsection{Method \code{get_studies_id_labels()}}{
-List labels
+\subsection{\code{Orthanc$get_studies_id_labels()}}{
+  List labels
 
 Get the labels that are associated with the given study (new in
 Orthanc 1.12.0)
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_labels(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_labels(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
+interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    List containing the names of the labels.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
-interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-List containing the names of the labels.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_studies_id_labels_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_studies_id_labels_label}{}}}
-\subsection{Method \code{delete_studies_id_labels_label()}}{
-Remove label
+\subsection{\code{Orthanc$delete_studies_id_labels_label()}}{
+  Remove label
 
 Remove a label associated with a study
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_studies_id_labels_label(id, label)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_studies_id_labels_label(id, label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
+      \item{\code{label}}{(character) The label to be removed.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
+}
 
-\item{\code{label}}{(character) The label to be removed.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_labels_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_labels_label}{}}}
-\subsection{Method \code{get_studies_id_labels_label()}}{
-Test label
+\subsection{\code{Orthanc$get_studies_id_labels_label()}}{
+  Test label
 
 Test whether the study is associated with the given label
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_labels_label(id, label)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_labels_label(id, label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{label}}{(character) The label of interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Empty string is returned in the case of presence, error
+      \item{\code{label}}{(character) The label of interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Empty string is returned in the case of presence, error
 404 in the case of absence.
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_studies_id_labels_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_studies_id_labels_label}{}}}
-\subsection{Method \code{put_studies_id_labels_label()}}{
-Add label
+\subsection{\code{Orthanc$put_studies_id_labels_label()}}{
+  Add label
 
 Associate a label with a study
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_studies_id_labels_label(id, label)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_studies_id_labels_label(id, label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
+      \item{\code{label}}{(character) The label to be added.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
+}
 
-\item{\code{label}}{(character) The label to be added.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_media"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_media}{}}}
-\subsection{Method \code{get_studies_id_media()}}{
-Create DICOMDIR media
+\subsection{\code{Orthanc$get_studies_id_media()}}{
+  Create DICOMDIR media
 
 Synchronously create a DICOMDIR media containing the DICOM study
 whose Orthanc identifier is provided in the URL. This flavor
 is synchronous, which might \emph{not} be desirable to archive large
 amount of data, as it might lead to network timeouts. Prefer the
 asynchronous version using \code{POST} method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_media(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_media(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item extended (string): If present, will include additional
 tags such as \code{SeriesDescription}, leading to a so-called
@@ -9410,36 +9423,36 @@ v1.12.7)
 archive will be transcoded to the provided transfer syntax:
 https://orthanc.uclouvain.be/book/faq/transcoding.html
 }
+  }
+  \subsection{Returns}{
+    ZIP file containing the archive.
+  }
 }
 
-\subsection{Returns}{
-ZIP file containing the archive.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_studies_id_media"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_studies_id_media}{}}}
-\subsection{Method \code{post_studies_id_media()}}{
-Create DICOMDIR media
+\subsection{\code{Orthanc$post_studies_id_media()}}{
+  Create DICOMDIR media
 
 Create a DICOMDIR media containing the DICOM study whose Orthanc
 identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_studies_id_media(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_studies_id_media(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, create the archive in
 asynchronous mode, which means that a job is submitted to
@@ -9470,39 +9483,39 @@ https://orthanc.uclouvain.be/book/faq/transcoding.html
 \item UserData (list): In asynchronous mode, user data that will
 be attached to the job.
 }
-}
-
-\subsection{Returns}{
-In asynchronous mode, information about the
+  }
+  \subsection{Returns}{
+    In asynchronous mode, information about the
 job that has been submitted to generate the archive:
 https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_studies_id_merge"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_studies_id_merge}{}}}
-\subsection{Method \code{post_studies_id_merge()}}{
-Merge study
+\subsection{\code{Orthanc$post_studies_id_merge()}}{
+  Merge study
 
 Start a new job so as to move some DICOM resources into the
 DICOM study whose Orthanc identifier is provided in the URL:
 https://orthanc.uclouvain.be/book/users/anonymization.html#merging
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_studies_id_merge(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_studies_id_merge(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, run the job in
 asynchronous mode, which means that the REST API call will
@@ -9527,194 +9540,190 @@ network timeouts.
 \item UserData (list): User data that will travel along with the
 job.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_metadata"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_metadata}{}}}
-\subsection{Method \code{get_studies_id_metadata()}}{
-List metadata
+\subsection{\code{Orthanc$get_studies_id_metadata()}}{
+  List metadata
 
 Get the list of metadata that are associated with the given study
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_metadata(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_metadata(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If present, also retrieve the value of the
 individual metadata
 \item numeric (string): If present, use the numeric identifier of
 the metadata instead of its symbolic name
 }
-}
-
-\subsection{Returns}{
-List containing the names of the available
+  }
+  \subsection{Returns}{
+    List containing the names of the available
 metadata, or List mapping metadata to their
 values (if \code{expand} argument is provided).
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-delete_studies_id_metadata_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-delete_studies_id_metadata_name}{}}}
-\subsection{Method \code{delete_studies_id_metadata_name()}}{
-Delete metadata
+\subsection{\code{Orthanc$delete_studies_id_metadata_name()}}{
+  Delete metadata
 
 Delete some metadata associated with the given DICOM study. This
 call will fail if trying to delete a system metadata (i.e. whose
 index is < 1024).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$delete_studies_id_metadata_name(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$delete_studies_id_metadata_name(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{name}}{(character) The name of the metadata, or its index
+      \item{\code{name}}{(character) The name of the metadata, or its index
 (cf. \code{UserMetadata} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-Match (string): Revision of the metadata, to check if its
 content has not changed and can be deleted. This header is
 mandatory if \code{CheckRevisions} option is \code{TRUE}.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_metadata_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_metadata_name}{}}}
-\subsection{Method \code{get_studies_id_metadata_name()}}{
-Get metadata
+\subsection{\code{Orthanc$get_studies_id_metadata_name()}}{
+  Get metadata
 
 Get the value of a metadata that is associated with the given
 study
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_metadata_name(id, name, headers = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_metadata_name(id, name, headers = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{name}}{(character) The name of the metadata, or its index
+      \item{\code{name}}{(character) The name of the metadata, or its index
 (cf. \code{UserMetadata} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional headers (\code{headers}):
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional headers (\code{headers}):
 \itemize{
 \item If-None-Match (string): Optional revision of the metadata,
 to check if its content has changed
 }
+  }
+  \subsection{Returns}{
+    Value of the metadata.
+  }
 }
 
-\subsection{Returns}{
-Value of the metadata.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_studies_id_metadata_name"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_studies_id_metadata_name}{}}}
-\subsection{Method \code{put_studies_id_metadata_name()}}{
-Set metadata
+\subsection{\code{Orthanc$put_studies_id_metadata_name()}}{
+  Set metadata
 
 Set the value of some metadata in the given DICOM study. This
 call will fail if trying to modify a system metadata (i.e. whose
 index is < 1024).
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_studies_id_metadata_name(id, name, headers = NULL, data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_studies_id_metadata_name(id, name, headers = NULL, data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{name}}{(character) The name of the metadata, or its index
+      \item{\code{name}}{(character) The name of the metadata, or its index
 (cf. \code{UserMetadata} configuration option).}
-
-\item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
-
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: String value of the metadata (text/plain).
+      \item{\code{headers}}{(list) Named-list of optional header parameters. See Details.}
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: String value of the metadata (text/plain).
 
 Optional headers (\code{headers}):
 \itemize{
 \item If-Match (string): Revision of the metadata, if this is not
 the first time this metadata is set.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_studies_id_modify"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_studies_id_modify}{}}}
-\subsection{Method \code{post_studies_id_modify()}}{
-Modify study
+\subsection{\code{Orthanc$post_studies_id_modify()}}{
+  Modify study
 
 Start a job that will modify all the DICOM instances within
 the study whose identifier is provided in the URL. The
 modified DICOM instances will be stored into a brand new
 study, whose Orthanc identifiers will be returned by the job.
 https://orthanc.uclouvain.be/book/users/anonymization.html#modification-of-studies-or-series
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_studies_id_modify(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_studies_id_modify(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, run the job in
 asynchronous mode, which means that the REST API call will
@@ -9766,36 +9775,36 @@ https://orthanc.uclouvain.be/book/faq/transcoding.html
 \item UserData (list): User data that will travel along with the
 job.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_module"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_module}{}}}
-\subsection{Method \code{get_studies_id_module()}}{
-Get study module
+\subsection{\code{Orthanc$get_studies_id_module()}}{
+  Get study module
 
 Get the study module of the DICOM study whose Orthanc identifier
 is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_module(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_module(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item ignore-length (array): Also include the DICOM tags that are
 provided in this list, even if their associated value is
@@ -9805,36 +9814,36 @@ hexadecimal format
 \item simplify (boolean): If present, report the DICOM tags in
 human-readable format (using the symbolic name of the tags)
 }
+  }
+  \subsection{Returns}{
+    Information about the DICOM study.
+  }
 }
 
-\subsection{Returns}{
-Information about the DICOM study.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_module_patient"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_module_patient}{}}}
-\subsection{Method \code{get_studies_id_module_patient()}}{
-Get patient module of study
+\subsection{\code{Orthanc$get_studies_id_module_patient()}}{
+  Get patient module of study
 
 Get the patient module of the DICOM study whose Orthanc
 identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_module_patient(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_module_patient(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item ignore-length (array): Also include the DICOM tags that are
 provided in this list, even if their associated value is
@@ -9844,36 +9853,36 @@ hexadecimal format
 \item simplify (boolean): If present, report the DICOM tags in
 human-readable format (using the symbolic name of the tags)
 }
+  }
+  \subsection{Returns}{
+    Information about the DICOM study.
+  }
 }
 
-\subsection{Returns}{
-Information about the DICOM study.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_patient"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_patient}{}}}
-\subsection{Method \code{get_studies_id_patient()}}{
-Get parent patient
+\subsection{\code{Orthanc$get_studies_id_patient()}}{
+  Get parent patient
 
 Get detailed information about the parent patient of the DICOM
 study whose Orthanc identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_patient(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_patient(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item full (boolean): If present, report the DICOM tags in full
 format (tags indexed by their hexadecimal format, associated
@@ -9892,17 +9901,17 @@ to 1.11.0.
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    Information about the parent DICOM patient.
+  }
 }
 
-\subsection{Returns}{
-Information about the parent DICOM patient.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_studies_id_reconstruct"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_studies_id_reconstruct}{}}}
-\subsection{Method \code{post_studies_id_reconstruct()}}{
-Reconstruct tags & optionally files of study
+\subsection{\code{Orthanc$post_studies_id_reconstruct()}}{
+  Reconstruct tags & optionally files of study
 
 Reconstruct the main DICOM tags in DB of the study whose
 Orthanc identifier is provided in the URL. This is useful
@@ -9912,22 +9921,22 @@ value from the resource of interest. Beware that this is a
 time-consuming operation, as all the children DICOM instances
 will be parsed again, and the Orthanc index will be updated
 accordingly.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_studies_id_reconstruct(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_studies_id_reconstruct(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item LimitToThisLevelMainDicomTags (logical): Only reconstruct
 this level MainDicomTags by re-reading them from a random
@@ -9941,36 +9950,36 @@ files of the resources (e.g: apply IngestTranscoding,
 StorageCompression). 'false' by default. (New in Orthanc
 1.11.0)
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_series"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_series}{}}}
-\subsection{Method \code{get_studies_id_series()}}{
-Get child series
+\subsection{\code{Orthanc$get_studies_id_series()}}{
+  Get child series
 
 Get detailed information about the child series of the DICOM
 study whose Orthanc identifier is provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_series(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_series(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item expand (string): If false or missing, only retrieve the list
 of child series
@@ -9991,55 +10000,55 @@ to 1.11.0.
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    List containing information about the child DICOM
+series.
+  }
 }
 
-\subsection{Returns}{
-List containing information about the child DICOM
-series.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_shared_tags"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_shared_tags}{}}}
-\subsection{Method \code{get_studies_id_shared_tags()}}{
-Get shared tags
+\subsection{\code{Orthanc$get_studies_id_shared_tags()}}{
+  Get shared tags
 
 Extract the DICOM tags whose value is constant across all the
 child instances of the DICOM study whose Orthanc identifier is
 provided in the URL
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_shared_tags(id, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_shared_tags(id, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item short (boolean): If present, report the DICOM tags in
 hexadecimal format
 \item simplify (boolean): If present, report the DICOM tags in
 human-readable format (using the symbolic name of the tags)
 }
+  }
+  \subsection{Returns}{
+    JSON object containing the values of the DICOM tags.
+  }
 }
 
-\subsection{Returns}{
-JSON object containing the values of the DICOM tags.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_studies_id_split"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_studies_id_split}{}}}
-\subsection{Method \code{post_studies_id_split()}}{
-Split study
+\subsection{\code{Orthanc$post_studies_id_split()}}{
+  Split study
 
 Start a new job so as to split the DICOM study whose
 Orthanc identifier is provided in the URL, by taking some
@@ -10047,22 +10056,22 @@ of its children series or instances out of it and putting
 them into a brand new study (this new study is created by
 setting the \code{StudyInstanceUID} tag to a random identifier):
 https://orthanc.uclouvain.be/book/users/anonymization.html#splitting
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_studies_id_split(id, json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_studies_id_split(id, json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
 interest.}
-
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, run the job in
 asynchronous mode, which means that the REST API call will
@@ -10100,158 +10109,169 @@ network timeouts.
 \item UserData (list): User data that will travel along with the
 job.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_studies_id_statistics"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_studies_id_statistics}{}}}
-\subsection{Method \code{get_studies_id_statistics()}}{
-Get study statistics
+\subsection{\code{Orthanc$get_studies_id_statistics()}}{
+  Get study statistics
 
 Get statistics about the given study
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_studies_id_statistics(id)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_studies_id_statistics(id)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{id}}{(character) Orthanc identifier of the study of
+interest.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{id}}{(character) Orthanc identifier of the study of
-interest.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_system"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_system}{}}}
-\subsection{Method \code{get_system()}}{
-Get system information
+\subsection{\code{Orthanc$get_system()}}{
+  Get system information
 
 Get system information about Orthanc
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_system()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_system()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools}{}}}
-\subsection{Method \code{get_tools()}}{
-List operations
+\subsection{\code{Orthanc$get_tools()}}{
+  List operations
 
 List the available operations under URI \verb{/tools/}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    List of the available operations.
+  }
 }
 
-\subsection{Returns}{
-List of the available operations.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_accepted_sop_classes"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_accepted_sop_classes}{}}}
-\subsection{Method \code{get_tools_accepted_sop_classes()}}{
-Get accepted SOPClassUID
+\subsection{\code{Orthanc$get_tools_accepted_sop_classes()}}{
+  Get accepted SOPClassUID
 
 Get the list of SOP Class UIDs that are accepted by Orthanc
 C-STORE SCP. This corresponds to the configuration options
 \code{AcceptedSopClasses} and \code{RejectedSopClasses}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_accepted_sop_classes()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_accepted_sop_classes()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    List containing the SOP Class UIDs.
+  }
 }
 
-\subsection{Returns}{
-List containing the SOP Class UIDs.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_accepted_transfer_syntaxes"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_accepted_transfer_syntaxes}{}}}
-\subsection{Method \code{get_tools_accepted_transfer_syntaxes()}}{
-Get accepted transfer syntaxes
+\subsection{\code{Orthanc$get_tools_accepted_transfer_syntaxes()}}{
+  Get accepted transfer syntaxes
 
 Get the list of UIDs of the DICOM transfer syntaxes that
 are accepted by Orthanc C-STORE SCP. This corresponds to
 the configuration options \code{AcceptedTransferSyntaxes} and
 \code{XXXTransferSyntaxAccepted}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_accepted_transfer_syntaxes()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_accepted_transfer_syntaxes()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    List containing the transfer syntax UIDs.
+  }
 }
 
-\subsection{Returns}{
-List containing the transfer syntax UIDs.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_tools_accepted_transfer_syntaxes"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_tools_accepted_transfer_syntaxes}{}}}
-\subsection{Method \code{put_tools_accepted_transfer_syntaxes()}}{
-Set accepted transfer syntaxes
+\subsection{\code{Orthanc$put_tools_accepted_transfer_syntaxes()}}{
+  Set accepted transfer syntaxes
 
 Set the DICOM transfer syntaxes that accepted by Orthanc C-STORE
 SCP
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_tools_accepted_transfer_syntaxes(json = NULL, data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_tools_accepted_transfer_syntaxes(json = NULL, data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item (list): JSON array containing a list of transfer syntax UIDs
 to be accepted. Wildcards \verb{?} and \code{*} are accepted.
 Request body: UID of the transfer syntax to be accepted.
 Wildcards \verb{?} and \code{*} are accepted. (text/plain).
 }
+  }
+  \subsection{Returns}{
+    List containing the now-accepted transfer syntax
+UIDs.
+  }
 }
 
-\subsection{Returns}{
-List containing the now-accepted transfer syntax
-UIDs.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_tools_bulk_anonymize"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_tools_bulk_anonymize}{}}}
-\subsection{Method \code{post_tools_bulk_anonymize()}}{
-Anonymize a set of resources
+\subsection{\code{Orthanc$post_tools_bulk_anonymize()}}{
+  Anonymize a set of resources
 
 Start a job that will anonymize all the DICOM patients, studies,
 series or instances whose identifiers are provided in the
 \code{Resources} field.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_tools_bulk_anonymize(json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_tools_bulk_anonymize(json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, run the job in
 asynchronous mode, which means that the REST API call will
@@ -10310,35 +10330,36 @@ https://orthanc.uclouvain.be/book/faq/transcoding.html
 \item UserData (list): User data that will travel along with the
 job.
 }
+  }
+  \subsection{Returns}{
+    The list of all the resources that have been created by
+this anonymization.
+  }
 }
 
-\subsection{Returns}{
-The list of all the resources that have been created by
-this anonymization.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_tools_bulk_content"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_tools_bulk_content}{}}}
-\subsection{Method \code{post_tools_bulk_content()}}{
-Describe a set of resources
+\subsection{\code{Orthanc$post_tools_bulk_content()}}{
+  Describe a set of resources
 
 Get the content all the DICOM patients, studies, series or
 instances whose identifiers are provided in the \code{Resources}
 field, in one single call.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_tools_bulk_content(json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_tools_bulk_content(json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Full (logical): If set to \code{TRUE}, report the DICOM tags
 in full format (tags indexed by their hexadecimal format,
@@ -10356,65 +10377,67 @@ patients/studies/series/instances of interest.
 \item Short (logical): If set to \code{TRUE}, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_tools_bulk_delete"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_tools_bulk_delete}{}}}
-\subsection{Method \code{post_tools_bulk_delete()}}{
-Delete a set of resources
+\subsection{\code{Orthanc$post_tools_bulk_delete()}}{
+  Delete a set of resources
 
 Delete all the DICOM patients, studies, series or instances whose
 identifiers are provided in the \code{Resources} field.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_tools_bulk_delete(json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_tools_bulk_delete(json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Resources (list): List of the Orthanc identifiers of the
 patients/studies/series/instances of interest.
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_tools_bulk_modify"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_tools_bulk_modify}{}}}
-\subsection{Method \code{post_tools_bulk_modify()}}{
-Modify a set of resources
+\subsection{\code{Orthanc$post_tools_bulk_modify()}}{
+  Modify a set of resources
 
 Start a job that will modify all the DICOM patients, studies,
 series or instances whose identifiers are provided in the
 \code{Resources} field.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_tools_bulk_modify(json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_tools_bulk_modify(json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, run the job in
 asynchronous mode, which means that the REST API call will
@@ -10474,35 +10497,36 @@ https://orthanc.uclouvain.be/book/faq/transcoding.html
 \item UserData (list): User data that will travel along with the
 job.
 }
+  }
+  \subsection{Returns}{
+    The list of all the resources that have been altered by
+this modification.
+  }
 }
 
-\subsection{Returns}{
-The list of all the resources that have been altered by
-this modification.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_tools_count_resources"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_tools_count_resources}{}}}
-\subsection{Method \code{post_tools_count_resources()}}{
-Count local resources
+\subsection{\code{Orthanc$post_tools_count_resources()}}{
+  Count local resources
 
 This URI can be used to count the resources that are matching
 criteria on the content of the local Orthanc server, in a way
 that is similar to tools/find
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_tools_count_resources(json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_tools_count_resources(json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Full (logical): If set to \code{TRUE}, report the DICOM tags
 in full format (tags indexed by their hexadecimal format,
@@ -10527,37 +10551,37 @@ values of the DICOM tags
 \item Short (logical): If set to \code{TRUE}, report the DICOM tags in
 hexadecimal format
 }
+  }
+  \subsection{Returns}{
+    A JSON object with the \code{Count} of matching resources.
+  }
 }
 
-\subsection{Returns}{
-A JSON object with the \code{Count} of matching resources.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_create_archive"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_create_archive}{}}}
-\subsection{Method \code{get_tools_create_archive()}}{
-Create ZIP archive
+\subsection{\code{Orthanc$get_tools_create_archive()}}{
+  Create ZIP archive
 
 Create a ZIP archive containing the DICOM resources (patients,
 studies, series, or instances) whose Orthanc identifiers are
 provided in the 'resources' argument
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_create_archive(resources = NULL, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resources}}{(character) A comma separated list of Orthanc
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_create_archive(resources = NULL, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resources}}{(character) A comma separated list of Orthanc
 resource identifiers to include in the ZIP archive..}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item filename (string): Filename to set in the
 "Content-Disposition" HTTP header (including file extension)
@@ -10570,34 +10594,35 @@ v1.12.7)
 will be transcoded to the provided transfer syntax:
 https://orthanc.uclouvain.be/book/faq/transcoding.html
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_tools_create_archive"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_tools_create_archive}{}}}
-\subsection{Method \code{post_tools_create_archive()}}{
-Create ZIP archive
+\subsection{\code{Orthanc$post_tools_create_archive()}}{
+  Create ZIP archive
 
 Create a ZIP archive containing the DICOM resources (patients,
 studies, series, or instances) whose Orthanc identifiers are
 provided in the body
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_tools_create_archive(json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_tools_create_archive(json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, create the archive in
 asynchronous mode, which means that a job is submitted to
@@ -10627,34 +10652,35 @@ https://orthanc.uclouvain.be/book/faq/transcoding.html
 \item UserData (list): In asynchronous mode, user data that will
 be attached to the job.
 }
-}
-
-\subsection{Returns}{
-In asynchronous mode, information about the
+  }
+  \subsection{Returns}{
+    In asynchronous mode, information about the
 job that has been submitted to generate the archive:
 https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_tools_create_dicom"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_tools_create_dicom}{}}}
-\subsection{Method \code{post_tools_create_dicom()}}{
-Create one DICOM instance
+\subsection{\code{Orthanc$post_tools_create_dicom()}}{
+  Create one DICOM instance
 
 Create one DICOM instance, and store it into Orthanc
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_tools_create_dicom(json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_tools_create_dicom(json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Content (character): This field can be used to
 embed an image (pixel data encoded as PNG or JPEG),
@@ -10690,37 +10716,37 @@ for private tags in \code{Tags}
 \item Tags (list): Associative array containing the tags of the
 new instance to be created
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_create_media"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_create_media}{}}}
-\subsection{Method \code{get_tools_create_media()}}{
-Create DICOMDIR media
+\subsection{\code{Orthanc$get_tools_create_media()}}{
+  Create DICOMDIR media
 
 Create a DICOMDIR media containing the DICOM resources (patients,
 studies, series, or instances) whose Orthanc identifiers are
 provided in the 'resources' argument
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_create_media(resources = NULL, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resources}}{(character) A comma separated list of Orthanc
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_create_media(resources = NULL, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resources}}{(character) A comma separated list of Orthanc
 resource identifiers to include in the DICOMDIR media..}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item filename (string): Filename to set in the
 "Content-Disposition" HTTP header (including file extension)
@@ -10733,34 +10759,35 @@ v1.12.7)
 will be transcoded to the provided transfer syntax:
 https://orthanc.uclouvain.be/book/faq/transcoding.html
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_tools_create_media"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_tools_create_media}{}}}
-\subsection{Method \code{post_tools_create_media()}}{
-Create DICOMDIR media
+\subsection{\code{Orthanc$post_tools_create_media()}}{
+  Create DICOMDIR media
 
 Create a DICOMDIR media containing the DICOM resources (patients,
 studies, series, or instances) whose Orthanc identifiers are
 provided in the body
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_tools_create_media(json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_tools_create_media(json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, create the archive in
 asynchronous mode, which means that a job is submitted to
@@ -10793,39 +10820,39 @@ https://orthanc.uclouvain.be/book/faq/transcoding.html
 \item UserData (list): In asynchronous mode, user data that will
 be attached to the job.
 }
-}
-
-\subsection{Returns}{
-In asynchronous mode, information about the
+  }
+  \subsection{Returns}{
+    In asynchronous mode, information about the
 job that has been submitted to generate the archive:
 https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_create_media_extended"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_create_media_extended}{}}}
-\subsection{Method \code{get_tools_create_media_extended()}}{
-Create DICOMDIR media
+\subsection{\code{Orthanc$get_tools_create_media_extended()}}{
+  Create DICOMDIR media
 
 Create a DICOMDIR media containing the DICOM resources (patients,
 studies, series, or instances) whose Orthanc identifiers are
 provided in the 'resources' argument
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_create_media_extended(resources = NULL, params = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{resources}}{(character) A comma separated list of Orthanc
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_create_media_extended(resources = NULL, params = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{resources}}{(character) A comma separated list of Orthanc
 resource identifiers to include in the DICOMDIR media..}
-
-\item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Optional query parameters (\code{params}):
+      \item{\code{params}}{(list) Named-list of optional query parameters. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Optional query parameters (\code{params}):
 \itemize{
 \item filename (string): Filename to set in the
 "Content-Disposition" HTTP header (including file extension)
@@ -10838,34 +10865,35 @@ v1.12.7)
 will be transcoded to the provided transfer syntax:
 https://orthanc.uclouvain.be/book/faq/transcoding.html
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_tools_create_media_extended"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_tools_create_media_extended}{}}}
-\subsection{Method \code{post_tools_create_media_extended()}}{
-Create DICOMDIR media
+\subsection{\code{Orthanc$post_tools_create_media_extended()}}{
+  Create DICOMDIR media
 
 Create a DICOMDIR media containing the DICOM resources (patients,
 studies, series, or instances) whose Orthanc identifiers are
 provided in the body
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_tools_create_media_extended(json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_tools_create_media_extended(json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item Asynchronous (logical): If \code{TRUE}, create the archive in
 asynchronous mode, which means that a job is submitted to
@@ -10898,100 +10926,106 @@ https://orthanc.uclouvain.be/book/faq/transcoding.html
 \item UserData (list): In asynchronous mode, user data that will
 be attached to the job.
 }
-}
-
-\subsection{Returns}{
-In asynchronous mode, information about the
+  }
+  \subsection{Returns}{
+    In asynchronous mode, information about the
 job that has been submitted to generate the archive:
 https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_default_encoding"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_default_encoding}{}}}
-\subsection{Method \code{get_tools_default_encoding()}}{
-Get default encoding
+\subsection{\code{Orthanc$get_tools_default_encoding()}}{
+  Get default encoding
 
 Get the default encoding that is used by Orthanc if parsing
 a DICOM instance without the \code{SpecificCharacterEncoding} tag,
 or during C-FIND. This corresponds to the configuration option
 \code{DefaultEncoding}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_default_encoding()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_default_encoding()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The name of the encoding.
+  }
 }
 
-\subsection{Returns}{
-The name of the encoding.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_tools_default_encoding"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_tools_default_encoding}{}}}
-\subsection{Method \code{put_tools_default_encoding()}}{
-Set default encoding
+\subsection{\code{Orthanc$put_tools_default_encoding()}}{
+  Set default encoding
 
 Change the default encoding that is used by Orthanc if parsing
 a DICOM instance without the \code{SpecificCharacterEncoding} tag,
 or during C-FIND. This corresponds to the configuration option
 \code{DefaultEncoding}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_tools_default_encoding(data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: The name of the encoding. Check out
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_tools_default_encoding(data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: The name of the encoding. Check out
 configuration option \code{DefaultEncoding} for the allowed values.
 (text/plain).
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_dicom_conformance"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_dicom_conformance}{}}}
-\subsection{Method \code{get_tools_dicom_conformance()}}{
-Get DICOM conformance
+\subsection{\code{Orthanc$get_tools_dicom_conformance()}}{
+  Get DICOM conformance
 
 Get the DICOM conformance statement of Orthanc
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_dicom_conformance()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_dicom_conformance()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The DICOM conformance statement.
+  }
 }
 
-\subsection{Returns}{
-The DICOM conformance statement.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_tools_dicom_echo"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_tools_dicom_echo}{}}}
-\subsection{Method \code{post_tools_dicom_echo()}}{
-Trigger C-ECHO SCU
+\subsection{\code{Orthanc$post_tools_dicom_echo()}}{
+  Trigger C-ECHO SCU
 
 Trigger C-ECHO SCU command against a DICOM modality described in
 the POST body, without having to register the modality in some
 \verb{/modalities/\{id\}} (new in Orthanc 1.8.1)
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_tools_dicom_echo(json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_tools_dicom_echo(json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item AET (character): AET of the remote DICOM modality
 \item CheckFind (logical): Issue a dummy C-FIND command after the
@@ -11014,64 +11048,66 @@ to this modality
 \item UseDicomTls (logical): Whether to use DICOM TLS in the SCU
 connection initiated by Orthanc (new in Orthanc 1.9.0)
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_tools_execute_script"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_tools_execute_script}{}}}
-\subsection{Method \code{post_tools_execute_script()}}{
-Execute Lua script
+\subsection{\code{Orthanc$post_tools_execute_script()}}{
+  Execute Lua script
 
 Execute the provided Lua script by the Orthanc server. This is
 very insecure for Orthanc servers that are remotely accessible.
 Since Orthanc 1.5.8, this route is disabled by default and can be
 enabled thanks to the \code{ExecuteLuaEnabled} configuration.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_tools_execute_script(data = NULL)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_tools_execute_script(data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: The Lua script to be executed (text/plain).
+  }
+  \subsection{Returns}{
+    Output of the Lua script.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: The Lua script to be executed (text/plain).
-}
-
-\subsection{Returns}{
-Output of the Lua script.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_tools_find"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_tools_find}{}}}
-\subsection{Method \code{post_tools_find()}}{
-Look for local resources
+\subsection{\code{Orthanc$post_tools_find()}}{
+  Look for local resources
 
 This URI can be used to perform a search on the content
 of the local Orthanc server, in a way that is similar
 to querying remote DICOM modalities using C-FIND SCU:
 https://orthanc.uclouvain.be/book/users/rest.html#performing-finds-within-orthanc
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_tools_find(json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_tools_find(json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item CaseSensitive (logical): Enable case-sensitive search for
 PN value representations (defaults to configuration option
@@ -11124,42 +11160,44 @@ hexadecimal format
 \item Since (numeric): Show only the resources since the provided
 index (in conjunction with \code{Limit})
 }
-}
-
-\subsection{Returns}{
-List containing either the Orthanc identifiers, or
+  }
+  \subsection{Returns}{
+    List containing either the Orthanc identifiers, or
 detailed information about the reported resources (if \code{Expand}
 argument is \code{TRUE}).
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_generate_uid"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_generate_uid}{}}}
-\subsection{Method \code{get_tools_generate_uid()}}{
-Generate an identifier
+\subsection{\code{Orthanc$get_tools_generate_uid()}}{
+  Generate an identifier
 
 Generate a random DICOM identifier
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_generate_uid(level = NULL)}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_generate_uid(level = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{level}}{(character) Type of DICOM resource among: \code{patient},
+\code{study}, \code{series} or \code{instance}.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The generated identifier.
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{level}}{(character) Type of DICOM resource among: \code{patient},
-\code{study}, \code{series} or \code{instance}.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
-The generated identifier.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_tools_invalidate_tags"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_tools_invalidate_tags}{}}}
-\subsection{Method \code{post_tools_invalidate_tags()}}{
-Invalidate DICOM-as-JSON summaries
+\subsection{\code{Orthanc$post_tools_invalidate_tags()}}{
+  Invalidate DICOM-as-JSON summaries
 
 Remove all the attachments of the type "DICOM-as-JSON"
 that are associated will all the DICOM instances stored
@@ -11167,495 +11205,533 @@ in Orthanc. These summaries will be automatically
 re-created on the next access. This is notably useful
 after changes to the \code{Dictionary} configuration option.
 https://orthanc.uclouvain.be/book/faq/orthanc-storage.html#storage-area
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_tools_invalidate_tags()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_tools_invalidate_tags()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_labels"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_labels}{}}}
-\subsection{Method \code{get_tools_labels()}}{
-Get all the used labels
+\subsection{\code{Orthanc$get_tools_labels()}}{
+  Get all the used labels
 
 List all the labels that are associated with any resource of the
 Orthanc database
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_labels()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_labels()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    List containing the labels.
+  }
 }
 
-\subsection{Returns}{
-List containing the labels.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_log_level"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_log_level}{}}}
-\subsection{Method \code{get_tools_log_level()}}{
-Get main log level
+\subsection{\code{Orthanc$get_tools_log_level()}}{
+  Get main log level
 
 Get the main log level of Orthanc
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_log_level()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_log_level()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Possible values: \code{default}, \code{verbose} or \code{trace}.
+  }
 }
 
-\subsection{Returns}{
-Possible values: \code{default}, \code{verbose} or \code{trace}.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_tools_log_level"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_tools_log_level}{}}}
-\subsection{Method \code{put_tools_log_level()}}{
-Set main log level
+\subsection{\code{Orthanc$put_tools_log_level()}}{
+  Set main log level
 
 Set the main log level of Orthanc
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_tools_log_level(data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: Possible values: \code{default}, \code{verbose} or \code{trace}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_tools_log_level(data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: Possible values: \code{default}, \code{verbose} or \code{trace}
 (text/plain).
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_log_level_dicom"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_log_level_dicom}{}}}
-\subsection{Method \code{get_tools_log_level_dicom()}}{
-Get log level for \code{dicom}
+\subsection{\code{Orthanc$get_tools_log_level_dicom()}}{
+  Get log level for \code{dicom}
 
 Get the log level of the log category \code{dicom}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_log_level_dicom()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_log_level_dicom()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Possible values: \code{default}, \code{verbose} or \code{trace}.
+  }
 }
 
-\subsection{Returns}{
-Possible values: \code{default}, \code{verbose} or \code{trace}.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_tools_log_level_dicom"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_tools_log_level_dicom}{}}}
-\subsection{Method \code{put_tools_log_level_dicom()}}{
-Set log level for \code{dicom}
+\subsection{\code{Orthanc$put_tools_log_level_dicom()}}{
+  Set log level for \code{dicom}
 
 Set the log level of the log category \code{dicom}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_tools_log_level_dicom(data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: Possible values: \code{default}, \code{verbose} or \code{trace}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_tools_log_level_dicom(data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: Possible values: \code{default}, \code{verbose} or \code{trace}
 (text/plain).
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_log_level_generic"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_log_level_generic}{}}}
-\subsection{Method \code{get_tools_log_level_generic()}}{
-Get log level for \code{generic}
+\subsection{\code{Orthanc$get_tools_log_level_generic()}}{
+  Get log level for \code{generic}
 
 Get the log level of the log category \code{generic}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_log_level_generic()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_log_level_generic()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Possible values: \code{default}, \code{verbose} or \code{trace}.
+  }
 }
 
-\subsection{Returns}{
-Possible values: \code{default}, \code{verbose} or \code{trace}.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_tools_log_level_generic"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_tools_log_level_generic}{}}}
-\subsection{Method \code{put_tools_log_level_generic()}}{
-Set log level for \code{generic}
+\subsection{\code{Orthanc$put_tools_log_level_generic()}}{
+  Set log level for \code{generic}
 
 Set the log level of the log category \code{generic}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_tools_log_level_generic(data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: Possible values: \code{default}, \code{verbose} or \code{trace}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_tools_log_level_generic(data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: Possible values: \code{default}, \code{verbose} or \code{trace}
 (text/plain).
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_log_level_http"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_log_level_http}{}}}
-\subsection{Method \code{get_tools_log_level_http()}}{
-Get log level for \code{http}
+\subsection{\code{Orthanc$get_tools_log_level_http()}}{
+  Get log level for \code{http}
 
 Get the log level of the log category \code{http}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_log_level_http()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_log_level_http()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Possible values: \code{default}, \code{verbose} or \code{trace}.
+  }
 }
 
-\subsection{Returns}{
-Possible values: \code{default}, \code{verbose} or \code{trace}.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_tools_log_level_http"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_tools_log_level_http}{}}}
-\subsection{Method \code{put_tools_log_level_http()}}{
-Set log level for \code{http}
+\subsection{\code{Orthanc$put_tools_log_level_http()}}{
+  Set log level for \code{http}
 
 Set the log level of the log category \code{http}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_tools_log_level_http(data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: Possible values: \code{default}, \code{verbose} or \code{trace}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_tools_log_level_http(data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: Possible values: \code{default}, \code{verbose} or \code{trace}
 (text/plain).
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_log_level_jobs"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_log_level_jobs}{}}}
-\subsection{Method \code{get_tools_log_level_jobs()}}{
-Get log level for \code{jobs}
+\subsection{\code{Orthanc$get_tools_log_level_jobs()}}{
+  Get log level for \code{jobs}
 
 Get the log level of the log category \code{jobs}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_log_level_jobs()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_log_level_jobs()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Possible values: \code{default}, \code{verbose} or \code{trace}.
+  }
 }
 
-\subsection{Returns}{
-Possible values: \code{default}, \code{verbose} or \code{trace}.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_tools_log_level_jobs"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_tools_log_level_jobs}{}}}
-\subsection{Method \code{put_tools_log_level_jobs()}}{
-Set log level for \code{jobs}
+\subsection{\code{Orthanc$put_tools_log_level_jobs()}}{
+  Set log level for \code{jobs}
 
 Set the log level of the log category \code{jobs}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_tools_log_level_jobs(data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: Possible values: \code{default}, \code{verbose} or \code{trace}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_tools_log_level_jobs(data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: Possible values: \code{default}, \code{verbose} or \code{trace}
 (text/plain).
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_log_level_lua"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_log_level_lua}{}}}
-\subsection{Method \code{get_tools_log_level_lua()}}{
-Get log level for \code{lua}
+\subsection{\code{Orthanc$get_tools_log_level_lua()}}{
+  Get log level for \code{lua}
 
 Get the log level of the log category \code{lua}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_log_level_lua()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_log_level_lua()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Possible values: \code{default}, \code{verbose} or \code{trace}.
+  }
 }
 
-\subsection{Returns}{
-Possible values: \code{default}, \code{verbose} or \code{trace}.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_tools_log_level_lua"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_tools_log_level_lua}{}}}
-\subsection{Method \code{put_tools_log_level_lua()}}{
-Set log level for \code{lua}
+\subsection{\code{Orthanc$put_tools_log_level_lua()}}{
+  Set log level for \code{lua}
 
 Set the log level of the log category \code{lua}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_tools_log_level_lua(data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: Possible values: \code{default}, \code{verbose} or \code{trace}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_tools_log_level_lua(data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: Possible values: \code{default}, \code{verbose} or \code{trace}
 (text/plain).
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_log_level_plugins"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_log_level_plugins}{}}}
-\subsection{Method \code{get_tools_log_level_plugins()}}{
-Get log level for \code{plugins}
+\subsection{\code{Orthanc$get_tools_log_level_plugins()}}{
+  Get log level for \code{plugins}
 
 Get the log level of the log category \code{plugins}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_log_level_plugins()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_log_level_plugins()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Possible values: \code{default}, \code{verbose} or \code{trace}.
+  }
 }
 
-\subsection{Returns}{
-Possible values: \code{default}, \code{verbose} or \code{trace}.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_tools_log_level_plugins"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_tools_log_level_plugins}{}}}
-\subsection{Method \code{put_tools_log_level_plugins()}}{
-Set log level for \code{plugins}
+\subsection{\code{Orthanc$put_tools_log_level_plugins()}}{
+  Set log level for \code{plugins}
 
 Set the log level of the log category \code{plugins}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_tools_log_level_plugins(data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: Possible values: \code{default}, \code{verbose} or \code{trace}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_tools_log_level_plugins(data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: Possible values: \code{default}, \code{verbose} or \code{trace}
 (text/plain).
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_log_level_sqlite"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_log_level_sqlite}{}}}
-\subsection{Method \code{get_tools_log_level_sqlite()}}{
-Get log level for \code{sqlite}
+\subsection{\code{Orthanc$get_tools_log_level_sqlite()}}{
+  Get log level for \code{sqlite}
 
 Get the log level of the log category \code{sqlite}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_log_level_sqlite()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_log_level_sqlite()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Possible values: \code{default}, \code{verbose} or \code{trace}.
+  }
 }
 
-\subsection{Returns}{
-Possible values: \code{default}, \code{verbose} or \code{trace}.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_tools_log_level_sqlite"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_tools_log_level_sqlite}{}}}
-\subsection{Method \code{put_tools_log_level_sqlite()}}{
-Set log level for \code{sqlite}
+\subsection{\code{Orthanc$put_tools_log_level_sqlite()}}{
+  Set log level for \code{sqlite}
 
 Set the log level of the log category \code{sqlite}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_tools_log_level_sqlite(data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: Possible values: \code{default}, \code{verbose} or \code{trace}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_tools_log_level_sqlite(data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: Possible values: \code{default}, \code{verbose} or \code{trace}
 (text/plain).
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_tools_lookup"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_tools_lookup}{}}}
-\subsection{Method \code{post_tools_lookup()}}{
-Look for DICOM identifiers
+\subsection{\code{Orthanc$post_tools_lookup()}}{
+  Look for DICOM identifiers
 
 This URI can be used to convert one DICOM identifier to a list of
 matching Orthanc resources
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_tools_lookup(data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: The DICOM identifier of interest (i.e. the value
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_tools_lookup(data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: The DICOM identifier of interest (i.e. the value
 of \code{PatientID}, \code{StudyInstanceUID}, \code{SeriesInstanceUID}, or
 \code{SOPInstanceUID}) (text/plain).
-}
-
-\subsection{Returns}{
-List containing a list of matching Orthanc
+  }
+  \subsection{Returns}{
+    List containing a list of matching Orthanc
 resources, each item in the list corresponding to a JSON object
 with the fields \code{Type}, \code{ID} and \code{Path} identifying one DICOM
 resource that is stored by Orthanc.
+  }
 }
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_metrics"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_metrics}{}}}
-\subsection{Method \code{get_tools_metrics()}}{
-Are metrics collected?
+\subsection{\code{Orthanc$get_tools_metrics()}}{
+  Are metrics collected?
 
 Returns a Boolean specifying whether Prometheus metrics are
 collected and exposed at \verb{/tools/metrics-prometheus}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_metrics()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_metrics()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    \code{1} if metrics are collected, \code{0} if metrics are
+disabled.
+  }
 }
 
-\subsection{Returns}{
-\code{1} if metrics are collected, \code{0} if metrics are
-disabled.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_tools_metrics"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_tools_metrics}{}}}
-\subsection{Method \code{put_tools_metrics()}}{
-Enable collection of metrics
+\subsection{\code{Orthanc$put_tools_metrics()}}{
+  Enable collection of metrics
 
 Enable or disable the collection and publication of metrics at
 \verb{/tools/metrics-prometheus}
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_tools_metrics(data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: \code{1} if metrics are collected, \code{0} if metrics are
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_tools_metrics(data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: \code{1} if metrics are collected, \code{0} if metrics are
 disabled (text/plain).
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_metrics_prometheus"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_metrics_prometheus}{}}}
-\subsection{Method \code{get_tools_metrics_prometheus()}}{
-Get usage metrics
+\subsection{\code{Orthanc$get_tools_metrics_prometheus()}}{
+  Get usage metrics
 
 Get usage metrics of Orthanc in the
 Prometheus file format (OpenMetrics):
 https://orthanc.uclouvain.be/book/users/advanced-rest.html#instrumentation-with-prometheus
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_metrics_prometheus()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_metrics_prometheus()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_now"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_now}{}}}
-\subsection{Method \code{get_tools_now()}}{
-Get UTC time
+\subsection{\code{Orthanc$get_tools_now()}}{
+  Get UTC time
 
 Get UTC time
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_now()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_now()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The UTC time.
+  }
 }
 
-\subsection{Returns}{
-The UTC time.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_now_local"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_now_local}{}}}
-\subsection{Method \code{get_tools_now_local()}}{
-Get local time
+\subsection{\code{Orthanc$get_tools_now_local()}}{
+  Get local time
 
 Get local time
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_now_local()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_now_local()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    The local time.
+  }
 }
 
-\subsection{Returns}{
-The local time.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_tools_reconstruct"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_tools_reconstruct}{}}}
-\subsection{Method \code{post_tools_reconstruct()}}{
-Reconstruct all the index
+\subsection{\code{Orthanc$post_tools_reconstruct()}}{
+  Reconstruct all the index
 
 Reconstruct the index of all the tags of all the DICOM instances
 that are stored in Orthanc. This is notably useful after the
@@ -11665,120 +11741,130 @@ time-consuming operation, as all the DICOM instances will be
 parsed again, and as all the Orthanc index will be regenerated.
 If you have a large database to process, it is advised to use the
 Housekeeper plugin to perform this action resource by resource
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_tools_reconstruct(json = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{json}}{(list) Named-list for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body JSON schema (application/json):
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_tools_reconstruct(json = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{json}}{(list) Named-list for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body JSON schema (application/json):
 \itemize{
 \item ReconstructFiles (logical): Also reconstruct the
 files of the resources (e.g: apply IngestTranscoding,
 StorageCompression). 'false' by default. (New in Orthanc
 1.11.0)
 }
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_tools_reset"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_tools_reset}{}}}
-\subsection{Method \code{post_tools_reset()}}{
-Restart Orthanc
+\subsection{\code{Orthanc$post_tools_reset()}}{
+  Restart Orthanc
 
 Restart Orthanc
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_tools_reset()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_tools_reset()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-post_tools_shutdown"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-post_tools_shutdown}{}}}
-\subsection{Method \code{post_tools_shutdown()}}{
-Shutdown Orthanc
+\subsection{\code{Orthanc$post_tools_shutdown()}}{
+  Shutdown Orthanc
 
 Shutdown Orthanc
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$post_tools_shutdown()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$post_tools_shutdown()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-get_tools_unknown_sop_class_accepted"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-get_tools_unknown_sop_class_accepted}{}}}
-\subsection{Method \code{get_tools_unknown_sop_class_accepted()}}{
-Is unknown SOP class accepted?
+\subsection{\code{Orthanc$get_tools_unknown_sop_class_accepted()}}{
+  Is unknown SOP class accepted?
 
 Shall Orthanc C-STORE SCP accept DICOM instances with an unknown
 SOP class UID?
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$get_tools_unknown_sop_class_accepted()}\if{html}{\out{</div>}}
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$get_tools_unknown_sop_class_accepted()}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Returns}{
+    \code{1} if accepted, \code{0} if not accepted.
+  }
 }
 
-\subsection{Returns}{
-\code{1} if accepted, \code{0} if not accepted.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-put_tools_unknown_sop_class_accepted"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-put_tools_unknown_sop_class_accepted}{}}}
-\subsection{Method \code{put_tools_unknown_sop_class_accepted()}}{
-Set unknown SOP class accepted
+\subsection{\code{Orthanc$put_tools_unknown_sop_class_accepted()}}{
+  Set unknown SOP class accepted
 
 Set whether Orthanc C-STORE SCP should accept DICOM instances
 with an unknown SOP class UID
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$put_tools_unknown_sop_class_accepted(data = NULL)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-Request body: \code{1} if accepted, \code{0} if not accepted
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$put_tools_unknown_sop_class_accepted(data = NULL)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{data}}{(bytes or character) Raw data for request body. See Details.}
+    }
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Details}{
+    Request body: \code{1} if accepted, \code{0} if not accepted
 (text/plain).
+  }
+  \subsection{Returns}{
+    Nothing, invisibly.
+  }
 }
 
-\subsection{Returns}{
-Nothing, invisibly.
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orthanc-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-Orthanc-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orthanc$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{Orthanc$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Orthanc$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }

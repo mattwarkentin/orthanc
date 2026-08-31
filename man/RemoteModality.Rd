@@ -10,5 +10,5 @@ An instance of \code{RemoteModality}.
 Wrapper around Orthanc API when dealing with a remote modality
 }
 \section{Super class}{
-\code{\link[orthanc:Modality]{orthanc::Modality}} -> \code{RemoteModality}
+\code{\link[orthanc:Modality]{Modality}} -> \code{RemoteModality}
 }

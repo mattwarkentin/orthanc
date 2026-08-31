@@ -21,7 +21,7 @@ find_and_filter_patients(
 
 \item{study_filter}{Predicate function to filter \link{Study}s.}
 
-\item{series_filter}{Predicate function to filer \link{Series}.}
+\item{series_filter}{Predicate function to filter \link{Series}.}
 
 \item{instance_filter}{Predicate function to filter \link{Instance}s.}
 

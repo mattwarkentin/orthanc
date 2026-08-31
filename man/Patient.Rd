@@ -10,192 +10,204 @@ An R6 instance of class \code{"Patient"}.
 An abstract class for a DICOM Patient resource.
 }
 \section{Super class}{
-\code{\link[orthanc:Resource]{orthanc::Resource}} -> \code{Patient}
+\code{\link[orthanc:Resource]{Resource}} -> \code{Patient}
 }
 \section{Active bindings}{
-\if{html}{\out{<div class="r6-active-bindings">}}
-\describe{
-\item{\code{patient_id}}{Patient ID}
+  \if{html}{\out{<div class="r6-active-bindings">}}
+  \describe{
+    \item{\code{patient_id}}{Patient ID}
 
-\item{\code{name}}{Patient Name}
+    \item{\code{name}}{Patient Name}
 
-\item{\code{birth_date}}{Patient Birth Date}
+    \item{\code{birth_date}}{Patient Birth Date}
 
-\item{\code{sex}}{Patient Sex}
+    \item{\code{sex}}{Patient Sex}
 
-\item{\code{other_patient_ids}}{Other Patient IDs}
+    \item{\code{other_patient_ids}}{Other Patient IDs}
 
-\item{\code{is_stable}}{Is stable?}
+    \item{\code{is_stable}}{Is stable?}
 
-\item{\code{last_update}}{Last Update}
+    \item{\code{last_update}}{Last Update}
 
-\item{\code{labels}}{Get or add labels}
+    \item{\code{labels}}{Get or add labels}
 
-\item{\code{protected}}{Get or set if patient is protected against recycling}
+    \item{\code{protected}}{Get or set if patient is protected against recycling}
 
-\item{\code{studies}}{Studies}
+    \item{\code{studies}}{Studies}
 
-\item{\code{studies_ids}}{Studies identifiers}
+    \item{\code{studies_ids}}{Studies identifiers}
 
-\item{\code{series}}{Series}
+    \item{\code{series}}{Series}
 
-\item{\code{series_ids}}{Series identifiers}
+    \item{\code{series_ids}}{Series identifiers}
 
-\item{\code{instances}}{Instances}
+    \item{\code{instances}}{Instances}
 
-\item{\code{instances_ids}}{Instances identifiers}
+    \item{\code{instances_ids}}{Instances identifiers}
 
-\item{\code{instances_tags}}{Instances tags}
+    \item{\code{instances_tags}}{Instances tags}
 
-\item{\code{num_studies}}{Number of studies}
+    \item{\code{num_studies}}{Number of studies}
 
-\item{\code{num_series}}{Number of series}
+    \item{\code{num_series}}{Number of series}
 
-\item{\code{num_instances}}{Number of instances}
+    \item{\code{num_instances}}{Number of instances}
 
-\item{\code{shared_tags}}{Shared tags}
+    \item{\code{shared_tags}}{Shared tags}
 
-\item{\code{statistics}}{Statistics}
-}
-\if{html}{\out{</div>}}
+    \item{\code{statistics}}{Statistics}
+  }
+  \if{html}{\out{</div>}}
 }
 \section{Methods}{
 \subsection{Public methods}{
-\itemize{
-\item \href{#method-Patient-get_main_information}{\code{Patient$get_main_information()}}
-\item \href{#method-Patient-add_label}{\code{Patient$add_label()}}
-\item \href{#method-Patient-has_label}{\code{Patient$has_label()}}
-\item \href{#method-Patient-remove_label}{\code{Patient$remove_label()}}
-\item \href{#method-Patient-get_zip_archive_content}{\code{Patient$get_zip_archive_content()}}
-\item \href{#method-Patient-download_archive}{\code{Patient$download_archive()}}
-\item \href{#method-Patient-get_patient_module}{\code{Patient$get_patient_module()}}
-\item \href{#method-Patient-anonymize}{\code{Patient$anonymize()}}
-\item \href{#method-Patient-anonymize_as_job}{\code{Patient$anonymize_as_job()}}
-\item \href{#method-Patient-modify}{\code{Patient$modify()}}
-\item \href{#method-Patient-modify_as_job}{\code{Patient$modify_as_job()}}
-\item \href{#method-Patient-get_shared_tags}{\code{Patient$get_shared_tags()}}
-\item \href{#method-Patient-remove_empty_studies}{\code{Patient$remove_empty_studies()}}
-\item \href{#method-Patient-clone}{\code{Patient$clone()}}
+  \itemize{
+    \item \href{#method-Patient-get_main_information}{\code{Patient$get_main_information()}}
+    \item \href{#method-Patient-add_label}{\code{Patient$add_label()}}
+    \item \href{#method-Patient-has_label}{\code{Patient$has_label()}}
+    \item \href{#method-Patient-remove_label}{\code{Patient$remove_label()}}
+    \item \href{#method-Patient-get_zip_archive_content}{\code{Patient$get_zip_archive_content()}}
+    \item \href{#method-Patient-download_archive}{\code{Patient$download_archive()}}
+    \item \href{#method-Patient-get_patient_module}{\code{Patient$get_patient_module()}}
+    \item \href{#method-Patient-anonymize}{\code{Patient$anonymize()}}
+    \item \href{#method-Patient-anonymize_as_job}{\code{Patient$anonymize_as_job()}}
+    \item \href{#method-Patient-modify}{\code{Patient$modify()}}
+    \item \href{#method-Patient-modify_as_job}{\code{Patient$modify_as_job()}}
+    \item \href{#method-Patient-get_shared_tags}{\code{Patient$get_shared_tags()}}
+    \item \href{#method-Patient-remove_empty_studies}{\code{Patient$remove_empty_studies()}}
+    \item \href{#method-Patient-clone}{\code{Patient$clone()}}
+  }
 }
-}
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
+\if{html}{\out{<details open><summary>Inherited methods</summary>
 <ul>
-<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="initialize"><a href='../../orthanc/html/Resource.html#method-Resource-initialize'><code>orthanc::Resource$initialize()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="print"><a href='../../orthanc/html/Resource.html#method-Resource-print'><code>orthanc::Resource$print()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="set_child_resources"><a href='../../orthanc/html/Resource.html#method-Resource-set_child_resources'><code>orthanc::Resource$set_child_resources()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="initialize"><a href='../../orthanc/html/Resource.html#method-Resource-initialize'><code>Resource$initialize()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="print"><a href='../../orthanc/html/Resource.html#method-Resource-print'><code>Resource$print()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="set_child_resources"><a href='../../orthanc/html/Resource.html#method-Resource-set_child_resources'><code>Resource$set_child_resources()</code></a></span></li>
 </ul>
-</details>
-}}
+</details>}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Patient-get_main_information"></a>}}
 \if{latex}{\out{\hypertarget{method-Patient-get_main_information}{}}}
-\subsection{Method \code{get_main_information()}}{
-Get patient information.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Patient$get_main_information()}\if{html}{\out{</div>}}
+\subsection{\code{Patient$get_main_information()}}{
+  Get patient information.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Patient$get_main_information()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Patient-add_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Patient-add_label}{}}}
-\subsection{Method \code{add_label()}}{
-Add label to resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Patient$add_label(label)}\if{html}{\out{</div>}}
+\subsection{\code{Patient$add_label()}}{
+  Add label to resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Patient$add_label(label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{label}}{Label.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{label}}{Label.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Patient-has_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Patient-has_label}{}}}
-\subsection{Method \code{has_label()}}{
-Test if resource has label.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Patient$has_label(label)}\if{html}{\out{</div>}}
+\subsection{\code{Patient$has_label()}}{
+  Test if resource has label.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Patient$has_label(label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{label}}{Label.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{label}}{Label.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Patient-remove_label"></a>}}
 \if{latex}{\out{\hypertarget{method-Patient-remove_label}{}}}
-\subsection{Method \code{remove_label()}}{
-Delete label from resource.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Patient$remove_label(label)}\if{html}{\out{</div>}}
+\subsection{\code{Patient$remove_label()}}{
+  Delete label from resource.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Patient$remove_label(label)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{label}}{Label.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{label}}{Label.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Patient-get_zip_archive_content"></a>}}
 \if{latex}{\out{\hypertarget{method-Patient-get_zip_archive_content}{}}}
-\subsection{Method \code{get_zip_archive_content()}}{
-Get bytes of the zip archive.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Patient$get_zip_archive_content()}\if{html}{\out{</div>}}
+\subsection{\code{Patient$get_zip_archive_content()}}{
+  Get bytes of the zip archive.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Patient$get_zip_archive_content()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Patient-download_archive"></a>}}
 \if{latex}{\out{\hypertarget{method-Patient-download_archive}{}}}
-\subsection{Method \code{download_archive()}}{
-Download zip archive to \code{path}.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Patient$download_archive(path, stream = FALSE)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{path}}{Path on disk.}
-
-\item{\code{stream}}{Should the resource be streamed and written to disk in
+\subsection{\code{Patient$download_archive()}}{
+  Download zip archive to \code{path}.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Patient$download_archive(path, stream = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{path}}{Path on disk.}
+      \item{\code{stream}}{Should the resource be streamed and written to disk in
 chunks? Default is \code{FALSE}, which means the resource file contents are
 retrieved in their entirety and written to disk all at once.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
-\if{html}{\out{</div>}}
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Patient-get_patient_module"></a>}}
 \if{latex}{\out{\hypertarget{method-Patient-get_patient_module}{}}}
-\subsection{Method \code{get_patient_module()}}{
-Get patient module in a simplified version
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Patient$get_patient_module()}\if{html}{\out{</div>}}
+\subsection{\code{Patient$get_patient_module()}}{
+  Get patient module in a simplified version
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Patient$get_patient_module()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Patient-anonymize"></a>}}
 \if{latex}{\out{\hypertarget{method-Patient-anonymize}{}}}
-\subsection{Method \code{anonymize()}}{
-Anonymize Patient
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Patient$anonymize(
+\subsection{\code{Patient$anonymize()}}{
+  Anonymize Patient
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Patient$anonymize(
   remove = list(),
   replace = list(),
   keep = list(),
@@ -206,44 +218,37 @@ Anonymize Patient
   private_creator = NULL,
   force = FALSE,
   dicom_version = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{remove}}{List of tags to remove.}
-
-\item{\code{replace}}{Named-list of tags to replce.}
-
-\item{\code{keep}}{List of tags to keep unchanged.}
-
-\item{\code{keep_private_tags}}{Keep private tags from DICOM instance.}
-
-\item{\code{keep_source}}{Keep original resource.}
-
-\item{\code{priority}}{Priority of the job.}
-
-\item{\code{permissive}}{Ignore errors during individual steps of the job?}
-
-\item{\code{private_creator}}{Private creator to be used for private tags in
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{remove}}{List of tags to remove.}
+      \item{\code{replace}}{Named-list of tags to replce.}
+      \item{\code{keep}}{List of tags to keep unchanged.}
+      \item{\code{keep_private_tags}}{Keep private tags from DICOM instance.}
+      \item{\code{keep_source}}{Keep original resource.}
+      \item{\code{priority}}{Priority of the job.}
+      \item{\code{permissive}}{Ignore errors during individual steps of the job?}
+      \item{\code{private_creator}}{Private creator to be used for private tags in
 replace.}
-
-\item{\code{force}}{Force tags to be changed.}
-
-\item{\code{dicom_version}}{Version of the DICOM standard to use for
+      \item{\code{force}}{Force tags to be changed.}
+      \item{\code{dicom_version}}{Version of the DICOM standard to use for
 anonymization.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
-\if{html}{\out{</div>}}
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Patient-anonymize_as_job"></a>}}
 \if{latex}{\out{\hypertarget{method-Patient-anonymize_as_job}{}}}
-\subsection{Method \code{anonymize_as_job()}}{
-Anonymize Patient
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Patient$anonymize_as_job(
+\subsection{\code{Patient$anonymize_as_job()}}{
+  Anonymize Patient
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Patient$anonymize_as_job(
   remove = list(),
   replace = list(),
   keep = list(),
@@ -254,44 +259,37 @@ Anonymize Patient
   private_creator = NULL,
   force = FALSE,
   dicom_version = NULL
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{remove}}{List of tags to remove.}
-
-\item{\code{replace}}{Named-list of tags to replce.}
-
-\item{\code{keep}}{List of tags to keep unchanged.}
-
-\item{\code{keep_private_tags}}{Keep private tags from DICOM instance.}
-
-\item{\code{keep_source}}{Keep original resource.}
-
-\item{\code{priority}}{Priority of the job.}
-
-\item{\code{permissive}}{Ignore errors during individual steps of the job?}
-
-\item{\code{private_creator}}{Private creator to be used for private tags in
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{remove}}{List of tags to remove.}
+      \item{\code{replace}}{Named-list of tags to replce.}
+      \item{\code{keep}}{List of tags to keep unchanged.}
+      \item{\code{keep_private_tags}}{Keep private tags from DICOM instance.}
+      \item{\code{keep_source}}{Keep original resource.}
+      \item{\code{priority}}{Priority of the job.}
+      \item{\code{permissive}}{Ignore errors during individual steps of the job?}
+      \item{\code{private_creator}}{Private creator to be used for private tags in
 replace.}
-
-\item{\code{force}}{Force tags to be changed.}
-
-\item{\code{dicom_version}}{Version of the DICOM standard to use for
+      \item{\code{force}}{Force tags to be changed.}
+      \item{\code{dicom_version}}{Version of the DICOM standard to use for
 anonymization.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
-\if{html}{\out{</div>}}
-}
-}
+
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Patient-modify"></a>}}
 \if{latex}{\out{\hypertarget{method-Patient-modify}{}}}
-\subsection{Method \code{modify()}}{
-Modify Patient
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Patient$modify(
+\subsection{\code{Patient$modify()}}{
+  Modify Patient
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Patient$modify(
   remove = list(),
   replace = list(),
   keep = list(),
@@ -301,41 +299,35 @@ Modify Patient
   permissive = FALSE,
   private_creator = NULL,
   force = FALSE
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{remove}}{List of tags to remove.}
-
-\item{\code{replace}}{Named-list of tags to replce.}
-
-\item{\code{keep}}{List of tags to keep unchanged.}
-
-\item{\code{remove_private_tags}}{Remove private tags from DICOM instance.}
-
-\item{\code{keep_source}}{Keep original resource.}
-
-\item{\code{priority}}{Priority of the job.}
-
-\item{\code{permissive}}{Ignore errors during individual steps of the job?}
-
-\item{\code{private_creator}}{Private creator to be used for private tags in
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{remove}}{List of tags to remove.}
+      \item{\code{replace}}{Named-list of tags to replce.}
+      \item{\code{keep}}{List of tags to keep unchanged.}
+      \item{\code{remove_private_tags}}{Remove private tags from DICOM instance.}
+      \item{\code{keep_source}}{Keep original resource.}
+      \item{\code{priority}}{Priority of the job.}
+      \item{\code{permissive}}{Ignore errors during individual steps of the job?}
+      \item{\code{private_creator}}{Private creator to be used for private tags in
 replace.}
+      \item{\code{force}}{Force tags to be changed.}
+    }
+    \if{html}{\out{</div>}}
+  }
+}
 
-\item{\code{force}}{Force tags to be changed.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Patient-modify_as_job"></a>}}
 \if{latex}{\out{\hypertarget{method-Patient-modify_as_job}{}}}
-\subsection{Method \code{modify_as_job()}}{
-Modify Patient
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Patient$modify_as_job(
+\subsection{\code{Patient$modify_as_job()}}{
+  Modify Patient
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Patient$modify_as_job(
   remove = list(),
   replace = list(),
   keep = list(),
@@ -345,69 +337,68 @@ Modify Patient
   permissive = FALSE,
   private_creator = NULL,
   force = FALSE
-)}\if{html}{\out{</div>}}
-}
-
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{remove}}{List of tags to remove.}
-
-\item{\code{replace}}{Named-list of tags to replce.}
-
-\item{\code{keep}}{List of tags to keep unchanged.}
-
-\item{\code{remove_private_tags}}{Remove private tags from DICOM instance.}
-
-\item{\code{keep_source}}{Keep original resource.}
-
-\item{\code{priority}}{Priority of the job.}
-
-\item{\code{permissive}}{Ignore errors during individual steps of the job?}
-
-\item{\code{private_creator}}{Private creator to be used for private tags in
+)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{remove}}{List of tags to remove.}
+      \item{\code{replace}}{Named-list of tags to replce.}
+      \item{\code{keep}}{List of tags to keep unchanged.}
+      \item{\code{remove_private_tags}}{Remove private tags from DICOM instance.}
+      \item{\code{keep_source}}{Keep original resource.}
+      \item{\code{priority}}{Priority of the job.}
+      \item{\code{permissive}}{Ignore errors during individual steps of the job?}
+      \item{\code{private_creator}}{Private creator to be used for private tags in
 replace.}
+      \item{\code{force}}{Force tags to be changed.}
+    }
+    \if{html}{\out{</div>}}
+  }
+}
 
-\item{\code{force}}{Force tags to be changed.}
-}
-\if{html}{\out{</div>}}
-}
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Patient-get_shared_tags"></a>}}
 \if{latex}{\out{\hypertarget{method-Patient-get_shared_tags}{}}}
-\subsection{Method \code{get_shared_tags()}}{
-Retrieve the shared tags of the patient.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Patient$get_shared_tags()}\if{html}{\out{</div>}}
+\subsection{\code{Patient$get_shared_tags()}}{
+  Retrieve the shared tags of the patient.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Patient$get_shared_tags()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Patient-remove_empty_studies"></a>}}
 \if{latex}{\out{\hypertarget{method-Patient-remove_empty_studies}{}}}
-\subsection{Method \code{remove_empty_studies()}}{
-Remove empty studies from patient.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Patient$remove_empty_studies()}\if{html}{\out{</div>}}
+\subsection{\code{Patient$remove_empty_studies()}}{
+  Remove empty studies from patient.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Patient$remove_empty_studies()}
+    \if{html}{\out{</div>}}
+  }
 }
 
-}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Patient-clone"></a>}}
 \if{latex}{\out{\hypertarget{method-Patient-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Patient$clone(deep = FALSE)}\if{html}{\out{</div>}}
+\subsection{\code{Patient$clone()}}{
+  The objects of this class are cloneable with this method.
+  \subsection{Usage}{
+    \if{html}{\out{<div class="r">}}
+    \preformatted{Patient$clone(deep = FALSE)}
+    \if{html}{\out{</div>}}
+  }
+  \subsection{Arguments}{
+    \if{html}{\out{<div class="arguments">}}
+    \describe{
+      \item{\code{deep}}{Whether to make a deep clone.}
+    }
+    \if{html}{\out{</div>}}
+  }
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
 }
