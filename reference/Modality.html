@@ -54,8 +54,7 @@
 
 <div class="section">
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
-
-<ul><li><p><a href="#method-Modality-initalize"><code>Modality$initalize()</code></a></p></li>
+<p></p><ul><li><p><a href="#method-Modality-initalize"><code>Modality$initalize()</code></a></p></li>
 <li><p><a href="#method-Modality-echo"><code>Modality$echo()</code></a></p></li>
 <li><p><a href="#method-Modality-get"><code>Modality$get()</code></a></p></li>
 <li><p><a href="#method-Modality-find"><code>Modality$find()</code></a></p></li>
@@ -64,49 +63,46 @@
 <li><p><a href="#method-Modality-get_query_answers"><code>Modality$get_query_answers()</code></a></p></li>
 <li><p><a href="#method-Modality-clone"><code>Modality$clone()</code></a></p></li>
 </ul></div><p></p><hr><a id="method-Modality-initalize"></a><div class="section">
-<h3 id="method-initalize-">Method <code>initalize()</code><a class="anchor" aria-label="anchor" href="#method-initalize-"></a></h3>
+<h3 id="modality-initalize-"><code>Modality$initalize()</code><a class="anchor" aria-label="anchor" href="#modality-initalize-"></a></h3>
 <p>Create a new Modality instance.</p><div class="section">
 <h4 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Modality</span><span class="op">$</span><span class="fu">initalize</span><span class="op">(</span><span class="va">client</span>, <span class="va">modality</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>client</code></dt>
 <dd><p>Orthanc API client.</p></dd>
 
-
-<dt><code>modality</code></dt>
+      <dt><code>modality</code></dt>
 <dd><p>Remote modality.</p></dd>
 
 
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Modality-echo"></a><div class="section">
-<h3 id="method-echo-">Method <code>echo()</code><a class="anchor" aria-label="anchor" href="#method-echo-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Modality-echo"></a><div class="section">
+<h3 id="modality-echo-"><code>Modality$echo()</code><a class="anchor" aria-label="anchor" href="#modality-echo-"></a></h3>
 <p>C-Echo to modality</p><div class="section">
 <h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Modality</span><span class="op">$</span><span class="fu">echo</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
+</div>
 
-</div><p></p><hr><a id="method-Modality-get"></a><div class="section">
-<h3 id="method-get-">Method <code><a href="https://rdrr.io/r/base/get.html" class="external-link">get()</a></code><a class="anchor" aria-label="anchor" href="#method-get-"></a></h3>
+<p></p><hr><a id="method-Modality-get"></a><div class="section">
+<h3 id="modality-get-"><code>Modality$get()</code><a class="anchor" aria-label="anchor" href="#modality-get-"></a></h3>
 <p>C-Move SCU: Send all the results to another modality whose
 AET is in the body.</p><div class="section">
 <h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Modality</span><span class="op">$</span><span class="fu">get</span><span class="op">(</span><span class="va">level</span>, <span class="va">resources</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>level</code></dt>
 <dd><p>Level of the query ("Patient", "Study", "Series",
 "Instance").</p></dd>
 
-
-<dt><code>resources</code></dt>
+      <dt><code>resources</code></dt>
 <dd><p>List or named-list of DICOM tags that identify data to
 retrieve (e.g., list(StudyInstanceUID = "1.3.6.1.4.1.22213.2.6291.2.1")).</p></dd>
 
@@ -114,14 +110,14 @@ retrieve (e.g., list(StudyInstanceUID = "1.3.6.1.4.1.22213.2.6291.2.1")).</p></d
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Modality-find"></a><div class="section">
-<h3 id="method-find-">Method <code><a href="https://rdrr.io/r/utils/apropos.html" class="external-link">find()</a></code><a class="anchor" aria-label="anchor" href="#method-find-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Modality-find"></a><div class="section">
+<h3 id="modality-find-"><code>Modality$find()</code><a class="anchor" aria-label="anchor" href="#modality-find-"></a></h3>
 <p>C-Find (Querying with data)</p><div class="section">
 <h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Modality</span><span class="op">$</span><span class="fu">find</span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>data</code></dt>
 <dd><p>Named-list to send in the body of request.</p></dd>
@@ -130,34 +126,33 @@ retrieve (e.g., list(StudyInstanceUID = "1.3.6.1.4.1.22213.2.6291.2.1")).</p></d
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Modality-move"></a><div class="section">
-<h3 id="method-move-">Method <code>move()</code><a class="anchor" aria-label="anchor" href="#method-move-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Modality-move"></a><div class="section">
+<h3 id="modality-move-"><code>Modality$move()</code><a class="anchor" aria-label="anchor" href="#modality-move-"></a></h3>
 <p>C-Find (Querying with data)</p><div class="section">
 <h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Modality</span><span class="op">$</span><span class="fu">move</span><span class="op">(</span><span class="va">query_id</span>, <span class="va">cmove_data</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>query_id</code></dt>
 <dd><p>Query identifier.</p></dd>
 
-
-<dt><code>cmove_data</code></dt>
+      <dt><code>cmove_data</code></dt>
 <dd><p>Ex. list(TargetAet = 'target_modality_name', Synchronous = FALSE)</p></dd>
 
 
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Modality-store"></a><div class="section">
-<h3 id="method-store-">Method <code>store()</code><a class="anchor" aria-label="anchor" href="#method-store-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Modality-store"></a><div class="section">
+<h3 id="modality-store-"><code>Modality$store()</code><a class="anchor" aria-label="anchor" href="#modality-store-"></a></h3>
 <p>Store series or instance to modality.</p><div class="section">
 <h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Modality</span><span class="op">$</span><span class="fu">store</span><span class="op">(</span><span class="va">instance_or_series_id</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>instance_or_series_id</code></dt>
 <dd><p>Instance or Series Orthanc identifier.</p></dd>
@@ -166,14 +161,14 @@ retrieve (e.g., list(StudyInstanceUID = "1.3.6.1.4.1.22213.2.6291.2.1")).</p></d
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Modality-get_query_answers"></a><div class="section">
-<h3 id="method-get-query-answers-">Method <code>get_query_answers()</code><a class="anchor" aria-label="anchor" href="#method-get-query-answers-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Modality-get_query_answers"></a><div class="section">
+<h3 id="modality-get-query-answers-"><code>Modality$get_query_answers()</code><a class="anchor" aria-label="anchor" href="#modality-get-query-answers-"></a></h3>
 <p>Get query answers.</p><div class="section">
 <h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Modality</span><span class="op">$</span><span class="fu">get_query_answers</span><span class="op">(</span><span class="va">query_id</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>query_id</code></dt>
 <dd><p>Query identifier.</p></dd>
@@ -182,14 +177,14 @@ retrieve (e.g., list(StudyInstanceUID = "1.3.6.1.4.1.22213.2.6291.2.1")).</p></d
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Modality-clone"></a><div class="section">
-<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Modality-clone"></a><div class="section">
+<h3 id="modality-clone-"><code>Modality$clone()</code><a class="anchor" aria-label="anchor" href="#modality-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
 <h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Modality</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
@@ -199,6 +194,7 @@ retrieve (e.g., list(StudyInstanceUID = "1.3.6.1.4.1.22213.2.6291.2.1")).</p></d
 </div>
 
 </div>
+
 
     </div>
 

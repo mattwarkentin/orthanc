@@ -8,5 +8,5 @@ An instance of `RemoteModality`.
 
 ## Super class
 
-[`orthanc::Modality`](https://mattwarkentin.github.io/orthanc/reference/Modality.md)
+[`Modality`](https://mattwarkentin.github.io/orthanc/reference/Modality.md)
 -\> `RemoteModality`

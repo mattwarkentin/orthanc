@@ -8,7 +8,7 @@ An R6 instance of class `"Instance"`.
 
 ## Super class
 
-[`orthanc::Resource`](https://mattwarkentin.github.io/orthanc/reference/Resource.md)
+[`Resource`](https://mattwarkentin.github.io/orthanc/reference/Resource.md)
 -\> `Instance`
 
 ## Active bindings
@@ -149,13 +149,13 @@ An R6 instance of class `"Instance"`.
 
 Inherited methods
 
-- [`orthanc::Resource$initialize()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-initialize)
-- [`orthanc::Resource$print()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-print)
-- [`orthanc::Resource$set_child_resources()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-set_child_resources)
+- [`Resource$initialize()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-initialize)
+- [`Resource$print()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-print)
+- [`Resource$set_child_resources()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-set_child_resources)
 
 ------------------------------------------------------------------------
 
-### Method `get_dicom_file_content()`
+### `Instance$get_dicom_file_content()`
 
 Retrieves bytes of DICOM file content
 
@@ -167,7 +167,7 @@ This method retrieves bytes corresponding to the DICOM file.
 
 ------------------------------------------------------------------------
 
-### Method `download_dicom()`
+### `Instance$download_dicom()`
 
 Download DICOM file to a path.
 
@@ -189,7 +189,7 @@ Download DICOM file to a path.
 
 ------------------------------------------------------------------------
 
-### Method `get_main_information()`
+### `Instance$get_main_information()`
 
 Get instance information.
 
@@ -199,7 +199,7 @@ Get instance information.
 
 ------------------------------------------------------------------------
 
-### Method `add_label()`
+### `Instance$add_label()`
 
 Add label to resource.
 
@@ -215,7 +215,7 @@ Add label to resource.
 
 ------------------------------------------------------------------------
 
-### Method `has_label()`
+### `Instance$has_label()`
 
 Test if resource has label.
 
@@ -231,7 +231,7 @@ Test if resource has label.
 
 ------------------------------------------------------------------------
 
-### Method `remove_label()`
+### `Instance$remove_label()`
 
 Delete label from resource.
 
@@ -247,7 +247,7 @@ Delete label from resource.
 
 ------------------------------------------------------------------------
 
-### Method `get_raw_content_by_tag()`
+### `Instance$get_raw_content_by_tag()`
 
 Get raw content of one DICOM tag.
 
@@ -263,7 +263,7 @@ Get raw content of one DICOM tag.
 
 ------------------------------------------------------------------------
 
-### Method `anonymize()`
+### `Instance$anonymize()`
 
 Anonymize Instance
 
@@ -316,7 +316,7 @@ Anonymize Instance
 
 ------------------------------------------------------------------------
 
-### Method `modify()`
+### `Instance$modify()`
 
 Modify an Instance
 
@@ -364,7 +364,7 @@ Modify an Instance
 
 ------------------------------------------------------------------------
 
-### Method `get_nifti_file_content()`
+### `Instance$get_nifti_file_content()`
 
 Get bytes of NIfTI file content.
 
@@ -380,7 +380,7 @@ Get bytes of NIfTI file content.
 
 ------------------------------------------------------------------------
 
-### Method `download_nifti()`
+### `Instance$download_nifti()`
 
 Download instance as NIfTI.
 
@@ -406,7 +406,7 @@ Download instance as NIfTI.
 
 ------------------------------------------------------------------------
 
-### Method `download_image()`
+### `Instance$download_image()`
 
 Download instance as an image.
 
@@ -453,7 +453,7 @@ Download instance as an image.
 
 ------------------------------------------------------------------------
 
-### Method `clone()`
+### `Instance$clone()`
 
 The objects of this class are cloneable with this method.
 

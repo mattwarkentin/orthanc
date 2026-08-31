@@ -22,3 +22,8 @@ Useful links:
 
 **Maintainer**: Matthew T. Warkentin <matthew.warkentin@ucalgary.ca>
 ([ORCID](https://orcid.org/0000-0001-8730-3511)) \[copyright holder\]
+
+Authors:
+
+- Matthew T. Warkentin <matthew.warkentin@ucalgary.ca>
+  ([ORCID](https://orcid.org/0000-0001-8730-3511)) \[copyright holder\]

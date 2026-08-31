@@ -47,43 +47,43 @@
 <dd><p>Job state.</p></dd>
 
 
-<dt><code>content</code></dt>
+    <dt><code>content</code></dt>
 <dd><p>Job content.</p></dd>
 
 
-<dt><code>type</code></dt>
+    <dt><code>type</code></dt>
 <dd><p>Job type.</p></dd>
 
 
-<dt><code>creation_time</code></dt>
+    <dt><code>creation_time</code></dt>
 <dd><p>Job creation time.</p></dd>
 
 
-<dt><code>effective_runtime</code></dt>
+    <dt><code>effective_runtime</code></dt>
 <dd><p>Job effective runtime.</p></dd>
 
 
-<dt><code>priority</code></dt>
+    <dt><code>priority</code></dt>
 <dd><p>Job priority.</p></dd>
 
 
-<dt><code>progress</code></dt>
+    <dt><code>progress</code></dt>
 <dd><p>Job progress.</p></dd>
 
 
-<dt><code>error</code></dt>
+    <dt><code>error</code></dt>
 <dd><p>Job error.</p></dd>
 
 
-<dt><code>error_details</code></dt>
+    <dt><code>error_details</code></dt>
 <dd><p>Job error details.</p></dd>
 
 
-<dt><code>timestamp</code></dt>
+    <dt><code>timestamp</code></dt>
 <dd><p>Job timestamp.</p></dd>
 
 
-<dt><code>completion_time</code></dt>
+    <dt><code>completion_time</code></dt>
 <dd><p>Job completion time.</p></dd>
 
 
@@ -94,39 +94,35 @@
 
 <div class="section">
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
-
-<ul><li><p><a href="#method-Job-new"><code>Job$new()</code></a></p></li>
+<p></p><ul><li><p><a href="#method-Job-initialize"><code>Job$new()</code></a></p></li>
 <li><p><a href="#method-Job-wait_until_completion"><code>Job$wait_until_completion()</code></a></p></li>
 <li><p><a href="#method-Job-get_information"><code>Job$get_information()</code></a></p></li>
 <li><p><a href="#method-Job-clone"><code>Job$clone()</code></a></p></li>
-</ul></div><p></p><hr><a id="method-Job-new"></a><div class="section">
-<h3 id="method-new-">Method <code>new()</code><a class="anchor" aria-label="anchor" href="#method-new-"></a></h3>
+</ul></div><p></p><hr><a id="method-Job-initialize"></a><div class="section">
+<h3 id="job-new-"><code>Job$new()</code><a class="anchor" aria-label="anchor" href="#job-new-"></a></h3>
 <p>Create a new Job instance.</p><div class="section">
 <h4 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va"><a href="../reference/Job.html">Job</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="va">id</span>, <span class="va">client</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>id</code></dt>
 <dd><p>Job ID.</p></dd>
 
-
-<dt><code>client</code></dt>
+      <dt><code>client</code></dt>
 <dd><p>Orthanc API client.</p></dd>
 
 
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Job-wait_until_completion"></a><div class="section">
-<h3 id="method-wait-until-completion-">Method <code>wait_until_completion()</code><a class="anchor" aria-label="anchor" href="#method-wait-until-completion-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Job-wait_until_completion"></a><div class="section">
+<h3 id="job-wait-until-completion-"><code>Job$wait_until_completion()</code><a class="anchor" aria-label="anchor" href="#job-wait-until-completion-"></a></h3>
 <p>Stop execution until job is not Pending/Running.</p><div class="section">
 <h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Job</span><span class="op">$</span><span class="fu">wait_until_completion</span><span class="op">(</span>interval <span class="op">=</span> <span class="fl">2L</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>interval</code></dt>
 <dd><p>Time interval to check the job status, default is 2s.</p></dd>
@@ -135,22 +131,23 @@
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Job-get_information"></a><div class="section">
-<h3 id="method-get-information-">Method <code>get_information()</code><a class="anchor" aria-label="anchor" href="#method-get-information-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Job-get_information"></a><div class="section">
+<h3 id="job-get-information-"><code>Job$get_information()</code><a class="anchor" aria-label="anchor" href="#job-get-information-"></a></h3>
 <p>Get job information.</p><div class="section">
 <h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Job</span><span class="op">$</span><span class="fu">get_information</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
+</div>
 
-</div><p></p><hr><a id="method-Job-clone"></a><div class="section">
-<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
+<p></p><hr><a id="method-Job-clone"></a><div class="section">
+<h3 id="job-clone-"><code>Job$clone()</code><a class="anchor" aria-label="anchor" href="#job-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
 <h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Job</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
@@ -160,6 +157,7 @@
 </div>
 
 </div>
+
 
     </div>
 

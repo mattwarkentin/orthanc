@@ -8,7 +8,7 @@ An R6 instance of class `"Series"`.
 
 ## Super class
 
-[`orthanc::Resource`](https://mattwarkentin.github.io/orthanc/reference/Resource.md)
+[`Resource`](https://mattwarkentin.github.io/orthanc/reference/Resource.md)
 -\> `Series`
 
 ## Active bindings
@@ -181,13 +181,13 @@ An R6 instance of class `"Series"`.
 
 Inherited methods
 
-- [`orthanc::Resource$initialize()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-initialize)
-- [`orthanc::Resource$print()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-print)
-- [`orthanc::Resource$set_child_resources()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-set_child_resources)
+- [`Resource$initialize()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-initialize)
+- [`Resource$print()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-print)
+- [`Resource$set_child_resources()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-set_child_resources)
 
 ------------------------------------------------------------------------
 
-### Method `get_main_information()`
+### `Series$get_main_information()`
 
 Get series information.
 
@@ -197,7 +197,7 @@ Get series information.
 
 ------------------------------------------------------------------------
 
-### Method `add_label()`
+### `Series$add_label()`
 
 Add label to resource.
 
@@ -213,7 +213,7 @@ Add label to resource.
 
 ------------------------------------------------------------------------
 
-### Method `has_label()`
+### `Series$has_label()`
 
 Test if resource has label.
 
@@ -229,7 +229,7 @@ Test if resource has label.
 
 ------------------------------------------------------------------------
 
-### Method `remove_label()`
+### `Series$remove_label()`
 
 Delete label from resource.
 
@@ -245,7 +245,7 @@ Delete label from resource.
 
 ------------------------------------------------------------------------
 
-### Method `anonymize()`
+### `Series$anonymize()`
 
 Anonymize Series
 
@@ -308,7 +308,7 @@ Anonymize Series
 
 ------------------------------------------------------------------------
 
-### Method `anonymize_as_job()`
+### `Series$anonymize_as_job()`
 
 Anonymize Series
 
@@ -371,7 +371,7 @@ Anonymize Series
 
 ------------------------------------------------------------------------
 
-### Method `modify()`
+### `Series$modify()`
 
 Modify Series
 
@@ -429,7 +429,7 @@ Modify Series
 
 ------------------------------------------------------------------------
 
-### Method `modify_as_job()`
+### `Series$modify_as_job()`
 
 Modify Series
 
@@ -487,7 +487,7 @@ Modify Series
 
 ------------------------------------------------------------------------
 
-### Method `get_zip_archive_content()`
+### `Series$get_zip_archive_content()`
 
 Get bytes of the zip archive.
 
@@ -497,7 +497,7 @@ Get bytes of the zip archive.
 
 ------------------------------------------------------------------------
 
-### Method `download_archive()`
+### `Series$download_archive()`
 
 Download zip archive to `path`.
 
@@ -519,7 +519,7 @@ Download zip archive to `path`.
 
 ------------------------------------------------------------------------
 
-### Method `get_shared_tags()`
+### `Series$get_shared_tags()`
 
 Retrieve the shared tags of the series.
 
@@ -529,7 +529,7 @@ Retrieve the shared tags of the series.
 
 ------------------------------------------------------------------------
 
-### Method `remove_empty_instances()`
+### `Series$remove_empty_instances()`
 
 Remove empty instances from series.
 
@@ -539,7 +539,7 @@ Remove empty instances from series.
 
 ------------------------------------------------------------------------
 
-### Method `get_nifti_file_content()`
+### `Series$get_nifti_file_content()`
 
 Get bytes of NIfTI file content.
 
@@ -555,7 +555,7 @@ Get bytes of NIfTI file content.
 
 ------------------------------------------------------------------------
 
-### Method `download_nifti()`
+### `Series$download_nifti()`
 
 Download series as NIfTI.
 
@@ -581,7 +581,7 @@ Download series as NIfTI.
 
 ------------------------------------------------------------------------
 
-### Method `clone()`
+### `Series$clone()`
 
 The objects of this class are cloneable with this method.
 

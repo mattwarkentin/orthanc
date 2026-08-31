@@ -24,7 +24,7 @@ An R6 instance of class `"Resource"`.
 
 ### Public methods
 
-- [`Resource$new()`](#method-Resource-new)
+- [`Resource$new()`](#method-Resource-initialize)
 
 - [`Resource$get_main_information()`](#method-Resource-get_main_information)
 
@@ -36,7 +36,7 @@ An R6 instance of class `"Resource"`.
 
 ------------------------------------------------------------------------
 
-### Method `new()`
+### `Resource$new()`
 
 Create a new Resource.
 
@@ -63,7 +63,7 @@ Create a new Resource.
 
 ------------------------------------------------------------------------
 
-### Method `get_main_information()`
+### `Resource$get_main_information()`
 
 Get main information for the resource.
 
@@ -73,7 +73,7 @@ Get main information for the resource.
 
 ------------------------------------------------------------------------
 
-### Method [`print()`](https://rdrr.io/r/base/print.html)
+### `Resource$print()`
 
 Print a `Resource` object.
 
@@ -89,7 +89,7 @@ Print a `Resource` object.
 
 ------------------------------------------------------------------------
 
-### Method `set_child_resources()`
+### `Resource$set_child_resources()`
 
 Set child resources.
 
@@ -105,7 +105,7 @@ Set child resources.
 
 ------------------------------------------------------------------------
 
-### Method `clone()`
+### `Resource$clone()`
 
 The objects of this class are cloneable with this method.
 

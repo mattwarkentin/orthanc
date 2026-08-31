@@ -47,11 +47,11 @@
 <dd><p>Orthanc identifier of the resource.</p></dd>
 
 
-<dt><code>main_dicom_tags</code></dt>
+    <dt><code>main_dicom_tags</code></dt>
 <dd><p>Main DICOM tags for the resource.</p></dd>
 
 
-<dt><code>is_locked</code></dt>
+    <dt><code>is_locked</code></dt>
 <dd><p>Get or set whether resource is locked.</p></dd>
 
 
@@ -62,30 +62,25 @@
 
 <div class="section">
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
-
-<ul><li><p><a href="#method-Resource-new"><code>Resource$new()</code></a></p></li>
+<p></p><ul><li><p><a href="#method-Resource-initialize"><code>Resource$new()</code></a></p></li>
 <li><p><a href="#method-Resource-get_main_information"><code>Resource$get_main_information()</code></a></p></li>
 <li><p><a href="#method-Resource-print"><code>Resource$print()</code></a></p></li>
 <li><p><a href="#method-Resource-set_child_resources"><code>Resource$set_child_resources()</code></a></p></li>
 <li><p><a href="#method-Resource-clone"><code>Resource$clone()</code></a></p></li>
-</ul></div><p></p><hr><a id="method-Resource-new"></a><div class="section">
-<h3 id="method-new-">Method <code>new()</code><a class="anchor" aria-label="anchor" href="#method-new-"></a></h3>
+</ul></div><p></p><hr><a id="method-Resource-initialize"></a><div class="section">
+<h3 id="resource-new-"><code>Resource$new()</code><a class="anchor" aria-label="anchor" href="#resource-new-"></a></h3>
 <p>Create a new Resource.</p><div class="section">
 <h4 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va"><a href="../reference/Resource.html">Resource</a></span><span class="op">$</span><span class="fu">new</span><span class="op">(</span><span class="va">id</span>, <span class="va">client</span>, lock_children <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>id</code></dt>
 <dd><p>Orthanc identifier of the resource.</p></dd>
 
-
-<dt><code>client</code></dt>
+      <dt><code>client</code></dt>
 <dd><p><code>Orthanc</code> client.</p></dd>
 
-
-<dt><code>lock_children</code></dt>
+      <dt><code>lock_children</code></dt>
 <dd><p>If <code>lock_children</code> is <code>TRUE</code>, the resource children
 (e.g., instances of a series via <code>Series$instances</code>) will be cached at
 the first query rather than queried every time. This is useful when you
@@ -96,22 +91,23 @@ filter result.</p></dd>
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Resource-get_main_information"></a><div class="section">
-<h3 id="method-get-main-information-">Method <code>get_main_information()</code><a class="anchor" aria-label="anchor" href="#method-get-main-information-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Resource-get_main_information"></a><div class="section">
+<h3 id="resource-get-main-information-"><code>Resource$get_main_information()</code><a class="anchor" aria-label="anchor" href="#resource-get-main-information-"></a></h3>
 <p>Get main information for the resource.</p><div class="section">
 <h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Resource</span><span class="op">$</span><span class="fu">get_main_information</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
+</div>
 
-</div><p></p><hr><a id="method-Resource-print"></a><div class="section">
-<h3 id="method-print-">Method <code><a href="https://rdrr.io/r/base/print.html" class="external-link">print()</a></code><a class="anchor" aria-label="anchor" href="#method-print-"></a></h3>
+<p></p><hr><a id="method-Resource-print"></a><div class="section">
+<h3 id="resource-print-"><code>Resource$print()</code><a class="anchor" aria-label="anchor" href="#resource-print-"></a></h3>
 <p>Print a <code>Resource</code> object.</p><div class="section">
 <h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Resource</span><span class="op">$</span><span class="fu">print</span><span class="op">(</span><span class="va">...</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>...</code></dt>
 <dd><p>Not currently used.</p></dd>
@@ -120,14 +116,14 @@ filter result.</p></dd>
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Resource-set_child_resources"></a><div class="section">
-<h3 id="method-set-child-resources-">Method <code>set_child_resources()</code><a class="anchor" aria-label="anchor" href="#method-set-child-resources-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Resource-set_child_resources"></a><div class="section">
+<h3 id="resource-set-child-resources-"><code>Resource$set_child_resources()</code><a class="anchor" aria-label="anchor" href="#resource-set-child-resources-"></a></h3>
 <p>Set child resources.</p><div class="section">
 <h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Resource</span><span class="op">$</span><span class="fu">set_child_resources</span><span class="op">(</span><span class="va">resources</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>resources</code></dt>
 <dd><p>List of resources.</p></dd>
@@ -136,14 +132,14 @@ filter result.</p></dd>
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Resource-clone"></a><div class="section">
-<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Resource-clone"></a><div class="section">
+<h3 id="resource-clone-"><code>Resource$clone()</code><a class="anchor" aria-label="anchor" href="#resource-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
 <h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Resource</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
@@ -153,6 +149,7 @@ filter result.</p></dd>
 </div>
 
 </div>
+
 
     </div>
 

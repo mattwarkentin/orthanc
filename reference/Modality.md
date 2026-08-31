@@ -34,7 +34,7 @@ An instance of `Modality`.
 
 ------------------------------------------------------------------------
 
-### Method `initalize()`
+### `Modality$initalize()`
 
 Create a new Modality instance.
 
@@ -54,7 +54,7 @@ Create a new Modality instance.
 
 ------------------------------------------------------------------------
 
-### Method `echo()`
+### `Modality$echo()`
 
 C-Echo to modality
 
@@ -64,7 +64,7 @@ C-Echo to modality
 
 ------------------------------------------------------------------------
 
-### Method [`get()`](https://rdrr.io/r/base/get.html)
+### `Modality$get()`
 
 C-Move SCU: Send all the results to another modality whose AET is in the
 body.
@@ -86,7 +86,7 @@ body.
 
 ------------------------------------------------------------------------
 
-### Method [`find()`](https://rdrr.io/r/utils/apropos.html)
+### `Modality$find()`
 
 C-Find (Querying with data)
 
@@ -102,7 +102,7 @@ C-Find (Querying with data)
 
 ------------------------------------------------------------------------
 
-### Method `move()`
+### `Modality$move()`
 
 C-Find (Querying with data)
 
@@ -122,7 +122,7 @@ C-Find (Querying with data)
 
 ------------------------------------------------------------------------
 
-### Method `store()`
+### `Modality$store()`
 
 Store series or instance to modality.
 
@@ -138,7 +138,7 @@ Store series or instance to modality.
 
 ------------------------------------------------------------------------
 
-### Method `get_query_answers()`
+### `Modality$get_query_answers()`
 
 Get query answers.
 
@@ -154,7 +154,7 @@ Get query answers.
 
 ------------------------------------------------------------------------
 
-### Method `clone()`
+### `Modality$clone()`
 
 The objects of this class are cloneable with this method.
 

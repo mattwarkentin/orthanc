@@ -8,7 +8,7 @@ An R6 instance of class `"Study"`.
 
 ## Super class
 
-[`orthanc::Resource`](https://mattwarkentin.github.io/orthanc/reference/Resource.md)
+[`Resource`](https://mattwarkentin.github.io/orthanc/reference/Resource.md)
 -\> `Study`
 
 ## Active bindings
@@ -141,13 +141,13 @@ An R6 instance of class `"Study"`.
 
 Inherited methods
 
-- [`orthanc::Resource$initialize()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-initialize)
-- [`orthanc::Resource$print()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-print)
-- [`orthanc::Resource$set_child_resources()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-set_child_resources)
+- [`Resource$initialize()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-initialize)
+- [`Resource$print()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-print)
+- [`Resource$set_child_resources()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-set_child_resources)
 
 ------------------------------------------------------------------------
 
-### Method `get_main_information()`
+### `Study$get_main_information()`
 
 Get study information.
 
@@ -157,7 +157,7 @@ Get study information.
 
 ------------------------------------------------------------------------
 
-### Method `add_label()`
+### `Study$add_label()`
 
 Add label to resource.
 
@@ -173,7 +173,7 @@ Add label to resource.
 
 ------------------------------------------------------------------------
 
-### Method `has_label()`
+### `Study$has_label()`
 
 Test if resource has label.
 
@@ -189,7 +189,7 @@ Test if resource has label.
 
 ------------------------------------------------------------------------
 
-### Method `remove_label()`
+### `Study$remove_label()`
 
 Delete label from resource.
 
@@ -205,7 +205,7 @@ Delete label from resource.
 
 ------------------------------------------------------------------------
 
-### Method `anonymize()`
+### `Study$anonymize()`
 
 Anonymize Study
 
@@ -268,7 +268,7 @@ Anonymize Study
 
 ------------------------------------------------------------------------
 
-### Method `anonymize_as_job()`
+### `Study$anonymize_as_job()`
 
 Anonymize Study
 
@@ -331,7 +331,7 @@ Anonymize Study
 
 ------------------------------------------------------------------------
 
-### Method `modify()`
+### `Study$modify()`
 
 Modify Study
 
@@ -389,7 +389,7 @@ Modify Study
 
 ------------------------------------------------------------------------
 
-### Method `modify_as_job()`
+### `Study$modify_as_job()`
 
 Modify Study as Job
 
@@ -447,7 +447,7 @@ Modify Study as Job
 
 ------------------------------------------------------------------------
 
-### Method `get_zip_archive_content()`
+### `Study$get_zip_archive_content()`
 
 Get bytes of the zip archive.
 
@@ -457,7 +457,7 @@ Get bytes of the zip archive.
 
 ------------------------------------------------------------------------
 
-### Method `download_archive()`
+### `Study$download_archive()`
 
 Download zip archive to `path`.
 
@@ -479,7 +479,7 @@ Download zip archive to `path`.
 
 ------------------------------------------------------------------------
 
-### Method `get_shared_tags()`
+### `Study$get_shared_tags()`
 
 Retrieve the shared tags of the study.
 
@@ -489,7 +489,7 @@ Retrieve the shared tags of the study.
 
 ------------------------------------------------------------------------
 
-### Method `remove_empty_series()`
+### `Study$remove_empty_series()`
 
 Remove empty series from study.
 
@@ -499,7 +499,7 @@ Remove empty series from study.
 
 ------------------------------------------------------------------------
 
-### Method `clone()`
+### `Study$clone()`
 
 The objects of this class are cloneable with this method.
 

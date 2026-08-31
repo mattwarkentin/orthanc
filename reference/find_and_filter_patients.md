@@ -41,7 +41,7 @@ find_and_filter_patients(
 
 - series_filter:
 
-  Predicate function to filer
+  Predicate function to filter
   [Series](https://mattwarkentin.github.io/orthanc/reference/Series.md).
 
 - instance_filter:

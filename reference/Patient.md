@@ -8,7 +8,7 @@ An R6 instance of class `"Patient"`.
 
 ## Super class
 
-[`orthanc::Resource`](https://mattwarkentin.github.io/orthanc/reference/Resource.md)
+[`Resource`](https://mattwarkentin.github.io/orthanc/reference/Resource.md)
 -\> `Patient`
 
 ## Active bindings
@@ -131,13 +131,13 @@ An R6 instance of class `"Patient"`.
 
 Inherited methods
 
-- [`orthanc::Resource$initialize()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-initialize)
-- [`orthanc::Resource$print()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-print)
-- [`orthanc::Resource$set_child_resources()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-set_child_resources)
+- [`Resource$initialize()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-initialize)
+- [`Resource$print()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-print)
+- [`Resource$set_child_resources()`](https://mattwarkentin.github.io/orthanc/reference/Resource.html#method-set_child_resources)
 
 ------------------------------------------------------------------------
 
-### Method `get_main_information()`
+### `Patient$get_main_information()`
 
 Get patient information.
 
@@ -147,7 +147,7 @@ Get patient information.
 
 ------------------------------------------------------------------------
 
-### Method `add_label()`
+### `Patient$add_label()`
 
 Add label to resource.
 
@@ -163,7 +163,7 @@ Add label to resource.
 
 ------------------------------------------------------------------------
 
-### Method `has_label()`
+### `Patient$has_label()`
 
 Test if resource has label.
 
@@ -179,7 +179,7 @@ Test if resource has label.
 
 ------------------------------------------------------------------------
 
-### Method `remove_label()`
+### `Patient$remove_label()`
 
 Delete label from resource.
 
@@ -195,7 +195,7 @@ Delete label from resource.
 
 ------------------------------------------------------------------------
 
-### Method `get_zip_archive_content()`
+### `Patient$get_zip_archive_content()`
 
 Get bytes of the zip archive.
 
@@ -205,7 +205,7 @@ Get bytes of the zip archive.
 
 ------------------------------------------------------------------------
 
-### Method `download_archive()`
+### `Patient$download_archive()`
 
 Download zip archive to `path`.
 
@@ -227,7 +227,7 @@ Download zip archive to `path`.
 
 ------------------------------------------------------------------------
 
-### Method `get_patient_module()`
+### `Patient$get_patient_module()`
 
 Get patient module in a simplified version
 
@@ -237,7 +237,7 @@ Get patient module in a simplified version
 
 ------------------------------------------------------------------------
 
-### Method `anonymize()`
+### `Patient$anonymize()`
 
 Anonymize Patient
 
@@ -300,7 +300,7 @@ Anonymize Patient
 
 ------------------------------------------------------------------------
 
-### Method `anonymize_as_job()`
+### `Patient$anonymize_as_job()`
 
 Anonymize Patient
 
@@ -363,7 +363,7 @@ Anonymize Patient
 
 ------------------------------------------------------------------------
 
-### Method `modify()`
+### `Patient$modify()`
 
 Modify Patient
 
@@ -421,7 +421,7 @@ Modify Patient
 
 ------------------------------------------------------------------------
 
-### Method `modify_as_job()`
+### `Patient$modify_as_job()`
 
 Modify Patient
 
@@ -479,7 +479,7 @@ Modify Patient
 
 ------------------------------------------------------------------------
 
-### Method `get_shared_tags()`
+### `Patient$get_shared_tags()`
 
 Retrieve the shared tags of the patient.
 
@@ -489,7 +489,7 @@ Retrieve the shared tags of the patient.
 
 ------------------------------------------------------------------------
 
-### Method `remove_empty_studies()`
+### `Patient$remove_empty_studies()`
 
 Remove empty studies from patient.
 
@@ -499,7 +499,7 @@ Remove empty studies from patient.
 
 ------------------------------------------------------------------------
 
-### Method `clone()`
+### `Patient$clone()`
 
 The objects of this class are cloneable with this method.
 

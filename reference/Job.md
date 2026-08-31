@@ -56,7 +56,7 @@ An instance of `Job`.
 
 ### Public methods
 
-- [`Job$new()`](#method-Job-new)
+- [`Job$new()`](#method-Job-initialize)
 
 - [`Job$wait_until_completion()`](#method-Job-wait_until_completion)
 
@@ -66,7 +66,7 @@ An instance of `Job`.
 
 ------------------------------------------------------------------------
 
-### Method `new()`
+### `Job$new()`
 
 Create a new Job instance.
 
@@ -86,7 +86,7 @@ Create a new Job instance.
 
 ------------------------------------------------------------------------
 
-### Method `wait_until_completion()`
+### `Job$wait_until_completion()`
 
 Stop execution until job is not Pending/Running.
 
@@ -102,7 +102,7 @@ Stop execution until job is not Pending/Running.
 
 ------------------------------------------------------------------------
 
-### Method `get_information()`
+### `Job$get_information()`
 
 Get job information.
 
@@ -112,7 +112,7 @@ Get job information.
 
 ------------------------------------------------------------------------
 
-### Method `clone()`
+### `Job$clone()`
 
 The objects of this class are cloneable with this method.
 

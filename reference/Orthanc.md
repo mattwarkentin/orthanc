@@ -44,7 +44,7 @@ An `Orthanc` instance.
 
 ### Public methods
 
-- [`Orthanc$new()`](#method-Orthanc-new)
+- [`Orthanc$new()`](#method-Orthanc-initialize)
 
 - [`Orthanc$GET()`](#method-Orthanc-GET)
 
@@ -648,7 +648,7 @@ An `Orthanc` instance.
 
 ------------------------------------------------------------------------
 
-### Method `new()`
+### `Orthanc$new()`
 
 Initialize a new Orthanc API Client
 
@@ -718,7 +718,7 @@ Initialize a new Orthanc API Client
 
 ------------------------------------------------------------------------
 
-### Method `GET()`
+### `Orthanc$GET()`
 
 GET request with specified route
 
@@ -750,7 +750,7 @@ Serialized response of the HTTP GET request.
 
 ------------------------------------------------------------------------
 
-### Method `DELETE()`
+### `Orthanc$DELETE()`
 
 DELETE to specified route
 
@@ -782,7 +782,7 @@ Serialized response of the HTTP DELETE request.
 
 ------------------------------------------------------------------------
 
-### Method `POST()`
+### `Orthanc$POST()`
 
 POST to specified route
 
@@ -834,7 +834,7 @@ Serialized response of the HTTP POST request.
 
 ------------------------------------------------------------------------
 
-### Method `PUT()`
+### `Orthanc$PUT()`
 
 PUT to specified route
 
@@ -886,7 +886,7 @@ Serialized response of the HTTP PUT request.
 
 ------------------------------------------------------------------------
 
-### Method `stream()`
+### `Orthanc$stream()`
 
 Stream an HTTP response body and write to disk.
 
@@ -922,7 +922,7 @@ Serialized response of the HTTP GET request.
 
 ------------------------------------------------------------------------
 
-### Method [`print()`](https://rdrr.io/r/base/print.html)
+### `Orthanc$print()`
 
 Print method for `Orthanc`.
 
@@ -942,7 +942,7 @@ Print method for `Orthanc`.
 
 ------------------------------------------------------------------------
 
-### Method `delete_changes()`
+### `Orthanc$delete_changes()`
 
 Clear changes
 
@@ -958,7 +958,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_changes()`
+### `Orthanc$get_changes()`
 
 List changes
 
@@ -1006,7 +1006,7 @@ The list of changes.
 
 ------------------------------------------------------------------------
 
-### Method `delete_exports()`
+### `Orthanc$delete_exports()`
 
 Clear exports
 
@@ -1022,7 +1022,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_exports()`
+### `Orthanc$get_exports()`
 
 List exports
 
@@ -1058,7 +1058,7 @@ The list of exports.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances()`
+### `Orthanc$get_instances()`
 
 List the available instances
 
@@ -1118,7 +1118,7 @@ about the reported instances (if `expand` argument is provided).
 
 ------------------------------------------------------------------------
 
-### Method `post_instances()`
+### `Orthanc$post_instances()`
 
 Upload DICOM instances
 
@@ -1146,7 +1146,7 @@ uploaded instance in the case of ZIP archive.
 
 ------------------------------------------------------------------------
 
-### Method `delete_instances_id()`
+### `Orthanc$delete_instances_id()`
 
 Delete some instance
 
@@ -1169,7 +1169,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id()`
+### `Orthanc$get_instances_id()`
 
 Get information about some instance
 
@@ -1218,7 +1218,7 @@ Information about the DICOM instance.
 
 ------------------------------------------------------------------------
 
-### Method `post_instances_id_anonymize()`
+### `Orthanc$post_instances_id_anonymize()`
 
 Anonymize instance
 
@@ -1294,7 +1294,7 @@ The anonymized DICOM instance.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_attachments()`
+### `Orthanc$get_instances_id_attachments()`
 
 List attachments
 
@@ -1327,7 +1327,7 @@ List containing the names of the attachments.
 
 ------------------------------------------------------------------------
 
-### Method `delete_instances_id_attachments_name()`
+### `Orthanc$delete_instances_id_attachments_name()`
 
 Delete attachment
 
@@ -1368,7 +1368,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_attachments_name()`
+### `Orthanc$get_instances_id_attachments_name()`
 
 List operations on attachments
 
@@ -1407,7 +1407,7 @@ List of the available operations.
 
 ------------------------------------------------------------------------
 
-### Method `put_instances_id_attachments_name()`
+### `Orthanc$put_instances_id_attachments_name()`
 
 Set attachment
 
@@ -1458,7 +1458,7 @@ Empty JSON object in the case of a success.
 
 ------------------------------------------------------------------------
 
-### Method `post_instances_id_attachments_name_compress()`
+### `Orthanc$post_instances_id_attachments_name_compress()`
 
 Compress attachment
 
@@ -1485,7 +1485,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_attachments_name_compressed_data()`
+### `Orthanc$get_instances_id_attachments_name_compressed_data()`
 
 Get attachment (no decompression)
 
@@ -1542,7 +1542,7 @@ The attachment.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_attachments_name_compressed_md5()`
+### `Orthanc$get_instances_id_attachments_name_compressed_md5()`
 
 Get MD5 of attachment on disk
 
@@ -1586,7 +1586,7 @@ The MD5 of the attachment, as stored on the disk.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_attachments_name_compressed_size()`
+### `Orthanc$get_instances_id_attachments_name_compressed_size()`
 
 Get size of attachment on disk
 
@@ -1630,7 +1630,7 @@ The size of the attachment, as stored on the disk.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_attachments_name_data()`
+### `Orthanc$get_instances_id_attachments_name_data()`
 
 Get attachment
 
@@ -1686,7 +1686,7 @@ The attachment.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_attachments_name_info()`
+### `Orthanc$get_instances_id_attachments_name_info()`
 
 Get info about the attachment
 
@@ -1725,7 +1725,7 @@ JSON object containing the information about the attachment.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_attachments_name_is_compressed()`
+### `Orthanc$get_instances_id_attachments_name_is_compressed()`
 
 Is attachment compressed?
 
@@ -1768,7 +1768,7 @@ Optional headers (`headers`):
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_attachments_name_md5()`
+### `Orthanc$get_instances_id_attachments_name_md5()`
 
 Get MD5 of attachment
 
@@ -1806,7 +1806,7 @@ The MD5 of the attachment.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_attachments_name_size()`
+### `Orthanc$get_instances_id_attachments_name_size()`
 
 Get size of attachment
 
@@ -1844,7 +1844,7 @@ The size of the attachment.
 
 ------------------------------------------------------------------------
 
-### Method `post_instances_id_attachments_name_uncompress()`
+### `Orthanc$post_instances_id_attachments_name_uncompress()`
 
 Uncompress attachment
 
@@ -1871,7 +1871,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_instances_id_attachments_name_verify_md5()`
+### `Orthanc$post_instances_id_attachments_name_verify_md5()`
 
 Verify attachment
 
@@ -1898,7 +1898,7 @@ On success, a valid JSON object is returned.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_content_path()`
+### `Orthanc$get_instances_id_content_path()`
 
 Get raw tag
 
@@ -1928,7 +1928,7 @@ of available tags if accessing a dataset.
 
 ------------------------------------------------------------------------
 
-### Method `post_instances_id_export()`
+### `Orthanc$post_instances_id_export()`
 
 Write DICOM onto filesystem
 
@@ -1962,7 +1962,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_file()`
+### `Orthanc$get_instances_id_file()`
 
 Download DICOM
 
@@ -2013,7 +2013,7 @@ The DICOM instance.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_frames()`
+### `Orthanc$get_instances_id_frames()`
 
 List available frames
 
@@ -2035,7 +2035,7 @@ The list of the indices of the available frames.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_frames_frame()`
+### `Orthanc$get_instances_id_frames_frame()`
 
 List operations
 
@@ -2062,7 +2062,7 @@ List of the available operations.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_frames_frame_image_int16()`
+### `Orthanc$get_instances_id_frames_frame_image_int16()`
 
 Decode a frame (int16)
 
@@ -2119,7 +2119,7 @@ JPEG image.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_frames_frame_image_uint16()`
+### `Orthanc$get_instances_id_frames_frame_image_uint16()`
 
 Decode a frame (uint16)
 
@@ -2175,7 +2175,7 @@ JPEG image.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_frames_frame_image_uint8()`
+### `Orthanc$get_instances_id_frames_frame_image_uint8()`
 
 Decode a frame (uint8)
 
@@ -2231,7 +2231,7 @@ JPEG image.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_frames_frame_matlab()`
+### `Orthanc$get_instances_id_frames_frame_matlab()`
 
 Decode frame for Matlab
 
@@ -2260,7 +2260,7 @@ Octave/Matlab matrix.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_frames_frame_numpy()`
+### `Orthanc$get_instances_id_frames_frame_numpy()`
 
 Decode frame for numpy
 
@@ -2302,7 +2302,7 @@ https://numpy.org/devdocs/reference/generated/numpy.lib.format.html.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_frames_frame_preview()`
+### `Orthanc$get_instances_id_frames_frame_preview()`
 
 Decode a frame (preview)
 
@@ -2358,7 +2358,7 @@ JPEG image.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_frames_frame_raw()`
+### `Orthanc$get_instances_id_frames_frame_raw()`
 
 Access raw frame
 
@@ -2386,7 +2386,7 @@ The raw frame.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_frames_frame_raw.gz()`
+### `Orthanc$get_instances_id_frames_frame_raw.gz()`
 
 Access raw frame (compressed)
 
@@ -2415,7 +2415,7 @@ The raw frame, compressed using gzip.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_frames_frame_rendered()`
+### `Orthanc$get_instances_id_frames_frame_rendered()`
 
 Render a frame
 
@@ -2484,7 +2484,7 @@ JPEG image.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_header()`
+### `Orthanc$get_instances_id_header()`
 
 Get DICOM meta-header
 
@@ -2522,7 +2522,7 @@ JSON object containing the DICOM tags and their associated value.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_image_int16()`
+### `Orthanc$get_instances_id_image_int16()`
 
 Decode an image (int16)
 
@@ -2570,7 +2570,7 @@ JPEG image.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_image_uint16()`
+### `Orthanc$get_instances_id_image_uint16()`
 
 Decode an image (uint16)
 
@@ -2617,7 +2617,7 @@ JPEG image.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_image_uint8()`
+### `Orthanc$get_instances_id_image_uint8()`
 
 Decode an image (uint8)
 
@@ -2664,7 +2664,7 @@ JPEG image.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_labels()`
+### `Orthanc$get_instances_id_labels()`
 
 List labels
 
@@ -2687,7 +2687,7 @@ List containing the names of the labels.
 
 ------------------------------------------------------------------------
 
-### Method `delete_instances_id_labels_label()`
+### `Orthanc$delete_instances_id_labels_label()`
 
 Remove label
 
@@ -2713,7 +2713,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_labels_label()`
+### `Orthanc$get_instances_id_labels_label()`
 
 Test label
 
@@ -2740,7 +2740,7 @@ of absence.
 
 ------------------------------------------------------------------------
 
-### Method `put_instances_id_labels_label()`
+### `Orthanc$put_instances_id_labels_label()`
 
 Add label
 
@@ -2766,7 +2766,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_matlab()`
+### `Orthanc$get_instances_id_matlab()`
 
 Decode frame for Matlab
 
@@ -2791,7 +2791,7 @@ Octave/Matlab matrix.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_metadata()`
+### `Orthanc$get_instances_id_metadata()`
 
 List metadata
 
@@ -2828,7 +2828,7 @@ metadata to their values (if `expand` argument is provided).
 
 ------------------------------------------------------------------------
 
-### Method `delete_instances_id_metadata_name()`
+### `Orthanc$delete_instances_id_metadata_name()`
 
 Delete metadata
 
@@ -2869,7 +2869,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_metadata_name()`
+### `Orthanc$get_instances_id_metadata_name()`
 
 Get metadata
 
@@ -2907,7 +2907,7 @@ Value of the metadata.
 
 ------------------------------------------------------------------------
 
-### Method `put_instances_id_metadata_name()`
+### `Orthanc$put_instances_id_metadata_name()`
 
 Set metadata
 
@@ -2953,7 +2953,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_instances_id_modify()`
+### `Orthanc$post_instances_id_modify()`
 
 Modify instance
 
@@ -3022,7 +3022,7 @@ The modified DICOM instance.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_module()`
+### `Orthanc$get_instances_id_module()`
 
 Get instance module
 
@@ -3062,7 +3062,7 @@ Information about the DICOM instance.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_numpy()`
+### `Orthanc$get_instances_id_numpy()`
 
 Decode instance for numpy
 
@@ -3099,7 +3099,7 @@ https://numpy.org/devdocs/reference/generated/numpy.lib.format.html.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_patient()`
+### `Orthanc$get_instances_id_patient()`
 
 Get parent patient
 
@@ -3148,7 +3148,7 @@ Information about the parent DICOM patient.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_pdf()`
+### `Orthanc$get_instances_id_pdf()`
 
 Get embedded PDF
 
@@ -3173,7 +3173,7 @@ PDF file.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_preview()`
+### `Orthanc$get_instances_id_preview()`
 
 Decode an image (preview)
 
@@ -3220,7 +3220,7 @@ JPEG image.
 
 ------------------------------------------------------------------------
 
-### Method `post_instances_id_reconstruct()`
+### `Orthanc$post_instances_id_reconstruct()`
 
 Reconstruct tags & optionally files of instance
 
@@ -3267,7 +3267,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_rendered()`
+### `Orthanc$get_instances_id_rendered()`
 
 Render an image
 
@@ -3327,7 +3327,7 @@ JPEG image.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_series()`
+### `Orthanc$get_instances_id_series()`
 
 Get parent series
 
@@ -3376,7 +3376,7 @@ Information about the parent DICOM series.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_simplified_tags()`
+### `Orthanc$get_instances_id_simplified_tags()`
 
 Get human-readable tags
 
@@ -3416,7 +3416,7 @@ JSON object containing the DICOM tags and their associated value.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_statistics()`
+### `Orthanc$get_instances_id_statistics()`
 
 Get instance statistics
 
@@ -3438,7 +3438,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_study()`
+### `Orthanc$get_instances_id_study()`
 
 Get parent study
 
@@ -3487,7 +3487,7 @@ Information about the parent DICOM study.
 
 ------------------------------------------------------------------------
 
-### Method `get_instances_id_tags()`
+### `Orthanc$get_instances_id_tags()`
 
 Get DICOM tags
 
@@ -3534,7 +3534,7 @@ JSON object containing the DICOM tags and their associated value.
 
 ------------------------------------------------------------------------
 
-### Method `get_jobs()`
+### `Orthanc$get_jobs()`
 
 List jobs
 
@@ -3564,7 +3564,7 @@ about the reported jobs (if `expand` argument is provided).
 
 ------------------------------------------------------------------------
 
-### Method `delete_jobs_id()`
+### `Orthanc$delete_jobs_id()`
 
 Delete a job from history
 
@@ -3588,7 +3588,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_jobs_id()`
+### `Orthanc$get_jobs_id()`
 
 Get job
 
@@ -3612,7 +3612,7 @@ JSON object detailing the job.
 
 ------------------------------------------------------------------------
 
-### Method `post_jobs_id_cancel()`
+### `Orthanc$post_jobs_id_cancel()`
 
 Cancel job
 
@@ -3636,7 +3636,7 @@ Empty JSON object in the case of a success.
 
 ------------------------------------------------------------------------
 
-### Method `post_jobs_id_pause()`
+### `Orthanc$post_jobs_id_pause()`
 
 Pause job
 
@@ -3660,7 +3660,7 @@ Empty JSON object in the case of a success.
 
 ------------------------------------------------------------------------
 
-### Method `post_jobs_id_resubmit()`
+### `Orthanc$post_jobs_id_resubmit()`
 
 Resubmit job
 
@@ -3684,7 +3684,7 @@ Empty JSON object in the case of a success.
 
 ------------------------------------------------------------------------
 
-### Method `post_jobs_id_resume()`
+### `Orthanc$post_jobs_id_resume()`
 
 Resume job
 
@@ -3708,7 +3708,7 @@ Empty JSON object in the case of a success.
 
 ------------------------------------------------------------------------
 
-### Method `delete_jobs_id_key()`
+### `Orthanc$delete_jobs_id_key()`
 
 Delete a job output
 
@@ -3736,7 +3736,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_jobs_id_key()`
+### `Orthanc$get_jobs_id_key()`
 
 Get job output
 
@@ -3764,7 +3764,7 @@ Content of the output of the job.
 
 ------------------------------------------------------------------------
 
-### Method `get_modalities()`
+### `Orthanc$get_modalities()`
 
 List DICOM modalities
 
@@ -3797,7 +3797,7 @@ information about the modalities (if `expand` argument is provided).
 
 ------------------------------------------------------------------------
 
-### Method `delete_modalities_id()`
+### `Orthanc$delete_modalities_id()`
 
 Delete DICOM modality
 
@@ -3821,7 +3821,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_modalities_id()`
+### `Orthanc$get_modalities_id()`
 
 List operations on modality
 
@@ -3843,7 +3843,7 @@ List of the available operations.
 
 ------------------------------------------------------------------------
 
-### Method `put_modalities_id()`
+### `Orthanc$put_modalities_id()`
 
 Update DICOM modality
 
@@ -3920,7 +3920,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_modalities_id_configuration()`
+### `Orthanc$get_modalities_id_configuration()`
 
 Get modality configuration
 
@@ -3942,7 +3942,7 @@ Configuration of the modality.
 
 ------------------------------------------------------------------------
 
-### Method `post_modalities_id_echo()`
+### `Orthanc$post_modalities_id_echo()`
 
 Trigger C-ECHO SCU
 
@@ -3981,7 +3981,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_modalities_id_find_worklist()`
+### `Orthanc$post_modalities_id_find_worklist()`
 
 C-FIND SCU for worklist
 
@@ -4022,7 +4022,7 @@ List describing the DICOM tags of the matching worklists.
 
 ------------------------------------------------------------------------
 
-### Method `post_modalities_id_get()`
+### `Orthanc$post_modalities_id_get()`
 
 Trigger C-GET SCU
 
@@ -4086,7 +4086,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_modalities_id_move()`
+### `Orthanc$post_modalities_id_move()`
 
 Trigger C-MOVE SCU
 
@@ -4152,7 +4152,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_modalities_id_query()`
+### `Orthanc$post_modalities_id_query()`
 
 Trigger C-FIND SCU
 
@@ -4201,7 +4201,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_modalities_id_storage_commitment()`
+### `Orthanc$post_modalities_id_storage_commitment()`
 
 Trigger storage commitment request
 
@@ -4244,7 +4244,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_modalities_id_store()`
+### `Orthanc$post_modalities_id_store()`
 
 Trigger C-STORE SCU
 
@@ -4331,7 +4331,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_modalities_id_store_straight()`
+### `Orthanc$post_modalities_id_store_straight()`
 
 Straight C-STORE SCU
 
@@ -4364,7 +4364,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients()`
+### `Orthanc$get_patients()`
 
 List the available patients
 
@@ -4424,7 +4424,7 @@ about the reported patients (if `expand` argument is provided).
 
 ------------------------------------------------------------------------
 
-### Method `delete_patients_id()`
+### `Orthanc$delete_patients_id()`
 
 Delete some patient
 
@@ -4446,7 +4446,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id()`
+### `Orthanc$get_patients_id()`
 
 Get information about some patient
 
@@ -4495,7 +4495,7 @@ Information about the DICOM patient.
 
 ------------------------------------------------------------------------
 
-### Method `post_patients_id_anonymize()`
+### `Orthanc$post_patients_id_anonymize()`
 
 Anonymize patient
 
@@ -4590,7 +4590,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_archive()`
+### `Orthanc$get_patients_id_archive()`
 
 Create ZIP archive
 
@@ -4636,7 +4636,7 @@ ZIP file containing the archive.
 
 ------------------------------------------------------------------------
 
-### Method `post_patients_id_archive()`
+### `Orthanc$post_patients_id_archive()`
 
 Create ZIP archive
 
@@ -4698,7 +4698,7 @@ https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_attachments()`
+### `Orthanc$get_patients_id_attachments()`
 
 List attachments
 
@@ -4731,7 +4731,7 @@ List containing the names of the attachments.
 
 ------------------------------------------------------------------------
 
-### Method `delete_patients_id_attachments_name()`
+### `Orthanc$delete_patients_id_attachments_name()`
 
 Delete attachment
 
@@ -4772,7 +4772,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_attachments_name()`
+### `Orthanc$get_patients_id_attachments_name()`
 
 List operations on attachments
 
@@ -4811,7 +4811,7 @@ List of the available operations.
 
 ------------------------------------------------------------------------
 
-### Method `put_patients_id_attachments_name()`
+### `Orthanc$put_patients_id_attachments_name()`
 
 Set attachment
 
@@ -4857,7 +4857,7 @@ Empty JSON object in the case of a success.
 
 ------------------------------------------------------------------------
 
-### Method `post_patients_id_attachments_name_compress()`
+### `Orthanc$post_patients_id_attachments_name_compress()`
 
 Compress attachment
 
@@ -4884,7 +4884,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_attachments_name_compressed_data()`
+### `Orthanc$get_patients_id_attachments_name_compressed_data()`
 
 Get attachment (no decompression)
 
@@ -4941,7 +4941,7 @@ The attachment.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_attachments_name_compressed_md5()`
+### `Orthanc$get_patients_id_attachments_name_compressed_md5()`
 
 Get MD5 of attachment on disk
 
@@ -4985,7 +4985,7 @@ The MD5 of the attachment, as stored on the disk.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_attachments_name_compressed_size()`
+### `Orthanc$get_patients_id_attachments_name_compressed_size()`
 
 Get size of attachment on disk
 
@@ -5029,7 +5029,7 @@ The size of the attachment, as stored on the disk.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_attachments_name_data()`
+### `Orthanc$get_patients_id_attachments_name_data()`
 
 Get attachment
 
@@ -5085,7 +5085,7 @@ The attachment.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_attachments_name_info()`
+### `Orthanc$get_patients_id_attachments_name_info()`
 
 Get info about the attachment
 
@@ -5124,7 +5124,7 @@ JSON object containing the information about the attachment.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_attachments_name_is_compressed()`
+### `Orthanc$get_patients_id_attachments_name_is_compressed()`
 
 Is attachment compressed?
 
@@ -5167,7 +5167,7 @@ Optional headers (`headers`):
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_attachments_name_md5()`
+### `Orthanc$get_patients_id_attachments_name_md5()`
 
 Get MD5 of attachment
 
@@ -5205,7 +5205,7 @@ The MD5 of the attachment.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_attachments_name_size()`
+### `Orthanc$get_patients_id_attachments_name_size()`
 
 Get size of attachment
 
@@ -5243,7 +5243,7 @@ The size of the attachment.
 
 ------------------------------------------------------------------------
 
-### Method `post_patients_id_attachments_name_uncompress()`
+### `Orthanc$post_patients_id_attachments_name_uncompress()`
 
 Uncompress attachment
 
@@ -5270,7 +5270,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_patients_id_attachments_name_verify_md5()`
+### `Orthanc$post_patients_id_attachments_name_verify_md5()`
 
 Verify attachment
 
@@ -5297,7 +5297,7 @@ On success, a valid JSON object is returned.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_instances()`
+### `Orthanc$get_patients_id_instances()`
 
 Get child instances
 
@@ -5349,7 +5349,7 @@ List containing information about the child DICOM instances.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_instances_tags()`
+### `Orthanc$get_patients_id_instances_tags()`
 
 Get tags of instances
 
@@ -5390,7 +5390,7 @@ the values of their DICOM tags.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_labels()`
+### `Orthanc$get_patients_id_labels()`
 
 List labels
 
@@ -5413,7 +5413,7 @@ List containing the names of the labels.
 
 ------------------------------------------------------------------------
 
-### Method `delete_patients_id_labels_label()`
+### `Orthanc$delete_patients_id_labels_label()`
 
 Remove label
 
@@ -5439,7 +5439,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_labels_label()`
+### `Orthanc$get_patients_id_labels_label()`
 
 Test label
 
@@ -5466,7 +5466,7 @@ of absence.
 
 ------------------------------------------------------------------------
 
-### Method `put_patients_id_labels_label()`
+### `Orthanc$put_patients_id_labels_label()`
 
 Add label
 
@@ -5492,7 +5492,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_media()`
+### `Orthanc$get_patients_id_media()`
 
 Create DICOMDIR media
 
@@ -5541,7 +5541,7 @@ ZIP file containing the archive.
 
 ------------------------------------------------------------------------
 
-### Method `post_patients_id_media()`
+### `Orthanc$post_patients_id_media()`
 
 Create DICOMDIR media
 
@@ -5607,7 +5607,7 @@ https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_metadata()`
+### `Orthanc$get_patients_id_metadata()`
 
 List metadata
 
@@ -5644,7 +5644,7 @@ metadata to their values (if `expand` argument is provided).
 
 ------------------------------------------------------------------------
 
-### Method `delete_patients_id_metadata_name()`
+### `Orthanc$delete_patients_id_metadata_name()`
 
 Delete metadata
 
@@ -5685,7 +5685,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_metadata_name()`
+### `Orthanc$get_patients_id_metadata_name()`
 
 Get metadata
 
@@ -5723,7 +5723,7 @@ Value of the metadata.
 
 ------------------------------------------------------------------------
 
-### Method `put_patients_id_metadata_name()`
+### `Orthanc$put_patients_id_metadata_name()`
 
 Set metadata
 
@@ -5769,7 +5769,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_patients_id_modify()`
+### `Orthanc$post_patients_id_modify()`
 
 Modify patient
 
@@ -5857,7 +5857,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_module()`
+### `Orthanc$get_patients_id_module()`
 
 Get patient module
 
@@ -5897,7 +5897,7 @@ Information about the DICOM patient.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_protected()`
+### `Orthanc$get_patients_id_protected()`
 
 Is the patient protected against recycling?
 
@@ -5919,7 +5919,7 @@ Is the patient protected against recycling?
 
 ------------------------------------------------------------------------
 
-### Method `put_patients_id_protected()`
+### `Orthanc$put_patients_id_protected()`
 
 Protect/Unprotect a patient against recycling
 
@@ -5948,7 +5948,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_patients_id_reconstruct()`
+### `Orthanc$post_patients_id_reconstruct()`
 
 Reconstruct tags & optionally files of patient
 
@@ -5995,7 +5995,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_series()`
+### `Orthanc$get_patients_id_series()`
 
 Get child series
 
@@ -6047,7 +6047,7 @@ List containing information about the child DICOM series.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_shared_tags()`
+### `Orthanc$get_patients_id_shared_tags()`
 
 Get shared tags
 
@@ -6085,7 +6085,7 @@ JSON object containing the values of the DICOM tags.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_statistics()`
+### `Orthanc$get_patients_id_statistics()`
 
 Get patient statistics
 
@@ -6107,7 +6107,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_patients_id_studies()`
+### `Orthanc$get_patients_id_studies()`
 
 Get child studies
 
@@ -6159,7 +6159,7 @@ List containing information about the child DICOM studies.
 
 ------------------------------------------------------------------------
 
-### Method `get_peers()`
+### `Orthanc$get_peers()`
 
 List Orthanc peers
 
@@ -6192,7 +6192,7 @@ information about the peers (if `expand` argument is provided).
 
 ------------------------------------------------------------------------
 
-### Method `delete_peers_id()`
+### `Orthanc$delete_peers_id()`
 
 Delete Orthanc peer
 
@@ -6216,7 +6216,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_peers_id()`
+### `Orthanc$get_peers_id()`
 
 List operations on peer
 
@@ -6238,7 +6238,7 @@ List of the available operations.
 
 ------------------------------------------------------------------------
 
-### Method `put_peers_id()`
+### `Orthanc$put_peers_id()`
 
 Update Orthanc peer
 
@@ -6288,7 +6288,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_peers_id_configuration()`
+### `Orthanc$get_peers_id_configuration()`
 
 Get peer configuration
 
@@ -6310,7 +6310,7 @@ Configuration of the peer.
 
 ------------------------------------------------------------------------
 
-### Method `post_peers_id_store()`
+### `Orthanc$post_peers_id_store()`
 
 Send to Orthanc peer
 
@@ -6374,7 +6374,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_peers_id_store_straight()`
+### `Orthanc$post_peers_id_store_straight()`
 
 Straight store to peer
 
@@ -6407,7 +6407,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_peers_id_system()`
+### `Orthanc$get_peers_id_system()`
 
 Get peer system information
 
@@ -6431,7 +6431,7 @@ System information about the peer.
 
 ------------------------------------------------------------------------
 
-### Method `get_plugins()`
+### `Orthanc$get_plugins()`
 
 List plugins
 
@@ -6447,7 +6447,7 @@ List containing the identifiers of the installed plugins.
 
 ------------------------------------------------------------------------
 
-### Method `get_plugins_explorer.js()`
+### `Orthanc$get_plugins_explorer.js()`
 
 JavaScript extensions to Orthanc Explorer
 
@@ -6465,7 +6465,7 @@ The JavaScript extensions.
 
 ------------------------------------------------------------------------
 
-### Method `get_plugins_id()`
+### `Orthanc$get_plugins_id()`
 
 Get plugin
 
@@ -6488,7 +6488,7 @@ JSON object containing information about the plugin.
 
 ------------------------------------------------------------------------
 
-### Method `get_queries()`
+### `Orthanc$get_queries()`
 
 List query/retrieve operations
 
@@ -6508,7 +6508,7 @@ List containing the identifiers.
 
 ------------------------------------------------------------------------
 
-### Method `delete_queries_id()`
+### `Orthanc$delete_queries_id()`
 
 Delete a query
 
@@ -6531,7 +6531,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_queries_id()`
+### `Orthanc$get_queries_id()`
 
 List operations on a query
 
@@ -6554,7 +6554,7 @@ List containing the list of operations.
 
 ------------------------------------------------------------------------
 
-### Method `get_queries_id_answers()`
+### `Orthanc$get_queries_id_answers()`
 
 List answers to a query
 
@@ -6596,7 +6596,7 @@ about the reported answers (if `expand` argument is provided).
 
 ------------------------------------------------------------------------
 
-### Method `get_queries_id_answers_index()`
+### `Orthanc$get_queries_id_answers_index()`
 
 List operations on an answer
 
@@ -6623,7 +6623,7 @@ List containing the list of operations.
 
 ------------------------------------------------------------------------
 
-### Method `get_queries_id_answers_index_content()`
+### `Orthanc$get_queries_id_answers_index_content()`
 
 Get one answer
 
@@ -6664,7 +6664,7 @@ JSON object containing the DICOM tags of the answer.
 
 ------------------------------------------------------------------------
 
-### Method `post_queries_id_answers_index_query_instances()`
+### `Orthanc$post_queries_id_answers_index_query_instances()`
 
 Query the child instances of an answer
 
@@ -6706,7 +6706,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_queries_id_answers_index_query_series()`
+### `Orthanc$post_queries_id_answers_index_query_series()`
 
 Query the child series of an answer
 
@@ -6748,7 +6748,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_queries_id_answers_index_query_studies()`
+### `Orthanc$post_queries_id_answers_index_query_studies()`
 
 Query the child studies of an answer
 
@@ -6790,7 +6790,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_queries_id_answers_index_retrieve()`
+### `Orthanc$post_queries_id_answers_index_retrieve()`
 
 Retrieve one answer with a C-MOVE or a C-GET SCU
 
@@ -6871,7 +6871,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_queries_id_level()`
+### `Orthanc$get_queries_id_level()`
 
 Get level of original query
 
@@ -6894,7 +6894,7 @@ The level.
 
 ------------------------------------------------------------------------
 
-### Method `get_queries_id_modality()`
+### `Orthanc$get_queries_id_modality()`
 
 Get modality of original query
 
@@ -6917,7 +6917,7 @@ The identifier of the DICOM modality.
 
 ------------------------------------------------------------------------
 
-### Method `get_queries_id_query()`
+### `Orthanc$get_queries_id_query()`
 
 Get original query arguments
 
@@ -6954,7 +6954,7 @@ Content of the original query.
 
 ------------------------------------------------------------------------
 
-### Method `post_queries_id_retrieve()`
+### `Orthanc$post_queries_id_retrieve()`
 
 Retrieve all answers with C-MOVE SCU
 
@@ -7026,7 +7026,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_series()`
+### `Orthanc$get_series()`
 
 List the available series
 
@@ -7086,7 +7086,7 @@ about the reported series (if `expand` argument is provided).
 
 ------------------------------------------------------------------------
 
-### Method `delete_series_id()`
+### `Orthanc$delete_series_id()`
 
 Delete some series
 
@@ -7108,7 +7108,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id()`
+### `Orthanc$get_series_id()`
 
 Get information about some series
 
@@ -7157,7 +7157,7 @@ Information about the DICOM series.
 
 ------------------------------------------------------------------------
 
-### Method `post_series_id_anonymize()`
+### `Orthanc$post_series_id_anonymize()`
 
 Anonymize series
 
@@ -7252,7 +7252,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_archive()`
+### `Orthanc$get_series_id_archive()`
 
 Create ZIP archive
 
@@ -7298,7 +7298,7 @@ ZIP file containing the archive.
 
 ------------------------------------------------------------------------
 
-### Method `post_series_id_archive()`
+### `Orthanc$post_series_id_archive()`
 
 Create ZIP archive
 
@@ -7360,7 +7360,7 @@ https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_attachments()`
+### `Orthanc$get_series_id_attachments()`
 
 List attachments
 
@@ -7393,7 +7393,7 @@ List containing the names of the attachments.
 
 ------------------------------------------------------------------------
 
-### Method `delete_series_id_attachments_name()`
+### `Orthanc$delete_series_id_attachments_name()`
 
 Delete attachment
 
@@ -7434,7 +7434,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_attachments_name()`
+### `Orthanc$get_series_id_attachments_name()`
 
 List operations on attachments
 
@@ -7473,7 +7473,7 @@ List of the available operations.
 
 ------------------------------------------------------------------------
 
-### Method `put_series_id_attachments_name()`
+### `Orthanc$put_series_id_attachments_name()`
 
 Set attachment
 
@@ -7519,7 +7519,7 @@ Empty JSON object in the case of a success.
 
 ------------------------------------------------------------------------
 
-### Method `post_series_id_attachments_name_compress()`
+### `Orthanc$post_series_id_attachments_name_compress()`
 
 Compress attachment
 
@@ -7546,7 +7546,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_attachments_name_compressed_data()`
+### `Orthanc$get_series_id_attachments_name_compressed_data()`
 
 Get attachment (no decompression)
 
@@ -7603,7 +7603,7 @@ The attachment.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_attachments_name_compressed_md5()`
+### `Orthanc$get_series_id_attachments_name_compressed_md5()`
 
 Get MD5 of attachment on disk
 
@@ -7643,7 +7643,7 @@ The MD5 of the attachment, as stored on the disk.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_attachments_name_compressed_size()`
+### `Orthanc$get_series_id_attachments_name_compressed_size()`
 
 Get size of attachment on disk
 
@@ -7687,7 +7687,7 @@ The size of the attachment, as stored on the disk.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_attachments_name_data()`
+### `Orthanc$get_series_id_attachments_name_data()`
 
 Get attachment
 
@@ -7743,7 +7743,7 @@ The attachment.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_attachments_name_info()`
+### `Orthanc$get_series_id_attachments_name_info()`
 
 Get info about the attachment
 
@@ -7782,7 +7782,7 @@ JSON object containing the information about the attachment.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_attachments_name_is_compressed()`
+### `Orthanc$get_series_id_attachments_name_is_compressed()`
 
 Is attachment compressed?
 
@@ -7821,7 +7821,7 @@ Optional headers (`headers`):
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_attachments_name_md5()`
+### `Orthanc$get_series_id_attachments_name_md5()`
 
 Get MD5 of attachment
 
@@ -7859,7 +7859,7 @@ The MD5 of the attachment.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_attachments_name_size()`
+### `Orthanc$get_series_id_attachments_name_size()`
 
 Get size of attachment
 
@@ -7897,7 +7897,7 @@ The size of the attachment.
 
 ------------------------------------------------------------------------
 
-### Method `post_series_id_attachments_name_uncompress()`
+### `Orthanc$post_series_id_attachments_name_uncompress()`
 
 Uncompress attachment
 
@@ -7924,7 +7924,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_series_id_attachments_name_verify_md5()`
+### `Orthanc$post_series_id_attachments_name_verify_md5()`
 
 Verify attachment
 
@@ -7951,7 +7951,7 @@ On success, a valid JSON object is returned.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_instances()`
+### `Orthanc$get_series_id_instances()`
 
 Get child instances
 
@@ -8003,7 +8003,7 @@ List containing information about the child DICOM instances.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_instances_tags()`
+### `Orthanc$get_series_id_instances_tags()`
 
 Get tags of instances
 
@@ -8044,7 +8044,7 @@ the values of their DICOM tags.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_labels()`
+### `Orthanc$get_series_id_labels()`
 
 List labels
 
@@ -8067,7 +8067,7 @@ List containing the names of the labels.
 
 ------------------------------------------------------------------------
 
-### Method `delete_series_id_labels_label()`
+### `Orthanc$delete_series_id_labels_label()`
 
 Remove label
 
@@ -8093,7 +8093,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_labels_label()`
+### `Orthanc$get_series_id_labels_label()`
 
 Test label
 
@@ -8120,7 +8120,7 @@ of absence.
 
 ------------------------------------------------------------------------
 
-### Method `put_series_id_labels_label()`
+### `Orthanc$put_series_id_labels_label()`
 
 Add label
 
@@ -8146,7 +8146,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_media()`
+### `Orthanc$get_series_id_media()`
 
 Create DICOMDIR media
 
@@ -8195,7 +8195,7 @@ ZIP file containing the archive.
 
 ------------------------------------------------------------------------
 
-### Method `post_series_id_media()`
+### `Orthanc$post_series_id_media()`
 
 Create DICOMDIR media
 
@@ -8261,7 +8261,7 @@ https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_metadata()`
+### `Orthanc$get_series_id_metadata()`
 
 List metadata
 
@@ -8298,7 +8298,7 @@ metadata to their values (if `expand` argument is provided).
 
 ------------------------------------------------------------------------
 
-### Method `delete_series_id_metadata_name()`
+### `Orthanc$delete_series_id_metadata_name()`
 
 Delete metadata
 
@@ -8339,7 +8339,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_metadata_name()`
+### `Orthanc$get_series_id_metadata_name()`
 
 Get metadata
 
@@ -8377,7 +8377,7 @@ Value of the metadata.
 
 ------------------------------------------------------------------------
 
-### Method `put_series_id_metadata_name()`
+### `Orthanc$put_series_id_metadata_name()`
 
 Set metadata
 
@@ -8423,7 +8423,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_series_id_modify()`
+### `Orthanc$post_series_id_modify()`
 
 Modify series
 
@@ -8511,7 +8511,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_module()`
+### `Orthanc$get_series_id_module()`
 
 Get series module
 
@@ -8551,7 +8551,7 @@ Information about the DICOM series.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_numpy()`
+### `Orthanc$get_series_id_numpy()`
 
 Decode series for numpy
 
@@ -8588,7 +8588,7 @@ https://numpy.org/devdocs/reference/generated/numpy.lib.format.html.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_patient()`
+### `Orthanc$get_series_id_patient()`
 
 Get parent patient
 
@@ -8637,7 +8637,7 @@ Information about the parent DICOM patient.
 
 ------------------------------------------------------------------------
 
-### Method `post_series_id_reconstruct()`
+### `Orthanc$post_series_id_reconstruct()`
 
 Reconstruct tags & optionally files of series
 
@@ -8684,7 +8684,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_shared_tags()`
+### `Orthanc$get_series_id_shared_tags()`
 
 Get shared tags
 
@@ -8722,7 +8722,7 @@ JSON object containing the values of the DICOM tags.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_statistics()`
+### `Orthanc$get_series_id_statistics()`
 
 Get series statistics
 
@@ -8744,7 +8744,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_series_id_study()`
+### `Orthanc$get_series_id_study()`
 
 Get parent study
 
@@ -8793,7 +8793,7 @@ Information about the parent DICOM study.
 
 ------------------------------------------------------------------------
 
-### Method `get_statistics()`
+### `Orthanc$get_statistics()`
 
 Get database statistics
 
@@ -8809,7 +8809,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_storage_commitment_id()`
+### `Orthanc$get_storage_commitment_id()`
 
 Get storage commitment report
 
@@ -8833,7 +8833,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_storage_commitment_id_remove()`
+### `Orthanc$post_storage_commitment_id_remove()`
 
 Remove after storage commitment
 
@@ -8859,7 +8859,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies()`
+### `Orthanc$get_studies()`
 
 List the available studies
 
@@ -8919,7 +8919,7 @@ about the reported studies (if `expand` argument is provided).
 
 ------------------------------------------------------------------------
 
-### Method `delete_studies_id()`
+### `Orthanc$delete_studies_id()`
 
 Delete some study
 
@@ -8941,7 +8941,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id()`
+### `Orthanc$get_studies_id()`
 
 Get information about some study
 
@@ -8990,7 +8990,7 @@ Information about the DICOM study.
 
 ------------------------------------------------------------------------
 
-### Method `post_studies_id_anonymize()`
+### `Orthanc$post_studies_id_anonymize()`
 
 Anonymize study
 
@@ -9085,7 +9085,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_archive()`
+### `Orthanc$get_studies_id_archive()`
 
 Create ZIP archive
 
@@ -9131,7 +9131,7 @@ ZIP file containing the archive.
 
 ------------------------------------------------------------------------
 
-### Method `post_studies_id_archive()`
+### `Orthanc$post_studies_id_archive()`
 
 Create ZIP archive
 
@@ -9193,7 +9193,7 @@ https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_attachments()`
+### `Orthanc$get_studies_id_attachments()`
 
 List attachments
 
@@ -9226,7 +9226,7 @@ List containing the names of the attachments.
 
 ------------------------------------------------------------------------
 
-### Method `delete_studies_id_attachments_name()`
+### `Orthanc$delete_studies_id_attachments_name()`
 
 Delete attachment
 
@@ -9267,7 +9267,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_attachments_name()`
+### `Orthanc$get_studies_id_attachments_name()`
 
 List operations on attachments
 
@@ -9306,7 +9306,7 @@ List of the available operations.
 
 ------------------------------------------------------------------------
 
-### Method `put_studies_id_attachments_name()`
+### `Orthanc$put_studies_id_attachments_name()`
 
 Set attachment
 
@@ -9352,7 +9352,7 @@ Empty JSON object in the case of a success.
 
 ------------------------------------------------------------------------
 
-### Method `post_studies_id_attachments_name_compress()`
+### `Orthanc$post_studies_id_attachments_name_compress()`
 
 Compress attachment
 
@@ -9379,7 +9379,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_attachments_name_compressed_data()`
+### `Orthanc$get_studies_id_attachments_name_compressed_data()`
 
 Get attachment (no decompression)
 
@@ -9436,7 +9436,7 @@ The attachment.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_attachments_name_compressed_md5()`
+### `Orthanc$get_studies_id_attachments_name_compressed_md5()`
 
 Get MD5 of attachment on disk
 
@@ -9480,7 +9480,7 @@ The MD5 of the attachment, as stored on the disk.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_attachments_name_compressed_size()`
+### `Orthanc$get_studies_id_attachments_name_compressed_size()`
 
 Get size of attachment on disk
 
@@ -9524,7 +9524,7 @@ The size of the attachment, as stored on the disk.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_attachments_name_data()`
+### `Orthanc$get_studies_id_attachments_name_data()`
 
 Get attachment
 
@@ -9580,7 +9580,7 @@ The attachment.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_attachments_name_info()`
+### `Orthanc$get_studies_id_attachments_name_info()`
 
 Get info about the attachment
 
@@ -9619,7 +9619,7 @@ JSON object containing the information about the attachment.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_attachments_name_is_compressed()`
+### `Orthanc$get_studies_id_attachments_name_is_compressed()`
 
 Is attachment compressed?
 
@@ -9658,7 +9658,7 @@ Optional headers (`headers`):
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_attachments_name_md5()`
+### `Orthanc$get_studies_id_attachments_name_md5()`
 
 Get MD5 of attachment
 
@@ -9696,7 +9696,7 @@ The MD5 of the attachment.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_attachments_name_size()`
+### `Orthanc$get_studies_id_attachments_name_size()`
 
 Get size of attachment
 
@@ -9734,7 +9734,7 @@ The size of the attachment.
 
 ------------------------------------------------------------------------
 
-### Method `post_studies_id_attachments_name_uncompress()`
+### `Orthanc$post_studies_id_attachments_name_uncompress()`
 
 Uncompress attachment
 
@@ -9761,7 +9761,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_studies_id_attachments_name_verify_md5()`
+### `Orthanc$post_studies_id_attachments_name_verify_md5()`
 
 Verify attachment
 
@@ -9788,7 +9788,7 @@ On success, a valid JSON object is returned.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_instances()`
+### `Orthanc$get_studies_id_instances()`
 
 Get child instances
 
@@ -9840,7 +9840,7 @@ List containing information about the child DICOM instances.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_instances_tags()`
+### `Orthanc$get_studies_id_instances_tags()`
 
 Get tags of instances
 
@@ -9881,7 +9881,7 @@ the values of their DICOM tags.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_labels()`
+### `Orthanc$get_studies_id_labels()`
 
 List labels
 
@@ -9904,7 +9904,7 @@ List containing the names of the labels.
 
 ------------------------------------------------------------------------
 
-### Method `delete_studies_id_labels_label()`
+### `Orthanc$delete_studies_id_labels_label()`
 
 Remove label
 
@@ -9930,7 +9930,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_labels_label()`
+### `Orthanc$get_studies_id_labels_label()`
 
 Test label
 
@@ -9957,7 +9957,7 @@ of absence.
 
 ------------------------------------------------------------------------
 
-### Method `put_studies_id_labels_label()`
+### `Orthanc$put_studies_id_labels_label()`
 
 Add label
 
@@ -9983,7 +9983,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_media()`
+### `Orthanc$get_studies_id_media()`
 
 Create DICOMDIR media
 
@@ -10032,7 +10032,7 @@ ZIP file containing the archive.
 
 ------------------------------------------------------------------------
 
-### Method `post_studies_id_media()`
+### `Orthanc$post_studies_id_media()`
 
 Create DICOMDIR media
 
@@ -10098,7 +10098,7 @@ https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
 
 ------------------------------------------------------------------------
 
-### Method `post_studies_id_merge()`
+### `Orthanc$post_studies_id_merge()`
 
 Merge study
 
@@ -10154,7 +10154,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_metadata()`
+### `Orthanc$get_studies_id_metadata()`
 
 List metadata
 
@@ -10191,7 +10191,7 @@ metadata to their values (if `expand` argument is provided).
 
 ------------------------------------------------------------------------
 
-### Method `delete_studies_id_metadata_name()`
+### `Orthanc$delete_studies_id_metadata_name()`
 
 Delete metadata
 
@@ -10232,7 +10232,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_metadata_name()`
+### `Orthanc$get_studies_id_metadata_name()`
 
 Get metadata
 
@@ -10270,7 +10270,7 @@ Value of the metadata.
 
 ------------------------------------------------------------------------
 
-### Method `put_studies_id_metadata_name()`
+### `Orthanc$put_studies_id_metadata_name()`
 
 Set metadata
 
@@ -10316,7 +10316,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_studies_id_modify()`
+### `Orthanc$post_studies_id_modify()`
 
 Modify study
 
@@ -10404,7 +10404,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_module()`
+### `Orthanc$get_studies_id_module()`
 
 Get study module
 
@@ -10444,7 +10444,7 @@ Information about the DICOM study.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_module_patient()`
+### `Orthanc$get_studies_id_module_patient()`
 
 Get patient module of study
 
@@ -10484,7 +10484,7 @@ Information about the DICOM study.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_patient()`
+### `Orthanc$get_studies_id_patient()`
 
 Get parent patient
 
@@ -10533,7 +10533,7 @@ Information about the parent DICOM patient.
 
 ------------------------------------------------------------------------
 
-### Method `post_studies_id_reconstruct()`
+### `Orthanc$post_studies_id_reconstruct()`
 
 Reconstruct tags & optionally files of study
 
@@ -10580,7 +10580,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_series()`
+### `Orthanc$get_studies_id_series()`
 
 Get child series
 
@@ -10632,7 +10632,7 @@ List containing information about the child DICOM series.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_shared_tags()`
+### `Orthanc$get_studies_id_shared_tags()`
 
 Get shared tags
 
@@ -10670,7 +10670,7 @@ JSON object containing the values of the DICOM tags.
 
 ------------------------------------------------------------------------
 
-### Method `post_studies_id_split()`
+### `Orthanc$post_studies_id_split()`
 
 Split study
 
@@ -10745,7 +10745,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_studies_id_statistics()`
+### `Orthanc$get_studies_id_statistics()`
 
 Get study statistics
 
@@ -10767,7 +10767,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_system()`
+### `Orthanc$get_system()`
 
 Get system information
 
@@ -10783,7 +10783,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools()`
+### `Orthanc$get_tools()`
 
 List operations
 
@@ -10799,7 +10799,7 @@ List of the available operations.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_accepted_sop_classes()`
+### `Orthanc$get_tools_accepted_sop_classes()`
 
 Get accepted SOPClassUID
 
@@ -10817,7 +10817,7 @@ List containing the SOP Class UIDs.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_accepted_transfer_syntaxes()`
+### `Orthanc$get_tools_accepted_transfer_syntaxes()`
 
 Get accepted transfer syntaxes
 
@@ -10835,7 +10835,7 @@ List containing the transfer syntax UIDs.
 
 ------------------------------------------------------------------------
 
-### Method `put_tools_accepted_transfer_syntaxes()`
+### `Orthanc$put_tools_accepted_transfer_syntaxes()`
 
 Set accepted transfer syntaxes
 
@@ -10870,7 +10870,7 @@ List containing the now-accepted transfer syntax UIDs.
 
 ------------------------------------------------------------------------
 
-### Method `post_tools_bulk_anonymize()`
+### `Orthanc$post_tools_bulk_anonymize()`
 
 Anonymize a set of resources
 
@@ -10962,7 +10962,7 @@ anonymization.
 
 ------------------------------------------------------------------------
 
-### Method `post_tools_bulk_content()`
+### `Orthanc$post_tools_bulk_content()`
 
 Describe a set of resources
 
@@ -11009,7 +11009,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_tools_bulk_delete()`
+### `Orthanc$post_tools_bulk_delete()`
 
 Delete a set of resources
 
@@ -11039,7 +11039,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_tools_bulk_modify()`
+### `Orthanc$post_tools_bulk_modify()`
 
 Modify a set of resources
 
@@ -11130,7 +11130,7 @@ modification.
 
 ------------------------------------------------------------------------
 
-### Method `post_tools_count_resources()`
+### `Orthanc$post_tools_count_resources()`
 
 Count local resources
 
@@ -11189,7 +11189,7 @@ A JSON object with the `Count` of matching resources.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_create_archive()`
+### `Orthanc$get_tools_create_archive()`
 
 Create ZIP archive
 
@@ -11234,7 +11234,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_tools_create_archive()`
+### `Orthanc$post_tools_create_archive()`
 
 Create ZIP archive
 
@@ -11294,7 +11294,7 @@ https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
 
 ------------------------------------------------------------------------
 
-### Method `post_tools_create_dicom()`
+### `Orthanc$post_tools_create_dicom()`
 
 Create one DICOM instance
 
@@ -11358,7 +11358,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_create_media()`
+### `Orthanc$get_tools_create_media()`
 
 Create DICOMDIR media
 
@@ -11403,7 +11403,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_tools_create_media()`
+### `Orthanc$post_tools_create_media()`
 
 Create DICOMDIR media
 
@@ -11468,7 +11468,7 @@ https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_create_media_extended()`
+### `Orthanc$get_tools_create_media_extended()`
 
 Create DICOMDIR media
 
@@ -11513,7 +11513,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_tools_create_media_extended()`
+### `Orthanc$post_tools_create_media_extended()`
 
 Create DICOMDIR media
 
@@ -11578,7 +11578,7 @@ https://orthanc.uclouvain.be/book/users/advanced-rest.html#jobs.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_default_encoding()`
+### `Orthanc$get_tools_default_encoding()`
 
 Get default encoding
 
@@ -11596,7 +11596,7 @@ The name of the encoding.
 
 ------------------------------------------------------------------------
 
-### Method `put_tools_default_encoding()`
+### `Orthanc$put_tools_default_encoding()`
 
 Set default encoding
 
@@ -11625,7 +11625,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_dicom_conformance()`
+### `Orthanc$get_tools_dicom_conformance()`
 
 Get DICOM conformance
 
@@ -11641,7 +11641,7 @@ The DICOM conformance statement.
 
 ------------------------------------------------------------------------
 
-### Method `post_tools_dicom_echo()`
+### `Orthanc$post_tools_dicom_echo()`
 
 Trigger C-ECHO SCU
 
@@ -11693,7 +11693,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_tools_execute_script()`
+### `Orthanc$post_tools_execute_script()`
 
 Execute Lua script
 
@@ -11722,7 +11722,7 @@ Output of the Lua script.
 
 ------------------------------------------------------------------------
 
-### Method `post_tools_find()`
+### `Orthanc$post_tools_find()`
 
 Look for local resources
 
@@ -11814,7 +11814,7 @@ about the reported resources (if `Expand` argument is `TRUE`).
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_generate_uid()`
+### `Orthanc$get_tools_generate_uid()`
 
 Generate an identifier
 
@@ -11837,7 +11837,7 @@ The generated identifier.
 
 ------------------------------------------------------------------------
 
-### Method `post_tools_invalidate_tags()`
+### `Orthanc$post_tools_invalidate_tags()`
 
 Invalidate DICOM-as-JSON summaries
 
@@ -11857,7 +11857,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_labels()`
+### `Orthanc$get_tools_labels()`
 
 Get all the used labels
 
@@ -11874,7 +11874,7 @@ List containing the labels.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_log_level()`
+### `Orthanc$get_tools_log_level()`
 
 Get main log level
 
@@ -11890,7 +11890,7 @@ Possible values: `default`, `verbose` or `trace`.
 
 ------------------------------------------------------------------------
 
-### Method `put_tools_log_level()`
+### `Orthanc$put_tools_log_level()`
 
 Set main log level
 
@@ -11917,7 +11917,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_log_level_dicom()`
+### `Orthanc$get_tools_log_level_dicom()`
 
 Get log level for `dicom`
 
@@ -11933,7 +11933,7 @@ Possible values: `default`, `verbose` or `trace`.
 
 ------------------------------------------------------------------------
 
-### Method `put_tools_log_level_dicom()`
+### `Orthanc$put_tools_log_level_dicom()`
 
 Set log level for `dicom`
 
@@ -11960,7 +11960,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_log_level_generic()`
+### `Orthanc$get_tools_log_level_generic()`
 
 Get log level for `generic`
 
@@ -11976,7 +11976,7 @@ Possible values: `default`, `verbose` or `trace`.
 
 ------------------------------------------------------------------------
 
-### Method `put_tools_log_level_generic()`
+### `Orthanc$put_tools_log_level_generic()`
 
 Set log level for `generic`
 
@@ -12003,7 +12003,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_log_level_http()`
+### `Orthanc$get_tools_log_level_http()`
 
 Get log level for `http`
 
@@ -12019,7 +12019,7 @@ Possible values: `default`, `verbose` or `trace`.
 
 ------------------------------------------------------------------------
 
-### Method `put_tools_log_level_http()`
+### `Orthanc$put_tools_log_level_http()`
 
 Set log level for `http`
 
@@ -12046,7 +12046,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_log_level_jobs()`
+### `Orthanc$get_tools_log_level_jobs()`
 
 Get log level for `jobs`
 
@@ -12062,7 +12062,7 @@ Possible values: `default`, `verbose` or `trace`.
 
 ------------------------------------------------------------------------
 
-### Method `put_tools_log_level_jobs()`
+### `Orthanc$put_tools_log_level_jobs()`
 
 Set log level for `jobs`
 
@@ -12089,7 +12089,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_log_level_lua()`
+### `Orthanc$get_tools_log_level_lua()`
 
 Get log level for `lua`
 
@@ -12105,7 +12105,7 @@ Possible values: `default`, `verbose` or `trace`.
 
 ------------------------------------------------------------------------
 
-### Method `put_tools_log_level_lua()`
+### `Orthanc$put_tools_log_level_lua()`
 
 Set log level for `lua`
 
@@ -12132,7 +12132,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_log_level_plugins()`
+### `Orthanc$get_tools_log_level_plugins()`
 
 Get log level for `plugins`
 
@@ -12148,7 +12148,7 @@ Possible values: `default`, `verbose` or `trace`.
 
 ------------------------------------------------------------------------
 
-### Method `put_tools_log_level_plugins()`
+### `Orthanc$put_tools_log_level_plugins()`
 
 Set log level for `plugins`
 
@@ -12175,7 +12175,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_log_level_sqlite()`
+### `Orthanc$get_tools_log_level_sqlite()`
 
 Get log level for `sqlite`
 
@@ -12191,7 +12191,7 @@ Possible values: `default`, `verbose` or `trace`.
 
 ------------------------------------------------------------------------
 
-### Method `put_tools_log_level_sqlite()`
+### `Orthanc$put_tools_log_level_sqlite()`
 
 Set log level for `sqlite`
 
@@ -12218,7 +12218,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_tools_lookup()`
+### `Orthanc$post_tools_lookup()`
 
 Look for DICOM identifiers
 
@@ -12249,7 +12249,7 @@ list corresponding to a JSON object with the fields `Type`, `ID` and
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_metrics()`
+### `Orthanc$get_tools_metrics()`
 
 Are metrics collected?
 
@@ -12266,7 +12266,7 @@ and exposed at `/tools/metrics-prometheus`
 
 ------------------------------------------------------------------------
 
-### Method `put_tools_metrics()`
+### `Orthanc$put_tools_metrics()`
 
 Enable collection of metrics
 
@@ -12294,7 +12294,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_metrics_prometheus()`
+### `Orthanc$get_tools_metrics_prometheus()`
 
 Get usage metrics
 
@@ -12312,7 +12312,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_now()`
+### `Orthanc$get_tools_now()`
 
 Get UTC time
 
@@ -12328,7 +12328,7 @@ The UTC time.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_now_local()`
+### `Orthanc$get_tools_now_local()`
 
 Get local time
 
@@ -12344,7 +12344,7 @@ The local time.
 
 ------------------------------------------------------------------------
 
-### Method `post_tools_reconstruct()`
+### `Orthanc$post_tools_reconstruct()`
 
 Reconstruct all the index
 
@@ -12381,7 +12381,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_tools_reset()`
+### `Orthanc$post_tools_reset()`
 
 Restart Orthanc
 
@@ -12397,7 +12397,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `post_tools_shutdown()`
+### `Orthanc$post_tools_shutdown()`
 
 Shutdown Orthanc
 
@@ -12413,7 +12413,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `get_tools_unknown_sop_class_accepted()`
+### `Orthanc$get_tools_unknown_sop_class_accepted()`
 
 Is unknown SOP class accepted?
 
@@ -12430,7 +12430,7 @@ class UID?
 
 ------------------------------------------------------------------------
 
-### Method `put_tools_unknown_sop_class_accepted()`
+### `Orthanc$put_tools_unknown_sop_class_accepted()`
 
 Set unknown SOP class accepted
 
@@ -12457,7 +12457,7 @@ Nothing, invisibly.
 
 ------------------------------------------------------------------------
 
-### Method `clone()`
+### `Orthanc$clone()`
 
 The objects of this class are cloneable with this method.
 

@@ -43,7 +43,7 @@
     </div>
     <div class="section level2">
     <h2 id="super-class">Super class<a class="anchor" aria-label="anchor" href="#super-class"></a></h2>
-    <p><code><a href="Resource.html">orthanc::Resource</a></code> -&gt; <code>Patient</code></p>
+    <p><code><a href="Resource.html">Resource</a></code> -&gt; <code>Patient</code></p>
     </div>
     <div class="section level2">
     <h2 id="active-bindings">Active bindings<a class="anchor" aria-label="anchor" href="#active-bindings"></a></h2>
@@ -51,83 +51,83 @@
 <dd><p>Patient ID</p></dd>
 
 
-<dt><code>name</code></dt>
+    <dt><code>name</code></dt>
 <dd><p>Patient Name</p></dd>
 
 
-<dt><code>birth_date</code></dt>
+    <dt><code>birth_date</code></dt>
 <dd><p>Patient Birth Date</p></dd>
 
 
-<dt><code>sex</code></dt>
+    <dt><code>sex</code></dt>
 <dd><p>Patient Sex</p></dd>
 
 
-<dt><code>other_patient_ids</code></dt>
+    <dt><code>other_patient_ids</code></dt>
 <dd><p>Other Patient IDs</p></dd>
 
 
-<dt><code>is_stable</code></dt>
+    <dt><code>is_stable</code></dt>
 <dd><p>Is stable?</p></dd>
 
 
-<dt><code>last_update</code></dt>
+    <dt><code>last_update</code></dt>
 <dd><p>Last Update</p></dd>
 
 
-<dt><code>labels</code></dt>
+    <dt><code>labels</code></dt>
 <dd><p>Get or add labels</p></dd>
 
 
-<dt><code>protected</code></dt>
+    <dt><code>protected</code></dt>
 <dd><p>Get or set if patient is protected against recycling</p></dd>
 
 
-<dt><code>studies</code></dt>
+    <dt><code>studies</code></dt>
 <dd><p>Studies</p></dd>
 
 
-<dt><code>studies_ids</code></dt>
+    <dt><code>studies_ids</code></dt>
 <dd><p>Studies identifiers</p></dd>
 
 
-<dt><code>series</code></dt>
+    <dt><code>series</code></dt>
 <dd><p>Series</p></dd>
 
 
-<dt><code>series_ids</code></dt>
+    <dt><code>series_ids</code></dt>
 <dd><p>Series identifiers</p></dd>
 
 
-<dt><code>instances</code></dt>
+    <dt><code>instances</code></dt>
 <dd><p>Instances</p></dd>
 
 
-<dt><code>instances_ids</code></dt>
+    <dt><code>instances_ids</code></dt>
 <dd><p>Instances identifiers</p></dd>
 
 
-<dt><code>instances_tags</code></dt>
+    <dt><code>instances_tags</code></dt>
 <dd><p>Instances tags</p></dd>
 
 
-<dt><code>num_studies</code></dt>
+    <dt><code>num_studies</code></dt>
 <dd><p>Number of studies</p></dd>
 
 
-<dt><code>num_series</code></dt>
+    <dt><code>num_series</code></dt>
 <dd><p>Number of series</p></dd>
 
 
-<dt><code>num_instances</code></dt>
+    <dt><code>num_instances</code></dt>
 <dd><p>Number of instances</p></dd>
 
 
-<dt><code>shared_tags</code></dt>
+    <dt><code>shared_tags</code></dt>
 <dd><p>Shared tags</p></dd>
 
 
-<dt><code>statistics</code></dt>
+    <dt><code>statistics</code></dt>
 <dd><p>Statistics</p></dd>
 
 
@@ -138,8 +138,7 @@
 
 <div class="section">
 <h3 id="public-methods">Public methods<a class="anchor" aria-label="anchor" href="#public-methods"></a></h3>
-
-<ul><li><p><a href="#method-Patient-get_main_information"><code>Patient$get_main_information()</code></a></p></li>
+<p></p><ul><li><p><a href="#method-Patient-get_main_information"><code>Patient$get_main_information()</code></a></p></li>
 <li><p><a href="#method-Patient-add_label"><code>Patient$add_label()</code></a></p></li>
 <li><p><a href="#method-Patient-has_label"><code>Patient$has_label()</code></a></p></li>
 <li><p><a href="#method-Patient-remove_label"><code>Patient$remove_label()</code></a></p></li>
@@ -153,25 +152,24 @@
 <li><p><a href="#method-Patient-get_shared_tags"><code>Patient$get_shared_tags()</code></a></p></li>
 <li><p><a href="#method-Patient-remove_empty_studies"><code>Patient$remove_empty_studies()</code></a></p></li>
 <li><p><a href="#method-Patient-clone"><code>Patient$clone()</code></a></p></li>
-</ul></div><p><details open><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="initialize"><a href="Resource.html#method-initialize"><code>orthanc::Resource$initialize()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="print"><a href="Resource.html#method-print"><code>orthanc::Resource$print()</code></a></span></li>
-<li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="set_child_resources"><a href="Resource.html#method-set_child_resources"><code>orthanc::Resource$set_child_resources()</code></a></span></li>
+</ul></div><p><details open><summary>Inherited methods</summary><ul><li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="initialize"><a href="Resource.html#method-initialize"><code>Resource$initialize()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="print"><a href="Resource.html#method-print"><code>Resource$print()</code></a></span></li>
+  <li><span class="pkg-link" data-pkg="orthanc" data-topic="Resource" data-id="set_child_resources"><a href="Resource.html#method-set_child_resources"><code>Resource$set_child_resources()</code></a></span></li>
 </ul></details></p><hr><a id="method-Patient-get_main_information"></a><div class="section">
-<h3 id="method-get-main-information-">Method <code>get_main_information()</code><a class="anchor" aria-label="anchor" href="#method-get-main-information-"></a></h3>
+<h3 id="patient-get-main-information-"><code>Patient$get_main_information()</code><a class="anchor" aria-label="anchor" href="#patient-get-main-information-"></a></h3>
 <p>Get patient information.</p><div class="section">
 <h4 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Patient</span><span class="op">$</span><span class="fu">get_main_information</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
+</div>
 
-</div><p></p><hr><a id="method-Patient-add_label"></a><div class="section">
-<h3 id="method-add-label-">Method <code>add_label()</code><a class="anchor" aria-label="anchor" href="#method-add-label-"></a></h3>
+<p></p><hr><a id="method-Patient-add_label"></a><div class="section">
+<h3 id="patient-add-label-"><code>Patient$add_label()</code><a class="anchor" aria-label="anchor" href="#patient-add-label-"></a></h3>
 <p>Add label to resource.</p><div class="section">
 <h4 id="usage-1">Usage<a class="anchor" aria-label="anchor" href="#usage-1"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Patient</span><span class="op">$</span><span class="fu">add_label</span><span class="op">(</span><span class="va">label</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>label</code></dt>
 <dd><p>Label.</p></dd>
@@ -180,14 +178,14 @@
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Patient-has_label"></a><div class="section">
-<h3 id="method-has-label-">Method <code>has_label()</code><a class="anchor" aria-label="anchor" href="#method-has-label-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Patient-has_label"></a><div class="section">
+<h3 id="patient-has-label-"><code>Patient$has_label()</code><a class="anchor" aria-label="anchor" href="#patient-has-label-"></a></h3>
 <p>Test if resource has label.</p><div class="section">
 <h4 id="usage-2">Usage<a class="anchor" aria-label="anchor" href="#usage-2"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Patient</span><span class="op">$</span><span class="fu">has_label</span><span class="op">(</span><span class="va">label</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-1">Arguments<a class="anchor" aria-label="anchor" href="#arguments-1"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>label</code></dt>
 <dd><p>Label.</p></dd>
@@ -196,14 +194,14 @@
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Patient-remove_label"></a><div class="section">
-<h3 id="method-remove-label-">Method <code>remove_label()</code><a class="anchor" aria-label="anchor" href="#method-remove-label-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Patient-remove_label"></a><div class="section">
+<h3 id="patient-remove-label-"><code>Patient$remove_label()</code><a class="anchor" aria-label="anchor" href="#patient-remove-label-"></a></h3>
 <p>Delete label from resource.</p><div class="section">
 <h4 id="usage-3">Usage<a class="anchor" aria-label="anchor" href="#usage-3"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Patient</span><span class="op">$</span><span class="fu">remove_label</span><span class="op">(</span><span class="va">label</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-2">Arguments<a class="anchor" aria-label="anchor" href="#arguments-2"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>label</code></dt>
 <dd><p>Label.</p></dd>
@@ -212,28 +210,28 @@
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Patient-get_zip_archive_content"></a><div class="section">
-<h3 id="method-get-zip-archive-content-">Method <code>get_zip_archive_content()</code><a class="anchor" aria-label="anchor" href="#method-get-zip-archive-content-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Patient-get_zip_archive_content"></a><div class="section">
+<h3 id="patient-get-zip-archive-content-"><code>Patient$get_zip_archive_content()</code><a class="anchor" aria-label="anchor" href="#patient-get-zip-archive-content-"></a></h3>
 <p>Get bytes of the zip archive.</p><div class="section">
 <h4 id="usage-4">Usage<a class="anchor" aria-label="anchor" href="#usage-4"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Patient</span><span class="op">$</span><span class="fu">get_zip_archive_content</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
+</div>
 
-</div><p></p><hr><a id="method-Patient-download_archive"></a><div class="section">
-<h3 id="method-download-archive-">Method <code>download_archive()</code><a class="anchor" aria-label="anchor" href="#method-download-archive-"></a></h3>
+<p></p><hr><a id="method-Patient-download_archive"></a><div class="section">
+<h3 id="patient-download-archive-"><code>Patient$download_archive()</code><a class="anchor" aria-label="anchor" href="#patient-download-archive-"></a></h3>
 <p>Download zip archive to <code>path</code>.</p><div class="section">
 <h4 id="usage-5">Usage<a class="anchor" aria-label="anchor" href="#usage-5"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Patient</span><span class="op">$</span><span class="fu">download_archive</span><span class="op">(</span><span class="va">path</span>, stream <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-3">Arguments<a class="anchor" aria-label="anchor" href="#arguments-3"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>path</code></dt>
 <dd><p>Path on disk.</p></dd>
 
-
-<dt><code>stream</code></dt>
+      <dt><code>stream</code></dt>
 <dd><p>Should the resource be streamed and written to disk in
 chunks? Default is <code>FALSE</code>, which means the resource file contents are
 retrieved in their entirety and written to disk all at once.</p></dd>
@@ -242,16 +240,19 @@ retrieved in their entirety and written to disk all at once.</p></dd>
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Patient-get_patient_module"></a><div class="section">
-<h3 id="method-get-patient-module-">Method <code>get_patient_module()</code><a class="anchor" aria-label="anchor" href="#method-get-patient-module-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Patient-get_patient_module"></a><div class="section">
+<h3 id="patient-get-patient-module-"><code>Patient$get_patient_module()</code><a class="anchor" aria-label="anchor" href="#patient-get-patient-module-"></a></h3>
 <p>Get patient module in a simplified version</p><div class="section">
 <h4 id="usage-6">Usage<a class="anchor" aria-label="anchor" href="#usage-6"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Patient</span><span class="op">$</span><span class="fu">get_patient_module</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
+</div>
 
-</div><p></p><hr><a id="method-Patient-anonymize"></a><div class="section">
-<h3 id="method-anonymize-">Method <code>anonymize()</code><a class="anchor" aria-label="anchor" href="#method-anonymize-"></a></h3>
+<p></p><hr><a id="method-Patient-anonymize"></a><div class="section">
+<h3 id="patient-anonymize-"><code>Patient$anonymize()</code><a class="anchor" aria-label="anchor" href="#patient-anonymize-"></a></h3>
 <p>Anonymize Patient</p><div class="section">
 <h4 id="usage-7">Usage<a class="anchor" aria-label="anchor" href="#usage-7"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Patient</span><span class="op">$</span><span class="fu">anonymize</span><span class="op">(</span></span>
@@ -266,48 +267,37 @@ retrieved in their entirety and written to disk all at once.</p></dd>
 <span>  force <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  dicom_version <span class="op">=</span> <span class="cn">NULL</span></span>
 <span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-4">Arguments<a class="anchor" aria-label="anchor" href="#arguments-4"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>remove</code></dt>
 <dd><p>List of tags to remove.</p></dd>
 
-
-<dt><code>replace</code></dt>
+      <dt><code>replace</code></dt>
 <dd><p>Named-list of tags to replce.</p></dd>
 
-
-<dt><code>keep</code></dt>
+      <dt><code>keep</code></dt>
 <dd><p>List of tags to keep unchanged.</p></dd>
 
-
-<dt><code>keep_private_tags</code></dt>
+      <dt><code>keep_private_tags</code></dt>
 <dd><p>Keep private tags from DICOM instance.</p></dd>
 
-
-<dt><code>keep_source</code></dt>
+      <dt><code>keep_source</code></dt>
 <dd><p>Keep original resource.</p></dd>
 
-
-<dt><code>priority</code></dt>
+      <dt><code>priority</code></dt>
 <dd><p>Priority of the job.</p></dd>
 
-
-<dt><code>permissive</code></dt>
+      <dt><code>permissive</code></dt>
 <dd><p>Ignore errors during individual steps of the job?</p></dd>
 
-
-<dt><code>private_creator</code></dt>
+      <dt><code>private_creator</code></dt>
 <dd><p>Private creator to be used for private tags in
 replace.</p></dd>
 
-
-<dt><code>force</code></dt>
+      <dt><code>force</code></dt>
 <dd><p>Force tags to be changed.</p></dd>
 
-
-<dt><code>dicom_version</code></dt>
+      <dt><code>dicom_version</code></dt>
 <dd><p>Version of the DICOM standard to use for
 anonymization.</p></dd>
 
@@ -315,8 +305,10 @@ anonymization.</p></dd>
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Patient-anonymize_as_job"></a><div class="section">
-<h3 id="method-anonymize-as-job-">Method <code>anonymize_as_job()</code><a class="anchor" aria-label="anchor" href="#method-anonymize-as-job-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Patient-anonymize_as_job"></a><div class="section">
+<h3 id="patient-anonymize-as-job-"><code>Patient$anonymize_as_job()</code><a class="anchor" aria-label="anchor" href="#patient-anonymize-as-job-"></a></h3>
 <p>Anonymize Patient</p><div class="section">
 <h4 id="usage-8">Usage<a class="anchor" aria-label="anchor" href="#usage-8"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Patient</span><span class="op">$</span><span class="fu">anonymize_as_job</span><span class="op">(</span></span>
@@ -331,48 +323,37 @@ anonymization.</p></dd>
 <span>  force <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>  dicom_version <span class="op">=</span> <span class="cn">NULL</span></span>
 <span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-5">Arguments<a class="anchor" aria-label="anchor" href="#arguments-5"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>remove</code></dt>
 <dd><p>List of tags to remove.</p></dd>
 
-
-<dt><code>replace</code></dt>
+      <dt><code>replace</code></dt>
 <dd><p>Named-list of tags to replce.</p></dd>
 
-
-<dt><code>keep</code></dt>
+      <dt><code>keep</code></dt>
 <dd><p>List of tags to keep unchanged.</p></dd>
 
-
-<dt><code>keep_private_tags</code></dt>
+      <dt><code>keep_private_tags</code></dt>
 <dd><p>Keep private tags from DICOM instance.</p></dd>
 
-
-<dt><code>keep_source</code></dt>
+      <dt><code>keep_source</code></dt>
 <dd><p>Keep original resource.</p></dd>
 
-
-<dt><code>priority</code></dt>
+      <dt><code>priority</code></dt>
 <dd><p>Priority of the job.</p></dd>
 
-
-<dt><code>permissive</code></dt>
+      <dt><code>permissive</code></dt>
 <dd><p>Ignore errors during individual steps of the job?</p></dd>
 
-
-<dt><code>private_creator</code></dt>
+      <dt><code>private_creator</code></dt>
 <dd><p>Private creator to be used for private tags in
 replace.</p></dd>
 
-
-<dt><code>force</code></dt>
+      <dt><code>force</code></dt>
 <dd><p>Force tags to be changed.</p></dd>
 
-
-<dt><code>dicom_version</code></dt>
+      <dt><code>dicom_version</code></dt>
 <dd><p>Version of the DICOM standard to use for
 anonymization.</p></dd>
 
@@ -380,8 +361,10 @@ anonymization.</p></dd>
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Patient-modify"></a><div class="section">
-<h3 id="method-modify-">Method <code>modify()</code><a class="anchor" aria-label="anchor" href="#method-modify-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Patient-modify"></a><div class="section">
+<h3 id="patient-modify-"><code>Patient$modify()</code><a class="anchor" aria-label="anchor" href="#patient-modify-"></a></h3>
 <p>Modify Patient</p><div class="section">
 <h4 id="usage-9">Usage<a class="anchor" aria-label="anchor" href="#usage-9"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Patient</span><span class="op">$</span><span class="fu">modify</span><span class="op">(</span></span>
@@ -395,52 +378,44 @@ anonymization.</p></dd>
 <span>  private_creator <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  force <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-6">Arguments<a class="anchor" aria-label="anchor" href="#arguments-6"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>remove</code></dt>
 <dd><p>List of tags to remove.</p></dd>
 
-
-<dt><code>replace</code></dt>
+      <dt><code>replace</code></dt>
 <dd><p>Named-list of tags to replce.</p></dd>
 
-
-<dt><code>keep</code></dt>
+      <dt><code>keep</code></dt>
 <dd><p>List of tags to keep unchanged.</p></dd>
 
-
-<dt><code>remove_private_tags</code></dt>
+      <dt><code>remove_private_tags</code></dt>
 <dd><p>Remove private tags from DICOM instance.</p></dd>
 
-
-<dt><code>keep_source</code></dt>
+      <dt><code>keep_source</code></dt>
 <dd><p>Keep original resource.</p></dd>
 
-
-<dt><code>priority</code></dt>
+      <dt><code>priority</code></dt>
 <dd><p>Priority of the job.</p></dd>
 
-
-<dt><code>permissive</code></dt>
+      <dt><code>permissive</code></dt>
 <dd><p>Ignore errors during individual steps of the job?</p></dd>
 
-
-<dt><code>private_creator</code></dt>
+      <dt><code>private_creator</code></dt>
 <dd><p>Private creator to be used for private tags in
 replace.</p></dd>
 
-
-<dt><code>force</code></dt>
+      <dt><code>force</code></dt>
 <dd><p>Force tags to be changed.</p></dd>
 
 
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Patient-modify_as_job"></a><div class="section">
-<h3 id="method-modify-as-job-">Method <code>modify_as_job()</code><a class="anchor" aria-label="anchor" href="#method-modify-as-job-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Patient-modify_as_job"></a><div class="section">
+<h3 id="patient-modify-as-job-"><code>Patient$modify_as_job()</code><a class="anchor" aria-label="anchor" href="#patient-modify-as-job-"></a></h3>
 <p>Modify Patient</p><div class="section">
 <h4 id="usage-10">Usage<a class="anchor" aria-label="anchor" href="#usage-10"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Patient</span><span class="op">$</span><span class="fu">modify_as_job</span><span class="op">(</span></span>
@@ -454,74 +429,66 @@ replace.</p></dd>
 <span>  private_creator <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  force <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-7">Arguments<a class="anchor" aria-label="anchor" href="#arguments-7"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>remove</code></dt>
 <dd><p>List of tags to remove.</p></dd>
 
-
-<dt><code>replace</code></dt>
+      <dt><code>replace</code></dt>
 <dd><p>Named-list of tags to replce.</p></dd>
 
-
-<dt><code>keep</code></dt>
+      <dt><code>keep</code></dt>
 <dd><p>List of tags to keep unchanged.</p></dd>
 
-
-<dt><code>remove_private_tags</code></dt>
+      <dt><code>remove_private_tags</code></dt>
 <dd><p>Remove private tags from DICOM instance.</p></dd>
 
-
-<dt><code>keep_source</code></dt>
+      <dt><code>keep_source</code></dt>
 <dd><p>Keep original resource.</p></dd>
 
-
-<dt><code>priority</code></dt>
+      <dt><code>priority</code></dt>
 <dd><p>Priority of the job.</p></dd>
 
-
-<dt><code>permissive</code></dt>
+      <dt><code>permissive</code></dt>
 <dd><p>Ignore errors during individual steps of the job?</p></dd>
 
-
-<dt><code>private_creator</code></dt>
+      <dt><code>private_creator</code></dt>
 <dd><p>Private creator to be used for private tags in
 replace.</p></dd>
 
-
-<dt><code>force</code></dt>
+      <dt><code>force</code></dt>
 <dd><p>Force tags to be changed.</p></dd>
 
 
 </dl><p></p></div>
 </div>
 
-</div><p></p><hr><a id="method-Patient-get_shared_tags"></a><div class="section">
-<h3 id="method-get-shared-tags-">Method <code>get_shared_tags()</code><a class="anchor" aria-label="anchor" href="#method-get-shared-tags-"></a></h3>
+</div>
+
+<p></p><hr><a id="method-Patient-get_shared_tags"></a><div class="section">
+<h3 id="patient-get-shared-tags-"><code>Patient$get_shared_tags()</code><a class="anchor" aria-label="anchor" href="#patient-get-shared-tags-"></a></h3>
 <p>Retrieve the shared tags of the patient.</p><div class="section">
 <h4 id="usage-11">Usage<a class="anchor" aria-label="anchor" href="#usage-11"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Patient</span><span class="op">$</span><span class="fu">get_shared_tags</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
+</div>
 
-</div><p></p><hr><a id="method-Patient-remove_empty_studies"></a><div class="section">
-<h3 id="method-remove-empty-studies-">Method <code>remove_empty_studies()</code><a class="anchor" aria-label="anchor" href="#method-remove-empty-studies-"></a></h3>
+<p></p><hr><a id="method-Patient-remove_empty_studies"></a><div class="section">
+<h3 id="patient-remove-empty-studies-"><code>Patient$remove_empty_studies()</code><a class="anchor" aria-label="anchor" href="#patient-remove-empty-studies-"></a></h3>
 <p>Remove empty studies from patient.</p><div class="section">
 <h4 id="usage-12">Usage<a class="anchor" aria-label="anchor" href="#usage-12"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Patient</span><span class="op">$</span><span class="fu">remove_empty_studies</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><p></p></div>
 </div>
 
+</div>
 
-</div><p></p><hr><a id="method-Patient-clone"></a><div class="section">
-<h3 id="method-clone-">Method <code>clone()</code><a class="anchor" aria-label="anchor" href="#method-clone-"></a></h3>
+<p></p><hr><a id="method-Patient-clone"></a><div class="section">
+<h3 id="patient-clone-"><code>Patient$clone()</code><a class="anchor" aria-label="anchor" href="#patient-clone-"></a></h3>
 <p>The objects of this class are cloneable with this method.</p><div class="section">
 <h4 id="usage-13">Usage<a class="anchor" aria-label="anchor" href="#usage-13"></a></h4>
 <p></p><div class="r"><div class="sourceCode"><pre><code><span><span class="va">Patient</span><span class="op">$</span><span class="fu">clone</span><span class="op">(</span>deep <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div><p></p></div>
-</div>
-
-<div class="section">
+</div><p></p><div class="section">
 <h4 id="arguments-8">Arguments<a class="anchor" aria-label="anchor" href="#arguments-8"></a></h4>
 <p></p><div class="arguments"><dl><dt><code>deep</code></dt>
 <dd><p>Whether to make a deep clone.</p></dd>
@@ -531,6 +498,7 @@ replace.</p></dd>
 </div>
 
 </div>
+
 
     </div>
 
